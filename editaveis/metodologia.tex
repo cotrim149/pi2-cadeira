@@ -1,0 +1,137 @@
+\chapter{Metodologia}
+
+
+%Comentário Rodrigo:
+%vc pode por q conforme for lendo vc vai implementando partes do sistema, implementando os algoritmos e/ou modulos q vc acabou de estudar.
+%pode por tb q ao implementar e ler em conjunto vc pode definir mais rapido oq entra e oq sai do seu escopo e como modelar as comunicações dos módulos
+
+\section{Metodologia para desenvolvimento TCC} %melhorar este título
+
+O presente trabalho pretende seguir uma metodologia cíclica, a qual será
+estruturado em fases. Cada ciclo será composto por 3 fases: Revisão Bibliográfica, Prova de conceito e Escrita do trabalho de conclusão de curso (TCC). 
+Esta metodologia será usada como um guia para condução da escrita da escrita do TCC.
+
+\subsection{Revisão Bibliográfica}
+A primeira fase será a de Revisão Bibliográfica, que
+consiste no mapeamento e na síntese de conhecimento de trabalhos já publicados nos temas
+de pesquisa de interesse do pesquisador[7]. 
+
+Esta fase possibilita a alimentação da fase seguinte, que está relacionada a como este trabalho será conduzido.
+
+\subsection{Prova de conceito}
+A segunda fase será a de prova de conceito que consiste em "... denominar um
+modelo prático que possa provar o conceito (teórico) estabelecido por uma pesquisa ou
+artigo técnico" \cite{poc}. Uma prova de conceito permite a demonstração de uma ideia, fundamentada teoricamente, na prática. Ou seja, aplicar o que foi inicialmente idealizado na prática, e para isso é necessário uma formalização.
+A formalização da prova de conceito deste trabalho consiste em:
+\begin{itemize}
+	\item Entendimento do escopo do problema analisado em cada ciclo
+	\item Análise de algoritmos que podem ser estendidos ao domínio conexo do problema
+	\item Implementação de algoritmos previamente analisados em contexto com o domínio conexo
+	\item Teste de algoritmo implementado em protótipo executável. 
+	\item Otimização de algoritmo.
+\end{itemize}  
+
+O entendimento do escopo do problema é essencial, pois com base neste entendimento um estudo mais profundo pode ser feito e uma solução pode ser melhor estudada. 
+Com base no estudo de uma solução a análise de um algoritmo pode ser feita, uma vez que o problema se encaixe em uma solução já existente, um estudo sobre algum algoritmo que se encaixe nessa solução é feito, um exemplo é uso do \textit{Knapsack} para se saber qual é a melhor forma de se levar itens valiosos para uma viagem \cite{book_algorithm_design}. Caso não se encaixe o algoritmo tende a ser produzido para este problema. 
+O próximo passo é a implementação do algoritmo contextualizando o mesmo com o problema.
+Em seguida alguns testes são feitos em relação ao todo, neste caso são analisados critérios como memória consumida e tempo de resposta do algoritmo em dispositivo móvel. Caso o algoritmo não apresente conformidade com os critérios, então uma otimização do mesmo é estudada e feita. %com urgência.
+%A otimização é um item necessário haja vista que a mesma 
+
+Esta fase possibilita uma via de retroalimentação com a fase de
+revisão bibliográfica, permitindo um maior refinamento da prova de
+conceito.
+
+\subsection{Escrita}
+A terceira fase será a de escrita do trabalho de conclusão de curso(TCC), que
+consiste no levantamento do referência teórico tanto para o domínio conexo da nutrição quanto o de engenharia de software, formalização das provas de conceito e escrita da síntese dos resultados das prova de conceito, 
+levando em conta a retroalimentação provida na fase anterior.
+
+\section{Metodologia para desenvolvimento do software}
+
+
+	A metodologia usada para este trabalho será uma adaptação do Scrum. 
+
+	Segundo \cite{scrum} o Scrum é um \textit{framework} no qual pessoas tem o poder de tratar e resolver problemas complexos e que podem se adaptar com o tempo, enquanto produtos são entregues com o mais alto valor possível, no qual os times são associados a papéis, eventos, artefatos e regras.
+
+	Este \textit{framework} consiste em resolver problemas complexos, na qual o empirismo é a base de controle de processo. ''O empirismo afirma que o conhecimento vem da experiência e de tomada de decisões baseadas no que é conhecido.'' \cite{scrum}. E são três os pilares que sustam este processo empírico:
+	\begin{itemize}
+		\item Transparência: São aspectos do processo que ficam visíveis aos envolvidos com os resultados, ou seja, um padrão comum deve ser adotado pelos envolvidos para que um visão comum seja partilhada. Exemplos disso são: utilização de uma linguagem mais comum, definição comum de ''pronto'' é compartilhada por aqueles que realizam o trabalho e por aqueles que aceitam o resultado do mesmo. 
+		\item Inspeção: Devem ser feitas, preferencialmente, por pessoal especializado, dando assim um maior aspecto benéfico. As inspeções devem ocorrer frequentemente, mas não ao ponto de atrapalhar a própria execução das tarefas.
+		\item Adaptação: Caso o produto ou processo inspecionado não esteja dentro dos limites aceitáveis os mesmos devem ser ajustados os mais breve possível, minimizando o impacto do retrabalho. ''O Scrum prescreve quatro Eventos formais, contidos dentro dos limites da Sprint, para inspeção e adaptação...''\cite{scrum}.
+		\begin{itemize}
+			\item Reunião de planejamento da Sprint
+			\item Reunião diária
+			\item Reunião de revisão da Sprint
+			\item Retrospectiva da Sprint
+		\end{itemize}
+	\end{itemize} 
+
+	O Scrum é orientado a eventos \textit{time-boxed}, ou seja, possuem uma duração fixa com tempo de início e fim. O primeiro evento que ocorre é o de planejamento da Sprint. Uma Sprint possui a duração de até 1 mês, não devendo ser reduzido ou aumentado o tempo assim que estabelecida a duração, devem ser iniciadas uma imediatamente após o termino de outra, tem o caráter incremental- permite que uma versão inicial do trabalho seja feita e incrementada futuramente-, sendo composta por: por uma reunião de planejamento da Sprint, reuniões diárias, o trabalho de desenvolvimento, uma revisão da Sprint e a retrospectiva da Sprint.''Sprints permitem previsibilidade que garante a inspeção e adaptação do progresso em direção à meta pelo menos a cada mês corrido. Sprints também limitam o risco ao custo de um mês corrido'' \cite[p.~8]{scrum}.
+
+	A reunião de planejamento de Sprint contempla todo o trabalho a ser planejado naquela Sprint. Esta reunião responde a algumas perguntas: 
+	\begin{enumerate}
+		\item O que pode ser entregue como resultado do incremento da próxima Sprint?
+		\item Como o trabalho necessário para entregar o incremento será realizado?
+	\end{enumerate}
+
+	O objetivo deste planejamento é obter uma meta para a Sprint, dando ao time de desenvolvimento o motivo de estar sendo construído este incremento. O incremento é a meta a ser satisfeita através da implementação do Backlog do Produto~\footnote{Explicação do que é o Backlogo do Produto} , que é criado durante este evento. O Backlog do Produto dá ao Time de Desenvolvimento~\footnote{Explicação do que é o time de desenvolvimento} um norte sobre o que deve ser feito naquela Sprint. 	 
+
+	O segundo evento ocorrido é a Reunião Diária, que é basicamente um reunião que ocorre em 15 minutos provida para o planejamento das atividades das próximas 24 horas. O processo de inspeção ocorre naturalmente neste evento, uma vez que os participantes respondem as perguntas de: o que fiz ontem, o que farei hoje e o que está me impedindo de fazer alguma futura para finalizar a sprint. Somente o Time de Desenvolvimento participa desta reunião. ''Reuniões Diárias melhoram as comunicações, eliminam outras reuniões, identificam e removem impedimentos para o desenvolvimento, destacam e promovem rápidas tomadas de decisão, e melhoram o nível de conhecimento do Time de Desenvolvimento. Esta é uma reunião chave para inspeção e adaptação.'' \cite[p.~11]{scrum} 
+
+	O terceiro evento é a Revisão de Sprint, que sempre ocorre ao final de cada Sprint com o objetivo de inspecionar o que foi incrementado e adaptar o Backlog do Produto caso precise. A reunião deve incluir para todos os envolvidos no Scrum, sendo possível esclarecer quais itens do Backlog ficaram prontos e quais não ficaram, mostrar quais problemas aconteceram, estão acontecendo e como foram resolvidos, demonstração do incremento pronto, todo o grupo colabora sobre o que fazer em seguida e as saídas geradas neste momento poderão ser usadas como insumos de entrada para a reunião de Planejamento da próxima Sprint e verificação das tendências de mercado quanto ao uso do potencial produto.
+
+	O quarto e último evento é a Retrospectiva da Sprint, que é a oportunidade de melhoria do Time Scrum, adotando novos planos de melhoria a serem aplicadas na próxima Sprint. Este evento ocorre depois da Revisão de Sprint e antes do planejamento da próxima Sprint, e o propósito desse é: saber como a última Sprint foi em relação as pessoas, relacionamentos, processos e ferramentas, identificar e ordenar potências melhorias de forma que todo o Time Scrum melhore enquanto trabalha. ''A implementação destas melhorias na próxima Sprint é a forma de adaptação à inspeção que o Time Scrum faz a si próprio. A Retrospectiva da Sprint fornece um evento dedicado e focado na inspeção e adaptação, no entanto, as melhorias podem ser adotadas a qualquer momento.'' \cite[p.~13]{scrum}.  
+
+\subsection{Adaptação adotada} 
+
+	Quais serão os papeis?
+	
+		Os papéis adotados para este trabalho serão:
+	
+		\begin{itemize}
+			\item O Product Owner (PO) será o grupo composto pelos desenvolvedores do aplicativo OnFit. 
+			\item O Scrum Master será o grupo composto por pelos Orientador e Coorientador deste trabalho, que terão como base o papel semelhante ao do Coach. 
+			\item O time de desenvolvimento será composto somente pelo autor deste trabalho.
+		\end{itemize}
+
+	Como irei definir as sprint?
+
+		Pretende-se utilizar iterações curtas, i.e. Sprints de duas semanas (em média), facilitando a modularização do que deve ser feito. A escolha deste duração foi baseada em experiências do Time de desenvolvimento em projetos passados, não sendo um valor escolhido arbitrariamente.
+
+	Quais serão as US?
+
+		US domínio nutrição
+		US domínio ES
+
+	Quais serão os eventos utilizados?
+
+
+\subsection{Ferramentas}
+
+	A ferramenta utilizada para organização das Estórias de Usuário será o Trello, que compreende num software de organização de Boards online que permite ao usuário alimentar estes como tarefas a serem feitas, desde tarefas simples do cotidiano como lavar um carro ou fazer as compras de casa a trabalhos mais complexos como organização de um time em relação do que cada membro pode fazer (Colocar figura de Board do OnFit). 
+	Este Board possui um rótulo, comumente usado para identificação do mesmo, e pode ser usado para gerar várias listas.
+	As listas possuem somente um rótulo, comumente usada para identificação da mesma, sendo esta possível gerar vários Cards (Colocar figura com Cards aqui). Por conseguinte o Card possui um título, uma descrição, e vários Checklists.
+	Cada Checklist possui um título e vários itens. Os itens são a menor unidade existente no trelo. A cada item marcado a porcentagem do Chekclist é atualizada, mostrando o desenvolvimento do mesmo.
+	
+	Uma outra ferramenta que será usada é o EverHour, que compreende num software de medição do tempo para tarefas online. Este software possui um plugin que pode ser integrado ao Trello, adicionando aos Cards os componentes de: 
+	\begin{itemize}
+		\item Estimativa de quando o Card estará pronto ou feito em horas
+		\item Tempo não contabilizado caso esqueça de iniciar a medição de tempo
+		\item Botão de iniciar relógio.
+	\end{itemize} 
+	O funcionamento do plugin é simples. Ao se fazer a instalação do plugin no navegador, seguindo as instruções do site, as funcionalidades descritas acima serão acessadas pelos Cards do Trello. Para iniciar a medição de tempo da tarefa basta clicar num Card e apertar o botão \textit{Start}, então uma nova medição será iniciada e o registro será feito no EverHour. Para fazer a parada o mesmo procedimento é feito, mas o botão a ser apertado será o \textit{Stop}.
+
+	O tempo realizado por cada Card pode ser visualizado no próprio site do EverHour.   
+
+	O Trello será usado como Kanbam. Fazendo-se um paralelo temos:
+	\begin{enumerate}
+		\item Cada Board do Trello será um quadro Kanbam. Caso seja necessário mais de um quadro é possível utilizar mais de um.
+		\item Cada Lista do Trello será uma coluna do quadro KanBam, sendo utilizado no mínimo 4 colunas: To Do, In Progress, Verify e Done. Caso seja necessário, será adicionado mais colunas.
+		\item Cada Card do Trello será uma Estória de Usuário, no qual o título será a Estória, a descrição do Card será a descrição da Estória.
+		\item Cada Checklists do Trello será dado como tarefas a serem feitas relacionadas aquela Estória de Usuário.
+	\end{enumerate}
+
+	Com a utilização do plugin do EverHour, a pontuação referente a cada Estória de Usuário será alocado em horas. Uma conversão de pontos em horas será feito. Levando em conta os critérios de dificuldade a ser completado pela tarefa e tamanho da tarefa a ser feita. 
+
+
+\section{Considerações Finais}
