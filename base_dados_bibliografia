@@ -2,6 +2,16 @@
 % Encoding: UTF-8
 
 
+@Manual{nbr9050,
+  Title                    = {NBR 9050: Acessibilidade e edificações, mobiliário, espaços e equipamentos urbanos},
+  Author                   = {ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS (ABNT)},
+  Organization             = {ABNT},
+  Year                     = {2004},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
 @Article{artigo_controle_cadeira_eletrica,
   Title                    = {SISTEMA DE CONTROLE E MOTORIZAÇÃO DE CADEIRA DE RODAS},
   Author                   = {ARLEI BARCELOS And JOSÉ NEWTON COELHO GONÇALVES And  MAXSUEL FLORES And WARLLEM BARBOSA},
@@ -34,12 +44,31 @@
   Timestamp                = {2015.09.09}
 }
 
+@Manual{manual_bateria_unipower,
+  Title                    = {Projeto e Desenvolvimento de circuito de controle para cadeira de rodas},
+  Author                   = {Marcos  Henrique Mamoru Otsuka HAMANAKA And José Antonio Siqueira DIAS},
+  Year                     = {2002},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09},
+  Url                      = {https://www.robocore.net/upload/ManualTecnicoBateriaUnipower.pdf}
+}
+
 @Book{livro_creating_games,
   Title                    = {Creating Games: Mechanics, Content, and Technology,},
   Author                   = {Morgan McGuire And Odest Chadwicke Jenkins},
   Editor                   = {A K Peters, Ltd.},
   Publisher                = {A K Peters, Ltd.},
   Year                     = {2009},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
+@Booklet{projeto_cadeira_rodas_inteligente,
+  Title                    = {PROJETO E CONTROLE DE UMA CADEIRA DE RODAS AUTOMATIZADA INTELIGENTE COM SENSORES DE ULTRASSOM},
+  Author                   = {Marco Antonio MEGGIOLARO And Igor Tavares Girsas},
+  Year                     = {2011},
 
   Owner                    = {cotrim},
   Timestamp                = {2015.09.09}
