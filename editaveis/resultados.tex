@@ -221,12 +221,60 @@ Para utilizar o bluetooth via celular basta acrescentar algumas linhas de códig
 
 \begin{figure}[!htb]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.3]{figuras/controle/bluetooth}
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/controle/bluetooth}
 \caption{Desenho do diagrama de blocos do sistema de controle}
 \label{fig:bluetooth}
 \end{figure}
 
 O módulo bluetooth HC-05 oferece uma forma fácil e barata de comunicação via Bluetooth, suporta tanto o modo mestre como escravo, além de ter uma fácil configuração e um alcance de até 10 metros.
+
+\subsubsection{Controladores de potência}
+
+Os motores de corrente continua utilizam das forças eletromagnéticas para transformar energia elétrica em mecânica funciona com fontes rectificadas, ou seja, que possuem polaridade fixa. Esse tipo de motor, possui dois terminais, um positivo e outro negativo que de acordo com o polaridade e o sentido da corrente controlam a repulsão dos eletroímãs e consequentemente o sentido da rotação do motor.
+
+Uma das maiores vantagens dos motores de corrente continua é o controle da velocidade que é feito com o dreno de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção além disso são propícios a problemas com faíscas internas o que impede o seu uso em ambientes perigosos.
+
+Geralmente motores precisam de corrente relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente continua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves. Na Figura \ref{fig:direcionamento_motores} tem-se o funcionamento dos motores de acordo com a combinação das chaves indicando que o seu sentido é proporcional ao da corrente.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/direcionamento_motores}
+\caption{Direcionamento dos motores}
+\label{fig:direcionamento_motores}
+\end{figure}
+
+O controle feito por chaves é relativamente efetivo, barato e simples, contudo, essas facilidades podem causar alguns problemas. Por se tratar de um sistema físico a chave, com o tempo, sofre desgaste físico e está propicia a problemas estruturais e até mesmo de acionamento por sistemas automatizados. Tem-se ainda a trepidação durante um acionamento que pode acabar gerando falsos positivos. Uma alternativa para esses problemas são os transistores operando no lugar das chaves.
+
+O acionamento dos transistores é feito de forma elétrica, não possuindo assim desgaste físico e podem ser feitos usando baixas tensões ou correntes, o que torna o sistema mais simples. Considerando que esse tipo de componente pode ser utilizado como portas lógicas é possível trabalhar com mais estados e uma margem maior para as necessidades do sistema. Outra vantagem é que existem vários tipos de transistores com diferentes características que ser agregadas ao projeto para funcionalidades como a proteção dos pinos dentre outros.
+
+O uso de transistores como chaves permite que sejam criados sistemas mais complexos que permitem estados diferentes como manter o motor parado. Um circuito utilizado para esse tipo de controle é a ponte H, que é basicamente um conjunto com alguns transistores construídos de modo que a corrente possa ser direcionada de acordo com a necessidade do sistema, como pode ser visto na Figura \ref{fig:motor_ponte_h}.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/motor_ponte_h}
+\caption{Circuito com ponte H}
+\label{fig:motor_ponte_h}
+\end{figure}
+
+O transistor usado na Figura \ref{fig:motor_ponte_h} é um transistor bipolar, que possui materiais polarizados e junções coladas, devido a suas características, não funciona muito bem em sistemas de potência dificultando o seu uso para motores que drenam muita corrente. Para aplicações que exigem a passagem de corrente, são usados os transistores de efeito de campo, FET, que suportam mais corrente devido a sua alta impedância de entrada. Como o próprio nome diz esse tipo de transistor é acionado com um campo elétrico na porta Gate. Devido a esse comportamento o acionamento fica praticamente isolado, o que permite uma passagem maior de corrente com uma proteção maior para os pinos de controle.
+
+O acionamento dos transistores é feito a partir de uma onda quadrada, o PWM - Pulse width modulation. O PWM é basicamente um onda com vários pulsos que possuem a sua largura controlada, Figura \ref{fig:ondas_quadradas}, que é chamado de Duty Cycle, essa largura determina o tempo com o qual os transistores ficarão ligados, controlando assim a passagem de corrente e a velocidade dos motores.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/controle/ondas_quadradas}
+\caption{Duty Cycle}
+\label{fig:ondas_quadradas}
+\end{figure}
+
+Para o kit de automação da cadeira de rodas, como uma primeira visão, será utilizada a ponte H, no controle dos motores. Um algoritmo de controle PWM usando o Raspeberry Pi que deve responder aos comandos do usuário como direção, aceleração, frenagem dentre outros que serão posteriormente levantados. Na Figura \ref{fig:esquema_controle} pode ser obervado o esquemático geral do sistema. Tem-se ainda o Distribuidor vai será uma placa para facilitar a alimentação do sistema e o Regulador vai servir para alimentar o Controlador e periféricos.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/esquema_controle}
+\caption{Esquemático geral do sistema}
+\label{fig:esquema_controle}
+\end{figure}
 
 \subsection{Tecnologias}
 
