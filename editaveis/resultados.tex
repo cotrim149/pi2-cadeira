@@ -43,7 +43,7 @@ O objetivo do projeto é desenvolver uma estrutura de fácil conexão e  resiste
 \section{Power Train}
 
 \subsection{Motor}
-Será utilizado no projeto o motor de corrente continua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração (HAMANAKA,2002). 
+Será utilizado no projeto o motor de corrente continua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração (HAMANAKA,2002).
 
 Especificações a serem atendidas:
 \begin{itemize}
@@ -78,7 +78,7 @@ As baterias SLA (bateria selada chumbo-ácido), também conhecida como Gelcell, 
 
 A bateria de chumbo-ácido tem a melhor retenção de carga entre todas as baterias recarregáveis. As baterias de SLA descarregam aproximadamente 40\% da sua energia armazenada em média em 1 ano, já uma de NiCd se auto descarrega na mesma quantidade em 3 meses.
 
-As baterias SLA devem sempre ser armazenadas carregadas. Deixar a bateria descarregada causa sulfação, uma condição que torna difícil, se não impossível, de se recarregar as baterias. A bateria SLA consegue fornecer entre 200 e 300 ciclos de carga/descarga.
+As baterias SLA devem sempre ser armazenadas carregadas. Deixar a bateria descarregada causa sulfação, uma condição que torna difícil, se não impossível, de se recarregar as baterias. A bateria SLA consegue fornecer entre 200 e 300 ciclos de carga/descarga.
 
 Vantagens:
 \begin{itemize}
@@ -88,35 +88,39 @@ Vantagens:
  \item Não exige muita manutenção e não tem o efeito memória.
 \end{itemize}
 
-Limitações:
+Limitações:
 \begin{itemize}
  \item A bateria não pode ser armazenada em completa descarga, a tensão tem de estar acima de 2,10V;
  \item Densidade baixa da energia;
  \item Ciclo de carga/descarga limitado;
  \item O eletrólito e o conteúdo da carga podem causar danos ambientais;
- \item Imprópria para dispositivos de mão que exigem tamanho compacto. 
+ \item Imprópria para dispositivos de mão que exigem tamanho compacto.
 \end{itemize}
 
-\subsubsection{Carregando Baterias Chumbo-Ácido}
-O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. Com correntes de carga maiores, e métodos de carga multi-estágios, o tempo de carga pode ser reduzido para 10 horas ou menos.
+\subsubsection{Carregando Baterias Chumbo-Ácido}
+O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. Com correntes de carga maiores, e métodos de carga multi-estágios, o tempo de carga pode ser reduzido para 10 horas ou menos.
 
-Durante a carga em corrente constante, a bateria carrega 70\% em aproximadamente 5 horas; os 30\% restantes são completados por uma lenta carga de pico. A corrente de pico dura outras 5 horas e é essencial para o bem estar da bateria. 
+Durante a carga em corrente constante, a bateria carrega 70\% em aproximadamente 5 horas; os 30\% restantes são completados por uma lenta carga de pico. A corrente de pico dura outras 5 horas e é essencial para o bem estar da bateria.
 
 A bateria escolhida para o projeto foi uma bateria de chumbo ácido, muito utilizado em veículos devido seu fácil acesso e baixo custo. Atualmente ela já é utilizada em cadeiras de rodas elétricas. Este é o tipo menos eficiente de bateria, com a pior relação peso/energia, mas em compensação é a tecnologia mais barata.
 
-\textbf{Autonomia}
-A capacidade de armazenamento de energia de uma bateria é medida através da multiplicação da corrente de descarga pelo tempo de autonomia, sendo dado em Ampére-hora (Ah).
+\subsubsection{Autonomia}
+A capacidade de armazenamento de energia de uma bateria é medida através da multiplicação da corrente de descarga pelo tempo de autonomia, sendo dado em Ampére-hora (Ah).
 
 Cálculo da autonomia da bateria em horas:
 
 $Autonomia(h) = \frac{Capacidade da bateria(Ah)}{Consumo do circuito(A)}$
 
-Potencia é dada por: 
+Potencia é dada por:
 \begin{equation}
  P=U*I
 \end{equation}
 
-Para o projeto é necessário 2 motores de no mínimo 294W, ou seja, os motores puxaram uma potência de 588W e são motores de 12V, com isso a corrente necessária é de: 588 = 12 * I \rightarrow I = $\frac{588}{12}$ = 49A
+Para o projeto é necessário 2 motores de no mínimo 294W, ou seja, os motores puxaram uma potência de 588W e são motores de 12V, com isso a corrente necessária é de:
+\begin{equation}
+588 = 12 * I
+I = \frac{588}{12} = 49A
+\end{equation}
 
 O modelo e as características da bateria foram informadas abaixo:
 
@@ -144,7 +148,7 @@ Nesse esquemático pode ser observado que a interface com o usuário recebe um i
 COLOCAR IMAGEM RASP
 
 \subsubsection{Joystick}
-Um joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consistem em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador[3]. O Joystick, muito utilizado em computadores e jogos eletrônicos provou sua utilidade em diversas áreas. 
+Um joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consistem em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador[3]. O Joystick, muito utilizado em computadores e jogos eletrônicos provou sua utilidade em diversas áreas.
 
 Para as cadeiras de rodas automatizadas essa é uma solução comum de controle para as mesmas, tendo em vista que é relativamente simples de ser acoplado uma vez que se entenda seu funcionamento básico.
 
@@ -155,7 +159,7 @@ Caso necessário a conexão do joystick ao sistema de controle pode ser feita po
 \subsubsection{Smartphone}
 Um telefone smartphone é um telefone celular com um sistema operacional móvel avançada que combina as características de um sistema operacional de computador pessoal com outros recursos úteis para uso móvel ou portátil [8].
 
-Devido á portabilidade destes dispositivos e sua facilidade de integração com outros sistemas, uma possível solução para a interação do usuário com o sistema pode ser feita. Uma conexão entre o dispositivo e o sistema será feita através de Bluetooth (Android ) ou "Virtual Private Network" (iOS e Android). 
+Devido á portabilidade destes dispositivos e sua facilidade de integração com outros sistemas, uma possível solução para a interação do usuário com o sistema pode ser feita. Uma conexão entre o dispositivo e o sistema será feita através de Bluetooth (Android ) ou "Virtual Private Network" (iOS e Android).
 
 Para o projeto em questão o usuário pode optar por utilizar o "Smartphone" ou ainda utilizar o joystick.
 
@@ -163,13 +167,13 @@ Para o projeto em questão o usuário pode optar por utilizar o "Smartphone" ou 
 
 COLOCAR IMAGEM PROTÓTIPOS
 
-O protótipo na figura(prototipos) foi feito com o intuito de mostrar o fluxo do aplicativo sugerido para o controle da cadeira de rodas automatizada. 
+O protótipo na figura(prototipos) foi feito com o intuito de mostrar o fluxo do aplicativo sugerido para o controle da cadeira de rodas automatizada.
 
 \subsection{Tecnologias}
 
 \subsubsection{Raspeberry Pi}
 
-É um componente eletrônico que será responsável pelo controle do motor, seu modelo ainda será decidido. A escolha foi feita devido ao número de recursos oferecidos e o baixo custo desse componente. 
+É um componente eletrônico que será responsável pelo controle do motor, seu modelo ainda será decidido. A escolha foi feita devido ao número de recursos oferecidos e o baixo custo desse componente.
 
 O Raspberry  tem como principal componente um pequeno circuito integrado que reúne o processador com a arquitetura ARM, a GPU VideoCore IV e a memória RAM que é compativel com o sistema operacional GNU/Linux. Suas especificações gerais são:
 
@@ -193,17 +197,3 @@ COLOCAR IMAGEM DA RASP
 Uma das linguagens a ser adotada será Python devido a facilidade de existir bibliotecas específicas que controlam o GPIO (General Purpose Input/Output) do Raspberry Pi.
 
 Essa linguagem é uma linguagem de programação de alto nivel, interpretada, orientada a objetos, de tipagem dinamica. Tem uma sintax consisa e clara, juntamente com uma biblioteca com recursos poderosos. Os módulos e frameworks ainda não foram decididos.
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
