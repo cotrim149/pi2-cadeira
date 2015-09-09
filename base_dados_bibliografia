@@ -12,9 +12,19 @@
   Timestamp                = {2015.09.09}
 }
 
+@Article{artigo_rudi,
+  Title                    = {DESENVOLVIMENTO DE KIT PARA AUTOMAÇÃO DE CADEIRA DE RODAS CONVENCIONAL},
+  Author                   = {Walter de B. Vidal Filho And Rafael Avila And Carlos H. Llanos Quinteros And Rudi Van Els And Guilherme Queiroga},
+  Journal                  = {VI CONGRESSO NACIONAL DE ENGENHARIA MECÂNICA},
+  Year                     = {2010},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
 @Article{artigo_controle_cadeira_eletrica,
   Title                    = {SISTEMA DE CONTROLE E MOTORIZAÇÃO DE CADEIRA DE RODAS},
-  Author                   = {ARLEI BARCELOS And JOSÉ NEWTON COELHO GONÇALVES And  MAXSUEL FLORES And WARLLEM BARBOSA},
+  Author                   = {ARLEI BARCELOS And JOSÉ NEWTON COELHO GONÇALVES And MAXSUEL FLORES And WARLLEM BARBOSA},
   Journal                  = {Associação Educacional Dom Bosco},
   Year                     = {2008},
 
@@ -24,7 +34,7 @@
 
 @Article{artigo_joystick_controller,
   Title                    = {Joystick Control for Powered Mobility: Current State of Technology and Future Directions},
-  Author                   = {Brad E. Dicianno And  Rory A. Cooper And John Coltellaro},
+  Author                   = {Brad E. Dicianno And Rory A. Cooper And John Coltellaro},
   Journal                  = {National Library of Medicine},
   Year                     = {2010},
 
@@ -46,7 +56,7 @@
 
 @Manual{manual_bateria_unipower,
   Title                    = {Projeto e Desenvolvimento de circuito de controle para cadeira de rodas},
-  Author                   = {Marcos  Henrique Mamoru Otsuka HAMANAKA And José Antonio Siqueira DIAS},
+  Author                   = {Marcos Henrique Mamoru Otsuka HAMANAKA And José Antonio Siqueira DIAS},
   Year                     = {2002},
 
   Owner                    = {cotrim},
