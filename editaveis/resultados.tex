@@ -119,8 +119,12 @@ Potencia é dada por:
 Para o projeto é necessário 2 motores de no mínimo 294W, ou seja, os motores puxaram uma potência de 588W e são motores de 12V, com isso a corrente necessária é de:
 \begin{equation}
 588 = 12 * I
+\end{equation}
+
+\begin{equation}
 I = \frac{588}{12} = 49A
 \end{equation}
+
 
 O modelo e as características da bateria foram informadas abaixo:
 
@@ -136,16 +140,33 @@ O modelo e as características da bateria foram informadas abaixo:
 
 \subsection{Interface com o usuário}
 
-Desde a primeira patente de cadeira de rodas elétrica em 1940 [1], diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação [4]. Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela 1.
+Desde a primeira patente de cadeira de rodas elétrica em 1940 [1], diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação [4]. Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{tab:interface}.
 
-COLOCAR IMAGEM TABELA 1
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{4cm}|}
+\hline
+Interface & Comunicação & Monitoramento & Características \\ \hline
+Joystick tradicional & Sem ou com fio, dependendo da aplicação. & Pouco, geralmente apenas o nível da bateria. & Contém mecanismo para encaixe na cadeira de rodas e botões de emergência, os dados são enviados via bluetooth ou fio para o microcontrolador, onde é feito todo o processamento. \\ \hline
+Joystick adaptado para o queixo & Com fio. & Nenhum & Joystick fixo é adaptado para o controle com o queixo, utilizado por tetraplégicos. \\ \hline
+Aplicativo em smartphone & Sem fio (VPN ou Bluetooth) & Total: nível da bateria, velocidade, inclinação e etc. & Apenas para motores dianteiros \\ \hline
+Guidão e motor dianteiro & Mecânica. & Pouco ou nenhum & Apenas para motores dianteiros. \\ \hline
+\end{tabular}
+\caption{Lista de dispositivos de controle de cadeiras de rodas elétricas.}
+\label{tab:interfaces}
+\end{table}
 
 \subsection{Dispositivo de controle}
-Um mapeamento feito pelos integrantes da equipe sobre como a Cadeira de Rodas automatizada será feita pode ser observada na figura 1.
+Um mapeamento feito pelos integrantes da equipe sobre como a Cadeira de Rodas automatizada será feita pode ser observada na figura \ref{fig:diagrama_blocos}.
 
 Nesse esquemático pode ser observado que a interface com o usuário recebe um input do usuário, utilizando Joystick ou Aplicativo. O sinal emitido por esta interface será processado em um \textit{raspeberry pi}, que por consequência irá movimentar o motor.
 
-COLOCAR IMAGEM RASP
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/diagrama_blocos}
+\caption{Desenho do diagrama de blocos do sistema de controle}
+\label{fig:diagrama_blocos}
+\end{figure}
 
 \subsubsection{Joystick}
 Um joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consistem em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador[3]. O Joystick, muito utilizado em computadores e jogos eletrônicos provou sua utilidade em diversas áreas.
@@ -165,9 +186,32 @@ Para o projeto em questão o usuário pode optar por utilizar o "Smartphone" ou 
 
 \subsubsection{Protótipo}
 
-COLOCAR IMAGEM PROTÓTIPOS
+  \begin{figure}[!htb]
+		\centering
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_1}
+		}
+		\quad %espaco separador
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_2}
+		}
+  \end{figure}
 
-O protótipo na figura(prototipos) foi feito com o intuito de mostrar o fluxo do aplicativo sugerido para o controle da cadeira de rodas automatizada.
+  \begin{figure}[!htb]
+		\centering
+		\legend{}
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_3}
+		}
+		\quad %espaco separador
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_4}
+		}
+		\caption{Protótipo de aplicativo para interface entre usuário e motor}
+		\label{fig:prototipos}
+  \end{figure}
+
+O protótipo na figura \ref{fig:prototipos} foi feito com o intuito de mostrar o fluxo do aplicativo sugerido para o controle da cadeira de rodas automatizada.
 
 \subsection{Tecnologias}
 
@@ -188,9 +232,14 @@ O Raspberry  tem como principal componente um pequeno circuito integrado que re�
  \item Conector Micro USB para alimentação (5 volts, 700mA).
 \end{itemize}
 
-A figura(referencia ao rasp) corresponde ao esquemático dos componentes do raspeberry que será utilizado no projeto.
+A figura \ref{fig:rasp} corresponde ao esquemático dos componentes do raspeberry que será utilizado no projeto.
 
-COLOCAR IMAGEM DA RASP
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/blueprint_rasp}
+\caption{Esquemático componentes Raspeberry Pi}
+\label{fig:rasp}
+\end{figure}
 
 \subsubsection{Linguagem de programação}
 
