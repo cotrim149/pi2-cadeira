@@ -1,0 +1,57 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@Article{artigo_controle_cadeira_eletrica,
+  Title                    = {SISTEMA DE CONTROLE E MOTORIZAÇÃO DE CADEIRA DE RODAS},
+  Author                   = {ARLEI BARCELOS And JOSÉ NEWTON COELHO GONÇALVES And  MAXSUEL FLORES And WARLLEM BARBOSA},
+  Journal                  = {Associação Educacional Dom Bosco},
+  Year                     = {2008},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
+@Article{artigo_joystick_controller,
+  Title                    = {Joystick Control for Powered Mobility: Current State of Technology and Future Directions},
+  Author                   = {Brad E. Dicianno And  Rory A. Cooper And John Coltellaro},
+  Journal                  = {National Library of Medicine},
+  Year                     = {2010},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
+@Patent{patent_cadeira_rodas_eletrica,
+  Title                    = {Folding wheel chair},
+  Nationality              = {US},
+  Number                   = {2095411},
+  Year                     = {1937},
+  Yearfiled                = {---},
+  Author                   = {Herbert A Everest And Harry C Jennings},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
+@Book{livro_creating_games,
+  Title                    = {Creating Games: Mechanics, Content, and Technology,},
+  Author                   = {Morgan McGuire And Odest Chadwicke Jenkins},
+  Editor                   = {A K Peters, Ltd.},
+  Publisher                = {A K Peters, Ltd.},
+  Year                     = {2009},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
+@Article{article_smartphone,
+  Title                    = {Smartphone vs. feature phone arms race heats up; which did you buy?},
+  Author                   = {Andrew Nusca},
+  Journal                  = {ZDNet},
+  Year                     = {2009},
+
+  Owner                    = {cotrim},
+  Timestamp                = {2015.09.09}
+}
+
