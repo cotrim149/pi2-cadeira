@@ -1,8 +1,18 @@
 TARGET = TCC_FGA.pdf
 
-BIBTEX = bibtex
-LATEX = latex
-DVIPS = dvips
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	LATEX = latex
+	BIBTEX = bibtex
+	DVIPS = dvips
+endif
+ifeq ($(UNAME_S),Darwin)
+	LATEX = /usr/texbin/latex
+	BIBTEX = /usr/texbin/bibtex
+	DVIPS = /usr/texbin/dvips
+endif
+
+
 PS2PDF = ps2pdf
 
 VERSION = 0.1.0
