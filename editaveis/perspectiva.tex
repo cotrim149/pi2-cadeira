@@ -11,6 +11,7 @@
     \end{enumerate}
   \subsection{Power Train}
     \begin{enumerate}
+      \item NECESSARIO TERMINAR DE PEGAR AS INFORMAÇÕES
       \item Especificação do motor a ser usado: Escolha de qual tipo do motor a ser utilizado na cadeira de rodas, levando em conta cálculos matemáticos como embasamento teórico.
 
       \item Pesquisa do tipo de bateria : Escolha do tipo de bateria, levando em conta o tipo, as vantegens e limitações.
@@ -18,18 +19,24 @@
       \item Especificação da bateria (Creio q seria melhor dimensionamento): Foi montada uma estratégia de carregamento(mudar esse nome) de bateria e um estudo da autonomia da mesma levando em conta cálculos matemáticos.
     \end{enumerate}
 
+    \subsection{Controle}
+      \begin{enumerate}
+        \item Especificação de tecnologia: Estudo e escolha da melhor tecnologia voltada para o problema, que no caso será feito com um Raspberry Pi para comunicação entre a interface do usuário e o motor.
+
+        \item Controle de potência: Estudo de qual tipo de controlador de potência a ser usado no motor, para controle de sua corrente. A escolha da utilização da ponte H será combinado com o algoritmo de PWM, que utiliza o Raspberry Pi como forma de resposta aos comandos dos usuários como a diração, aceleração, frenagem da cadeira motorizada adaptada.
+
+        \item Escolha da linguagem de programação: Definição de qual linguagem será utilizada com base na problemática existente e nos recursos a serem utilizados. A linguagem escolhida foi o Phyton, pois existem bibliotecas especificas que controlam GPIO do Raspebery Pi.
+
+      \end{enumerate}
+
   \subsection{Interface com Usuário}
     \begin{enumerate}
-      \item Estudo de tecnologias para interfaces: Estudo de quais tecnologias são usadas como interface de usuário para controle da cadeira motorizada adaptada. Neste estudo são observados dispositivos de controle como Joystick e aplicativos utilizando tecnologia Bluetooth ou Virtual Private Network para comunicar com o Raspberry Pi.
-    \end{enumerate}
+      \item Estudo de tecnologias para interfaces: Estudo de quais tecnologias são usadas como interface de usuário para controle da cadeira motorizada adaptada. Neste estudo são observados dispositivos de controle como Joystick e aplicativos que podem utilizar tecnologia Bluetooth ou VPN para comunicar com o Raspberry Pi.
 
-  \subsection{Controle}
-    \begin{enumerate}
-      \item Especificação de tecnologia: Estudo e escolha da melhor tecnologia voltada para o problema, que no caso será feito com um Raspberry Pi para comunicação entre a interface do usuário e o motor.
-
-      \item Controle de potência: Estudo de qual tipo de controlador de potência a ser usado no motor, para controle de sua corrente. A escolha da utilização da ponte H será combinado com o algoritmo de PWM, que se utiliza do Raspberry Pi que deve responder ao comandos dos usuários como a diração, aceleração, frenagem.
+      \item Escolha da linguagem de programação do aplicativo: Definição de qual linguagem será utilizada com base na problemática existente e nos recursos a serem utilizados. A linguagem escolhida para o desenvolvimento do aplicativo será definida conforme o resultado de estudo de utilziação de Bluetooth e VPN. Caso a escolha seja para dispositivos Android, então pode ser escolhida a linguagem nativa Java, caso a escolha seja para dispositivos iOS, então pode ser escolhida a linguagem nativa Objective-C ou Swift.
 
     \end{enumerate}
+
 
 \section{Próximos passos}
   \subsection{Estrutura}
