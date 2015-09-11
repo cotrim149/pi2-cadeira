@@ -4,7 +4,7 @@ As cadeiras de rodas motorizadas proporcionam conforto, segurança, rapidez e pr
 
 Além disso, outro problema que as cadeiras de rodas motorizadas possuem é que em caso de necessidade, não podem ser usadas como cadeiras de rodas manuais, pois possuem rodas pequenas para aproveitar melhor a potência dos motores e sistema de transmissão. Outro detalhe importante é que cadeiras de rodas motorizadas são geralmente pesadas, e não possuem as facilidades de transportes das cadeiras manuais.
 
-\section{Estado da Técnica}
+\section{Estado Técnico}
 
 \subsection{Estrutura}
 As cadeiras de rodas comuns são especificadas e regulamentadas pela \cite{nbr9050}. Porém, cada usuário está acomodado e acostumado com sua própria cadeira. Ao pesquisar sobre sistemas já existentes de automação de cadeiras de rodas, propôs-se uma estrutura inovadora de tração traseira sem que haja necessidade de modificação da cadeira e que seja de acoplamento rápido a cadeira comum.

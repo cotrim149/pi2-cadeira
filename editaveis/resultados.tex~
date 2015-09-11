@@ -1,0 +1,306 @@
+\chapter[Resultados]{Resultados}
+
+\section{Estrutura}
+Com a utilização do programa CATIA V5 3D foi estruturado o sistema eletrônico acoplado à cadeira de rodas, \ref{fig:frontal}. Visando três preceitos básicos: comodidade, acessibilidade e conforto.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_frontal}
+\caption{Vista Frontal}
+\label{fig:frontal}
+\end{figure}
+
+O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resistente. O produto proposto, ver figura \ref{fig:traseira},\ref{fig:sistema}, \ref{fig:lateral} e \ref{fig:superior},deve-se acoplar a qualquer cadeira de rodas. Foi pensado em um dispositivo no formato de uma mala para que seja de fácil conexão, uso e manuseio.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_traseira}
+\caption{Vista Traseira}
+\label{fig:traseira}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/explode}
+\caption{Visão do Sistema}
+\label{fig:sistema}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_lateral_cadeira}
+\caption{Imagem Lateral}
+\label{fig:lateral}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_superior}
+\caption{Imagem Superior}
+\label{fig:superior}
+\end{figure}
+
+\section{Power Train}
+
+\subsection{Motor}
+Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+
+Especificações a serem atendidas
+\begin{itemize}
+ \item Velocidade máxima de 7,2 km/h apx: 2m/s;
+ \item Peso máximo de 120 kg;
+ \item Peso da bateria 10 kg;
+ \item Peso da cadeira (valor aproximado) 20kg;
+ \item Peso total estimado: 150 Kg;
+ \item Considerando hipoteticamente o coeficiente de atrito ($\mu$): 0,2.
+\end{itemize}
+
+\textbf{Força de atrito:}
+\begin{equation}
+ \overrightarrow{F} = \overrightarrow{N} * \mu = 150 * 9,8 * 0,2 = 294N
+\end{equation}
+
+\textbf{Potência do motor:}
+
+\begin{equation}
+ P_{x} = \frac{F * v}{100} = \frac{294 * 2}{1000} = \frac{588}{100} = 0,588kW
+\end{equation}
+
+O motor para a utilização na aplicação deve seguir algumas características dentro das especificações do projeto. Serão utilizados dois motores para motorizar a cadeira de rodas. Com isso é necessário que cada motor tenha a potência mínima de: \textbf{294W}.
+
+\subsection{Baterias}
+\subsubsection{Chumbo-Ácido}
+Inventadas em 1859 pelo físico francês Gaston Planté, é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso, é a bateria que mais se adequa ao projeto.
+
+Um grande problema foi solucionado na década de 70, onde pesquisadores conseguiram desenvolver uma bateria de chumbo-ácido livre de manutenção, podendo operar em qualquer posição. Nesta bateria, o invólucro foi selado e o eletrólito líquido foi transformado em separadores umedecidos.
+
+As baterias SLA (bateria selada chumbo-ácido), também conhecida como Gelcell, tem uma faixa típica de capacidade que vai de 0,2 Ah até 30 Ah. Esse tipo de bateria está livre do famoso efeito memória, e deixar a bateria em carga flutuante por um longo período não causa nenhum dano.
+
+A bateria de chumbo-ácido tem a melhor retenção de carga entre todas as baterias recarregáveis. As baterias de SLA descarregam, em média, aproximadamente 40\% da sua energia armazenada em 1 ano, já uma de NiCd se auto descarrega na mesma quantidade em 3 meses.
+
+As baterias SLA devem sempre ser armazenadas carregadas. Deixar a bateria descarregada causa sulfação, uma condição que torna difícil, se não impossível, de se recarregar as baterias. A bateria SLA consegue fornecer entre 200 e 300 ciclos de carga/descarga.
+
+Vantagens:
+\begin{itemize}
+ \item A mais barata em termos de custo por Watt horas;
+ \item Segura e durável quando utilizada corretamente;
+ \item Auto descarga está entre as mais baixas entre as baterias com sistema de recarga;
+ \item Não exige muita manutenção e não tem o efeito memória.
+\end{itemize}
+
+Limitações:
+\begin{itemize}
+ \item A bateria não pode ser armazenada em completa descarga, a tensão tem de estar acima de 2,10V;
+ \item Densidade baixa da energia;
+ \item Ciclo de carga/descarga limitado;
+ \item O eletrólito e o conteúdo da carga podem causar danos ambientais;
+ \item Imprópria para dispositivos de mão que exigem tamanho compacto.
+\end{itemize}
+
+\subsubsection{Carregando Baterias Chumbo-Ácido}
+O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. Com correntes de carga maiores, e métodos de carga multi-estágios, o tempo de carga pode ser reduzido para 10 horas ou menos.
+
+Durante a carga em corrente constante, a bateria carrega 70\% em aproximadamente 5 horas; os 30\% restantes são completados por uma lenta carga de pico. A corrente de pico dura outras 5 horas e é essencial para o bem estar da bateria.
+
+A bateria escolhida para o projeto foi uma bateria de chumbo ácido, muito utilizado em veículos devido a seu fácil acesso e baixo custo. Atualmente ela já é utilizada em cadeiras de rodas elétricas. Este é o tipo menos eficiente de bateria, com a pior relação peso/energia, em compensação, é a tecnologia mais barata.
+
+\subsubsection{Autonomia}
+A capacidade de armazenamento de energia de uma bateria é medida através da multiplicação da corrente de descarga pelo tempo de autonomia, sendo dado em Ampére-hora~(Ah).
+
+Cálculo da autonomia da bateria em horas:
+
+$Autonomia(h) = \frac{Capacidade da bateria(Ah)}{Consumo do circuito(A)}$
+
+Potencia é dada por:
+\begin{equation}
+ P=U*I
+\end{equation}
+
+Para o projeto são necessários dois motores de no mínimo 294W de potência cada, ou seja, os dois motores terão, em conjunto, uma potência de 588W. Os motores a serem utilizados vão operar a uma tensão de 12V, com isso a corrente necessária é de:
+\begin{equation}
+588 [W] = 12 [V] * I [A]
+\end{equation}
+
+\begin{equation}
+I = \frac{588}{12} = 49A
+\end{equation}
+
+O modelo e as características da bateria foram informadas abaixo:
+\begin{itemize}
+ \item Bateria GetPower;
+ \item Bateria de gel selada;
+ \item Tensão: 12V;
+ \item Capacidade: 26Ah;
+ \item Peso: 8,6 Kg;
+ \item Dimensões ( Comp x Larg x Alt ) : 166 x 175 x 125mm;
+ \item Preço: R\$240,00(Mercado livre).
+\end{itemize}
+
+\subsection{Interface com o usuário}
+Desde a primeira patente de cadeira de rodas elétrica em 1937 \cite{patent_cadeira_rodas_eletrica}, diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação \cite{artigo_controle_cadeira_eletrica}. Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{tab:interfaces}.
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{4cm}|}
+\hline
+Interface & Comunicação & Monitoramento & Características \\ \hline
+Joystick tradicional & Sem ou com fio, dependendo da aplicação. & Pouco, geralmente apenas o nível da bateria. & Contém mecanismo para encaixe na cadeira de rodas e ainda botões de emergência, os dados são enviados via bluetooth ou fio para o microcontrolador, onde é feito todo o processamento. \\ \hline
+Joystick adaptado para o queixo & Com fio. & Nenhum. & Joystick fixo é adaptado para o controle com o queixo, utilizado por tetraplégicos. \\ \hline
+Aplicativo em smartphone & Sem fio (VPN ou Bluetooth) & Total: nível da bateria, velocidade, inclinação e etc. & Um aplicativo de controle é instalado no celular, onde são mostradas as condições da cadeira e o usuário gera os comandos, todo o processamento é feito no microcontrolador, a aquisição e envio dos dados de monitoramento e as ações geradas pelo usuário. \\ \hline
+Guidão e motor dianteiro & Mecânica. & Pouco ou nenhum. & Apenas para motores dianteiros. \\ \hline
+\end{tabular}
+\caption{Lista de dispositivos de controle de cadeiras de rodas elétricas.}
+\label{tab:interfaces}
+\end{table}
+
+\subsection{Dispositivo de controle}
+Um mapeamento sobre como a cadeira de rodas automatizada será feita pode ser observado na figura \ref{fig:diagrama_blocos}.
+
+Nesse esquemático pode ser observado que a interface com o usuário recebe um input do usuário, utilizando Joystick ou Aplicativo. O sinal emitido por esta interface será processado em um \textit{Raspeberry Pi}, que em seguida irá movimentar o motor.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/diagrama_blocos}
+\caption{Desenho do diagrama de blocos do sistema de controle}
+\label{fig:diagrama_blocos}
+\end{figure}
+
+\subsubsection{Joystick}
+O joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consiste em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador \cite{livro_creating_games}. O Joystick, muito utilizado em computadores e jogos eletrônicos provou sua utilidade em diversas áreas.
+
+Para as cadeiras de rodas automatizadas essa é uma solução comum de controle para as mesmas, tendo em vista que é relativamente simples de ser acoplado uma vez que se entenda seu funcionamento básico.
+
+Para o projeto em questão, esta foi uma das alternativas encontradas. No qual o joystick seria acoplado ao braço da cadeira, ou em uma posição que o usuário se sinta mais confortável. Este acoplamento deve ser simples para favorecer a característica de portabilidade do projeto como um todo.
+
+Caso necessário, a comunicação do joystick com o sistema de controle pode ser feita por bluetooth, tal característica contribui para o objetivo final do projeto \cite{artigo_joystick_controller}.
+
+\subsubsection{Smartphone}
+O \textit{smartphone} é um telefone celular com um sistema operacional móvel avançado que combina as características de um sistema operacional de computador pessoal com outros recursos úteis para uso móvel ou portátil \cite{article_smartphone}.
+
+Devido a portabilidade destes dispositivos e sua facilidade de integração com outros sistemas, uma possível solução para a interação do usuário com o sistema pode ser feita. Uma conexão entre o dispositivo e o sistema será feita através de Bluetooth (Android) ou "Virtual Private Network" (iOS e Android).
+
+Para o projeto em questão o usuário pode optar por utilizar o \textit{Smartphone} ou ainda o joystick.
+
+\subsubsection{Protótipo}
+
+  \begin{figure}[!htb]
+		\centering
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_1}
+		}
+		\quad %espaco separador
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_2}
+		}
+  \end{figure}
+
+  \begin{figure}[!htb]
+		\centering
+		\legend{}
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_3}
+		}
+		\quad %espaco separador
+		\subfloat{
+  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_4}
+		}
+		\caption{Protótipo de aplicativo para interface entre usuário e motor}
+		\label{fig:prototipos}
+  \end{figure}
+
+O protótipo na figura \ref{fig:prototipos} foi feito com o intuito de mostrar o fluxo do aplicativo sugerido para o controle da cadeira de rodas automatizada.
+
+\subsubsection{Bluetooth}
+
+Bluetooth é um padrão de tecnologia de transmissão de dados sem fio para curtas distâncias, utilizando ondas de rádio UHF (de 2.4 à 2.485GHz). Essa tecnologia é utilizada pelos mais diversos dispositivos, como celulares, notebooks, desktops, sistemas embarcados, carros e etc, com esta é possível conectar uma série de dispositivos sem problemas de sincronização.
+
+Para utilizar o bluetooth via celular basta acrescentar algumas linhas de código de controle do periférico à aplicação, porém, utilizar este meio de comunicação em um microcontrolador não é uma tarefa tão trivial, muitas vezes é necessário acoplar um módulo de comunicação bluetooth ao sistema e programar a comunicação em um nível mais baixo. Neste trabalho, decidiu-se que a comunicação bluetooth, exceto via celular, será implementada utilizando-se o módulo bluetooth HC-05, conforme a figura \ref{fig:bluetooth}.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/controle/bluetooth}
+\caption{Módulo Bluetooth HC-05}
+\label{fig:bluetooth}
+\end{figure}
+
+O módulo bluetooth HC-05 oferece uma forma fácil e barata de comunicação via Bluetooth, suporta tanto o modo mestre como escravo, além de ter uma fácil configuração e um alcance de até 10 metros.
+
+\subsubsection{Controladores de potência}
+
+Os motores de corrente contínua utilizam das forças eletromagnéticas para transformar energia elétrica em mecânica funciona com fontes retificadas, ou seja, que possuem polaridade fixa. Esse tipo de motor, possui dois terminais, um positivo e outro negativo que de acordo com o polaridade e o sentido da corrente controlam a repulsão dos eletroímãs e consequentemente o sentido da rotação do motor.
+
+Uma das maiores vantagens dos motores de corrente contínua é o controle da velocidade que é feito com o dreno de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção, além disso, são propícios a problemas com faíscas internas, o que impede o seu uso em ambientes perigosos.
+
+Geralmente, motores precisam de correntes relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente contínua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves. Na figura \ref{fig:direcionamento_motores} tem-se o funcionamento dos motores de acordo com a combinação das chaves indicando que o seu sentido é proporcional ao da corrente.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/direcionamento_motores}
+\caption{Direcionamento dos motores}
+\label{fig:direcionamento_motores}
+\end{figure}
+
+O controle feito por chaves é relativamente efetivo, barato e simples, contudo, essas facilidades podem causar alguns problemas. Por se tratar de um sistema físico, a chave, com o tempo, sofre desgaste físico e está propícia a problemas estruturais e até mesmo de acionamento por sistemas automatizados. Tem-se ainda a trepidação durante um acionamento que pode acabar gerando falsos positivos. Uma alternativa para esses problemas são os transistores operando no lugar das chaves.
+
+O acionamento dos transistores é feito de forma elétrica, não possuindo assim desgaste físico e podem ser feitos usando baixas tensões ou correntes, o que torna o sistema mais simples. Considerando que esse tipo de componente pode atuar como porta lógica, é possível trabalhar com mais estados e uma margem maior para as necessidades do sistema. Outra vantagem é que existem vários tipos de transistores com diferentes características que podem ser agregadas ao projeto para funcionalidades como a proteção dos pinos, entre outros.
+
+O uso de transistores como chaves permite que sejam criados sistemas mais complexos que permitem estados diferentes, como manter o motor parado. Um circuito geralmente utilizado para esse tipo de controle é a ponte H, que é basicamente um conjunto com alguns transistores construídos de modo que a corrente possa ser direcionada de acordo com a necessidade do sistema, como pode ser visto na figura \ref{fig:motor_ponte_h}.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/motor_ponte_h}
+\caption{Circuito com ponte H}
+\label{fig:motor_ponte_h}
+\end{figure}
+
+O transistor usado na figura \ref{fig:motor_ponte_h} é um transistor bipolar, que possui materiais polarizados e junções coladas, devido às suas características, não funciona muito bem em sistemas de potência, dificultando o seu uso para motores que drenam muita corrente. Para aplicações que exigem a passagem de corrente, são utilizados os transistores de efeito de campo, FET, que suportam mais corrente devido à sua alta impedância de entrada. Como o próprio nome diz, esse tipo de transistor é acionado com um campo elétrico na porta \textit{Gate}. Devido a esse comportamento o acionamento fica praticamente isolado, o que permite uma maior passagem de corrente com uma proteção maior para os pinos de controle.
+
+O acionamento dos transistores é feito a partir de uma onda quadrada, o PWM (\textit{Pulse Width Modulation}). O PWM é basicamente um onda com vários pulsos que possuem a sua largura controlada, figura \ref{fig:ondas_quadradas}, que é chamado de \textit{Duty Cycle}, essa largura determina o tempo com o qual os transistores ficarão ligados, controlando assim a passagem de corrente e a velocidade dos motores.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/controle/ondas_quadradas}
+\caption{Duty Cycle}
+\label{fig:ondas_quadradas}
+\end{figure}
+
+Para o kit de automação da cadeira de rodas, como uma primeira visão, será utilizada a ponte H para controle dos motores. Um algoritmo de controle PWM usando o Raspeberry Pi que deve responder aos comandos do usuário como direção, aceleração, frenagem, entre outros que serão posteriormente levantados. Na figura \ref{fig:esquema_controle} pode ser obervado o esquemático geral do sistema. Tem-se ainda o Distribuidor, uma placa para facilitar a alimentação do sistema, e o Regulador, para alimentar o Controlador e periféricos.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/esquema_controle}
+\caption{Esquemático geral do sistema}
+\label{fig:esquema_controle}
+\end{figure}
+
+\subsection{Tecnologias}
+
+\subsubsection{Raspeberry Pi}
+
+É um pequeno computador que será responsável pelo controle do motor, seu modelo ainda será decidido. A escolha foi feita devido ao número de recursos oferecidos e o baixo custo desse componente.
+
+O Raspberry Pi tem como principal componente um pequeno circuito integrado que reúne o processador com a arquitetura ARM, a GPU VideoCore IV e a memória RAM que é compativel com o sistema operacional GNU/Linux. As especificações gerais do modelo mais provável a ser utilizado no projeto, o \texit{Raspberry Pi Model B}, que pode ser visto na figura \ref{fig:rasp}, são:
+
+\begin{itemize}
+ \item Processador ARM 11 de 700 MHz;
+ \item GPU VideoCore IV de 250 MHz;
+ \item 256 MB total de RAM;
+ \item Saída de vídeo HDMI e RCA;
+ \item Saída de áudio P2;
+ \item Interface de rede Ethernet;
+ \item 2 portas USB;
+ \item Conector Micro USB para alimentação (5 volts, 700mA).
+\end{itemize}
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/blueprint_rasp}
+\caption{Esquemático componentes Raspeberry Pi}
+\label{fig:rasp}
+\end{figure}
+
+\subsubsection{Linguagem de programação}
+
+Uma das linguagens a ser adotada será o Python devido a facilidade de existir bibliotecas específicas que controlam o GPIO (General Purpose Input/Output) do Raspberry Pi.
+
+Essa linguagem é uma linguagem de programação de alto nível, interpretada, orientada a objetos, de tipagem dinâmica. Tem uma sintaxe consisa e clara, juntamente com bibliotecas com recursos poderosos. Os módulos e frameworks ainda não foram decididos.
