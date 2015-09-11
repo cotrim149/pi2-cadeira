@@ -78,13 +78,13 @@ A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, 
 
 \section{Controle}
 
-O kit de automação para cadeiras de roda será e um produto projetado para auxiliar na locomoção do cadeirante em um shopping. Na Figura \ref{fig:diagrama_blocos} foi feita uma proposta de construção do kit mostrando a sua estrutura de controle. Em verde claro tem-se um componente que talvez seja somente integrado ao sistema. Esses blocos foram resultado dos estudos teóricos e de discursões da equipe. Em verde escuro, sistemas que serão efetivamente projetados e construídos e em azul, componentes que não serão construídos mas farão parte do kit de automação.
+O kit de automação para cadeiras de roda será e um produto projetado para auxiliar na locomoção do cadeirante em um shopping. Na Figura \ref{fig:esquema_controle} foi feita uma proposta de construção do kit mostrando a sua estrutura de controle. Em verde claro tem-se um componente que talvez seja somente integrado ao sistema. Esses blocos foram resultado dos estudos teóricos e de discursões da equipe. Em verde escuro, sistemas que serão efetivamente projetados e construídos e em azul, componentes que não serão construídos mas farão parte do kit de automação.
 
 \begin{figure}[!htb]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/diagrama_blocos}
-\caption{Desenho do diagrama de blocos do sistema de controle}
-\label{fig:diagrama_blocos}
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/esquema_controle}
+\caption{Esquemático de funcionamento geral da cadeira de rodas automatizada}
+\label{fig:esquema_controle}
 \end{figure}
 
 
@@ -152,86 +152,3 @@ O protótipo na figura \ref{fig:prototipos} foi feito com o intuito de mostrar o
 
 A principal funcionalidade deste aplicação é basicamente voltada para o controle da cadeira de rodas automatizada, no qual o usuário teria um \textit{joystick} virtual que se comunica com o \textit{Raspeberry Pi} enviando o comando para os motores.
 Uma das restrições pensadas, foi a de enquanto o controle estiver ativado via aplicativo o usuário não poderia ter o controle através do \textit{joystick} físico.
-
-\begin{comment}
-  \subsection{Controladores de potência}
-
-  Os motores de corrente contínua utilizam das forças eletromagnéticas para transformar energia elétrica em mecânica funciona com fontes retificadas, ou seja, que possuem polaridade fixa. Esse tipo de motor, possui dois terminais, um positivo e outro negativo que de acordo com o polaridade e o sentido da corrente controlam a repulsão dos eletroímãs e consequentemente o sentido da rotação do motor.
-
-  Uma das maiores vantagens dos motores de corrente contínua é o controle da velocidade que é feito com o dreno de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção, além disso, são propícios a problemas com faíscas internas, o que impede o seu uso em ambientes perigosos.
-
-  Geralmente, motores precisam de correntes relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente contínua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves. Na figura \ref{fig:direcionamento_motores} tem-se o funcionamento dos motores de acordo com a combinação das chaves indicando que o seu sentido é proporcional ao da corrente.
-
-  \begin{figure}[!htb]
-  \centering
-    \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/direcionamento_motores}
-  \caption{Direcionamento dos motores}
-  \label{fig:direcionamento_motores}
-  \end{figure}
-
-  O controle feito por chaves é relativamente efetivo, barato e simples, contudo, essas facilidades podem causar alguns problemas. Por se tratar de um sistema físico, a chave, com o tempo, sofre desgaste físico e está propícia a problemas estruturais e até mesmo de acionamento por sistemas automatizados. Tem-se ainda a trepidação durante um acionamento que pode acabar gerando falsos positivos. Uma alternativa para esses problemas são os transistores operando no lugar das chaves.
-
-  O acionamento dos transistores é feito de forma elétrica, não possuindo assim desgaste físico e podem ser feitos usando baixas tensões ou correntes, o que torna o sistema mais simples. Considerando que esse tipo de componente pode atuar como porta lógica, é possível trabalhar com mais estados e uma margem maior para as necessidades do sistema. Outra vantagem é que existem vários tipos de transistores com diferentes características que podem ser agregadas ao projeto para funcionalidades como a proteção dos pinos, entre outros.
-
-  O uso de transistores como chaves permite que sejam criados sistemas mais complexos que permitem estados diferentes, como manter o motor parado. Um circuito geralmente utilizado para esse tipo de controle é a ponte H, que é basicamente um conjunto com alguns transistores construídos de modo que a corrente possa ser direcionada de acordo com a necessidade do sistema, como pode ser visto na figura \ref{fig:motor_ponte_h}.
-
-  \begin{figure}[!htb]
-  \centering
-    \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/motor_ponte_h}
-  \caption{Circuito com ponte H}
-  \label{fig:motor_ponte_h}
-  \end{figure}
-
-  O transistor usado na figura \ref{fig:motor_ponte_h} é um transistor bipolar, que possui materiais polarizados e junções coladas, devido às suas características, não funciona muito bem em sistemas de potência, dificultando o seu uso para motores que drenam muita corrente. Para aplicações que exigem a passagem de corrente, são utilizados os transistores de efeito de campo, FET, que suportam mais corrente devido à sua alta impedância de entrada. Como o próprio nome diz, esse tipo de transistor é acionado com um campo elétrico na porta \textit{Gate}. Devido a esse comportamento o acionamento fica praticamente isolado, o que permite uma maior passagem de corrente com uma proteção maior para os pinos de controle.
-
-  O acionamento dos transistores é feito a partir de uma onda quadrada, o PWM (\textit{Pulse Width Modulation}). O PWM é basicamente um onda com vários pulsos que possuem a sua largura controlada, figura \ref{fig:ondas_quadradas}, que é chamado de \textit{Duty Cycle}, essa largura determina o tempo com o qual os transistores ficarão ligados, controlando assim a passagem de corrente e a velocidade dos motores.
-
-  \begin{figure}[!htb]
-  \centering
-    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/controle/ondas_quadradas}
-  \caption{Duty Cycle}
-  \label{fig:ondas_quadradas}
-  \end{figure}
-
-  Para o kit de automação da cadeira de rodas, como uma primeira visão, será utilizada a ponte H para controle dos motores. Um algoritmo de controle PWM usando o Raspeberry Pi que deve responder aos comandos do usuário como direção, aceleração, frenagem, entre outros que serão posteriormente levantados. Na figura \ref{fig:esquema_controle} pode ser obervado o esquemático geral do sistema. Tem-se ainda o Distribuidor, uma placa para facilitar a alimentação do sistema, e o Regulador, para alimentar o Controlador e periféricos.
-
-  \begin{figure}[!htb]
-  \centering
-    \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/esquema_controle}
-  \caption{Esquemático geral do sistema}
-  \label{fig:esquema_controle}
-  \end{figure}
-
-\end{comment}
-
-\subsection{Tecnologias}
-
-\subsubsection{Raspeberry Pi}
-
-É um pequeno computador que será responsável pelo controle do motor, seu modelo ainda será decidido. A escolha foi feita devido ao número de recursos oferecidos e o baixo custo desse componente.
-
-O Raspberry Pi tem como principal componente um pequeno circuito integrado que reúne o processador com a arquitetura ARM, a GPU VideoCore IV e a memória RAM que é compativel com o sistema operacional GNU/Linux. As especificações gerais do modelo mais provável a ser utilizado no projeto, o \textit{Raspberry Pi Model B}, que pode ser visto na figura \ref{fig:rasp}, são:
-
-\begin{itemize}
- \item Processador ARM 11 de 700 MHz;
- \item GPU VideoCore IV de 250 MHz;
- \item 256 MB total de RAM;
- \item Saída de vídeo HDMI e RCA;
- \item Saída de áudio P2;
- \item Interface de rede Ethernet;
- \item 2 portas USB;
- \item Conector Micro USB para alimentação (5 volts, 700mA).
-\end{itemize}
-
-\begin{figure}[!htb]
-\centering
-  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/blueprint_rasp}
-\caption{Esquemático componentes Raspeberry Pi}
-\label{fig:rasp}
-\end{figure}
-
-\subsubsection{Linguagem de programação}
-
-Uma das linguagens a ser adotada será o Python devido a facilidade de existir bibliotecas específicas que controlam o GPIO (General Purpose Input/Output) do Raspberry Pi.
-
-Essa linguagem é uma linguagem de programação de alto nível, interpretada, orientada a objetos, de tipagem dinâmica. Tem uma sintaxe consisa e clara, juntamente com bibliotecas com recursos poderosos. Os módulos e frameworks ainda não foram decididos.
