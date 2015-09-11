@@ -1,21 +1,19 @@
-\chapter{Fundamentação Teórica}
+\chapter{Fundamentação Teórica}\label{cap:fundamentacao_teorica}
 
 As cadeiras de rodas motorizadas proporcionam conforto, segurança, rapidez e prevenção de lesões nos membros superiores devido ao uso repetitivo em cadeiras de rodas manuais. Porém, uma cadeira de rodas motorizada representa um alto custo: em uma análise do impacto orçamentário realizada pelo Departamento de Economia da Saúde, Investimento e Desenvolvimento- Ministério da Saúde-DESID/SE/MS, o preço sugerido para uma cadeira de rodas motorizada é de R\$ 4.999,00, além do custo de manutenção \cite{relatorio_sus}.
 
 Além disso, outro problema que as cadeiras de rodas motorizadas possuem é que em caso de necessidade, não podem ser usadas como cadeiras de rodas manuais, pois possuem rodas pequenas para aproveitar melhor a potência dos motores e sistema de transmissão. Outro detalhe importante é que cadeiras de rodas motorizadas são geralmente pesadas, e não possuem as facilidades de transportes das cadeiras manuais.
 
-\section{Estado Técnico}
-
-\subsection{Estrutura}
+\section{Estrutura}
 As cadeiras de rodas comuns são especificadas e regulamentadas pela \cite{nbr9050}. Porém, cada usuário está acomodado e acostumado com sua própria cadeira. Ao pesquisar sobre sistemas já existentes de automação de cadeiras de rodas, propôs-se uma estrutura inovadora de tração traseira sem que haja necessidade de modificação da cadeira e que seja de acoplamento rápido a cadeira comum.
 
 Com a utilização do programa CATIA V5 3D foi estruturado o sistema eletrônico acoplado à cadeira de rodas, visando três preceitos básicos: comodidade, acessibilidade e conforto.
 
 O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resistente. O produto proposto deve-se acoplar a qualquer cadeira de rodas. Foi pensado em um dispositivo no formato de uma mala de viagem reforçada, que se acoplaria às hastes traseiras da cadeira. Esta mala possuiria duas rodas externas que estão conectadas a dois motores alimentados por uma bateria. Vide figuras na seção de resultados \ref{fig:sistema}.
 
-\subsection{Power Train}
+\section{Power Train}
 
-\subsubsection{Motor}
+\subsection{Motor}
 
 	Motor é uma máquina que tem a capacidade de transformar energia elétrica em energia mecânica \cite{projeto_cadeira_rodas_inteligente}, existem dois tipos de motores, motor de corrente alternada (CA) e os de corrente contínua (CC).
 
@@ -45,7 +43,7 @@ O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resisten
   Uma das maiores vantagens dos motores de corrente continua é o controle da velocidade que é feito com o dreno de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção além disso são propícios a problemas com faíscas internas o que impede o seu uso em ambientes perigosos.
 
 
- \subsubsection{Bateria}
+ \subsection{Bateria}
   Baterias são dispositivos que transformam energia química em elétrica e vice-versa. Por ser um processo reversível, as baterias podem ser carregadas e descarregadas várias vezes. Hoje no mercado existem vários tipos de baterias, com diferentes condições nominais.
 
   A bateria adequada ao projeto seria uma bateria de chumbo ácido, muito utilizada em veículos devido a seu fácil acesso e baixo custo. Atualmente ela já é utilizada em cadeiras de rodas elétricas. Este é o tipo menos eficiente de bateria, com a pior relação peso/energia, em compensação, é a tecnologia mais barata.
@@ -77,17 +75,18 @@ O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resisten
       \item Imprópria para dispositivos de mão que exigem tamanho compacto.
     \end{itemize}
 
-\paragraph{Carregando Baterias}
+\subsubsection{Carregando Baterias}
   O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. Com correntes de carga maiores, e métodos de carga multi-estágios, o tempo de carga pode ser reduzido para 10 horas ou menos.
 
   Durante a carga em corrente constante, a bateria carrega 70\% em aproximadamente 5 horas; os 30\% restantes são completados por uma lenta carga de pico. A corrente de pico dura outras 5 horas e é essencial para o bem estar da bateria.
 
-\subsection{Controle}
+\section{Controle}
 
 Desde a primeira patente de cadeira de rodas elétrica em 1937 \cite{patent_cadeira_rodas_eletrica}, diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação \cite{artigo_controle_cadeira_eletrica}. Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{tab:interfaces}.
 
 \begin{table}[!htb]
 \centering
+\caption{Lista de dispositivos de controle de cadeiras de rodas elétricas.}
 \begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{4cm}|}
 \hline
 Interface & Comunicação & Monitoramento & Características \\ \hline
@@ -96,31 +95,30 @@ Joystick adaptado para o queixo & Com fio. & Nenhum. & Joystick fixo é adaptado
 Aplicativo em smartphone & Sem fio (VPN ou Bluetooth) & Total: nível da bateria, velocidade, inclinação e etc. & Um aplicativo de controle é instalado no celular, onde são mostradas as condições da cadeira e o usuário gera os comandos, todo o processamento é feito no microcontrolador, a aquisição e envio dos dados de monitoramento e as ações geradas pelo usuário. \\ \hline
 Guidão e motor dianteiro & Mecânica. & Pouco ou nenhum. & Apenas para motores dianteiros. \\ \hline
 \end{tabular}
-\caption{Lista de dispositivos de controle de cadeiras de rodas elétricas.}
 \label{tab:interfaces}
 \end{table}
 
- \subsubsection{Dispositivos de controle}
-Um mapeamento sobre como a cadeira de rodas automatizada será feita pode ser observado na figura \ref{fig:diagrama_blocos}.
-
-Nesse esquemático pode ser observado que a interface com o usuário recebe um input do usuário, utilizando Joystick ou Aplicativo. O sinal emitido por esta interface será processado em um \textit{Raspeberry Pi}, que em seguida irá movimentar o motor.
+\subsection{Dispositivos de controle}
+Um mapeamento sobre uma maneira de implementação da cadeira de rodas automatizada pode ser observado na figura \ref{fig:diagrama_blocos}.
 
 \begin{figure}[!htb]
 \centering
   \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/diagrama_blocos}
-\caption{Desenho do diagrama de blocos do sistema de controle}
+\caption{Desenho do diagrama de blocos de um sistema de controle simplificado para cadeiras de rodas automatizadas}
 \label{fig:diagrama_blocos}
 \end{figure}
 
-\paragraph{Joystick}
+Nesse esquemático pode ser observado que a interface com o usuário recebe uma entrada do usuário, utilizando-se um joystick ou aplicativo de celular. O sinal emitido por esta interface é então processado em um computador, a \textit{Raspeberry Pi} neste caso, que em seguida controla o movimento o motor.
+
+\subsubsection{Joystick}
 O joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consiste em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador \cite{livro_creating_games}. O Joystick, muito utilizado em computadores e jogos eletrônicos provou sua utilidade em diversas áreas.
 
-\paragraph{Smartphones}
+\subsubsection{Smartphones}
 São dispositivos repletos de funções, tem uma grande portabilidade e sua facilidade de integração com outros sistemas é grande, dessa forma tornando-se uma possível solução para a interação do usuário com o sistema da cadeira de rodas.
 
- \subsubsection{Tecnologias}
+ \subsection{Tecnologias}
 
-\paragraph{Raspberry PI}
+\subsubsection{Raspberry PI}
 
 O Raspberry Pi tem como principal componente um pequeno circuito integrado que reúne o processador com a arquitetura ARM, a GPU VideoCore IV e a memória RAM que é compativel com o sistema operacional GNU/Linux. As especificações gerais do modelo mais provável a ser utilizado no projeto, o \textit{Raspberry Pi Model B}, que pode ser visto na figura \ref{fig:rasp}, são:
 
@@ -142,14 +140,14 @@ O Raspberry Pi tem como principal componente um pequeno circuito integrado que r
 \label{fig:rasp}
 \end{figure}
 
-\paragraph{Python}
+\subsubsection{Python}
 
   Uma das linguagens a ser adotada será Python devido a facilidade de existir bibliotecas específicas que controlam o GPIO (General Purpose Input/Output) do Raspberry Pi.
   Essa linguagem é uma linguagem de programação de alto nivel, interpretada, orientada a objetos, de tipagem dinamica. Tem uma sintax consisa e clara, juntamente com uma biblioteca com recursos poderosos. Os módulos e frameworks ainda não foram decididos.
 
-\paragraph{Bluetooth}
-  Bluetooth é um padrão de tecnologia de transmissão de dados sem fio para curtas distâncias, utilizando ondas de rádio UHF (de 2.4 à 2.485GHz [FONTE]). É utilizada pelos mais diversos dispositivos, como celulares, notebooks, desktops, sistemas embarcados, carros e etc, com esta tecnologia e possível conectar uma serie de dispositivos sem apresentar problemas de sincronização.
+\subsubsection{Bluetooth}
+  Bluetooth é um padrão de tecnologia de transmissão de dados sem fio para curtas distâncias, utilizando ondas de rádio UHF (de 2.4 à 2.485GHz \cite{bluetooth}). É utilizada pelos mais diversos dispositivos, como celulares, notebooks, desktops, sistemas embarcados, carros e etc, com esta tecnologia e possível conectar uma serie de dispositivos sem apresentar problemas de sincronização.
 
-\subsubsection{Controle do motor}
+\subsection{Controle do motor}
 
-  Geralmente motores precisam de corrente relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente continua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves, transistores e o circuito de ponte H. 
+  Geralmente motores precisam de corrente relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente continua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves, transistores e o circuito de ponte H.
