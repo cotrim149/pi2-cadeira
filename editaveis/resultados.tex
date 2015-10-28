@@ -56,7 +56,7 @@ Será utilizado no projeto o motor de corrente contínua. A escolha foi feita po
 
 Especificações a serem atendidas:
 \begin{itemize}
- \item Velocidade máxima de 7,2 km/h apx: 2m/s;
+ \item Velocidade máxima de 7,44km/h;
  \item Peso máximo de 120 kg;
  \item Peso da bateria 10 kg;
  \item Peso da cadeira (valor aproximado) 20kg;
@@ -64,39 +64,46 @@ Especificações a serem atendidas:
  \item Considerando hipoteticamente o coeficiente de atrito ($\mu$): 0,2.
 \end{itemize}
 
-\textbf{Força de atrito:}
-\begin{equation}
- \overrightarrow{F} = \overrightarrow{N} * \mu = 150 * 9,8 * 0,2 = 294N
-\end{equation}
-
-\textbf{Potência do motor:}
-
-\begin{equation}
- P_{x} = \frac{F * v}{100} = \frac{294 * 2}{1000} = \frac{588}{100} = 0,588kW
-\end{equation}
-
-O motor para a utilização na aplicação deve seguir algumas características dentro das especificações do projeto. Serão utilizados dois motores para motorizar a cadeira de rodas. Com isso é necessário que cada motor tenha a potência mínima de: \textbf{294W}.
 
 \subsection{Baterias}
 A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas,  como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica} foi a bateria escolhida para o projeto, considerando ainda o seu fácil acesso e baixo  custo.
 
 \subsubsection{Autonomia}
 
-A capacidade de armazenamento de energia de uma bateria é medida através da multiplicação da corrente de descarga pelo tempo de autonomia, sendo dado em Ampére-hora (Ah). Cálculo da autonomia da bateria em horas:
+Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Para este projeto se decidiu utilizar motores de 300W. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Para este projeto fez-se uma estimativa da potência necessária através do balanço de energia.
 
-$Autonomia(h) = \frac{Capacidade da bateria(Ah)}{Consumo do circuito(A)}$
-Potencia é dada por:
+	A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
+
 \begin{equation}
- P=U*I
+ Em_{x} = \frac{m*V^{2}}{2} * \varepsilon
 \end{equation}
 
-Para o projeto são necessários dois motores de no mínimo 294W de potência cada, ou seja, os dois motores terão, em conjunto, uma potência de 588W. Os motores a serem utilizados vão operar a uma tensão de 12V, com isso a corrente necessária é de:
-\begin{equation}
-588 [W] = 12 [V] * I [A]
-\end{equation}
+        	Onde Em é a energia fornecida pelo motor, m é a massa de 150 kg e V é a velocidade em m/s. Aqui estimou-se perdas do motor de pelo menos 20\%, sendo assim,  é igual a 1,20. Assim, a energia necessária para mover a cadeira é de 694.44 J, a potência é portanto 694.44 W.
+
+        	Ao utilizar dois motores de 300 W, a potência total entregue ao sistema seria de 600 W. Rearranjando a equação para encontrar o valor da velocidade, e atribuindo 80\% de eficiência no acoplamento das rodas com o eixo do motor, temos:
 
 \begin{equation}
-I = \frac{588}{12} = 49A
+  V_{x} =  0.8 * \sqrt { \frac{600*2}{m* \varepsilon}}
+\end{equation}
+
+        	Assim, a estimativa da velocidade máxima que a cadeira deve obter será de pelo menos 7.44 km/h, que é uma velocidade razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+
+\begin{equation}
+ \omega_{x} =  \frac{V}{r}
+\end{equation}
+
+        	Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 20.656 rad/s ou 197.5 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2800 rpm, teria de ser feita uma redução de pelo menos 1:14, onde a velocidade angular de saída do redutor seria de 200 rpm. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 29.05 Nm.
+
+        	Para atender dois motores de 300 W, será conectada uma bateria de carro de chumbo selado de 12 V e capacidade de 60Ah, tem-se que a energia E gerada pela bateria é de:
+
+\begin{equation}
+E_{x}=(I*\Delta t)*U = (60 Ah)*12= 720 Wh
+\end{equation}
+
+        	Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
+
+\begin{equation}
+\Delta t_{x}= \frac{720W}{600Wh}= 1.2h= 1 hora e 12 minutos
 \end{equation}
 
 \section{Controle}

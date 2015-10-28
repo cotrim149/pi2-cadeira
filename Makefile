@@ -7,9 +7,9 @@ ifeq ($(UNAME_S),Linux)
 	DVIPS = dvips
 endif
 ifeq ($(UNAME_S),Darwin)
-	LATEX = /usr/texbin/latex
-	BIBTEX = /usr/texbin/bibtex
-	DVIPS = /usr/texbin/dvips
+	LATEX = /Library/TeX/texbin/latex
+	BIBTEX = /Library/TeX/texbin/bibtex
+	DVIPS = /Library/TeX/texbin/dvips
 endif
 
 
