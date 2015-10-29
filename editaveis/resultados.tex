@@ -8,7 +8,7 @@ Com a utilização do programa CATIA V5 3D foi estruturado o sistema eletrônico
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_isometrica_traseira}
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/vista_isometrica_traseira}
 \caption{Vista Isométrica Traseira}
 \label{fig:vista_isometrica_traseira}
 \end{figure}
@@ -17,7 +17,7 @@ O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resisten
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_traseira}
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/vista_traseira}
 \caption{Vista Traseira}
 \label{fig:traseira}
 \end{figure}
@@ -26,7 +26,7 @@ A forma como a mala será acoplada a cadeira usa como base as hastes da mala e a
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/explode}
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/explode}
 \caption{Visão do Sistema}
 \label{fig:sistema}
 \end{figure}
@@ -35,7 +35,7 @@ Cada roda possuirá um motor próprio para que seja possível rotaciona-lás em 
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_lateral_cadeira}
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/vista_lateral_cadeira}
 \caption{Imagem Lateral}
 \label{fig:lateral}
 \end{figure}
@@ -44,60 +44,133 @@ Como pode se notar nas figuras, o sistema de propulsão devera empurrar a cadeir
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[keepaspectratio=true,scale=0.4]{figuras/estrutura/vista_superior}
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/vista_superior}
 \caption{Imagem Superior}
 \label{fig:superior}
 \end{figure}
 
-\section{Power Train}
-\subsection{Motor}
+\subsection{Protótipo}
+
+A partir do policloreto de vinila, usualmente conhecido como PVC, foi feita uma estrutura de teste para encaixar na parte de trás da cadeira de rodas, com o intuito de buscar a melhor regulação to tamanho da estrutura. O protótipo em questão foi feito para se chegar o mais próximo de um modelo ideal capaz de se acoplar as cadeiras regulamentadas pela NBR 9050.
+
+O protótipo é uma estrutura retangular com uma alça de regulação de largura, seguido de dois “joelhos” em PVC para o acoplamento das rodinhas e da haste, dois encaixes com três saídas para regulação da barra de encaixe superior da cadeira. Há quatro furos na barra de regulação de largura, a qual serve para se adequar ao tipo de cadeira de rodas sendo utilizada, \ref{fig:acoplamento}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/acoplamento}
+\caption{Estrutura de acoplamento}
+\label{fig:acoplamento}
+\end{figure}
+
+No protótipo foram usadas oito braçadeiras circulares de curso infinito, as quais se acoplam na cadeira de rodas dando rigidez a estrutura, dessas oito braçadeiras, duas na parte inferior se acoplam na parte de baixo da cadeira, outras duas se acoplam na parte superior. A figura \ref{fig:acop_bracadeira} ilustrara o sistema de acoplamento estrutura/cadeira.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/acop_bracadeira}
+\caption{Sistema de acoplamento com braçadeira}
+\label{fig:acop_bracadeira}
+\end{figure}
+
+Na parte da estrutura mostrada na figura \ref{fig:acop_bracadeira} existem dois “joelhos” que ligam as rodinhas com o as barras de PVC, além de uma barra em paralelo com a barra das rodinhas, capaz de variar em altura e largura para se adequar ao tamanho da cadeira utilizada, e  duas braçadeiras nas pontas das barras que irão se acoplar a cadeira de rodas.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/superior_estrutura}
+\caption{Parte superior da estrutura}
+\label{fig:superior_estrutura}
+\end{figure}
+
+A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois “joelhos” capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois “T” com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
+
+Componentes do modelo:
+
+\begin{itemize}
+  \item Oito braçadeiras circulares de curso infinito;
+  \item Quarto “joelhos” de 90$^\circ$;
+  \item Dois “T”;
+  \item Duas rodas;
+  \item Barras de PVC com diâmetros de 20mm e 25mm;
+  \item Quatro parafusos;
+  \item Oito arruelas;
+  \item Quatro porcas.
+\end{itemize}
+
+O protótipo apresentado na figura \ref{fig:estr_prototipo} foi capaz de mostrar como funcionará o sistema, e todo encaixe necessário para não ocorrer folga e desconforto ao cadeirante. Esta estrutura se assemelha com as medidas do sistema original, mudando apenas o material da execução e do funcionamento. Obteve-se excelentes resultados testando tal protótipo em dois modelos de cadeira de rodas. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/estr_prototipo}
+\caption{Estrutura acoplada a cadeira}
+\label{fig:estr_prototipo}
+\end{figure}
+
+\section{Power-Train}
+
+\subsection{Moto-redutor}
 
 Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
 
-Especificações a serem atendidas:
+Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
+
 \begin{itemize}
- \item Velocidade máxima de 7,2 km/h apx: 2m/s;
- \item Peso máximo de 120 kg;
- \item Peso da bateria 10 kg;
- \item Peso da cadeira (valor aproximado) 20kg;
- \item Peso total estimado: 150 Kg;
- \item Considerando hipoteticamente o coeficiente de atrito ($\mu$): 0,2.
+  \item Potência de 305 a 350 W;
+  \item 12 ou 24 Vcc;
+  \item Rotação de entrada de 2500 rpm;
+  \item Reduções de 1:10 até 1:60.
 \end{itemize}
 
-\textbf{Força de atrito:}
-\begin{equation}
- \overrightarrow{F} = \overrightarrow{N} * \mu = 150 * 9,8 * 0,2 = 294N
-\end{equation}
+Especificações a serem atendidas:
 
-\textbf{Potência do motor:}
-
-\begin{equation}
- P_{x} = \frac{F * v}{100} = \frac{294 * 2}{1000} = \frac{588}{100} = 0,588kW
-\end{equation}
-
-O motor para a utilização na aplicação deve seguir algumas características dentro das especificações do projeto. Serão utilizados dois motores para motorizar a cadeira de rodas. Com isso é necessário que cada motor tenha a potência mínima de: \textbf{294W}.
+\begin{itemize}
+  \item Velocidade máxima de 10 km/h;
+  \item 12 Volts corrente contínua;
+  \item Peso da bateria 15 kg;
+  \item Peso da cadeira (valor aproximado) 15kg;
+  \item Peso total estimado: 150 Kg;
+  \item Redução de pelo menos 1:10.
+\end{itemize}
 
 \subsection{Baterias}
+
 A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas,  como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica} foi a bateria escolhida para o projeto, considerando ainda o seu fácil acesso e baixo  custo.
 
 \subsubsection{Autonomia}
 
-A capacidade de armazenamento de energia de uma bateria é medida através da multiplicação da corrente de descarga pelo tempo de autonomia, sendo dado em Ampére-hora (Ah). Cálculo da autonomia da bateria em horas:
-
-$Autonomia(h) = \frac{Capacidade da bateria(Ah)}{Consumo do circuito(A)}$
-Potencia é dada por:
-\begin{equation}
- P=U*I
-\end{equation}
-
-Para o projeto são necessários dois motores de no mínimo 294W de potência cada, ou seja, os dois motores terão, em conjunto, uma potência de 588W. Os motores a serem utilizados vão operar a uma tensão de 12V, com isso a corrente necessária é de:
-\begin{equation}
-588 [W] = 12 [V] * I [A]
-\end{equation}
+Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Para este projeto se decidiu utilizar motores de 300W. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Decidiu-se fazer uma estimativa da potência necessária através do balanço de energia.
+A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
 
 \begin{equation}
-I = \frac{588}{12} = 49A
+Em = \frac{m*V^2*\epsilon}{2}
 \end{equation}
+
+Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade em metros por segundo. Aqui estimou-se perdas do motor de pelo menos 20\%, sendo assim, é igual a 1,20. Assim, a energia necessária para mover a cadeira é de 694 J, a potência é portanto 694 W.
+
+Ao utilizar dois motores de 300 W, a potência total entregue ao sistema seria de 600 W. Rearranjando a equação para encontrar o valor da velocidade, e atribuindo 80\% de eficiência no acoplamento das rodas com o eixo do motor, temos:
+
+\begin{equation}
+Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
+\end{equation}
+
+Assim, a estimativa da velocidade máxima que a cadeira deve obter será de pelo menos 7.44 km/h, uma velocidade razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+
+\begin{equation}
+\omega = \frac{V}{r}
+\end{equation}
+
+Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 20.6 rad/s ou aproximadamente 197 rpm. Considerando as especificações do motor comprado: velocidade angular nominal de 2500 rpm e potência de 305 W, teria de ser feita uma redução de pelo menos 1:10, onde a velocidade angular de saída do redutor seria de 250 rpm. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 29 Nm.
+
+Para atender dois motores de 305 W, será conectada uma bateria de carro de chumbo selado de 12 V e capacidade de 60Ah, tem-se que a energia $E$ gerada pela bateria é de:
+
+\begin{equation}
+E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
+\end{equation}
+
+Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
+
+\begin{equation}
+\Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
+\end{equation}
+
 
 \section{Controle}
 
@@ -105,68 +178,81 @@ O kit de automação para cadeiras de roda será e um produto projetado para aux
 
 \begin{figure}[!htb]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/esquema_controle}
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/resultados/esquema_controle}
 \caption{Esquemático de funcionamento geral da cadeira de rodas automatizada}
 \label{fig:esquema_controle}
 \end{figure}
 
+Para o kit de automação da cadeira de rodas, será utilizada a ponte H para o controle dos motores. Um algoritmo de controle PWM usando o Raspeberry Pi que deve responder aos comandos do usuário como direção, aceleração, frenagem, entre outros que serão posteriormente levantados. Tem-se ainda o Distribuidor, uma placa para facilitar a alimentação do sistema, e o Regulador, para alimentar o Controlador e periféricos.
 
-Para o kit de automação da cadeira de rodas, será utilizada a ponte H para o controle dos motores. Um algoritmo de controle PWM usando o Raspeberry Pi que deve responder aos comandos do usuário como direção, aceleração, frenagem, entre outros que serão posteriormente levantados. Na figura \ref{fig:diagrama_blocos} pode ser obervado o esquemático geral do sistema. Tem-se ainda o Distribuidor, uma placa para facilitar a alimentação do sistema, e o Regulador, para alimentar o Controlador e periféricos.
+O sistema vai ser projetado de forma que não seja necessário retirar a bateria para essa ser carregada, o carregador será construído comprado, considerando que o tempo disponível para o desenvolvimento do projeto é relativamente curto.
+
+\subsection{Arquitetura}
+
+Com base no entendimento de como as informações foram entendidas, e na formulação dos diagramas de ideias, foi formulada uma arquitetura inicial para o software de controle do produto.
 
 \begin{figure}[!htb]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/diagrama_blocos}
-\caption{Desenho do diagrama de blocos do sistema de controle}
-\label{fig:diagrama_blocos}
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/resultados/arquitetura}
+\caption{Arquitetura}
+\label{fig:arquitetura}
 \end{figure}
 
-O sistema vai ser projetado de forma que não seja necessário retirar a bateria para essa ser carregada, o grupo ainda não estabeleceu se o carregador vai ser construído ou comprado, considerando que o tempo disponível para o desenvolvimento do projeto é relativamente curto.
+Esta arquitetura pode ser entendida na figura \ref{fig:arquitetura}. Esta figura ilustra a ideia de como a arquitetura se comporta. Imaginando o fluxo da informação, conforme o uso do usuário temos:
 
-O Distribuidor vai ser basicamente uma placa que facilitara a conexão de todas as outras ao sistema, assim não será necessário que haja reduções de tensão tão drásticas. A placa terá um circuito de proteção, para evitar problemas de sobretensão e curto, saídas para a ponte H, tanto para alimentar possíveis circuitos e motor e ainda saídas para o regulador.
+\begin{enumerate}
+  \item Usuário envia a informação via "Joystick" com os comandos relativos as direções pretendidas. O "Joystick" possui 2 potênciometros que funcionam enviando a informações que variam de 0 a 255.
+  \item Esta informação será captada por um MSP, convertendo esse sinal analógico para digital e enviando-o para o Raspberry Pi.
+  \item O envio desta informação é recebido, via interrupção, do MSP no Raspberry  Pi. O envio da informação é feito via UART. (esta interrupção recebe a informação através de uma nova thread)
+  \item O Raspberry Pi irá tratar esta informação das direções que o usuário pretende seguir, em intensidade e direção que os motores devem agir. E então a informação é passada para o MSP que controla a Ponte-H. O envio da  informação é feito via UART.
+  \item O MSP que controla a Ponte-H recebe a informação e a traduz em 2 pulsos de onda quadrada, que tem como intuito enviar cada um destes pulsos para uma Ponte-H diferente.
+  \item A Ponte-H controla os motores.
+\end{enumerate}
 
-O Regulador terá a funcionalidade de alimentar o controlador com seus periféricos. Essa placa terá um circuito de proteção, para o controlador, contra possíveis problemas do distribuidor, saídas de alimentação para o controlador e ainda uma USB de alimentação para o celular do usuário, para impedir problemas de falta de bateria.
+A parte relacionada ao sensoriamento ainda não foi completamente estabelecida, mas pretende-se adicionar sensores ou algum outro mecanismo capaz de aferir o nível de bateria, velocidade e nível de inclinação da cadeira.
+
+Durante o desenvolvimento de software do produto, foi utilizado o TDD (Test Driven Development), que consiste em desenvolver o software mediante testes unitários. Fazer o TDD implica em manter qualidade ao longo do desenvolvimento. Baseados nisso, a ferramenta de cobertura de código, "coverage", nos auxilia em saber o que está sendo testado e o que não está esta sendo testado, mostrando a porcentagem de cada classe testada.
+
+\subsection{Funcionamento e Estratégia de Uso}
+
+Em relação aos microcontroladores utilizados para transmitir as informações do "joystick" até o motor, serão utilizados 2 MSPs e 1 Raspberry Pi.
+
+\begin{enumerate}
+  \item O MSP do "Joystick" tem a função de receber o sinal analógico do "Joystick", transformá-lo em digital e enviá-lo para o Raspberry Pi. A rotina de conversão e transmissão dos dados referentes ao “Joystick” é controlada via TimerA, o principal temporizador do MSP utilizado, este temporizador gera uma interrupção a uma taxa de amostragem definida. A cada interrupção, o MSP lê as entradas analógicas referentes ao “Joystick” e as converte em valores digitais de um byte utilizando do SAR ADC (Successive Approximation ADC) interno ao MSP, em seguida estas informações são enviadas para o Raspberry Pi via serial, utilizando o protocolo UART (Universal Asynchronous Receiver/Transmitter), antecedidas de um cabeçalho definido, este cabeçalho é essencial para uma correta leitura dos dados pelo Raspberry Pi.
+  \item O Raspberry Pi tem a função de  receber estes dados via UART. Este recebimento é controlado via interrupção, com a intenção de não onerar a "thread"principal do programa. Ao se receber esta informação, então é feita a tradução dos valores para intensidade e direção de cada motor. Após esta tradução os dados são enviados, via UART, para o MSP dos motores.
+  \item O MSP dos motores tem a função de receber os dados traduzidos do Raspberry Pi para os motores, utilizando como intermediário uma Ponte-H para cada motor. O MSP ao receber as informações via UART, então uma onda quadrada é gerada para cada motor.
+\end{enumerate}
+
+A estratégia de conversão dos potênciometros em intensidade para os motores é feita da seguinte forma:
+
+1. Mapeamento dos valores dos potênciometros em estados conforme figura \ref{fig:tabela-pots}.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/resultados/tabela-pots}
+\caption{Potenciômetros do Joystick}
+\label{fig:tabela-pots}
+\end{figure}
+
+2. Conforme o estado mapeado, a intensidade e direção do motor podem ser definidas conforme figura \ref{fig:tabela-pots2}.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/resultados/tabela-pots2}
+\caption{Mais dados dos potenciômetros do Joystick}
+\label{fig:tabela-pots2}
+\end{figure}
+
+O Distribuidor vai ser basicamente uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas. A placa terá um circuito de proteção, para evitar problemas de sobretensão e curto, saídas para a ponte H, tanto para alimentar possíveis circuitos e motor e ainda saídas para o regulador.
+
+O Regulador terá a funcionalidade de alimentar o controlador com seus periféricos. Essa placa terá um circuito de proteção, para o controlador, contra possíveis problemas do distribuidor, saídas de alimentação para o controlador, para impedir problemas de falta de bateria.
 
 A ponte H será o circuito responsável por fazer o controle de velocidade e direção dos motores. Essa placa terá além dos circuitos necessários para o funcionamento da ponte H, um circuito de proteção para os motores e pinos de entrada do PWM, já que pode haver possíveis problemas de sobretensão a alimentação do motor.
 
-
 \section{Interface com o usuário}
 
-
 \subsection{Joystick}
+
 Para as cadeiras de rodas automatizadas essa é uma solução comum de controle para as mesmas, tendo em vista que é relativamente simples de ser acoplado uma vez que se entenda seu funcionamento básico. Para o projeto em questão essa foi uma das alternativas encontradas. No qual o joystick seria acoplado ao braço da cadeira, ou em uma posição que o usuário se sinta mais ergonomicamente confortável. Este acoplamento deve ser simples para favorecer a característica de portabilidade do projeto como um todo.
 
 Caso necessário a conexão do joystick ao sistema de controle pode ser feita por bluetooth, tal característica contribui para o objetivo final do projeto \cite{artigo_joystick_controller}.
-
-\subsubsection{Smartphone}
-O \textit{smartphone} é um telefone celular com um sistema operacional móvel avançado que combina as características de um sistema operacional de computador pessoal com outros recursos úteis para uso móvel ou portátil \cite{article_smartphone}.
-
-Devido a portabilidade destes dispositivos e sua facilidade de integração com outros sistemas, uma possível solução para a interação do usuário com o sistema pode ser feita. Uma conexão entre o dispositivo e o sistema será feita através de Bluetooth (Android) ou "Virtual Private Network" (iOS e Android). Para o projeto em questão o usuário pode optar por utilizar o \textit{Smartphone} ou ainda o joystick.
-
-\subsubsection{Protótipo}
-
-O protótipo na figura \ref{fig:prototipos} foi feito com o intuito de mostrar o fluxo do aplicativo sugerido para o controle da cadeira de rodas automatizada.
-
-A principal funcionalidade deste aplicação é basicamente voltada para o controle da cadeira de rodas automatizada, no qual o usuário teria um \textit{joystick} virtual que se comunica com o \textit{Raspeberry Pi} enviando o comando para os motores.
-Uma das restrições pensadas, foi a de enquanto o controle estiver ativado via aplicativo o usuário não poderia ter o controle através do \textit{joystick} físico.
-
-
-  \begin{figure}[!htb]
-		\centering
-		\legend{}
-    \subfloat{
-  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_1}
-		}
-		\quad %espaco separador
-		\subfloat{
-  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_2}
-		}
-		\subfloat{
-  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_3}
-		}
-		\quad %espaco separador
-		\subfloat{
-  		\includegraphics[keepaspectratio=true,scale=0.6]{figuras/controle/tela_4}
-		}
-		\caption{Protótipo de aplicativo para interface entre usuário e motor}
-		\label{fig:prototipos}
-  \end{figure}
