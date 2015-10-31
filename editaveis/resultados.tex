@@ -174,7 +174,7 @@ Desta forma, considerando a potência consumida pelos dispositivos eletrônicos 
 
 \section{Controle}
 
-O kit de automação para cadeiras de roda será e um produto projetado para auxiliar na locomoção do cadeirante em um shopping. Na Figura \ref{fig:esquema_controle} foi feita uma proposta de construção do kit mostrando a sua estrutura de controle. Em verde claro tem-se um componente que talvez seja somente integrado ao sistema. Esses blocos foram resultado dos estudos teóricos e de discursões da equipe. Em verde escuro, sistemas que serão efetivamente projetados e construídos e em azul, componentes que não serão construídos mas farão parte do kit de automação.
+ Na Figura \ref{fig:esquema_controle} foi feita uma proposta de construção do kit mostrando a sua estrutura de controle. Em verde claro tem-se um componente que talvez seja somente integrado ao sistema. Esses blocos foram resultado dos estudos teóricos e de discursões da equipe. Em verde escuro, sistemas que serão efetivamente projetados e construídos e em azul, componentes que não serão construídos mas farão parte do kit de automação.
 
 \begin{figure}[!htb]
 \centering
@@ -263,23 +263,50 @@ O usuário terá acesso ao Joystick e ainda a dois painéis simples, um deles va
 
 A estratégia de conversão dos potênciometros em intensidade para os motores é feita da seguinte forma:
 
-1. Mapeamento dos valores dos potênciometros em estados conforme figura \ref{fig:tabela-pots}.
+1. Mapeamento dos valores dos potênciometros em estados conforme figura \ref{tab:tabela-pots}.
 
-\begin{figure}[!htb]
+\begin{table}[!ht]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.8]{figuras/resultados/tabela-pots}
-\caption{Potenciômetros do Joystick}
-\label{fig:tabela-pots}
-\end{figure}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Valor Potenciômetro 1 (motor1) & Valor Potenciômetro 2 (motor2) & Estado \\ \hline
+255 & 255 & Para frente \\ \hline
+255 & 0 & Virar para direita (próprio eixo) \\ \hline
+255 & 127 & Virar para direita (eixo motor 2) frontal \\ \hline
+127 & 127 & Parado \\ \hline
+127 & 255 & virar para esquerda (eixo motor 1) frontal \\ \hline
+127 & 0 & virar para esquerda (eixo motor 1) traseiro \\ \hline
+0 & 0 & Para trás \\ \hline
+0 & 255 & Virar para esquerda (próprio eixo) \\ \hline
+0 & 127 & virar para direita (eixo motor 2) traseiro \\ \hline
+\end{tabular}
+}
+\caption{Mapeamento dos valores conforme estado}
+\label{tab:tabela-pots}
+\end{table}
 
-2. Conforme o estado mapeado, a intensidade e direção do motor podem ser definidas conforme figura \ref{fig:tabela-pots2}.
+2. Conforme o estado mapeado, a intensidade e direção do motor podem ser definidas conforme figura \ref{tab:tabela-pots2}.
 
-\begin{figure}[!htb]
+\begin{table}[!ht]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.8]{figuras/resultados/tabela-pots2}
-\caption{Mais dados dos potenciômetros do Joystick}
-\label{fig:tabela-pots2}
-\end{figure}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Estado                                      & Motor 1(Intensidade(\%), Direção) & Motor 2(Intensidade (\%), Direção) \\ \hline
+Para frente                                 & (100, + )                         & (100, + )                          \\ \hline
+Virar para direita (próprio eixo)           & (100, +)                          & (100, -)                           \\ \hline
+Virar para direita (eixo motor 2) frontal   & (100, +)                          & (0 , *)                            \\ \hline
+Parado                                      & (0, *)                            & (0, *)                             \\ \hline
+virar para esquerda (eixo motor 1) frontal  & (0, *)                            & (100, +)                           \\ \hline
+virar para esquerda (eixo motor 1) traseiro & (0, *)                            & (100, -)                           \\ \hline
+Para trás                                   & (100, -)                          & (100, -)                           \\ \hline
+Virar para esquerda (próprio eixo)          & (100, -)                          & (100, +)                           \\ \hline
+\end{tabular}
+}
+\caption{Intesidade e direção dos motores conforme estado. Asteriscos simbolizam motor sem direção}
+\label{tab:tabela-pots2}
+\end{table}
 
 O Distribuidor vai ser basicamente uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas. A placa terá um circuito de proteção, para evitar problemas de sobretensão e curto, saídas para a ponte H, tanto para alimentar possíveis circuitos e motor e ainda saídas para o regulador.
 
