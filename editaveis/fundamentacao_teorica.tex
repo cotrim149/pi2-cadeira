@@ -49,9 +49,11 @@ Para definir um redutor é necessário que haja a presença de um conjunto de ei
 
 Para que possa obter uma redução de torque é necessário a presença de engrenagem entre os eixos dos dispositivos. Por meio das engrenagens a velocidade de rotação da transmissão é reduzida, e o contato entre engrenagens de menor ou maior número de dentes (variação no diâmetro) possibilita a redução de torque desejada.
 
-Existem dois tipos principais de redutores: Engrenagens cilíndricas de dentes retos e engrenagens cilíndricas de dentes helicoidais. As primeiras distinguem-se por transmissão de força sem deslizamento nos dentes, relação de multiplicação constante e independência de carregamento. Promove segurança de funcionamento, durabilidade, resistência a sobrecargas, fácil manutenção e dimensões reduzidas em relação a potência.
+Existem dois tipos principais de redutores: Engrenagens cilíndricas de dentes retos e engrenagens cilíndricas de dentes helicoidais.
 
-As engrenagens cilíndricas de dentes helicoidais apresentam a vantagem de terem um funcionamento muito suave. Elas trabalham com relevante escorregamento de um dente sobre outro. Sua utilização permite transmissões silenciosas, sem vibrações e choques, pois há sempre 2 ou 3 dentes em contato. A altura do dente poderá ser, eventualmente reduzida, sem prejudicar a transmissão. O número de dentes mínimo poderá ser inferior ao das engrenagens cilíndricas de dentes retos, e a relação de transmissão poderá ser maior. Sendo a superfície de contato muito reduzida, teremos grandes pressões por isso as engrenagens helicoidais são muito mais usadas.
+As primeiras distinguem-se por transmissão de força sem deslizamento nos dentes, relação de multiplicação constante e independência de carregamento. Promove segurança de funcionamento, durabilidade, resistência a sobrecargas, fácil manutenção e dimensões reduzidas em relação a potência.
+
+As outras, as engrenagens cilíndricas de dentes helicoidais, apresentam a vantagem de terem um funcionamento muito suave. Elas trabalham com relevante escorregamento de um dente sobre outro. Sua utilização permite transmissões silenciosas, sem vibrações e choques, pois há sempre 2 ou 3 dentes em contato. A altura do dente poderá ser, eventualmente reduzida, sem prejudicar a transmissão. O número de dentes mínimo poderá ser inferior ao das engrenagens cilíndricas de dentes retos, e a relação de transmissão poderá ser maior. Sendo a superfície de contato muito reduzida, teremos grandes pressões por isso as engrenagens helicoidais são muito mais usadas.
 
 \begin{figure}[!htb]
 	\centering
@@ -101,11 +103,11 @@ O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. C
 
 \subsection{Controle}
 
-Desde a primeira patente de cadeira de rodas elétrica em 1937 (EVEREST; JENNINGS, 1937), diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação (BARCELOS et al., 2008). Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{label12}.
+Desde a primeira patente de cadeira de rodas elétrica em 1937 (EVEREST; JENNINGS, 1937), diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação (BARCELOS et al., 2008). Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{tab:formas_controle}.
 
-\begin{table}[]
+\begin{table}[!ht]
 	\centering
-	\label{label12}
+	\label{tab:formas_controle}
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		Interface                     & Comunicação                              & Monitoramento                                & Características                                                                                                                                                                        \\ \hline
@@ -126,20 +128,11 @@ Em uma cadeira de roda elétrica o controle que representa a interface com o usu
 
 Para o projeto o Joystick será conectado com fio e acoplado ao braço da cadeira, em uma posição que o usuário se sinta mais confortável de acordo com as limitações do dispositivo. Este acoplamento deverá ser simples e confiável.
 
-Foram feitas algumas tentativas para o desenvolvimento do Joystick com a confecção de uma placa de circuito impresso, porém devido a organização dos pinos não foi possível finalizar a mesma. Foi comprado um Joystick que possui cinco pinos, sendo um para alimentação 5V, outro para GND, dois para as direções, vertical e horizontal e ainda outro para um botão, conforme pode ser visto na figura \ref{joy}.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/joy.eps}
-	\caption{Joystick de cinco pinos}
-	\label{joy}
-\end{figure}
-
-O usuário terá acesso ao Joystick e ainda a dois painéis simples, um deles vai indicar a velocidade do sistema e o outro para mostrar o nível da bateria. Os medidores de bateria e velocidade, serão indicados por LEDs que mostrarão o nível que o sistema se encontra e serão posicionados de forma que facilite a vida do usuário.
 
 \subsection{Tecnologias}
-
+\label{subsec:tecnologias}
 \subsubsection{Raspberry PI}
+
 
 O Raspberry Pi é um computador do tamanho de um cartão de crédito que faz uso do sistema operacional Linux. Este sistema foi desenvolvido para rodar aplicações de todos os tipos, como internet, vídeo, dentre outras, que geralmente rodam em um computador pessoal comum. Possui entradas USB que permitem a conexão de periféricos como mouse, teclado, câmeras e saídas para TVs como HDMI. Possui apenas memória volátil, sem disco rígido e roda o sistema operacional a partir de um cartão de memória (RASPEBERRY..., 2015).
 
@@ -159,7 +152,7 @@ O Raspberry Pi tem como principal componente um pequeno circuito integrado que r
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/raspberry.eps}
-	\caption{Raspberry Pi Model B}
+	\caption{Raspberry Pi Model B+}
 	\label{rasp}
 \end{figure}
 
@@ -202,14 +195,24 @@ A ponte H é utilizada para o controle dos motores e ela faz isso por meio do co
 
 A ponte H é um conjunto de quatro transistores ligados de formas que quando seja acionado suas entradas polarizem apenas dois transistores como mostrado na figura \ref{figx+1}, dos quatro presentes, e permita que a corrente flua pelo motor movimentando-o.
 
+Os transistores da ponte H funcionam como chaves controladas por tensão. Os transistores utilizados são o IRF 3205, e eles são polarizados quando se cria uma diferença de tensão entre o \textit{Gate} (G) e \textit{Source} (s), conforme pode ser visto na figura \ref{fig:portas_transistor_irf}, VGS maior que a tensão de threshold (VTH).
+
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_1.eps}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/portas_irf_3205}
+	\caption{Portas do transistor IRF 3205 \cite{datasheet_irf_3205}}
+	\label{fig:portas_transistor_irf}
+\end{figure}
+
+A tensão de VTH é a menor diferença de tensão que precisa ser alcançado entre G e S, conforme pode ser visto na figura x, para que o transistor seja ativado essa informação encontra-se no datasheet, para o transistor IRF 3205 esse valor vai de 2V até 4V \cite{datasheet_irf_3205}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=1]{figuras/referencialteorico/figurax_1.eps}
 	\caption{Ponte H com transistores FETs}
 	\label{figx+1}
 \end{figure}
 
-Os transistores da ponte H funcionam como chaves controladas por tensão. Os transistores utilizados são o IRF 3205, e eles são polarizados quando se cria uma diferença de tensão entre o Gate (G) e Source (s) VGS maior que a tensão de threshold (VTH), ou seja maior que 2 volts [datasheet]. Quando polarizados permitem que a corrente flua do Dreno (D) para o Source (IDS), dessa forma funcionando como uma chave.
 
 Com isso utiliza-se desta propriedade e da disposição deles para fazer o controle do sentido de giro do motor. Quando o transistor Q1 e Q4 são polarizados, o terminal direito do motor fica com uma tensão mais positiva que o esquerdo, fazendo a corrente fluir da direita para a esquerda como mostrado na figura \ref{figx+2}.
 
@@ -220,30 +223,13 @@ Com isso utiliza-se desta propriedade e da disposição deles para fazer o contr
 	\label{figx+2}
 \end{figure}
 
-Acionando-se em conjunto os transistores Q3 e Q2, o terminal esquerdo do motor fica com uma tensão maior que o direito, fazendo a corrente fluir da esquerda para a direita. Desse modo girando inversamente a quando acionou-se os transistores Q1 e Q4 como mostrado na figura \ref{figx+3}.
+Acionando-se em conjunto os transistores Q3 e Q2, o terminal esquerdo do motor fica com uma tensão maior que o direito, fazendo a corrente fluir da esquerda para a direita. Com o acionamento dos transistores Q1 e Q4, como mostrado na figura \ref{figx+3}, a corrente flui no sentido contrário e os motores giram no sentido contrário.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_3.eps}
+	\includegraphics[keepaspectratio=true,scale=1.2]{figuras/referencialteorico/figurax_3.eps}
 	\caption{Motor no sentido anti-horário devido a corrente}
 	\label{figx+3}
 \end{figure}
 
-Os transistores Q1 e Q2 não podem ser polarizados simultaneamente assim como os transistores Q3 e Q4. Pois o fechamento em conjunto de tais chaves causaria um curto na fonte de alimentação. Por esse motivo foi desenvolvido um modulo de segurança utilizando portas logicas na entrada impedindo que as duas entradas que controlam os transistores sejam acionadas ao mesmo tempo. Foi utilizado uma porta NAND e duas porta AND para garantir que não haverá  acionamento de todos os transistores ao mesmo tempo.
-
-Foi necessário utilizar um dobrador de tensão no circuito, como ele foi possível garantir um VGS maior que 2V para polarizar dos transistores MOSFET da ponte, como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polariza-lo.
-
-O circuito do dobrador, representado na figura \ref{figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
-
-Durante o período da onda quadrada em alto, C3 descarrega na saída do diodo na parte negativa gerando um efeito que dobra a tensão, conforme pode ser visto nos nomes abaixo. É importante observar que o capacitor C2 não pode ser muito grande e nem o pulso do oscilador muito largo para que não haja uma descontinuidade muito grande no valor de tensão.
-
-Esse circuito é necessário pois a tensão do circuito está limitada em 12V. Com isso não é possível conseguir um VGS maior que 2V nos transistores MOSFET da ponte H. Com o auxílio desse artifício muito utilizado na eletrônica consegue-se fazer a transformação de um tensão DC em uma tensão DC com o dobro de tensão, com isso tem-se 24V teóricos na saída do circuito dobrador de tensão, pois a tensão de entrada é cerca de 12V.
-
-Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 para eles alimentarem o Gate dos transistores MOSFET do circuito, como há perdas envolvidas, chegarão cerca de 22V nas portas G dos transistores, tornando possível haver uma diferença maior que a VTH e polarizando os transistores da maneira correta e permitindo o funcionamento do sistema por completo.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4.eps}
-	\caption{Circuito elevador te tensão}
-	\label{figx+4}
-\end{figure}
+Os transistores Q1 e Q2 não podem ser polarizados simultaneamente assim como os transistores Q3 e Q4. Pois o fechamento em conjunto de tais chaves causaria um curto na fonte de alimentação. Por esse motivo foi desenvolvido um modulo de segurança utilizando portas logicas na entrada, impedindo que as duas entradas que controlam os transistores sejam acionadas ao mesmo tempo.

@@ -13,7 +13,9 @@ Com a utilização do programa CATIA V5 3D foi estruturado o sistema eletrônico
 \label{fig:vista_isometrica_traseira}
 \end{figure}
 
-O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resistente. O produto proposto, ver figura \ref{fig:traseira},\ref{fig:sistema}, \ref{fig:lateral} e \ref{fig:superior},deve-se acoplar a qualquer cadeira de rodas. Foi pensado em um dispositivo no formato de uma mala para que seja de fácil conexão, uso e manuseio.
+O objetivo do projeto é desenvolver uma estrutura de fácil conexão e resistente. O produto proposto, ver figura \ref{fig:traseira}, \ref{fig:sistema}, \ref{fig:lateral} e \ref{fig:superior},deve-se acoplar a qualquer cadeira de rodas.
+
+Foi pensado em um dispositivo no formato de uma mala para que seja de fácil conexão, uso e manuseio.
 
 \begin{figure}[!htb]
 \centering
@@ -53,7 +55,7 @@ Como pode se notar nas figuras, o sistema de propulsão devera empurrar a cadeir
 
 A partir do policloreto de vinila, usualmente conhecido como PVC, foi feita uma estrutura de teste para encaixar na parte de trás da cadeira de rodas, com o intuito de buscar a melhor regulação to tamanho da estrutura. O protótipo em questão foi feito para se chegar o mais próximo de um modelo ideal capaz de se acoplar as cadeiras regulamentadas pela NBR 9050.
 
-O protótipo é uma estrutura retangular com uma alça de regulação de largura, seguido de dois “joelhos” em PVC para o acoplamento das rodinhas e da haste, dois encaixes com três saídas para regulação da barra de encaixe superior da cadeira. Há quatro furos na barra de regulação de largura, a qual serve para se adequar ao tipo de cadeira de rodas sendo utilizada, \ref{fig:acoplamento}.
+O protótipo é uma estrutura retangular com uma alça de regulação de largura, seguido de dois “joelhos” em PVC para o acoplamento das rodinhas e da haste, dois encaixes com três saídas para regulação da barra de encaixe superior da cadeira. Há quatro furos na barra de regulação de largura, a qual serve para se adequar ao tipo de cadeira de rodas sendo utilizada, vide figura para mais detalhes \ref{fig:acoplamento}.
 
 \begin{figure}[!htb]
 \centering
@@ -62,7 +64,7 @@ O protótipo é uma estrutura retangular com uma alça de regulação de largura
 \label{fig:acoplamento}
 \end{figure}
 
-No protótipo foram usadas oito braçadeiras circulares de curso infinito, as quais se acoplam na cadeira de rodas dando rigidez a estrutura, dessas oito braçadeiras, duas na parte inferior se acoplam na parte de baixo da cadeira, outras duas se acoplam na parte superior. A figura \ref{fig:acop_bracadeira} ilustrara o sistema de acoplamento estrutura/cadeira.
+No protótipo foram usadas oito braçadeiras circulares de curso infinito, as quais se acoplam na cadeira de rodas dando rigidez a estrutura, dessas oito braçadeiras, duas na parte inferior se acoplam na parte de baixo da cadeira, outras duas se acoplam na parte superior. A figura \ref{fig:acop_bracadeira} ilustra o sistema de acoplamento estrutura/cadeira.
 
 \begin{figure}[!htb]
 \centering
@@ -82,8 +84,7 @@ Na parte da estrutura mostrada na figura \ref{fig:acop_bracadeira} existem dois 
 
 A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois “joelhos” capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois “T” com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
 
-Componentes do modelo:
-
+Os componentes utilizados para se fazer este modelo são descritos:
 \begin{itemize}
   \item Oito braçadeiras circulares de curso infinito;
   \item Quarto “joelhos” de 90$^\circ$;
@@ -212,15 +213,53 @@ A parte relacionada ao sensoriamento ainda não foi completamente estabelecida, 
 
 Durante o desenvolvimento de software do produto, foi utilizado o TDD (Test Driven Development), que consiste em desenvolver o software mediante testes unitários. Fazer o TDD implica em manter qualidade ao longo do desenvolvimento. Baseados nisso, a ferramenta de cobertura de código, "coverage", nos auxilia em saber o que está sendo testado e o que não está esta sendo testado, mostrando a porcentagem de cada classe testada.
 
+\subsection{Ponte H}
+
+No decorrer da produção do circuito da ponte H, foi utilizado uma porta NAND e duas porta AND para garantir que não haverá acionamento de todos os transistores ao mesmo tempo.
+
+Foi necessário utilizar um dobrador de tensão no circuito, com ele foi possível garantir um VGS maior que 2V para polarização dos transistores MOSFET da ponte. Como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polariza-lo.
+
+O circuito do dobrador, representado na figura \ref{figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
+
+Durante o período da onda quadrada em alto, C3 descarrega na saída do diodo na parte negativa gerando um efeito que dobra a tensão, conforme pode ser visto na figura \ref{fig:figx+4}. É importante observar que o capacitor C2 não pode ser muito grande e nem o pulso do oscilador muito largo para que não haja uma descontinuidade muito grande no valor de tensão.
+
+Esse circuito é necessário pois a tensão do circuito está limitada em 12V. Com isso não é possível conseguir um VGS maior que 2V nos transistores MOSFET da ponte H. Com o auxílio desse artifício muito utilizado na eletrônica consegue-se fazer a transformação de um tensão DC em uma tensão DC com o dobro de tensão, com isso tem-se 24V teóricos na saída do circuito dobrador de tensão, pois a tensão de entrada é cerca de 12V.
+
+Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 para eles alimentarem o Gate dos transistores MOSFET do circuito, como há perdas envolvidas, chegarão cerca de 22V nas portas G dos transistores, tornando possível haver uma diferença maior que a VTH e polarizando os transistores da maneira correta e permitindo o funcionamento do sistema por completo.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4.eps}
+	\caption{Circuito elevador te tensão}
+	\label{fig:figx+4}
+\end{figure}
+
 \subsection{Funcionamento e Estratégia de Uso}
+
+\textbf{Joystick - Microcontroladores}
 
 Em relação aos microcontroladores utilizados para transmitir as informações do "joystick" até o motor, serão utilizados 2 MSPs e 1 Raspberry Pi.
 
 \begin{enumerate}
   \item O MSP do "Joystick" tem a função de receber o sinal analógico do "Joystick", transformá-lo em digital e enviá-lo para o Raspberry Pi. A rotina de conversão e transmissão dos dados referentes ao “Joystick” é controlada via TimerA, o principal temporizador do MSP utilizado, este temporizador gera uma interrupção a uma taxa de amostragem definida. A cada interrupção, o MSP lê as entradas analógicas referentes ao “Joystick” e as converte em valores digitais de um byte utilizando do SAR ADC (Successive Approximation ADC) interno ao MSP, em seguida estas informações são enviadas para o Raspberry Pi via serial, utilizando o protocolo UART (Universal Asynchronous Receiver/Transmitter), antecedidas de um cabeçalho definido, este cabeçalho é essencial para uma correta leitura dos dados pelo Raspberry Pi.
   \item O Raspberry Pi tem a função de  receber estes dados via UART. Este recebimento é controlado via interrupção, com a intenção de não onerar a "thread"principal do programa. Ao se receber esta informação, então é feita a tradução dos valores para intensidade e direção de cada motor. Após esta tradução os dados são enviados, via UART, para o MSP dos motores.
-  \item O MSP dos motores tem a função de receber os dados traduzidos do Raspberry Pi para os motores, utilizando como intermediário uma Ponte-H para cada motor. O MSP ao receber as informações via UART, então uma onda quadrada é gerada para cada motor.
+  \item O MSP dos motores tem a função de receber os dados traduzidos do Raspberry Pi para os motores, utilizando como intermediário uma Ponte-H para cada motor. O MSP ao receber as informações via UART, consegue gerar 2 ondas quadradas, uma para cada motor, a serem transmitidas via Ponte H.
 \end{enumerate}
+
+\textbf{Joystick - Desenvolvimento em Placa}
+
+Foram feitas algumas tentativas para o desenvolvimento do Joystick com a confecção de uma placa de circuito impresso, porém devido a organização dos pinos não foi possível finalizar a mesma. Foi comprado um Joystick que possui cinco pinos, sendo um para alimentação 5V, outro para GND, dois para as direções, vertical e horizontal e ainda outro para um botão, conforme pode ser visto na figura \ref{joy}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/joy.eps}
+	\caption{Joystick de cinco pinos}
+	\label{joy}
+\end{figure}
+
+O usuário terá acesso ao Joystick e ainda a dois painéis simples, um deles vai indicar a velocidade do sistema e o outro para mostrar o nível da bateria. Os medidores de bateria e velocidade, serão indicados por LEDs que mostrarão o nível que o sistema se encontra e serão posicionados de forma que facilite a vida do usuário.
+
+\textbf{Joystick - Conversão dos Valores}
 
 A estratégia de conversão dos potênciometros em intensidade para os motores é feita da seguinte forma:
 
