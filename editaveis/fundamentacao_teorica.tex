@@ -120,8 +120,6 @@ Desde a primeira patente de cadeira de rodas elétrica em 1937 (EVEREST; JENNING
 
 \subsection{Dispositivos de controle}
 
-\subsubsection{Joystick}
-
 O joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consiste em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador (MCGUIRE; JENKINS, 2009). O Joystick, muito utilizado em computadores e jogos eletrônicos, provou sua utilidade em diversas áreas.
 
 Em uma cadeira de roda elétrica o controle que representa a interface com o usuário, normalmente é feito com sistemas de Joystick. Essa é uma solução comum devido sua simplicidade, baixo custo e confiabilidade.
@@ -166,23 +164,23 @@ Uma das linguagens a ser adotada será Python devido a facilidade de existir bib
 
 O ambiente utilizado para desenvolver o software relativo ao projeto tem como linguagem de desenvolvimento Python 3.4 e ambiente para testes.
 
-Os testes unitários são utilizados de forma a testar a menor unidade do software, de tal forma a suportar a automatização dos mesmos, de forma independente entre os testes (Referência,Acessado em 22 de Outubro de 2015). O framework a ser utilizado será o "unittest", suportado e provido pelo próprio Python.
+Os testes unitários são utilizados de forma a testar a menor unidade do software, de tal forma a suportar a automatização dos mesmos, de forma independente entre os testes \cite{unittest}. O framework a ser utilizado será o "unittest", suportado e provido pelo próprio Python.
 
-Ainda será utilizado o "Mock", que é uma biblioteca de teste que faz parte do framework "unittest". É utilizada para "fingir" que algo existe enquanto não pode ser implementado (Referencia,Acessado em 22 de Outubro de 2015).
+Ainda será utilizado o "Mock", que é uma biblioteca de teste que faz parte do framework "unittest". É utilizada para "fingir" que algo existe enquanto não pode ser implementado \cite{unittest_mock}.
 
 Contaremos ainda com a cobertura de código, que é uma métrica quantitativa de qualidade utilizada para aferir a quantidade percentual de teste do software. Mostrando assim a efetividade dos testes realizados, artifício esse que se torna indispensável quando utiliza-se testes unitários, pois proporciona um retorno da medida da eficácia.
 
 \subsubsection{Arquitetura}
 
-'' É um conjunto de elementos arquiteturais (de dados, de processamento, de conexão) que possuem alguma organização. Os elementos e sua organização são definidos por decisões tomadas para satisfazer objetivos e restrições. '' (Silvia Regina Vergilio apud Perry e Wolf(92),Arquitetura de Software, Disponível em: link).
+'' É um conjunto de elementos arquiteturais (de dados, de processamento, de conexão) que possuem alguma organização. Os elementos e sua organização são definidos por decisões tomadas para satisfazer objetivos e restrições. '' \cite{arquitetura_definition}.
 
 \subsubsection{Controle do motor}
 
 Geralmente motores precisam de corrente relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente continua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves, transistores e o circuito de ponte H.
 
-\subsubsection{Ponte H}
+\textbf{Ponte H}
 
-Para realizar o controle dos motores elétricos de corrente contínua (DC) é necessário determinar o sentido da corrente que passa pelos terminais do motor, é através da ponte H que se realiza o controle, com ela é possível determinar o sentido que o eixo girará e sua velocidade. O Diagrama da ponte H está figura \ref{figx}.
+Para realizar o controle dos motores elétricos de corrente contínua (DC) é necessário determinar o sentido da corrente que passa pelos terminais do motor. É através da ponte H que se realiza o controle. Com a ponte H é possível determinar o sentido que o eixo girará e sua velocidade. O Diagrama da ponte H pode ser visto na figura \ref{figx}.
 
 \begin{figure}[!htb]
 	\centering
@@ -191,9 +189,10 @@ Para realizar o controle dos motores elétricos de corrente contínua (DC) é ne
 	\label{figx}
 \end{figure}
 
-A ponte H é utilizada para o controle dos motores e ela faz isso por meio do controle de corrente, ela é usada para determinar o sentido de corrente e o valor de tensão no controle de um motor DC.
+A ponte H é utilizada para o controle dos motores e ela faz isso por meio do controle de corrente. E ainda é usada para determinar o sentido de corrente e o valor de tensão no controle de um motor DC.
 
-A ponte H é um conjunto de quatro transistores ligados de formas que quando seja acionado suas entradas polarizem apenas dois transistores como mostrado na figura \ref{figx+1}, dos quatro presentes, e permita que a corrente flua pelo motor movimentando-o.
+A ponte H é um conjunto de quatro transistores, ligados de formas que suas entradas, ao serem acionadas, polarizem apenas dois transistores como mostrado na figura \ref{figx+1}, dos quatro presentes. Permitindo assim, que a corrente flua pelo motor movimentando-o.
+
 
 Os transistores da ponte H funcionam como chaves controladas por tensão. Os transistores utilizados são o IRF 3205, e eles são polarizados quando se cria uma diferença de tensão entre o \textit{Gate} (G) e \textit{Source} (s), conforme pode ser visto na figura \ref{fig:portas_transistor_irf}, VGS maior que a tensão de threshold (VTH).
 
