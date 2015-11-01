@@ -178,7 +178,7 @@ Desta forma, considerando a potência consumida pelos dispositivos eletrônicos 
 
 \begin{figure}[!htb]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.6]{figuras/resultados/esquema_controle}
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/esquema_controle}
 \caption{Esquemático de funcionamento geral da cadeira de rodas automatizada}
 \label{fig:esquema_controle}
 \end{figure}
@@ -193,7 +193,7 @@ Com base no entendimento de como as informações foram entendidas, e na formula
 
 \begin{figure}[!htb]
 \centering
-  \includegraphics[keepaspectratio=true,scale=0.75]{figuras/resultados/arquitetura}
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/arquitetura}
 \caption{Arquitetura}
 \label{fig:arquitetura}
 \end{figure}
@@ -232,6 +232,24 @@ Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 par
 	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4.eps}
 	\caption{Circuito elevador te tensão}
 	\label{fig:figx+4}
+\end{figure}
+
+
+Para facilitar e proteger o sistema, será construído um distribuidor que vai ser basicamente uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
+
+O distribuidor vai ser responsável por alimentar os motores elétricos e os módulos de controle dos movimentos da cadeira de rodas. Ele contará com um bloco de entrada que estará conectado diretamente nos terminais da bateria, onde a partir desse bloco de entrada teremos duas saídas de distribuição, uma com 12 volts e outra com 5 volts.
+
+A saída de distribuição de 12 volts será realizada através de cabos que serão conectados nos terminais dos motores. Essa saída será dupla, ou seja, cada motor terá sua alimentação individual, sendo que para proteção dos dois motores, utilizaremos fuzíveis inseridos antes dos plugs dos moteres, para que caso ocorra alguma variação de corrente, os motores não sejam danificados.
+
+A saída de distribuição de 5 volts será proveniente da utilização de um regulador de tensão 7805. Serão utilizados diodos zeners(falar qual) que garantirão que a tensão se mantenha estável nos 5 volts. Essa saída será responsável pela alimentação das duas pontes H, da Raspberry Pi, dos 3 msp430 e do joystick.
+
+Esse distribuidor de tensão pode ser visto no diagrama apresentado na figura \ref{fig:diagrama_controle}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/fluxograma}
+	\caption{Diagrama do sistema de controle}
+	\label{fig:diagrama_controle}
 \end{figure}
 
 \subsection{Funcionamento e Estratégia de Uso}
