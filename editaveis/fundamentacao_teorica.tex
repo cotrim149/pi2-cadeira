@@ -8,6 +8,8 @@ Além disso, outro problema que as cadeiras de rodas motorizadas possuem é que 
 
 \section{Power Train}
 
+Para que a cadeira de rodas se movimente sem o uso de força humana, é preciso de um sistema elétrico capaz de substituir essa ação. Tal sistema deve ser composto por motores que darão o torque e a força necessária para as rodas da cadeira, e por uma fonte de energia que alimente estes motores, garantindo autonomia eficiente ao sistema, como uma bateria por exemplo.
+
 \subsection{Motor}
 
 Motor é uma máquina que tem a capacidade de transformar energia elétrica em energia mecânica (MEGGIOLARO; GIRSAS, 2011), existem dois tipos de motores: motor de corrente alternada (CA) e os de corrente contínua (CC).
@@ -47,19 +49,20 @@ O redutor tem a finalidade de modificar algumas características de ventiladores
 
 Para definir um redutor é necessário que haja a presença de um conjunto de eixos com engrenagens cilíndricas dentadas ou, até mesmo, conectado com um parafuso. Tudo isso para que haja uma redução do torque do eixo do dispositivo gerador de energia, quando comparado com o torque do eixo do dispositivo a ser acoplado, por exemplo uma roda. O uso de redutores é bem visto na fabricação de relógios, esteiras industriais e bombas.
 
-Para que possa obter uma redução de torque é necessário a presença de engrenagem entre os eixos dos dispositivos. Por meio das engrenagens a velocidade de rotação da transmissão é reduzida, e o contato entre engrenagens de menor ou maior número de dentes (variação no diâmetro) possibilita a redução de torque desejada.
+Para que possa obter uma redução de torque é necessário a presença de engrenagem entre os eixos dos dispositivos. Por meio das engrenagens a velocidade de rotação da transmissão é reduzida, e o contato entre engrenagens de menor ou maior número de dentes (variação no diâmetro) possibilita a redução de torque desejada. A figura \ref{fig:motor} abaixo representa um motor acoplado a um redutor.
+
 
 Existem dois tipos principais de redutores: Engrenagens cilíndricas de dentes retos e engrenagens cilíndricas de dentes helicoidais.
 
 As primeiras distinguem-se por transmissão de força sem deslizamento nos dentes, relação de multiplicação constante e independência de carregamento. Promove segurança de funcionamento, durabilidade, resistência a sobrecargas, fácil manutenção e dimensões reduzidas em relação a potência.
 
-As outras, as engrenagens cilíndricas de dentes helicoidais, apresentam a vantagem de terem um funcionamento muito suave. Elas trabalham com relevante escorregamento de um dente sobre outro. Sua utilização permite transmissões silenciosas, sem vibrações e choques, pois há sempre 2 ou 3 dentes em contato. A altura do dente poderá ser, eventualmente reduzida, sem prejudicar a transmissão. O número de dentes mínimo poderá ser inferior ao das engrenagens cilíndricas de dentes retos, e a relação de transmissão poderá ser maior. Sendo a superfície de contato muito reduzida, teremos grandes pressões por isso as engrenagens helicoidais são muito mais usadas.
+As engrenagens cilíndricas de dentes helicoidais apresentam a vantagem de terem um funcionamento muito suave. Elas trabalham com relevante escorregamento de um dente sobre outro. Sua utilização permite transmissões silenciosas, sem vibrações e choques. O número de dentes mínimo poderá ser inferior ao das engrenagens cilíndricas de dentes retos, e a relação de transmissão poderá ser maior. Sendo a superfície de contato muito reduzida, se tem grandes pressões, por isso as engrenagens helicoidais são mais usadas.
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/motor}
 	\caption{Motor de corrente continua acoplado a um redutor}
-	\label{motor}
+	\label{fig:motor}
 \end{figure}
 
 \subsection{Bateria}
@@ -108,12 +111,12 @@ Desde a primeira patente de cadeira de rodas elétrica em 1937 (EVEREST; JENNING
 \begin{table}[!ht]
 	\centering
 	\label{tab:formas_controle}
-	\begin{tabular}{|l|l|l|l|}
+	\begin{tabular}{p{2.5cm}|p{3cm}|p{3cm}|p{5cm}}
 		\hline
 		Interface                     & Comunicação                              & Monitoramento                                & Características                                                                                                                                                                        \\ \hline
 		Joystick tradicional          & Sem ou com fio, dependendo,da aplicação. & Pouco, geralmente apenas o nível da bateria. & Contém mecanismo para encaixe na cadeira de rodas e ainda botões de emergência, os dados são enviados via bluetooth ou fio para o microcontrolador, onde é feito todo o processamento. \\ \hline
 		Joystick adaptado para, o queixo & Com fio.                                 & Nenhum.                                      & Joystick fixo é adaptado para o controle com o queixo, utilizado por tetraplégicos.                                                                                                    \\ \hline
-		Guidãoe,motordianteiro        & Mecânica.                                & Pouco,ou,nenhum.                             & Apenas para motores dianteiros.                                                                                                                                                        \\ \hline
+		Guidão e motor dianteiro        & Mecânica.                                & Pouco, ou, nenhum.                             & Apenas para motores dianteiros.                                                                                                                                                        \\ \hline
 	\end{tabular}
 	\caption{Formas de controle}
 \end{table}

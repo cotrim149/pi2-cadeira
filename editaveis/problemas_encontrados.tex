@@ -84,11 +84,22 @@ O ambiente físico utilizado para desenvolvimento do software deste projeto é u
 
     \end{itemize}
 
-\subsection{Simulações da Ponte H}
+\subsection{Ponte H}
  \begin{itemize}
-      \item Problema:Se colocado alto nível nas duas entradas o motor poderia “explodir”.
-
+    \item Problema:Se colocado alto nível nas duas entradas o motor poderia “explodir”.
 	  \item Solução:Colocar uma porta lógica no início para corrigir essa falha, assim quando a ponte H receber nível lógico nas duas entradas o motor não responderá
+
+    \item Problema: As entradas da ponte H não podem ser acionadas ao mesmo tempo, pois caso sejam acionadas haverá um curto circuito no sistema e não haverá diferença de tensão nos terminais do motor.
+    \item Solução: Para o risco de curto circuito, caso as entradas fossem acionadas ao mesmo tempo, desenvolveu-se uma lógica na entrada utilizando portas lógicas do tipo AND e NAND. Isso foi feito para garantir que não haverá acionamento das duas entradas da ponte H ao mesmo tempo.
+
+    \item Problema no desenvolvimento da PCB: Por algumas placas estarem velhas, ao serem esquentadas o esquemático do papel não estava sendo transferido e o Fenolíteo descolou do cobre.
+    \item Solução: Foram compradas placas novas de Fenolíteo e foi feita a mudança de papel coche para papel fotográfico
+
+    \item Dificuldades na simulação: Para fazer os testes da ponte H era necessário um PWM nas entradas do circuito, e na simulação não era possível fazer o sinal de PWM com um microcontrolador. Para testar o circuito completo era necessário utilizar a lógica das portas logicas junto com os CI’s correspondentes. Nas primeiras simulações os componentes corretos para a confecção não estavam sendo encontrados.
+    \item Solucão: A dificuldade de simulação foi superada com a mudança de software de simulação, pois nessa forma foi possível encontrar todos os componentes que eram necessários para simulação, e para gerar o PWM foi estudado formas de gera-lo utilizando circuitos integrados. Dessa forma foi possível testar o funcionamento.
+
+    \item Problema: A porte H é um circuito de potência, e os seus transistores esquentem muito. Como o circuito puxa uma alta corrente, os transistores MOSFET superaquecem, e com isso não se é desejável deixar o circuito em uma temperatura tão elevada. Os transistores MOSFET podem operar em até 175$^{\circ}$C.
+    \item Solução: ara amenizar o problema de superaquecimento dos transistores, foi planejado a utilização de uma placa metálica, com o intuito de dissipar o calor dos transistores e nela acoplar um cooler.
 
     \end{itemize}
 
@@ -124,8 +135,9 @@ O ambiente físico utilizado para desenvolvimento do software deste projeto é u
 \subsection{Acoplamento}
  \begin{itemize}
   \item Problema: O ponto mais importante a se considerar para que o projeto funcione de modo eficaz e robusta é a forma como o sistema se acopla a cadeira, pois o deslocamento sera feito através da rotação das rodas acopladas a mala, ou seja, caso  a conexão não fique firme o deslocamento sera comprometido.
-  \item Solução 1: Primeiramente se pensou em criar um sistema de garras que seriam presas a estrutura tubular da cadeira, o que seria eficaz e simples de ser feito, porem após conseguir cadeiras reais para análise foi constatado que não haveria como acoplar as garras a algumas cadeiras devido a forma como os fabricantes fixam o tecido que mantem o encosto para as costas no lugar. Então foi pensado em utilizar velcros que seriam baratos, fáceis de utilizar e se bem posicionados permitiriam uma boa fixação, m...(line truncated)...
-  \item Solução 2: Em seguida foi pensado em uma forma de acoplamento que não fosse afetada por diferentes tipos de modos de montagem ou disposição de partes da cadeira. Tendo em mãos duas cadeiras de rodas reais e distintas notou se a presença de dois pontos livres para realizar o acoplamento. Com a solução em mente foi decidido criar um protótipo em PVC, devido ao baixo custo, para que fosse possível analisar de fato se o sistema de acoplamento idealizado seria eficaz. Apos construída a estrutura foi const...(line truncated)...
+  \item Solução 1: Primeiramente se pensou em criar um sistema de garras que seriam presas a estrutura tubular da cadeira, o que seria eficaz e simples de ser feito, porem após conseguir cadeiras reais para análise foi constatado que não haveria como acoplar as garras a algumas cadeiras devido a forma como os fabricantes fixam o tecido que mantem o encosto para as costas no lugar. Então foi pensado em utilizar velcros que seriam baratos, fáceis de utilizar e se bem posicionados permitiriam uma boa fixação, mas após testados ficou claro que não seria possível manter a estrutura firmemente fixada, pois o velcro não previne alguns tipos de movimentos que a movimentaçao do sistema geraria.
+
+  \item Solução 2: Em seguida foi pensado em uma forma de acoplamento que não fosse afetada por diferentes tipos de modos de montagem ou disposição de partes da cadeira. Tendo em mãos duas cadeiras de rodas reais e distintas notou se a presença de dois pontos livres para realizar o acoplamento. Com a solução em mente foi decidido criar um protótipo em PVC, devido ao baixo custo, para que fosse possível analisar de fato se o sistema de acoplamento idealizado seria eficaz. Apos construída a estrutura foi constatada, então, a eficácia do sistema, que tem baixo custo, sem perder a resistência, praticidade e adaptabilidade aos parâmetros fixados pela NBR 9050.
 
  \end{itemize}
 
