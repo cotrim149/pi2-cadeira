@@ -187,6 +187,14 @@ Para o kit de automação da cadeira de rodas, será utilizada a ponte H para o 
 
 O sistema vai ser projetado de forma que não seja necessário retirar a bateria para essa ser carregada, o carregador será construído comprado, considerando que o tempo disponível para o desenvolvimento do projeto é relativamente curto.
 
+\subsection{Joystick}
+
+Para as cadeiras de rodas automatizadas essa é uma solução comum de controle para as mesmas, tendo em vista que é relativamente simples de ser acoplado uma vez que se entenda seu funcionamento básico. Para o projeto em questão essa foi uma das alternativas encontradas. No qual o joystick seria acoplado ao braço da cadeira, ou em uma posição que o usuário se sinta mais ergonomicamente confortável. Este acoplamento deve ser simples para favorecer a característica de portabilidade do projeto como um todo.
+
+Nesta iteração foram feitos alguns testes para utilização do joystick, porém ainda não voltado para uso do usuário.
+
+Os testes realizados foram feito como testes de utilização do conjunto motores-ponte H-Raspberry Pi-MSPs.
+
 \subsection{Arquitetura}
 
 Com base no entendimento de como as informações foram entendidas, e na formulação dos diagramas de ideias, foi formulada uma arquitetura inicial para o software de controle do produto.
@@ -326,16 +334,8 @@ Virar para esquerda (próprio eixo)          & (100, -)                         
 \label{tab:tabela-pots2}
 \end{table}
 
-O Distribuidor vai ser basicamente uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas. A placa terá um circuito de proteção, para evitar problemas de sobretensão e curto, saídas para a ponte H, tanto para alimentar possíveis circuitos e motor e ainda saídas para o regulador.
+Para facilitar e proteger o sistema, será construído um distribuidor que será, basicamente, uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas nos módulos, pois esta já estará pronta no distribuidor. O distribuidor contará ainda como um circuito de proteção para os demais periféricos.
 
 O Regulador terá a funcionalidade de alimentar o controlador com seus periféricos. Essa placa terá um circuito de proteção, para o controlador, contra possíveis problemas do distribuidor, saídas de alimentação para o controlador, para impedir problemas de falta de bateria.
 
 A ponte H será o circuito responsável por fazer o controle de velocidade e direção dos motores. Essa placa terá além dos circuitos necessários para o funcionamento da ponte H, um circuito de proteção para os motores e pinos de entrada do PWM, já que pode haver possíveis problemas de sobretensão a alimentação do motor.
-
-\section{Interface com o usuário}
-
-\subsection{Joystick}
-
-Para as cadeiras de rodas automatizadas essa é uma solução comum de controle para as mesmas, tendo em vista que é relativamente simples de ser acoplado uma vez que se entenda seu funcionamento básico. Para o projeto em questão essa foi uma das alternativas encontradas. No qual o joystick seria acoplado ao braço da cadeira, ou em uma posição que o usuário se sinta mais ergonomicamente confortável. Este acoplamento deve ser simples para favorecer a característica de portabilidade do projeto como um todo.
-
-Caso necessário a conexão do joystick ao sistema de controle pode ser feita por bluetooth, tal característica contribui para o objetivo final do projeto \cite{artigo_joystick_controller}.
