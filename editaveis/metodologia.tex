@@ -1,5 +1,8 @@
 \chapter[Metodologia]{Metodologia}
 
+Nesta seção são apresentadas as metodologias de desenvolvimento do produto, de organização e monitoramento e de integração entre engenharias. 
+
+A metodologia de desenvolvimento do produto mostra como serão desenvolvidas as partes da estrutura, alimentação e controle do sistema, a metodologia de organização e monitoramento detalha como são realizadas as reuniões, papéis dentro da equipe, ferramentas de organização e documentos produzidos, já a parte de integração entre engenharias apresenta a contribuição de cada engenharia no decorrer do projeto e em cada tarefa.
 
 \section{Estrutura}
 
@@ -7,7 +10,7 @@ Modelagem 3D do dispositivo: será construído um modelo 3D da estrutura, seguin
 
 Será construído um modelo utilizando PVC para os testes de acoplamento.
 
-Com o auxilio do torno mecânico disponível no galpão da Faculdade UNB - Campus Gama será torneado um eixo para o acoplamento do conjunto de moto-redução e roda do sistema
+Com o auxílio do torno mecânico disponível no galpão da Faculdade UNB - Campus Gama será torneado um eixo para o acoplamento do conjunto de moto-redução e roda do sistema.
 
 \section{Power Train}
 
@@ -15,23 +18,22 @@ Especificação do conjunto moto-redutor e bateria: serão levantados os requisi
 
 \section{Controle}
 
-  \begin{enumerate}
-    \item Especificação de tecnologia: estudo e escolha da melhor tecnologia voltada para o problema. Envolvendo desde as especificações do ambiente físico até as especificações do ambiente virtual para desenvolvimento do software.
-    \item Estudo, simulação e execução de qual tipo de controlador de potência será usado no motor, para controle de sua corrente.
-    \item Estudo e simulação das soluções encontradas para o joystick, bateria e sensoriamento.
-  \end{enumerate}
-
+\begin{enumerate}
+	\item Especificação de tecnologia: estudo e escolha da melhor tecnologia voltada para o problema. Envolvendo desde as especificações do ambiente físico até as especificações do ambiente virtual para desenvolvimento do software.
+	\item Estudo, simulação e execução de qual tipo de controlador de potência será usado no motor, para controle de sua corrente.
+	\item Estudo e simulação das soluções encontradas para o \textit{joystick}, bateria e sensoriamento.
+\end{enumerate}
 
 \section{Metodologia de organização e monitoramento}
 
-Para a execução do projeto o grupo organizou com base nas metodologias ágeis ''Extreme Programming'' (XP) e Scrum, comuns a engenharia de software, porém, estas metodologias foram adaptadas conforme a necessidade e o contexto do projeto que este documento descreve. Um exemplo destas adaptações é a ausência de um ''Product Owner', para esta representação todo o grupo a exercerá através de reuniões para tomadas de decisão.
+Para a execução do projeto o grupo organizou com base nas metodologias ágeis ''Extreme Programming'' (XP) e Scrum, comuns a engenharia de software, porém, estas metodologias foram adaptadas conforme a necessidade e o contexto do projeto que este documento descreve. Um exemplo destas adaptações é a ausência de um ''Product Owner'', para esta representação todo o grupo a exercerá através de reuniões para tomadas de decisão.
 
 O Scrum e o XP são metodologias ágeis que nos baseamos para o planejamento do processo produtivo. No inicio do projeto foi definido o escopo, product backlog, de uma forma mais macro, resultando assim na nossa EAP, que pode ser observada na figura \ref{fig:eap}.
 
 \begin{figure}[!htb]
 \centering
   \includegraphics[keepaspectratio=true,scale=0.65]{figuras/metodologia/EAP}
-\caption{EAP}
+\caption{Estrutura Analítica do Projeto}
 \label{fig:eap}
 \end{figure}
 
@@ -45,12 +47,12 @@ Os prazos e datas nos quais foram baseados as datas de entrega, builds, releases
 Para o acompanhamento do projeto serão utilizadas ferramentas que facilitam os métodos citados anteriormente. Para auxiliar na comunicação será utilizada a ferramenta Slack, para o compartilhamento de Artefatos, pesquisas e documentos será utilizada a ferramenta Google Drive, para reuniões à distancia será utilizada a ferramenta Google Hangouts, para o desenvolvimento  e versionamento dos softwares provenientes será utilizado o GitHub.
 
 Com isso podemos concluir que nossas fases são divididas em Sprints, e as atividades são definidas no planejamento inicial de cada Sprint, bem como os responsáveis. As entradas são as atividades planejadas e as saídas são os relatórios e o produto incrementado.
+
 \section{Integração entre Engenharias}
 
 Considerando a diversidade de conhecimentos das várias engenharias que estão a contribuir para o trabalho, o grupo tem como objetivo  compartilhar o máximo de informação possível, com a finalidade de integração entre os componentes. Com base nesta integração, então será alcançando um trabalho final mais completo e acabado. Envolvendo os membros em atividades que não são apenas a da área de conforto.
 
 Com isso em mente e munidos de uma metodologia de organização de ciclo de vida cíclico e dinâmico, as tarefas são divididas entre os pairings formados pelos integrantes de diferentes engenharias sempre que possível. Como exemplo, temos a tabela \ref{tab:integracao}, que mostra nosso esquemático de divisão de responsáveis nas tarefas dentro das Sprints, esclarecendo a metodologia implementada
-
 
 \begin{table}[!ht]
 \centering
@@ -75,6 +77,7 @@ Sprint 1 & Estrutura & Automotiva/Energia \\ \hline
 
 Embora a intenção principal seja integrar os conhecimentos da melhor forma possível, temos ciência da necessidade de se focar engenharias especificas em determinadas áreas de atuação. Portanto, definimos de uma forma macro as principais áreas de atuação especifica de cada engenharia.
 
-Neste exemplo do nosso primeiro momento, a maior contribuição das Engenharias de Software e Eletrônica será, em conjunto, no controle da cadeira, desde o controle da direção, que pretendesse aplicar tanto por Joystick quanto por aplicativo para celular, quanto no controle dos motores e bateria necessária. A Engenharia de Energia ficará responsável, em primeiro momento, pelo dimensionamento da bateria e montagem do motor, juntamente com a Engenharia Automotiva que trabalhará também na estrutura do produto produzido.
+Neste exemplo do nosso primeiro momento, a maior contribuição das Engenharias de Software e Eletrônica será, em conjunto, no controle da cadeira, desde o controle da direção, que pretendesse aplicar tanto por \textit{joystick} quanto por aplicativo para celular, quanto no controle dos motores e bateria necessária. A Engenharia de Energia ficará responsável, em primeiro momento, pelo dimensionamento da bateria e montagem do motor, juntamente com a Engenharia Automotiva que trabalhará também na estrutura do produto produzido.
 
-Contudo, todos os membros do projeto, em algum momento, trabalharão em duplas de pesquisa ou implementação em partes fora de sua zona de conforto, visando uma maior integração entre as engenharias e um maior entendimento de todos em cada parte do projeto
+Contudo, todos os membros do projeto, em algum momento, trabalharão em duplas de pesquisa ou implementação em partes fora de sua zona de conforto, visando uma maior integração entre as engenharias e um maior entendimento de todos em cada parte do projeto.
+
