@@ -1,22 +1,41 @@
-\chapter{Fundamentação Teórica}\label{cap:fundamentacao_teorica}
+\chapter{Fundamentação Teórica}
+\label{cap:fundamentacao_teorica}
 
+As cadeiras de rodas motorizadas proporcionam conforto, segurança, rapidez e prevenção de lesões nos membros superiores devido ao uso repetitivo em cadeiras de rodas manuais. Porém, uma cadeira de rodas motorizada representa um alto custo: em uma análise do impacto orçamentário realizada pelo Departamento de Economia da Saúde, Investimento e Desenvolvimento - Ministério da Saúde-DESID/SE/MS, o preço sugerido para uma cadeira de rodas motorizada é de R\$ 4.999,00, além do custo de manutenção \cite{relatorio_sus}.
 
-As cadeiras de rodas motorizadas proporcionam conforto, segurança, rapidez e prevenção de lesões nos membros superiores devido ao uso repetitivo em cadeiras de rodas manuais. Porém, uma cadeira de rodas motorizada representa um alto custo: em uma análise do impacto orçamentário realizada pelo Departamento de Economia da Saúde, Investimento e Desenvolvimento- Ministério da Saúde-DESID/SE/MS, o preço sugerido para uma cadeira de rodas motorizada é de R\$ 4.999,00, além do custo de manutenção (CONITEC, 8 de maio de 2013).
+Além disso, cadeiras de rodas motorizadas, em caso de necessidade, não podem ser usadas como cadeiras de rodas manuais, pois possuem rodas pequenas para aproveitar melhor a potência dos motores e sistema de transmissão. Outro detalhe importante é que cadeiras de rodas motorizadas são geralmente pesadas e não possuem as facilidades de transportes das cadeiras manuais.
 
-Além disso, outro problema que as cadeiras de rodas motorizadas possuem é que em caso de necessidade, não podem ser usadas como cadeiras de rodas manuais, pois possuem rodas pequenas para aproveitar melhor a potência dos motores e sistema de transmissão. Outro detalhe importante é que cadeiras de rodas motorizadas são geralmente pesadas, e não possuem as facilidades de transportes das cadeiras manuais.
+Neste capítulo é apresentada toda a fundamentação teórica utilizada para a criação do produto desenvolvido. Dividido em seções, o capítulo aborda os princípios do \textit{Power Train} (Alimentação e Motores) e \textit{Controle Eletrônico} utilizados.
 
+Na seção \textit{Power Train} são apresentados conceitos relacionados a motores e baterias, já na seção \textit{Controle} são apresentados controladores analógicos de motores (ponte H), interface de controle do usuário, microcontroladores, arquitetura, linguagens de programação, testes de software e tecnologias.
+
+\begin{comment}
+Quando a parte de estrutura estiver na fundamentação teórica, trocar os dois últimos parágrafos dessa introdução por:
+
+-----------------------------
+Neste capítulo é apresentada toda a fundamentação teórica utilizada para a criação do produto desenvolvido. Dividido em seções, o capítulo aborda os seguintes temas: 
+
+\begin{itemize}
+	\item Power Train (Alimentação e Motores)
+	\item Estrutura Mecânica
+	\item Controle Eletrônico
+\end{itemize}
+
+Na seção \textit{Power Train} são apresentados conceitos relacionados a motores e baterias. Em \textit{Estrutura Mecânica} são apresentadas as ferramentas computacionais utilizadas, conceitos a cerca de materiais e cálculos estruturais. Na seção \textit{Controle} são apresentados controladores analógicos de motores (ponte H), interface de controle do usuário, microcontroladores, arquitetura, linguagens de programação, testes de software e tecnologias.
+-----------------------------
+\end{comment}
 
 \section{Power Train}
 
-Para que a cadeira de rodas se movimente sem o uso de força humana, é preciso de um sistema elétrico capaz de substituir essa ação. Tal sistema deve ser composto por motores que darão o torque e a força necessária para as rodas da cadeira, e por uma fonte de energia que alimente estes motores, garantindo autonomia eficiente ao sistema, como uma bateria por exemplo.
+Para que a cadeira de rodas se movimente sem o uso de força humana, é preciso de um sistema elétrico capaz de substituir essa ação. Tal sistema deve ser composto por motores que darão o torque e a força necessária para as rodas da cadeira, e por uma fonte de energia que alimente estes motores, garantindo autonomia eficiente ao sistema, uma bateria, por exemplo.
 
 \subsection{Motor}
 
-Motor é uma máquina que tem a capacidade de transformar energia elétrica em energia mecânica (MEGGIOLARO; GIRSAS, 2011), existem dois tipos de motores: motor de corrente alternada (CA) e os de corrente contínua (CC).
+Motor é uma máquina que tem a capacidade de transformar energia elétrica em energia mecânica \cite{projeto_cadeira_rodas_inteligente}, existem dois tipos de motores: motor de corrente alternada (CA) e os de corrente contínua (CC).
 
-As cadeiras de rodas automáticas utilizam de baterias como fonte de alimentação para os motores, portanto se deve utilizar motores de corrente contínua. Este tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração (HAMANAKA; DIAS, 2002).
+As cadeiras de rodas automáticas utilizam-se de baterias como fonte de alimentação para os motores, portanto deve-se utilizar motores de corrente contínua. Este tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
 
-É necessário que as relações de velocidades entre os motores tenham um sistema de controle rígido de forma que o usuário consiga controlar a cadeira adequadamente. Os motores devem responder aos comandos sem que haja erros por uma questão de segurança. Uma metodologia para o dimensionamento de sistemas de tração para veículos elétricos é baseada na dinâmica veicular e considerando três condições de operação:
+É necessário que as relações de velocidades entre os motores tenham um sistema de controle rígido de forma que o usuário consiga controlar a cadeira adequadamente. Os motores devem responder aos comandos sem que hajam erros por uma questão de segurança. Uma metodologia para o dimensionamento de sistemas de tração para veículos elétricos é baseada na dinâmica veicular e considerando três condições de operação:
 
 \begin{itemize}
 	\item Aceleração inicial
@@ -27,19 +46,19 @@ As cadeiras de rodas automáticas utilizam de baterias como fonte de alimentaç�
 Um sistema que supre essas três condições funcionará adequadamente nos demais regimes de operação. Os parâmetros que definem essas restrições são:
 
 \begin{itemize}
-	\item Velocidade nominal do veiculo
-    \item Tempo especificado para o veiculo atingir a velocidade nominal
+	\item Velocidade nominal do veículo
+    \item Tempo especificado para o veículo atingir a velocidade nominal
     \item Velocidade máxima
-    \item Massa do veiculo
+    \item Massa do veículo
 \end{itemize}
 
 \subsubsection{Motor de Corrente Contínua}
 
-O objetivo é atender as restrições de projeto com o menor requerimento de potencia, ou seja, obter um perfil de torque-velocidade ótimo para o sistema de tração elétrica. Os motores de corrente continua utilizam das forças eletromagnéticas para transformar energia elétrica em mecânica, eles funcionam com uma fonte retificada, ou seja, que possuem polaridade fixa.
+O objetivo é atender as restrições de projeto com o menor requerimento de potência, ou seja, obter um perfil de torque-velocidade ótimo para o sistema de tração elétrica. Os motores de corrente contínua utilizam-se das forças eletromagnéticas para transformar energia elétrica em mecânica, eles funcionam com uma fonte retificada, ou seja, que possuem polaridade fixa.
 
 Este tipo de motor possui dois terminais, um positivo e outro negativo que de acordo com a polaridade e o sentido da corrente controlam a repulsão dos eletroímãs e consequentemente o sentido da rotação do motor. Ele é capaz de reverter o sentido da corrente sem que haja reversão de torque.
 
-Uma das maiores vantagens dos motores de corrente continua é o controle da velocidade que é feito por drenagem de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção, além disso, são propícios a problemas com faíscas internas o que impede o seu uso em ambientes perigosos.
+Uma das maiores vantagens dos motores de corrente contínua é o controle da velocidade que é feito por drenagem de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção, além disso, são propícios a problemas com faíscas internas o que impede o seu uso em ambientes perigosos.
 
 Outro problema encontrado é a alta velocidade angular. Motores de corrente contínua encontrados no mercado possuem velocidades angulares nominais entre 2500 e 2800 rpm, o que lhes confere um baixo torque. Cadeiras de rodas precisam de motores que transmitam um alto torque para as rodas para poder movimentá-la, assim, se faz necessário um sistema redutor acoplado ao eixo do motor para reduzir a velocidade angular e aumentar o torque.
 
@@ -49,7 +68,7 @@ O redutor tem a finalidade de modificar algumas características de ventiladores
 
 Para definir um redutor é necessário que haja a presença de um conjunto de eixos com engrenagens cilíndricas dentadas ou, até mesmo, conectado com um parafuso. Tudo isso para que haja uma redução do torque do eixo do dispositivo gerador de energia, quando comparado com o torque do eixo do dispositivo a ser acoplado, por exemplo uma roda. O uso de redutores é bem visto na fabricação de relógios, esteiras industriais e bombas.
 
-Para que possa obter uma redução de torque é necessário a presença de engrenagem entre os eixos dos dispositivos. Por meio das engrenagens a velocidade de rotação da transmissão é reduzida, e o contato entre engrenagens de menor ou maior número de dentes (variação no diâmetro) possibilita a redução de torque desejada. A figura \ref{fig:motor} abaixo representa um motor acoplado a um redutor.
+Para que possa obter uma redução de torque é necessário a presença de engrenagem entre os eixos dos dispositivos. Por meio das engrenagens a velocidade de rotação da transmissão é reduzida, e o contato entre engrenagens de menor ou maior número de dentes (variação do diâmetro) possibilita a redução de torque desejada. A figura \ref{fig:motor} abaixo representa um motor acoplado a um redutor.
 
 
 Existem dois tipos principais de redutores: Engrenagens cilíndricas de dentes retos e engrenagens cilíndricas de dentes helicoidais.
@@ -61,21 +80,21 @@ As engrenagens cilíndricas de dentes helicoidais apresentam a vantagem de terem
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/motor}
-	\caption{Motor de corrente continua acoplado a um redutor}
+	\caption{Motor de corrente contínua acoplado a um redutor}
 	\label{fig:motor}
 \end{figure}
 
 \subsection{Bateria}
 
-Baterias são dispositivos que transformam energia química em elétrica e viceversa. Por ser um processo reversível, as baterias podem ser carregadas e descarregadas várias vezes. Hoje no mercado existem vários tipos de baterias, com diferentes condições nominais.
+Baterias são dispositivos que transformam energia química em elétrica e vice-versa. Por ser um processo reversível, as baterias podem ser carregadas e descarregadas várias vezes. Hoje no mercado existem vários tipos de baterias, com diferentes condições nominais.
 
 A bateria adequada ao projeto seria uma bateria de chumbo ácida, muito utilizada em veículos devido a seu fácil acesso e baixo custo. Atualmente ela já é utilizada em cadeiras de rodas elétricas. Este é o tipo menos eficiente de bateria, com a pior relação peso/energia, em compensação, é a tecnologia mais barata.
 
-Inventadas em 1859 pelo físico francês Gaston Planté, é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso, é a bateria que mais se adéqua ao projeto.
+Inventadas em 1859 pelo físico francês Gaston Planté, é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (\textit{no-breaks}) e cadeiras de rodas elétricas. Desprezando-se o problema do peso, é a bateria que mais se adéqua ao projeto.
 
 Um grande problema foi solucionado na década de 70, onde pesquisadores conseguiram desenvolver uma bateria de chumbo-ácido livre de manutenção, podendo operar em qualquer posição. Nesta bateria, o invólucro foi selado e o eletrólito líquido foi transformado em separadores umedecidos.
 
-As baterias SLA (bateria selada chumbo-ácido), também conhecida como Gelcell, tem uma faixa típica de capacidade que vai de 0,2 Ah até 30 Ah. Esse tipo de bateria está livre do famoso efeito memória, e deixar a bateria em carga flutuante por um longo período não causa nenhum dano.
+As baterias SLA (bateria selada chumbo-ácido), também conhecida como \textit{Gelcell}, tem uma faixa típica de capacidade que vai de 0,2 Ah até 30 Ah. Esse tipo de bateria está livre do famoso efeito memória, e deixar a bateria em carga flutuante por um longo período não causa nenhum dano.
 
 A bateria de chumbo-ácido tem a melhor retenção de carga entre todas as baterias recarregáveis. As baterias de SLA descarregam, em média, aproximadamente 40\% da sua energia armazenada em 1 ano, já uma de NiCd se auto descarrega na mesma quantidade em 3 meses.
 
@@ -84,7 +103,7 @@ As baterias SLA devem sempre ser armazenadas carregadas. Deixar a bateria descar
 Vantagens:
 
 \begin{itemize}
-	\item A mais barata em termos de custo por Watt horas;
+	\item A mais barata em termos de custo por Watt hora;
 	\item Segura e durável quando utilizada corretamente;
 	\item Auto descarga está entre as mais baixas entre as baterias com sistema de recarga;
 	\item Não exige muita manutenção e não tem o efeito memória.
@@ -100,54 +119,52 @@ Limitações:
 	\item Imprópria para dispositivos de mão que exigem tamanho compacto.
 \end{itemize}
 
-\subsubsection{Carregando Baterias}
+\subsubsection{Carregando baterias}
 
-O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. Com correntes de carga maiores, e métodos de carga multi-estágios, o tempo de carga pode ser reduzido para 10 horas ou menos. Durante a carga em corrente constante, a bateria carrega 70\% em aproximadamente 5 horas; os 30\% restantes são completados por uma lenta carga de pico. A corrente de pico dura outras 5 horas e é essencial para o bem estar da bateria.
+O tempo de carga de uma bateria de Chumbo-Ácido (selada) é de 12 a 16 horas. Com correntes de carga maiores, e métodos de carga multi-estágios, o tempo de carga pode ser reduzido para 10 horas ou menos. Durante a carga em corrente constante, a bateria carrega 70\% em aproximadamente 5 horas, os 30\% restantes são completados por uma lenta carga de pico. A corrente de pico dura outras 5 horas e é essencial para o bem estar da bateria.
 
 \section{Controle}
 
-Desde a primeira patente de cadeira de rodas elétrica em 1937 (EVEREST; JENNINGS, 1937), diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação (BARCELOS et al., 2008). Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{tab:formas_controle}.
+Desde a primeira patente de cadeira de rodas elétrica em 1937 \cite{patent_cadeira_rodas_eletrica}, diversos modelos de cadeiras de rodas motorizadas foram desenvolvidos. As mais diversas interfaces humano-computador foram criadas de modo a facilitar a vida do cadeirante, desde cadeiras elétricas com um joystick simples à cadeiras inteligentes controladas por voz ou sem fio via celular, com monitoramento de velocidade, bateria e inclinação \cite{artigo_controle_cadeira_eletrica}. Foram pesquisas várias formas de controle de cadeiras de rodas que podem ser consultados na tabela \ref{tab:formas_controle}.
 
 \begin{table}[!ht]
 	\centering
 	\label{tab:formas_controle}
 	\begin{tabular}{p{2.5cm}|p{3cm}|p{3cm}|p{5cm}}
 		\hline
-		Interface                     & Comunicação                              & Monitoramento                                & Características                                                                                                                                                                        \\ \hline
-		Joystick tradicional          & Sem ou com fio, dependendo,da aplicação. & Pouco, geralmente apenas o nível da bateria. & Contém mecanismo para encaixe na cadeira de rodas e ainda botões de emergência, os dados são enviados via bluetooth ou fio para o microcontrolador, onde é feito todo o processamento. \\ \hline
-		Joystick adaptado para, o queixo & Com fio.                                 & Nenhum.                                      & Joystick fixo é adaptado para o controle com o queixo, utilizado por tetraplégicos.                                                                                                    \\ \hline
-		Guidão e motor dianteiro        & Mecânica.                                & Pouco, ou, nenhum.                             & Apenas para motores dianteiros.                                                                                                                                                        \\ \hline
+		Interface & Comunicação & Monitoramento & Características \\ \hline
+		Joystick tradicional & Sem ou com fio, dependendo,da aplicação. & Pouco, geralmente apenas o nível da bateria. & Contém mecanismo para encaixe na cadeira de rodas e ainda botões de emergência, os dados são enviados via bluetooth ou fio para o microcontrolador, onde é feito todo o processamento. \\ \hline
+		Joystick adaptado para o queixo & Com fio. & Nenhum. & Joystick fixo é adaptado para o controle com o queixo, utilizado por tetraplégicos. \\ \hline
+		Guidão e motor dianteiro & Mecânica. & Pouco ou nenhum. & Apenas para motores dianteiros. \\ \hline
 	\end{tabular}
 	\caption{Formas de controle}
 \end{table}
 
 \subsection{Dispositivos de controle}
 
-O joystick é um periférico de computador pessoal ou um dispositivo geral de controle que consiste em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador (MCGUIRE; JENKINS, 2009). O Joystick, muito utilizado em computadores e jogos eletrônicos, provou sua utilidade em diversas áreas.
+O \textit{joystick} é um periférico de computador pessoal ou um dispositivo geral de controle que consiste em uma vara vertical na qual os pivôs se aproximam de uma extremidade e transmitem seu ângulo em duas ou três dimensões a um computador \cite{livro_creating_games}. O \textit{joystick}, muito utilizado em computadores e jogos eletrônicos, provou sua utilidade em diversas áreas.
 
-Em uma cadeira de roda elétrica o controle que representa a interface com o usuário, normalmente é feito com sistemas de Joystick. Essa é uma solução comum devido sua simplicidade, baixo custo e confiabilidade.
+Em uma cadeira de roda elétrica o controle que representa a interface com o usuário, normalmente é feito com sistemas de \textit{joystick}. Essa é uma solução comum devido sua simplicidade, baixo custo e confiabilidade.
 
-Para o projeto o Joystick será conectado com fio e acoplado ao braço da cadeira, em uma posição que o usuário se sinta mais confortável de acordo com as limitações do dispositivo. Este acoplamento deverá ser simples e confiável.
-
+Para o projeto, o \textit{joystick} será conectado com fio e acoplado ao braço da cadeira, em uma posição que o usuário se sinta mais confortável de acordo com as limitações do dispositivo. Este acoplamento deverá ser simples e confiável.
 
 \subsection{Tecnologias}
 \label{subsec:tecnologias}
 \subsubsection{Raspberry PI}
 
+O Raspberry Pi é um computador do tamanho de um cartão de crédito que faz uso do sistema operacional Linux. Este sistema foi desenvolvido para rodar aplicações de todos os tipos, como internet, vídeo, dentre outras, que geralmente rodam em um computador pessoal comum. Possui entradas USB que permitem a conexão de periféricos como mouse, teclado, câmeras e saídas para TVs como HDMI. Possui apenas memória volátil, sem disco rígido e roda o sistema operacional a partir de um cartão de memória \cite{rasp_foundation}.
 
-O Raspberry Pi é um computador do tamanho de um cartão de crédito que faz uso do sistema operacional Linux. Este sistema foi desenvolvido para rodar aplicações de todos os tipos, como internet, vídeo, dentre outras, que geralmente rodam em um computador pessoal comum. Possui entradas USB que permitem a conexão de periféricos como mouse, teclado, câmeras e saídas para TVs como HDMI. Possui apenas memória volátil, sem disco rígido e roda o sistema operacional a partir de um cartão de memória (RASPEBERRY..., 2015).
-
-O Raspberry Pi tem como principal componente um pequeno circuito integrado que reúne o processador com a arquitetura ARM, a GPU VideoCore IV e a memória RAM que é compativel com o sistema operacional GNU/Linux. As especificações gerais do modelo mais provável a ser utilizado no projeto, o Raspberry Pi Model B, que pode ser visto na figura \ref{rasp}, são:
+O Raspberry Pi tem como principal componente um pequeno circuito integrado que reúne o processador com a arquitetura ARM, a GPU VideoCore IV e a memória RAM que é compativel com o sistema operacional GNU/Linux. As especificações gerais do modelo mais provável a ser utilizado no projeto, o Raspberry Pi modelo B+, que pode ser visto na figura \ref{rasp}, são:
 
 \begin{itemize}
-	\item Processador ARM 11 de 700 MHz;
-	\item GPU VideoCore IV de 250 MHz;
-	\item 256 MB total de RAM;
+	\item Processador ARM11 de 700 MHz;
+	\item GPU Dual Core VideoCore IV;
+	\item Memória 512MB SDRAM;
 	\item Saída de vídeo HDMI e RCA;
 	\item Saída de áudio P2;
 	\item Interface de rede Ethernet;
-	\item 2 portas USB;
-	\item Conector Micro USB para alimentação (5 volts, 700mA).
+	\item 4 portas USB 2.0;
+	\item Conector Micro USB para alimentação.
 \end{itemize}
 
 \begin{figure}[!htb]
@@ -157,45 +174,51 @@ O Raspberry Pi tem como principal componente um pequeno circuito integrado que r
 	\label{rasp}
 \end{figure}
 
-Ainda será utilizado uma tecnologia de conexão remota chamada SSH, que consistem em "um programa utilizado para acessar remotamente máquinas e executar comandos remotamente na máquina acessada".(BSD General Commands Manual, acessado em 22 de Outubro de 2015).
+Ainda será utilizada uma tecnologia de conexão remota chamada SSH, que consistem em "um programa utilizado para acessar remotamente máquinas e executar comandos remotamente na máquina acessada" (BSD General Commands Manual, acessado em 22 de Outubro de 2015).
 
 \subsubsection{Python}
 
-Uma das linguagens a ser adotada será Python devido a facilidade de existir bibliotecas específicas que controlam o GPIO (General Purpose Input/Output) do Raspberry Pi. Essa linguagem é uma linguagem de programação de alto nivel, interpretada, orientada a objetos, de tipagem dinamica. Tem uma sintax consisa e clara, juntamente com uma biblioteca com recursos poderosos. Os módulos e frameworks ainda não foram decididos.
+Uma das linguagens a ser adotada será Python devido a facilidade de existir bibliotecas específicas que controlam o GPIO (\textit{General Purpose Input/Output}) do Raspberry Pi. Essa linguagem é uma linguagem de programação de alto nivel, interpretada, orientada à objetos, de tipagem dinâmica. Tem uma sintaxe consisa e clara, juntamente com uma biblioteca com recursos poderosos. Os módulos e \textit{frameworks} ainda não foram decididos.
 
 \subsubsection{Ambiente de desenvolvimento}
 
 O ambiente utilizado para desenvolver o software relativo ao projeto tem como linguagem de desenvolvimento Python 3.4 e ambiente para testes.
 
-Os testes unitários são utilizados de forma a testar a menor unidade do software, de tal forma a suportar a automatização dos mesmos, de forma independente entre os testes \cite{unittest}. O framework a ser utilizado será o "unittest", suportado e provido pelo próprio Python.
+Os testes unitários são utilizados de forma a testar a menor unidade do software, de tal forma a suportar a automatização dos mesmos, de forma independente entre os testes \cite{unittest}. O \textit{framework} a ser utilizado será o "unittest", suportado e provido pelo próprio Python.
 
-Ainda será utilizado o "Mock", que é uma biblioteca de teste que faz parte do framework "unittest". É utilizada para "fingir" que algo existe enquanto não pode ser implementado \cite{unittest_mock}.
+Ainda será utilizado o \textit{Mock}, uma biblioteca de teste que faz parte do \textit{framework} "unittest". É utilizada para simular o comportamento de um componente enquanto este não for implementado \cite{unittest_mock}.
 
-Contaremos ainda com a cobertura de código, que é uma métrica quantitativa de qualidade utilizada para aferir a quantidade percentual de teste do software. Mostrando assim a efetividade dos testes realizados, artifício esse que se torna indispensável quando utiliza-se testes unitários, pois proporciona um retorno da medida da eficácia.
+Será realizada ainda a cobertura de código, uma métrica quantitativa de qualidade utilizada para aferir a quantidade percentual de teste do software, mostrando assim a efetividade dos testes realizados, artifício esse que se torna indispensável quando utiliza-se testes unitários, pois proporciona um retorno da medida da eficácia.
 
 \subsubsection{Arquitetura}
 
-'' É um conjunto de elementos arquiteturais (de dados, de processamento, de conexão) que possuem alguma organização. Os elementos e sua organização são definidos por decisões tomadas para satisfazer objetivos e restrições. '' \cite{arquitetura_definition}.
+"É um conjunto de elementos arquiteturais (de dados, de processamento, de conexão) que possuem alguma organização. Os elementos e sua organização são definidos por decisões tomadas para satisfazer objetivos e restrições" \cite{arquitetura_definition}.
 
 \subsubsection{Controle do motor}
 
-Geralmente motores precisam de corrente relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente continua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves, transistores e o circuito de ponte H.
+Geralmente motores precisam de corrente relativamente altas para controlar o seu funcionamento, assim é necessário que o sistema seja capaz de drenar corrente suficiente para os dispositivos. Considerando a característica dos motores de corrente contínua, sua direção é controlada pelo sentido da corrente, pode-se construir um sistema para o controle do sentido de forma simples utilizando apenas chaves, transistores e o circuito de ponte H.
 
 \textbf{Ponte H}
 
-Para realizar o controle dos motores elétricos de corrente contínua (DC) é necessário determinar o sentido da corrente que passa pelos terminais do motor. É através da ponte H que se realiza o controle. Com a ponte H é possível determinar o sentido que o eixo girará e sua velocidade. O Diagrama da ponte H pode ser visto na figura \ref{figx}.
+Para realizar o controle dos motores elétricos de corrente contínua é necessário determinar o sentido da corrente que passa pelos terminais do motor, é através da ponte H que se realiza o controle. Com a ponte H é possível determinar o sentido que o eixo girará e sua velocidade. O Diagrama da ponte H pode ser visto na figura \ref{fig:ponteh}.
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/figurax.eps}
-	\caption{Ponte H completa + circuitos de acionamento}
-	\label{figx}
+	\caption{Ponte H completa e circuitos de acionamento}
+	\label{fig:ponteh}
 \end{figure}
 
 A ponte H é utilizada para o controle dos motores e ela faz isso por meio do controle de corrente. E ainda é usada para determinar o sentido de corrente e o valor de tensão no controle de um motor DC.
 
-A ponte H é um conjunto de quatro transistores, ligados de formas que suas entradas, ao serem acionadas, polarizem apenas dois transistores como mostrado na figura \ref{figx+1}, dos quatro presentes. Permitindo assim, que a corrente flua pelo motor movimentando-o.
+A ponte H é um conjunto de quatro transistores, ligados de formas que suas entradas, ao serem acionadas, polarizem apenas dois transistores como mostrado na figura \ref{fig:ponteh_fets}, dos quatro presentes. Permitindo assim, que a corrente flua pelo motor movimentando-o.
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=1]{figuras/referencialteorico/figurax_1.eps}
+	\caption{Ponte H com transistores FETs}
+	\label{fig:ponteh_fets}
+\end{figure}
 
 Os transistores da ponte H funcionam como chaves controladas por tensão. Os transistores utilizados são o IRF 3205, e eles são polarizados quando se cria uma diferença de tensão entre o \textit{Gate} (G) e \textit{Source} (s), conforme pode ser visto na figura \ref{fig:portas_transistor_irf}, VGS maior que a tensão de threshold (VTH).
 
@@ -208,30 +231,23 @@ Os transistores da ponte H funcionam como chaves controladas por tensão. Os tra
 
 A tensão de VTH é a menor diferença de tensão que precisa ser alcançado entre G e S, conforme pode ser visto na figura x, para que o transistor seja ativado essa informação encontra-se no datasheet, para o transistor IRF 3205 esse valor vai de 2V até 4V \cite{datasheet_irf_3205}.
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[keepaspectratio=true,scale=1]{figuras/referencialteorico/figurax_1.eps}
-	\caption{Ponte H com transistores FETs}
-	\label{figx+1}
-\end{figure}
-
-
-Com isso utiliza-se desta propriedade e da disposição deles para fazer o controle do sentido de giro do motor. Quando o transistor Q1 e Q4 são polarizados, o terminal direito do motor fica com uma tensão mais positiva que o esquerdo, fazendo a corrente fluir da direita para a esquerda como mostrado na figura \ref{figx+2}.
+Com isso utiliza-se desta propriedade e da disposição deles para fazer o controle do sentido de giro do motor. Quando o transistor Q1 e Q4 são polarizados, o terminal direito do motor fica com uma tensão mais positiva que o esquerdo, fazendo a corrente fluir da direita para a esquerda como mostrado na figura \ref{fig:motor_clockwise}.
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.5]{figuras/referencialteorico/figurax_2.eps}
 	\caption{Motor no sentido horário devido a corrente}
-	\label{figx+2}
+	\label{fig:motor_clockwise}
 \end{figure}
 
-Acionando-se em conjunto os transistores Q3 e Q2, o terminal esquerdo do motor fica com uma tensão maior que o direito, fazendo a corrente fluir da esquerda para a direita. Com o acionamento dos transistores Q1 e Q4, como mostrado na figura \ref{figx+3}, a corrente flui no sentido contrário e os motores giram no sentido contrário.
+Acionando-se em conjunto os transistores Q3 e Q2, o terminal esquerdo do motor fica com uma tensão maior que o direito, fazendo a corrente fluir da esquerda para a direita. Com o acionamento dos transistores Q1 e Q4, como mostrado na figura \ref{fig:motor_counterclockwise}, a corrente flui no sentido contrário e os motores giram no sentido contrário.
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=1]{figuras/referencialteorico/figurax_3.eps}
 	\caption{Motor no sentido anti-horário devido a corrente}
-	\label{figx+3}
+	\label{fig:motor_counterclockwise}
 \end{figure}
 
 Os transistores Q1 e Q2 não podem ser polarizados simultaneamente assim como os transistores Q3 e Q4. Pois o fechamento em conjunto de tais chaves causaria um curto na fonte de alimentação. Por esse motivo foi desenvolvido um modulo de segurança utilizando portas logicas na entrada, impedindo que as duas entradas que controlam os transistores sejam acionadas ao mesmo tempo.
+
