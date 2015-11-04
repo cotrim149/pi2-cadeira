@@ -7,8 +7,7 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 -Dificuldade na definição das atividades da Sprint: No início do projeto foi definido que nossa organização seria baseada na metodologia ágil, sendo assim teríamos tarefas semanais.
     \begin{itemize}
       \item Problema: De uma forma geral, o grupo superestimou as atividades nas sprints, tornando muito difícil a conclusão das atividades propostas para a sprint.
-	  \item Solução: Como solução granularizamos as atividades reduzindo-as para que fosse possível realizá-las no tempo de uma sprint e durante a mudança, que durou cerca de 3 sprints, calibramos os erros e acertos na retrospectiva feita ao final de cada sprint
-.
+	  \item Solução: Como solução granularizamos as atividades reduzindo-as para que fosse possível realizá-las no tempo de uma sprint e durante a mudança, que durou cerca de 3 sprints, calibramos os erros e acertos na retrospectiva feita ao final de cada sprint.
 
     \end{itemize}
 
@@ -28,25 +27,30 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 
 \section{Controle}
 
--LINGUAGEM NOVA: Mesmo com a experiência do grupo dos alunos de software, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
+  \textbf{Linguagem Nova}
+
+    Mesmo com a experiência do grupo dos alunos de software, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
 
 \subsection{Ambiente de Desenvolvimento}
 
--Testes unitários do código-fonte.
+\textbf{Testes unitários do código-fonte}
+
     \begin{itemize}
       \item Problema: Utilização do framework de teste de forma correta.
 	  \item Solução: Olhar a documentação do framework e aprender como utilizar.
 
     \end{itemize}
 
--Mock
+\textbf{Mock}
+
  \begin{itemize}
       \item Problema: Entendimento de como utilizar o "Mock" para fingir que o Hardware existe.
 	  \item Solução: Conversa entre grupos da disciplina de Projeto Integrador 2 e leitura e compreensão da documentação.
 
     \end{itemize}
 
--Cobertura de código em Python
+\textbf{Cobertura de código em Python}
+
  \begin{itemize}
       \item Problema: Como fazer cobertura de código para Python.
 	  \item Solução: Depois de realizar pesquisas o Coverage foi escolhido e instalado inicialmente no repositório local para teste e depois que confirmada a eficiencia foi instalado na Raspberry Pi.
@@ -54,20 +58,26 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 
 \subsection{Ambiente físico}
 O ambiente físico utilizado para desenvolvimento do software deste projeto é um Raspeberry Pi, vide seção \ref{subsec:tecnologias}, referente as configurações do mesmo.
--SSH
+
+ \textbf{SSH}
+
  \begin{itemize}
       \item Problema:  O acesso via SSH é feito através de um cabo de rede, no qual somete uma máquina por vez pode acessar. Isso ocasiona um problema de ociosidade na equipe: enquanto um componente o utiliza, os outros 2 ficam ociosos.
 	  \item Solução: Utilizar o Raspeberry conectado a um roteador Wi-Fi, que permite a todos os integrantes utilizarem do ambiente mutualmente via rede sem fio.
     \end{itemize}
 
--Mudança de Sistema Operacional: Pode ser instalado no Raspberry um sistema operacional que possibilite a facilidade de uso, mediante as necessidades de quem o instala.
+  \textbf{Mudança de Sistema Operacional}
+
+Pode ser instalado no Raspberry um sistema operacional que possibilite a facilidade de uso, mediante as necessidades de quem o instala.
  \begin{itemize}
       \item Problema:  Problema relacionado: Pretende-se utilizar um ambiente para teste que possibilite o desenvolvimento de forma completa mediante o possível para o projeto. Para isto é necessário o uso de testes unitários e do "Mock", descobriu-se que o primeiro SIstema Operacional instalado (Raspdebian Wheezy) não atende para a utilização do "Mock".
 
 	  \item Solução:Um outro Sistema Operacional foi instalado (Raspdebian Jessie), por possuir nativamente um ambiente de testes robusto que possibilite o uso de testes unitários e "Mock".
     \end{itemize}
 
--Quantidade de MSPs a serem utilizados: A utilização de vários MSPs é uma ótima alternativa para separar componentes independentes e utilizar ferramentas como conversor AD, gerador de PWM e temporizador de forma simples, barata e rápida.
+\textbf{Quantidade de MSPs a serem utilizados}
+
+A utilização de vários MSPs é uma ótima alternativa para separar componentes independentes e utilizar ferramentas como conversor AD, gerador de PWM e temporizador de forma simples, barata e rápida.
  \begin{itemize}
       \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
 
@@ -112,7 +122,7 @@ O ambiente físico utilizado para desenvolvimento do software deste projeto é u
 
 \section{Power Train}
 
-\subsection{Escolha de um motor }
+\subsection{Escolha de um motor}
   Fazer a escolha do melhor motor, levando em conta o atendimento os requisitos velocidade-torque.
  \begin{itemize}
   \item Problema: A escolha do melhor método de cálculo de potência necessária para mover o sistema completo (cadeira de rodas mais usuário) foi um problema devida a alta variedade de possibilidades, tornando-se muito indecisa a precisão dos cálculos.
