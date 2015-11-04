@@ -13,7 +13,7 @@ Na seção \textit{Power Train} são apresentados conceitos relacionados a motor
 Quando a parte de estrutura estiver na fundamentação teórica, trocar os dois últimos parágrafos dessa introdução por:
 
 -----------------------------
-Neste capítulo é apresentada toda a fundamentação teórica utilizada para a criação do produto desenvolvido. Dividido em seções, o capítulo aborda os seguintes temas: 
+Neste capítulo é apresentada toda a fundamentação teórica utilizada para a criação do produto desenvolvido. Dividido em seções, o capítulo aborda os seguintes temas:
 
 \begin{itemize}
 	\item Power Train (Alimentação e Motores)
@@ -24,6 +24,24 @@ Neste capítulo é apresentada toda a fundamentação teórica utilizada para a 
 Na seção \textit{Power Train} são apresentados conceitos relacionados a motores e baterias. Em \textit{Estrutura Mecânica} são apresentadas as ferramentas computacionais utilizadas, conceitos a cerca de materiais e cálculos estruturais. Na seção \textit{Controle} são apresentados controladores analógicos de motores (ponte H), interface de controle do usuário, microcontroladores, arquitetura, linguagens de programação, testes de software e tecnologias.
 -----------------------------
 \end{comment}
+
+\section{Estrutura}
+
+	\textbf{Liga Metálica}
+
+	
+	Com o objetivo de confeccionar a estrutura que suportará os motores e baterias, é necessário observar alguns conceitos dos materiais que são relevantes ao projeto, bem como o custo, já que este trabalho se trata de um trabalho universitário.
+
+	De acordo com a matéria publicada por Infomet, a dureza e resistência da liga deve-se ao enriquecimento superficial nos aços que é suportada por um núcleo tenaz. Sabe-se que vários tipos de aço apresentam boas condições para essa finalidade. Para tanto, deve-se levar em consideração que a cementação exige tratamento térmico relativamente complexo, o que faz com que a escolha do aço não pode ser feita baseada somente na aplicação final do material, mas também levando em conta as condições térmicas que o material irá sofrer \cite{ensaio_fadiga}. Para esse trabalho, o material estará exposto a condições de temperatura ambiente, o que não será uma variável preocupante. Dessa forma, os esforços mecânicos serão os que merecem devida atenção.
+
+	Levando em consideração principal o aspecto financeiro verificou-se dois tipos de ligas que podem ser utilizadas nesse trabalho: SAE 1020 e SAE 1040. De acordo com a fornecedora de aço Favorit, o aço SAE 1040 apresenta boa resistência mecânica, boa usinabilidade e baixa soldabilidade. Estes aços não apresentam as mesmas características mecânicas e metalúrgicas apresentadas pelos aços especiais, pois em seus processos de fabricação não são controlados o tamanho de grão austenítico, os níveis de gases dissolvidos, o grau de pureza, etc. As faixas de composições químicas dos aços comerciais são apenas orientadas pela norma NBR 6006 ou pelas normas internacionais tipo SAE, AISI, ou DIN, portanto, não há garantias de que os teores dos elementos químicos principais ou residuais estejam estritamente dentro dos limites especificados por estas normas. Além disto, nos aços comerciais, não são garantidas as faixas de temperabilidade conforme as normas NBR ou SAE \cite{favorit}. Como outra opção, o aço SAE 1020 é um dos aços ao carbono mais utilizado como aço para cementação com excelente relação custo benefício quando comparado com aço para o mesmo propósito \cite{metals}.
+
+	De acordo com um experimento realizado no trabalho de conclusão de curso do Fernando Ickert, através da análise visual das amostras foi possível observar que os materiais que possuem maior ductilidade (aço SAE 1020 e aço SAE 1045), apresentaram escoamento com maior facilidade em relação aos materiais menos dúcteis (aço inoxidável AISI 304). A partir disto, foi possível verificar com maior clareza a propagação da trinca devido à compressão e tração do corpo de prova, ao longo do ensaio até sua ruptura por fadiga, pois as amostras de aço SAE 1020 e aço SAE 1045 apresentaram uma considerável deformação antes de atingir a ruptura, ao contrário do que aconteceu com um material dúctil-frágil no caso do aço inoxidável AISI 304, que não apresentou uma variação visível em sua deformação e acabou rompendo de maneira inesperada \cite{ensaio_fadiga}.
+
+	Conforme a fornecedora de aço Açosport, Características e propriedades mecânicas dos aços SAE 1020, os aços SAE 1020 são aços carbonos de ligas metálicas constituídas basicamente de ferro, carbono, silício e manganês, apresentando também outros elementos inerentes ao processo de fabricação, em percentuais controlados. O aço carbono SAE 1020 é um dos aços mais utilizados, devido a sua baixa temperabilidade, excelente forjabilidade e soldabilidade, porém sua usinagem é relativamente pobre. Esse aço é indicado para parafusos, trefilados duros, chassis, discos de roda, peças em geral para máquinas, tubos soldados e veículos submetidos a esforços pequenos e médios. Este tipo de aço é altamente tenaz, particularmente indicado para fabricação de peças que devam receber tratamento superficial para aumento de dureza, principalmente cementação. O aço SAE 1020 é utilizado ainda para eixos em geral, forjados \cite{acosport}.
+
+	Por conta da facilidade de compra do SAE 1020 e especificações mecânicas descritas acima, o grupo optou por esse material para a realização da estrutura do dispositivo de locomoção automatizada. O material atende todas as especificações mecânicas para aguentar as cargas exigidas.
+
 
 \section{Power Train}
 
@@ -250,4 +268,3 @@ Acionando-se em conjunto os transistores Q3 e Q2, o terminal esquerdo do motor f
 \end{figure}
 
 Os transistores Q1 e Q2 não podem ser polarizados simultaneamente assim como os transistores Q3 e Q4. Pois o fechamento em conjunto de tais chaves causaria um curto na fonte de alimentação. Por esse motivo foi desenvolvido um modulo de segurança utilizando portas logicas na entrada, impedindo que as duas entradas que controlam os transistores sejam acionadas ao mesmo tempo.
-
