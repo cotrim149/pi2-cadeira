@@ -209,7 +209,7 @@ Com base no entendimento de como as informações foram entendidas, e na formula
 Esta arquitetura pode ser entendida na figura \ref{fig:arquitetura}. Esta figura ilustra a ideia de como a arquitetura se comporta. Imaginando o fluxo da informação, conforme o uso do usuário temos:
 
 \begin{enumerate}
-  \item Usuário envia a informação via "Joystick" com os comandos relativos as direções pretendidas. O "Joystick" possui 2 potênciometros que funcionam enviando a informações que variam de 0 a 255.
+  \item Usuário envia a informação via Joystick com os comandos relativos as direções pretendidas. O Joystick possui 2 potênciometros que funcionam enviando a informações que variam de 0 a 255.
   \item Esta informação será captada por um MSP, convertendo esse sinal analógico para digital e enviando-o para o Raspberry Pi.
   \item O envio desta informação é recebido, via interrupção, do MSP no Raspberry  Pi. O envio da informação é feito via UART. (esta interrupção recebe a informação através de uma nova thread)
   \item O Raspberry Pi irá tratar esta informação das direções que o usuário pretende seguir, em intensidade e direção que os motores devem agir. E então a informação é passada para o MSP que controla a Ponte-H. O envio da  informação é feito via UART.
