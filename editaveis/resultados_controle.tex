@@ -174,9 +174,6 @@ Desta forma, considerando a potência consumida pelos dispositivos eletrônicos 
 
 \section{Controle}
 
--------------------------------------------------------------------------------
----- Tópicos para a escrita da parte de controle do capítulo de resultados ----
--------------------------------------------------------------------------------
 Panororama do sistema de controle conforme Arquitetura
   - Desde controle de software a periféricos (Usuário a Motor)
   - Panorama de Arquitetura - Antes e depois
@@ -189,6 +186,49 @@ Joystick
     - Colocar imagem de código
   - Interface de usuário
     - Fotos do controle
+
+
+\subsection{Controlador Central}
+
+  O Raspberry será utilizado como central de comandos para processar as informações vindas do MSP dedicado ao módulo Joystick e enviar o resultado deste processamento para o MSP dedicado aos Motores.
+
+  \textbf{Comunição entre MSP e Raspberry}
+
+  A comunicação, tanto entre o MSP do Josytick e o Raspberry, quanto entre o MSP do Motor e o Raspberry, estão sendo feitas via \textit{threads}.
+
+  A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
+
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figuras/resultados/find_port_method}
+  \caption{Método para encontrar porta dinamicamente}
+  \label{fig:find_port_method}
+  \end{figure}
+
+  Este método permite que tanto o MSP do Joystick quanto o MSP do Motor, sejam conectados sem a previa identificação de qual porta utilizar para comunicação. Porém, há existência de prioridade entre as \textit{threads}, ou seja, enquanto a \textit{threads} do Joystick não se conectar com sucesso a \textit{threads} do Motor não irá se conectar.
+
+  Para que este processo ocorra com sucesso, uma checagem de dados é feita para cada tentativa de conexão. Esta checagem consiste em verificar se a porta, a ser conectada, está enviando dados ou recebendo. Para que a conexão do Josytick ocorra com sucesso, a porta deva estar recebendo dados, para que a conexão do Motor ocorra com sucesso, a porta não deve enviar dados. A implementação desta checagem pode ser verificada na figura \ref{fig:try_receive_data}.
+
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/try_receive_data}
+  \caption{Método para checar se existe recebimento de dados em porta, caso Motor}
+  \label{fig:try_receive_data}
+  \end{figure}
+
+  Esta estratégia auxilia na manutenção do produto, pois caso algum MSP fique inutilizavel, é possivel colocar outro MSP, previamente configurado, no lugar do componente inutilizado.
+
+  Após o Raspberry conseguir encontrar uma porta para se conectar com o MSP do Joystick, então a \textit{thread} do MSP do Motor utiliza do mesmo método para se conectar.
+
+  Ao se ter as duas conexões estabelecidas, então o recebimento de dados são adquiridos do Joystick e enviados para os Motores. Para se fazer este envio de informações de forma correta é necessário fazer a sincronização entre as \textit{threads}.
+
+  \textbf{Sincronização de \textit{Threads}}
+
+  Foi percebido que as \textit{threads} precisam estar sincronizadas para se fazer o envio de informações de forma correta. Pois a \textit{thread} do Joystick recebe as informações, e a \textit{thread} do Motor consome estas informações.
+
+  Este problema de sincronização das \textit{threads} é conhecido como um clássico problema de \textit{threads}: Produtor e Consumidor.
+
+
 
 Controlador central
   - Explicação de código do Rasp
@@ -213,7 +253,6 @@ Ponte-H (copiar e colar do documento pc2)
   - Colocar informações sobre dissipador
   - Estanhamento das placas
   - Dimensionamento da largura das trilhas
-  - Circuito de direcionamento das PWMs através das seletoras
 
 Alimentação do sistema
   - Esquema de alimentação do sistema
