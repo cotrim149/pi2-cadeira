@@ -174,12 +174,42 @@ Desta forma, considerando a potência consumida pelos dispositivos eletrônicos 
 
 \section{Controle}
 
+<<<<<<< HEAD
+=======
+\subsection{Joystick}
+
+O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos) e um microcontrolador.
+
+Toda a forma de interação entre o usuário e a cadeira de rodas é feita a partir do Joystick, a figura \ref{fig:joy_hand_control} dá uma noção das dimensões e ergonomia deste componente. O controle que fica nas mãos do usuário é conectado à cadeira de rodas por meio de um cabo $RJ45$, apenas o \textit{joystick} foi colocado dentro do controle, o microcontrolador dedicado a este módulo foi colocado junto ao controlador central na traseira da cadeira, para uma maior segurança do mesmo.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
+\caption{Imagem do controle da cadeira de rodas}
+\label{fig:joy_hand_control}
+\end{figure}
+
+O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD para os potenciômetros, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
+
+A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
+\caption{Rotina de trabalho do microcontrolador do módulo Joystick}
+\label{fig:joy_fluxogram}
+\end{figure}
+
+\begin{comment}
+-------------------------------------------------------------------------------
+---- Tópicos para a escrita da parte de controle do capítulo de resultados ----
+-------------------------------------------------------------------------------
 Panororama do sistema de controle conforme Arquitetura
   - Desde controle de software a periféricos (Usuário a Motor)
   - Panorama de Arquitetura - Antes e depois
-    - Citar melhoria quanto a desempenho
+    - Citar melhoria quanto ao desempenho
   - Estratégia de comunição entre componentes - Antes e depois
-  - Integração Joystick e motor - Fala sobre estados
+  - Integração Joystick e motor - Falar sobre os estados
 
 Joystick
   - Software e Hardware (periféricos e MSP Joystick)
@@ -253,7 +283,9 @@ Ponte-H (copiar e colar do documento pc2)
   - Colocar informações sobre dissipador
   - Estanhamento das placas
   - Dimensionamento da largura das trilhas
+  - Circuito de direcionamento das PWMs através das seletoras (demultiplexador)
 
 Alimentação do sistema
   - Esquema de alimentação do sistema
   - Circuito regulador de tensão
+\end{comment}
