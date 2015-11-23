@@ -141,7 +141,7 @@ Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corr
 A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
 
 \begin{equation}
-Em = \frac{m*V^2*\epsilon}{2}
+  Em = \frac{m*V^2*\epsilon}{2}
 \end{equation}
 
 Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade em metros por segundo. Aqui estimou-se perdas do motor de pelo menos 20\%, sendo assim, $\epsilon$ é igual a 1,20. Assim, a energia necessária para mover a cadeira é de 694 J, a potência é portanto 694 W.
@@ -174,8 +174,18 @@ Desta forma, considerando a potência consumida pelos dispositivos eletrônicos 
 
 \section{Controle}
 
-<<<<<<< HEAD
-=======
+\begin{comment}
+-------------------------------------------------------------------------------
+---- Tópicos para a escrita da parte de controle do capítulo de resultados ----
+-------------------------------------------------------------------------------
+Panororama do sistema de controle conforme Arquitetura
+  - Desde controle de software a periféricos (Usuário a Motor)
+  - Panorama de Arquitetura - Antes e depois
+    - Citar melhoria quanto ao desempenho
+  - Estratégia de comunição entre componentes - Antes e depois
+  - Integração Joystick e motor - Falar sobre os estados
+\end{comment}
+
 \subsection{Joystick}
 
 O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos) e um microcontrolador.
@@ -201,15 +211,6 @@ A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquiri
 \end{figure}
 
 \begin{comment}
--------------------------------------------------------------------------------
----- Tópicos para a escrita da parte de controle do capítulo de resultados ----
--------------------------------------------------------------------------------
-Panororama do sistema de controle conforme Arquitetura
-  - Desde controle de software a periféricos (Usuário a Motor)
-  - Panorama de Arquitetura - Antes e depois
-    - Citar melhoria quanto ao desempenho
-  - Estratégia de comunição entre componentes - Antes e depois
-  - Integração Joystick e motor - Falar sobre os estados
 
 Joystick
   - Software e Hardware (periféricos e MSP Joystick)
@@ -217,6 +218,7 @@ Joystick
   - Interface de usuário
     - Fotos do controle
 
+\end{comment}
 
 \subsection{Controlador Central}
 
@@ -229,10 +231,10 @@ Joystick
   A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
 
   \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figuras/resultados/find_port_method}
-  \caption{Método para encontrar porta dinamicamente}
-  \label{fig:find_port_method}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/resultados/find_port_method}
+    \caption{Método para encontrar porta dinamicamente}
+    \label{fig:find_port_method}
   \end{figure}
 
   Este método permite que tanto o MSP do Joystick quanto o MSP do Motor, sejam conectados sem a previa identificação de qual porta utilizar para comunicação. Porém, há existência de prioridade entre as \textit{threads}, ou seja, enquanto a \textit{threads} do Joystick não se conectar com sucesso a \textit{threads} do Motor não irá se conectar.
@@ -242,7 +244,7 @@ Joystick
   \begin{figure}[!htb]
   \centering
   \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/try_receive_data}
-  \caption{Método para checar se existe recebimento de dados em porta, caso Motor}
+  \caption{Método para checar se existe recebimento de dados em porta. Caso do Motor.}
   \label{fig:try_receive_data}
   \end{figure}
 
@@ -258,8 +260,32 @@ Joystick
 
   Este problema de sincronização das \textit{threads} é conhecido como um clássico problema de \textit{threads}: Produtor e Consumidor.
 
+  Este problema é caracterizado por 2 processo que compartilharem de um \textit{buffer} comum, no qual o produtor insere a informação no \textit{buffer} e o consumidor retira a informação do \textit{buffer}. Possíveis problemas: Produtor insere produto onde não foi consumido e consumidor remove informação onde já foi removido. Mais detalhes do problema no capítulo \ref{cap:fundamentacao_teorica}.
+
+  Este problema foi solucionado com os seguintes passos:
+  \begin{enumerate}
+    \item Produtor: Produz os itens necessários em \textit{buffer}, no caso os valores referentes aos potenciometros do Joystick. Neste momento a \textit{thread} do Consumidor é parada e uma variável responsável por esta trava é notificada. Isto pode ser visto na figura \ref{fig:joy_lock};
+    \item Consumidor: Consume os itens em \textit{buffer} enviado os mesmos para o MSP dos Motores. Neste momento a \textit{thread} do Produtor é parada e a variável responsável pela trava é consumida. Isto pode ser visto na figura \ref{fig:motor_lock};
+  \end{enumerate}
+
+  A variável de trava é utilizada com o propósito de se fazer a produção e o consumo de forma sincronizada. O processo do Consumidor somente será ativo quando o processo do Produtor setar a variável de trava.
+
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figuras/resultados/joy_lock}
+  \caption{Código utilizado para notificar variável de trava}
+  \label{fig:joy_lock}
+  \end{figure}
+
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figuras/resultados/motor_lock}
+  \caption{Código utilizado para consumir itens e consequentemente a variável de trava}
+  \label{fig:motor_lock}
+  \end{figure}
 
 
+\begin{comment}
 Controlador central
   - Explicação de código do Rasp
     - Explicação arquitetura paralela(produtor/consumidor)
