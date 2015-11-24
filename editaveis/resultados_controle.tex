@@ -272,7 +272,7 @@ Joystick
 
   \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.9\textwidth]{figuras/resultados/joy_lock}
+  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/joy_lock}
   \caption{Código utilizado para notificar variável de trava}
   \label{fig:joy_lock}
   \end{figure}
@@ -285,8 +285,80 @@ Joystick
   \end{figure}
 
 
+\subsection{Integração Motor e Joystick}
+
+Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeamento dos possíveis estados de movimentação. Estes estados foram inicialmente mapeados utilizando os valores do módulo do Joystick. Com base nos estados mapeados, a intensidade e direção dos motores são formulados. Esta integração foi implementada na Raspberry.
+
+  \textbf{Mapeamento dos Estados em Relação ao Joystick}
+
+  Estes estados, vide tabela \ref{tab:tabela-pots}, são formalizados a partir das possibilidades de valores que podem ser capturados do módulo Joystick.
+
+  Os valores do potenciômetro 1 são referenciados para o motor da esquerda e os valores do potenciômetro 2 são referenciados para o motor da direita.
+
+  \begin{table}[!ht]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  ID & Valor Potenciômetro 1  & Valor Potenciômetro 2  & Estado \\ \hline
+  1 & 254 & 255 & Para frente \\ \hline
+  2 & 254 & 1 & Virar para direita (próprio eixo) \\ \hline
+  3 & 254 & 127 & Virar para direita (eixo motor 2) frontal \\ \hline
+  4 & 126 & 127 & Parado \\ \hline
+  5 & 126 & 255 & virar para esquerda (eixo motor 1) frontal \\ \hline
+  6 & 126 & 1 & virar para esquerda (eixo motor 1) traseiro \\ \hline
+  7 & 0 & 1 & Para trás \\ \hline
+  8 & 0 & 255 & Virar para esquerda (próprio eixo) \\ \hline
+  9 & 0 & 127 & virar para direita (eixo motor 2) traseiro \\ \hline
+  \end{tabular}
+  }
+  \caption{Mapeamento dos estados conforme valores do Joystick}
+  \label{tab:tabela-pots}
+  \end{table}
+
+  Para elucidar os estados da tabela \ref{tab:tabela-pots} a figura \ref{fig:estados} foi confeccionada.
+
+  \begin{figure}[!ht]
+    \center
+    \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_1_2_7_8}
+    \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_3_5}
+    \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_6_9}
+    \caption{Imagens lado a lado}
+    \label{fig:estados}
+  \end{figure}
+
+  \textbf{Mapeamento de Intensidade e Direção dos Motores}
+
+    Conforme os estados mapeados na tabela \ref{tab:tabela-pots}, as intensidades e direções de cada motor são definidas na tabela \ref{tab:tabela-pots2}.
+
+    \begin{table}[!ht]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    ID & Estado & Motor 1(Intensidade(\%), Direção) & Motor 2(Intensidade (\%), Direção) \\ \hline
+    1 & Para frente & (100, + ) & (100, + ) \\ \hline
+    2 & Virar para direita (próprio eixo) & (100, +) & (100, -) \\ \hline
+    3 & Virar para direita (eixo motor 2) frontal & (100, +) & (0 , *) \\ \hline
+    4 & Parado & (0, *) & (0, *) \\ \hline
+    5 & Virar para esquerda (eixo motor 1) frontal & (0, *) & (100, +) \\ \hline
+    6 & Virar para esquerda (eixo motor 1) traseiro & (0, *) & (100, -) \\ \hline
+    7 & Para trás & (100, -) & (100, -) \\ \hline
+    8 & Virar para esquerda (próprio eixo) & (100, -) & (100, +) \\ \hline
+    9 & Virar para direita (eixo motor 2) traseiro & (100, -) & (0, *) \\ \hline
+    \end{tabular}
+    }
+    \caption{Intensidade e direção dos motores conforme estado. Asteriscos simbolizam motor sem direção}
+    \label{tab:tabela-pots2}
+    \end{table}
+
+    \textbf{Integração de \textit{joystick}}
+
+    O hardware utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, para fazer o controle da cadeira, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
+
+
 \begin{comment}
-Controlador central
+#Controlador central
   - Explicação de código do Rasp
     - Explicação arquitetura paralela(produtor/consumidor)
 
