@@ -121,7 +121,7 @@ f_r= m*g \frac{(dwb-x)}{dwb}   e  f_{r,rr}= \mu*f_r
 f_c=m*g \frac{x}{dwb}   e  f_{c,rr}= \mu*f_c
 \end{equation}
 \begin{equation}
-f_rr=f_{c,rr}+ f_{r,rr}  
+f_rr=f_{c,rr}+ f_{r,rr}
 \end{equation}
 
 A resistência ao rolamento frr é, por fim, a soma das resistências das rodas dianteiras e traseiras.
@@ -152,7 +152,7 @@ f_c=m*g \frac{x}{dwb}   e  f_{c,rr}= \mu*f_c
 f_{rr}=f_{c,rr}+ f_{r,rr}+ f_{p,rr}
 \end{equation}
 
-As constantes usadas nestes cálculos foram: 
+As constantes usadas nestes cálculos foram:
 
 \begin{itemize}
 \item $\mu$ = 0,03 \cite{rolling_resistance} – constante estimada para o pior piso e pior tipo de material da roda;
@@ -289,7 +289,7 @@ Assim, a estimativa da velocidade máxima que a cadeira deve obter será de apro
 \omega = \frac{V}{r}
 \end{equation}
 
-Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm. 
+Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm.
 
 Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
 
@@ -456,7 +456,7 @@ Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeame
     \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_1_2_7_8}
     \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_3_5}
     \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_6_9}
-    \caption{Imagens lado a lado}
+    \caption{Estados da cadeira}
     \label{fig:estados}
   \end{figure}
 
@@ -487,21 +487,33 @@ Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeame
 
     \textbf{Integração de \textit{joystick}}
 
-    O hardware utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, para fazer o controle da cadeira, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
+    O hardware utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, para fazer o controle da cadeira, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura \ref{fig:joy_m1m2}, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
+
+    \begin{figure}[!ht]
+      \center
+      \includegraphics[width=0.4\textwidth]{figuras/resultados/joy_xy}
+      \caption{Visão de \textit{joystick} com eixos para propósito geral}
+      \label{fig:joy_superior}
+    \end{figure}
+
+    \begin{figure}[!ht]
+      \center
+      \includegraphics[width=0.5\textwidth]{figuras/resultados/joy_m1m2}
+      \caption{Visão de \textit{joystick} com eixos rotacionados}
+      \label{fig:joy_m1m2}
+    \end{figure}
+
 
 
 \begin{comment}
-#Controlador central
-  - Explicação de código do Rasp
-    - Explicação arquitetura paralela(produtor/consumidor)
 
 Motor
   - Software e Hardware (periféricos e MSP Motor)
     - Colocar imagem de código
 
 Integração Motor e Joystick
-  - Mapeamento dos estados em relação ao joystick (255,255->Frente)
-  - Mapeamento dos estados em relação aos motores (intensidade, direção)
+#  - Mapeamento dos estados em relação ao joystick (255,255->Frente)
+#  - Mapeamento dos estados em relação aos motores (intensidade, direção)
   - Integração via software ou via hardware
     - Soft
       Vantagens: Uso de propósito geral
