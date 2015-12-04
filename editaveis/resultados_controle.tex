@@ -110,76 +110,75 @@ O protótipo apresentado na figura \ref{fig:estr_prototipo} foi capaz de mostrar
 \subsection[Resistência a Rolagem]{Resistência a Rolagem}
 Segundo \cite{propulsao_cadeira}, os fatores que determinam a resistência ao rolamento são: os coeficientes de atrito das rodas traseiras e dianteiras, o peso total do sistema (cadeira e usuário), a superfície em que a cadeira está sendo impulsionada e a distribuição de peso entre as rodas traseiras e dianteiras através do centro de massa (Cm).
 
-A figura \ref{fig:diagrama_variaveis} a seguir é um diagrama que ilustra as variáveis que determinam a resistência de rolagem da cadeira de rodas manual. Estas variáveis são: o comprimento da roda (\textit{dwb}), a distância horizontal do eixo das rodas traseiras ao centro de massa (\textit{x}) e a distância horizontal do eixo das rodas dianteiras ao centro de massa (\textit{dwb-x}).
+A figura \ref{fig:diagrama_variaveis} é um diagrama que ilustra as variáveis que determinam a resistência de rolagem da cadeira de rodas manual. Estas variáveis são: o comprimento da roda (\textit{dwb}), a distância horizontal do eixo das rodas traseiras ao centro de massa (\textit{x}) e a distância horizontal do eixo das rodas dianteiras ao centro de massa (\textit{dwb-x}).
 
-As forças presentes no diagrama representam as forças peso das rodas traseiras (\textit{fr}) e das dianteiras (\textit{fc}), que fazem parte das forças de resistência ao rolamento: \textit{fr,rr} das rodas traseiras e \textit{fc,rr} das rodas dianteiras. Nas equações abaixo: $\mu$ é o coeficiente de fricção de rolagem, $m$ é a massa e $g$ é a aceleração da gravidade \cite{propulsao_cadeira}:
+As forças presentes no diagrama representam as forças peso das rodas traseiras (\textit{fr}) e das dianteiras (\textit{fc}), que fazem parte das forças de resistência ao rolamento: \textit{fr,rr} das rodas traseiras e \textit{fc,rr} das rodas dianteiras. Nas equações abaixo: $\mu$ é o coeficiente de fricção de rolagem, $m$ é a massa e $g$ é a aceleração da gravidade \cite{propulsao_cadeira}.
 
 \begin{equation}
-f_r= m*g \frac{(dwb-x)}{dwb}   e  f_{r,rr}= \mu*f_r
+	f_r=m*g\frac{(dwb-x)}{dwb} ; f_{r,rr}=\mu*f_r
 \end{equation}
 \begin{equation}
-f_c=m*g \frac{x}{dwb}   e  f_{c,rr}= \mu*f_c
+	f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
 \end{equation}
 \begin{equation}
+<<<<<<< HEAD
 f_rr=f_{c,rr}+ f_{r,rr}
+=======
+	f_rr=f_{c,rr}+f_{r,rr}
+>>>>>>> 563f30561d9412cd5e74a3d7e1548e9351f11fde
 \end{equation}
 
-A resistência ao rolamento frr é, por fim, a soma das resistências das rodas dianteiras e traseiras.
+A resistência ao rolamento $frr$ é, por fim, a soma das resistências das rodas dianteiras e traseiras.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.9\textwidth]{figuras/resultados/diagrama_variaveis}
-\caption{Diagrama das variáveis que determinam a resistência de rolagem da cadeira de rodas manual. \cite{propulsao_cadeira}.}
-\label{fig:diagrama_variaveis}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width = 0.7\textwidth]{figuras/resultados/diagrama_variaveis}
+	\caption{Diagrama das variáveis que determinam a resistência de rolagem da cadeira de rodas manual. \cite{propulsao_cadeira}.}
+	\label{fig:diagrama_variaveis}
 \end{figure}
 
-Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-se um peso a mais ao sistema, assim como um ponto a mais de contato de distribuição da massa total é adicionado ao sistema. Desta maneira, as forças nas rodas traseiras são aliviadas por serem divididas com as rodas do protótipo. A figura NUMERO abaixo apresenta as distâncias entre os eixos das rodas da cadeira e do protótipo ao centro de massa.
+Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-se um peso a mais ao sistema, assim como um ponto a mais de contato de distribuição da massa total é adicionado ao sistema. Desta maneira, as forças nas rodas traseiras são aliviadas por serem divididas com as rodas do protótipo. A figura \ref{fig:finalmente_essa_imagem} abaixo apresenta as distâncias entre os eixos das rodas da cadeira e do protótipo ao centro de massa.
 
-%Terá uma figura aqui.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width = 0.5\textwidth]{figuras/resultados/finalmente_essa_imagem}
+	\caption{Diagrama das Variáveis para determinação da Resistência de Rolagem com o protótipo acoplado. Autoria própria.}
+	\label{fig:finalmente_essa_imagem}
+\end{figure}
 
-Desta maneira, as equações discutidas anteriormente são modificadas para se ajustarem ao protótipo acoplado, onde s é a distância entre as rodas do protótipo e o centro de massa (Cm) e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo:
+Desta maneira, as equações discutidas anteriormente são modificadas abaixo para se ajustarem ao protótipo acoplado, onde $s$ é a distância entre as rodas do protótipo e o centro de massa, e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo.
 
 \begin{equation}
-f_p = m*g \frac{(dwb-s-x)}{dwb}   e  f_{p,rr}= \mu*f_p
+	f_p=m*g\frac{(dwb-s-x)}{dwb} ; f_{p,rr}=\mu*f_p
 \end{equation}
 \begin{equation}
-f_r = m*g \frac{(dwb-s)}{dwb}   e  f_{r,rr}= \mu*f_r
+	f_r=m*g\frac{(dwb-s)}{dwb} ; f_{r,rr}=\mu*f_r
 \end{equation}
 \begin{equation}
-f_c=m*g \frac{x}{dwb}   e  f_{c,rr}= \mu*f_c
+	f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
 \end{equation}
 \begin{equation}
-f_{rr}=f_{c,rr}+ f_{r,rr}+ f_{p,rr}
+	f_{rr}=f_{c,rr}+f_{r,rr}+f_{p,rr}
 \end{equation}
 
 As constantes usadas nestes cálculos foram:
 
 \begin{itemize}
-\item $\mu$ = 0,03 \cite{rolling_resistance} – constante estimada para o pior piso e pior tipo de material da roda;
-
-\item m = 150 kg (massa máxima);
-
-\item g = 9.81 m/s2;
-
-\item dwb = 72 cm;
-
-\item s = 36 cm;
-
-\item x = 6 cm;
-
+	\item $\mu$ = 0,03. Constante estimada para o pior piso e pior tipo de material da roda \cite{rolling_resistance};
+	\item m = 150 kg (massa máxima);
+	\item g = 9.81 $m/s^2$;
+	\item dwb = 72 cm;
+	\item s = 36 cm;
+	\item x = 6 cm;
 \end{itemize}
 
 Os resultados das forças de resistência ao rolamento são, portanto:
 
 \begin{itemize}
-\item fp,rr = 18.394 N;
-
-\item fr,rr = 22.073 N;
-
-\item fc,rr = 3.6787 N;
-
-\item frr = 44.146 N;
-
+	\item fp,rr = 18.394 N;
+	\item fr,rr = 22.073 N;
+	\item fc,rr = 3.6787 N;
+	\item frr = 44.146 N;
 \end{itemize}
 
 Esta força deve ser vencida pelos motores acoplados ao protótipo de modo a retirar a cadeira da inércia quando todas as rodas da cadeira estão alinhadas para frente perfeitamente. Porém, isto nem sempre acontece.
@@ -532,3 +531,8 @@ Alimentação do sistema
   - Esquema de alimentação do sistema
   - Circuito regulador de tensão
 \end{comment}
+
+\section{Dissipador de calor}
+
+A Jéssica é linda!
+O Duerno é o nosso mascote!
