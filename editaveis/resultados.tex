@@ -107,70 +107,201 @@ O protótipo apresentado na figura \ref{fig:estr_prototipo} foi capaz de mostrar
 
 \section{Power-Train}
 
-\subsection{Moto-redutor}
+\subsection[Resistência a Rolagem]{Resistência a Rolagem}
+Segundo \cite{propulsao_cadeira}, os fatores que determinam a resistência ao rolamento são: os coeficientes de atrito das rodas traseiras e dianteiras, o peso total do sistema (cadeira e usuário), a superfície em que a cadeira está sendo impulsionada e a distribuição de peso entre as rodas traseiras e dianteiras através do centro de massa (Cm).
 
-Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+A figura \ref{fig:diagrama_variaveis} é um diagrama que ilustra as variáveis que determinam a resistência de rolagem da cadeira de rodas manual. Estas variáveis são: o comprimento da roda (\textit{dwb}), a distância horizontal do eixo das rodas traseiras ao centro de massa (\textit{x}) e a distância horizontal do eixo das rodas dianteiras ao centro de massa (\textit{dwb-x}).
 
-Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
+As forças presentes no diagrama representam as forças peso das rodas traseiras (\textit{fr}) e das dianteiras (\textit{fc}), que fazem parte das forças de resistência ao rolamento: \textit{fr,rr} das rodas traseiras e \textit{fc,rr} das rodas dianteiras. Nas equações abaixo: $\mu$ é o coeficiente de fricção de rolagem, $m$ é a massa e $g$ é a aceleração da gravidade \cite{propulsao_cadeira}.
+
+\begin{equation}
+	f_r=m*g\frac{(dwb-x)}{dwb} ; f_{r,rr}=\mu*f_r
+\end{equation}
+\begin{equation}
+	f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
+\end{equation}
+\begin{equation}
+f_rr=f_{c,rr}+ f_{r,rr}
+\end{equation}
+
+A resistência ao rolamento $frr$ é, por fim, a soma das resistências das rodas dianteiras e traseiras.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width = 0.7\textwidth]{figuras/resultados/diagrama_variaveis}
+	\caption{Diagrama das variáveis que determinam a resistência de rolagem da cadeira de rodas manual. \cite{propulsao_cadeira}.}
+	\label{fig:diagrama_variaveis}
+\end{figure}
+
+Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-se um peso a mais ao sistema, assim como um ponto a mais de contato de distribuição da massa total é adicionado ao sistema. Desta maneira, as forças nas rodas traseiras são aliviadas por serem divididas com as rodas do protótipo. A figura \ref{fig:finalmente_essa_imagem} abaixo apresenta as distâncias entre os eixos das rodas da cadeira e do protótipo ao centro de massa.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width = 0.5\textwidth]{figuras/resultados/finalmente_essa_imagem}
+	\caption{Diagrama das Variáveis para determinação da Resistência de Rolagem com o protótipo acoplado. Autoria própria.}
+	\label{fig:finalmente_essa_imagem}
+\end{figure}
+
+Desta maneira, as equações discutidas anteriormente são modificadas abaixo para se ajustarem ao protótipo acoplado, onde $s$ é a distância entre as rodas do protótipo e o centro de massa, e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo. Como explicado na seção anterior, a distância entre o eixo das rodas maiores e o centro de massa, neste caso $x$, foi igual a 5 cm.
+
+\begin{equation}
+	f_p=m*g\frac{(dwb-s-x)}{dwb} ; f_{p,rr}=\mu*f_p
+\end{equation}
+\begin{equation}
+	f_r=m*g\frac{(dwb-s)}{dwb} ; f_{r,rr}=\mu*f_r
+\end{equation}
+\begin{equation}
+	f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
+\end{equation}
+\begin{equation}
+	f_{rr}=f_{c,rr}+f_{r,rr}+f_{p,rr}
+\end{equation}
+
+A distribuiçao do peso na cadeira de rodas é, portanto, de 44.4 \%\ para a roda do sistema, 51.4 \% para as rodas traseiras da cadeira e 4.2 \%\ para as rodas dianteiras da cadeira. As constantes usadas nestes cálculos foram:
+
+As constantes usadas nestes cálculos foram:
+
 
 \begin{itemize}
-  \item Potência de 305 a 350 W;
-  \item 12 ou 24 Vcc;
-  \item Rotação de entrada de 2500 rpm;
-  \item Reduções de 1:10 até 1:60.
+	\item $\mu$ = 0.03. Coeficiente estimado para o pior piso e pior tipo de material da roda \cite{rolling_resistance};
+	\item m = 150 kg (massa máxima);
+	\item g = 9.81 $m/s^2$;
+	\item dwb = 72 cm;
+	\item s = 35 cm;
+	\item x = 5 cm;
 \end{itemize}
 
-Especificações a serem atendidas:
+Os resultados das forças de resistência ao rolamento são, portanto:
 
 \begin{itemize}
-  \item Velocidade máxima de 10 km/h;
-  \item 12 Volts corrente contínua;
-  \item Peso da bateria 15 kg;
-  \item Peso da cadeira (valor aproximado) 15kg;
-  \item Peso total estimado: 150 Kg;
-  \item Redução de pelo menos 1:10.
+	\item fp,rr = 19.62 N;
+	\item fr,rr = 22.686 N;
+	\item fc,rr = 1.839 N;
+	\item frr = 44.145 N;
 \end{itemize}
 
-\subsection{Bateria}
+Esta força deve ser vencida pelos motores acoplados ao protótipo de modo a retirar a cadeira da inércia quando todas as rodas da cadeira estão alinhadas para frente perfeitamente. Porém, isto nem sempre acontece.
 
-A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
-
-\subsubsection{Autonomia}
-
-Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Para este projeto se decidiu utilizar motores de 300W. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Decidiu-se fazer uma estimativa da potência necessária através do balanço de energia.
-A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
+Portanto foi feita uma simulação para quando as rodas dianteiras estão paralelas às rodas traseiras. Nesta configuração, as rodas dianteiras fornecem uma resistência a mais ao movimento. Esta resistência foi considerada como uma resistência de atrito estático e depende do coeficiente de atrito estático do material das rodas dianteiras ($\mu e$) e da fração da massa suportada nas rodas dianteiras que pode ser definida como:
 
 \begin{equation}
-Em = \frac{m*V^2*\epsilon}{2}
+c = \frac{x}{dwb}
 \end{equation}
 
-Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade em metros por segundo. Aqui estimou-se perdas do motor de pelo menos 20\%, sendo assim, $\epsilon$ é igual a 1,20. Assim, a energia necessária para mover a cadeira é de 694 J, a potência é portanto 694 W.
-
-Ao utilizar dois motores de 300 W, a potência total entregue ao sistema seria de 600 W. Rearranjando a equação para encontrar o valor da velocidade, e atribuindo 80\% de eficiência no acoplamento das rodas com o eixo do motor, temos:
+A resistência adicional pode ser definida, portanto, como:
 
 \begin{equation}
-Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
+f_{ce}= m*g* \mu_e \frac{x}{dwb}
 \end{equation}
 
-Assim, a estimativa da velocidade máxima que a cadeira deve obter será de pelo menos 7.44 km/h, uma velocidade razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+A resistência total ao movimento (fT) seria portanto a soma das resistências de rolamento com a de atrito estático:
 
 \begin{equation}
-\omega = \frac{V}{r}
+f_T = f_{rr} + f_{ce} = 44.146+45.984 = 90.129 N
 \end{equation}
 
-Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 20.6 rad/s ou aproximadamente 197 rpm. Considerando as especificações do motor comprado: velocidade angular nominal de 2500 rpm e potência de 305 W, teria de ser feita uma redução de pelo menos 1:10, onde a velocidade angular de saída do redutor seria de 250 rpm. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 29 Nm (Newtons-metro).
-
-Para atender dois motores de 305 W, será conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
+Isto exige um torque inicial de 9.0129 Nm (dado que os raios das rodas do protótipo são de 10 cm). Portanto, pode-se dizer que, nesta situação, a potência necessária para retirar a cadeira da inércia é de:
 
 \begin{equation}
-E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
+P = T*\omega = 9.0129*26.18 = 235.96 W
 \end{equation}
 
-Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
+  A potência entregue pelos motores à cadeira de rodas será maior que estes 235.96 W . A diferença entre a entregue e a necessária para retirar a cadeira da inércia será considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
 
-\begin{equation}
-\Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
-\end{equation}
+  \subsection{Moto-redutor}
+
+  Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+
+  Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
+
+  \begin{itemize}
+    \item Potência de 305 a 350 W;
+    \item 12 ou 24 Vcc;
+    \item Rotação de entrada de 2500 rpm;
+    \item Reduções de 1:10 até 1:60.
+  \end{itemize}
+
+  Especificações a serem atendidas:
+
+  \begin{itemize}
+    \item Velocidade máxima de 10 km/h;
+    \item 12 Volts corrente contínua;
+    \item Peso da bateria 15 kg;
+    \item Peso da cadeira (valor aproximado) 15kg;
+    \item Peso total estimado: 150 Kg;
+    \item Redução de pelo menos 1:10.
+  \end{itemize}
+
+  \subsection{Bateria}
+
+  A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
+
+  \subsubsection{Autonomia}
+
+  Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Para este projeto fez-se uma estimativa da potência necessária através do balanço de energia \cite{acionamento_motores_cadeira}.
+
+  A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
+
+
+  \begin{equation}
+    Em = \frac{m*V^2}{2}
+  \end{equation}
+
+  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade de 2.77 m/s. Assim, a energia necessária para mover a cadeira é de 578.7 J. Sendo 1 Watt igual a 1 J/s, tem-se, portanto, 578.7 W.
+
+  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 Volts e 305 Watts para o projeto, assim, a potência total entregue ao sistema é de 610 W. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
+
+  As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
+
+  \begin{equation}
+  P = R*I, assim, R = \frac{305}{25.417^2} = 0.47231 \ohm
+  \end{equation}
+
+  As perdas nos enrolamentos (Pj) é portanto:
+
+  \begin{equation}
+  Pj = R*I = 0.47213*25.417 = 12 W
+  \end{equation}
+
+  As perdas totais (Pt) são, portanto:
+
+  \begin{equation}
+  Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
+  \end{equation}
+
+  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, se deve adicionar um termo de perdas a serem superadas pelos motores à equação da energia, este termo $\epsilon$ seria igual a 1.09:
+
+  \begin{equation}
+    Em = \frac{m*V^2*\epsilon}{2}
+  \end{equation}
+
+  Assim, a energia necessária para mover a estrutura seria de 630.434 J, ou 630.434 W de potência. Para encontrar o valor da velocidade final do sistema é preciso rearranjar a equação acima. Uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
+
+  \begin{equation}
+  Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
+  \end{equation}
+
+  Assim, a estimativa da velocidade máxima que a cadeira deve obter será de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+
+  \begin{equation}
+  \omega = \frac{V}{r}
+  \end{equation}
+
+  Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm.
+
+  Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
+
+  Para atender dois motores de 305 W, será conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
+
+  \begin{equation}
+  E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
+  \end{equation}
+
+  Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
+
+  \begin{equation}
+  \Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
+  \end{equation}
 
 \section{Controle}
 
@@ -334,4 +465,8 @@ Virar para esquerda (próprio eixo)          & (100, -)                         
 \label{tab:tabela-pots2}
 \end{table}
 
-Para facilitar e proteger o sistema, será construído um distribuidor que será, basicamente, uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas nos módulos
+Para facilitar e proteger o sistema, será construído um distribuidor que será, basicamente, uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas nos módulos, pois esta já estará pronta no distribuidor. O distribuidor contará ainda como um circuito de proteção para os demais periféricos.
+
+Na parte de sensoreamento utilizaremos circuitos e sensores para indicar o nível de bateria e a velocidade da cadeira de rodas.
+
+Para indicar o nível de bateria, serão utilizados comparadores que a partir da tensão presente na bateria, alimentem LED's vermelhos, amarelos e verdes, indicando uma escala de cores, para assim mostrar qual o nível de bateria que ainda resta no sistema.
