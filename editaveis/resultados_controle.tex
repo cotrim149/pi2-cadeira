@@ -415,6 +415,31 @@ Joystick
   \label{fig:motor_lock}
   \end{figure}
 
+\subsection{Motor}
+
+    O modulo Motor é utilizado para fazer a movimentação da cadeira, conforme os comandos enviados pelo usuário através do módulo Joystick. O módulo Motor é composto por 2 motores de corrente contínua e um microcontrolador.
+
+    O microcontrolador deste módulo tem como intuito receber as informações do controlador central e gerar 2 pulsos de PWM, um para cada motor. As funções \textit{update\_left} e \textit{update\_right}, vide figura \ref{fig:update_motors}, tem como objetivo atualizar o \textit{duty cycle} para cada motor.
+
+    \begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figuras/resultados/update_motor_right}
+    \includegraphics[width = 0.5\textwidth]{figuras/resultados/update_motor_left}
+    \caption{Funções para atualização de taxa do \textit{duty cycle}}
+    \label{fig:update_motors}
+    \end{figure}
+
+    Os valores são recebidos através da função \textit{update}, vide figura \ref{fig:update}, responsável por receber de forma correta os dados. Esta rotina consiste em verificar se o valor recebido é impar ou par. Isto é feito por causa da estratégia utilizada para diferenciar os dados de cada potenciômetro enviados do módulo Joystick, através do controlador central.
+
+    \begin{figure}[!htb]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figuras/resultados/update}
+    \caption{Função para diferenciação de dado recebido}
+    \label{fig:update}
+    \end{figure}
+
+
+    A função \textit{update\_left} recebe os valores pares, e a função \textit{update\_right} recebe os valores impares.
 
 \subsection{Integração Motor e Joystick}
 
@@ -505,10 +530,6 @@ Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeame
 
 \begin{comment}
 
-Motor
-  - Software e Hardware (periféricos e MSP Motor)
-    - Colocar imagem de código
-
 Integração Motor e Joystick
 #  - Mapeamento dos estados em relação ao joystick (255,255->Frente)
 #  - Mapeamento dos estados em relação aos motores (intensidade, direção)
@@ -521,8 +542,7 @@ Integração Motor e Joystick
       Desvantagem: Não foi observados desvantagens para a aplicação, porém para outros propósitos é mais dificil de se utilizar os dados, pois os mesmos não tem uma relação direta com o plano cartesiano original.
 
 Ponte-H (copiar e colar do documento pc2)
-  - Colocar informações sobre dissipador
-  - Estanhamento das placas
+  - Colocar informações sobre dissipador (somente falta o valores pra jéssica colocar isso)
   - Dimensionamento da largura das trilhas
   - Circuito de direcionamento das PWMs através das seletoras (demultiplexador)
 
@@ -531,7 +551,43 @@ Alimentação do sistema
   - Circuito regulador de tensão
 \end{comment}
 
-\section{Dissipador de calor}
+\subsection{Ponte H}
 
-A Jéssica é linda!
-O Duerno é o nosso mascote!
+No decorrer da produção do circuito da ponte H, foi utilizado uma porta NAND e duas porta AND para garantir que não haverá acionamento de todos os transistores ao mesmo tempo.
+
+Foi necessário utilizar um dobrador de tensão no circuito, com ele foi possível garantir um VGS maior que 2V para polarização dos transistores MOSFET da ponte. Como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polariza-lo.
+
+O circuito do dobrador, representado na figura \ref{figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
+
+Durante o período da onda quadrada em alto, C3 descarrega na saída do diodo na parte negativa gerando um efeito que dobra a tensão, conforme pode ser visto na figura \ref{fig:figx+4}. É importante observar que o capacitor C2 não pode ser muito grande e nem o pulso do oscilador muito largo para que não haja uma descontinuidade muito grande no valor de tensão.
+
+Esse circuito é necessário pois a tensão do circuito está limitada em 12V. Com isso não é possível conseguir um VGS maior que 2V nos transistores MOSFET da ponte H. Com o auxílio desse artifício muito utilizado na eletrônica consegue-se fazer a transformação de um tensão DC em uma tensão DC com o dobro de tensão, com isso tem-se 24V teóricos na saída do circuito dobrador de tensão, pois a tensão de entrada é cerca de 12V.
+
+Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 para eles alimentarem o Gate dos transistores MOSFET do circuito, como há perdas envolvidas, chegarão cerca de 22V nas portas G dos transistores, tornando possível haver uma diferença maior que a VTH e polarizando os transistores da maneira correta e permitindo o funcionamento do sistema por completo.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4.eps}
+	\caption{Circuito elevador te tensão}
+	\label{fig:figx+4}
+\end{figure}
+
+
+Para facilitar e proteger o sistema, será construído um distribuidor que vai ser basicamente uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
+
+O distribuidor vai ser responsável por alimentar os motores elétricos e os módulos de controle dos movimentos da cadeira de rodas. Ele contará com um bloco de entrada que estará conectado diretamente nos terminais da bateria, onde a partir desse bloco de entrada teremos duas saídas de distribuição, uma com 12 volts e outra com 5 volts.
+
+A saída de distribuição de 12 volts será realizada através de cabos que serão conectados nos terminais dos motores. Essa saída será dupla, ou seja, cada motor terá sua alimentação individual, sendo que para proteção dos dois motores, utilizaremos fuzíveis inseridos antes dos plugs dos moteres, para que caso ocorra alguma variação de corrente, os motores não sejam danificados.
+
+A saída de distribuição de 5 volts será proveniente da utilização de um regulador de tensão 7805. Serão utilizados diodos zeners(falar qual) que garantirão que a tensão se mantenha estável nos 5 volts. Essa saída será responsável pela alimentação das duas pontes H, da Raspberry Pi, dos 3 msp430 e do joystick.
+
+Esse distribuidor de tensão pode ser visto no diagrama apresentado na figura \ref{fig:diagrama_controle}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/fluxograma}
+	\caption{Diagrama do sistema de controle}
+	\label{fig:diagrama_controle}
+\end{figure}
+
+\subsection{Dissipador de calor}
