@@ -121,11 +121,7 @@ As forças presentes no diagrama representam as forças peso das rodas traseiras
 	f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
 \end{equation}
 \begin{equation}
-<<<<<<< HEAD
 f_rr=f_{c,rr}+ f_{r,rr}
-=======
-	f_rr=f_{c,rr}+f_{r,rr}
->>>>>>> 563f30561d9412cd5e74a3d7e1548e9351f11fde
 \end{equation}
 
 A resistência ao rolamento $frr$ é, por fim, a soma das resistências das rodas dianteiras e traseiras.
@@ -146,7 +142,7 @@ Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-s
 	\label{fig:finalmente_essa_imagem}
 \end{figure}
 
-Desta maneira, as equações discutidas anteriormente são modificadas abaixo para se ajustarem ao protótipo acoplado, onde $s$ é a distância entre as rodas do protótipo e o centro de massa, e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo.
+Desta maneira, as equações discutidas anteriormente são modificadas abaixo para se ajustarem ao protótipo acoplado, onde $s$ é a distância entre as rodas do protótipo e o centro de massa, e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo. Como explicado na seção anterior, a distância entre o eixo das rodas maiores e o centro de massa, neste caso $x$, foi igual a 5 cm.
 
 \begin{equation}
 	f_p=m*g\frac{(dwb-s-x)}{dwb} ; f_{p,rr}=\mu*f_p
@@ -161,24 +157,27 @@ Desta maneira, as equações discutidas anteriormente são modificadas abaixo pa
 	f_{rr}=f_{c,rr}+f_{r,rr}+f_{p,rr}
 \end{equation}
 
+A distribuiçao do peso na cadeira de rodas é, portanto, de 44.4 \%\ para a roda do sistema, 51.4 \% para as rodas traseiras da cadeira e 4.2 \%\ para as rodas dianteiras da cadeira. As constantes usadas nestes cálculos foram:
+
 As constantes usadas nestes cálculos foram:
 
+
 \begin{itemize}
-	\item $\mu$ = 0,03. Constante estimada para o pior piso e pior tipo de material da roda \cite{rolling_resistance};
+	\item $\mu$ = 0.03. Coeficiente estimado para o pior piso e pior tipo de material da roda \cite{rolling_resistance};
 	\item m = 150 kg (massa máxima);
 	\item g = 9.81 $m/s^2$;
 	\item dwb = 72 cm;
-	\item s = 36 cm;
-	\item x = 6 cm;
+	\item s = 35 cm;
+	\item x = 5 cm;
 \end{itemize}
 
 Os resultados das forças de resistência ao rolamento são, portanto:
 
 \begin{itemize}
-	\item fp,rr = 18.394 N;
-	\item fr,rr = 22.073 N;
-	\item fc,rr = 3.6787 N;
-	\item frr = 44.146 N;
+	\item fp,rr = 19.62 N;
+	\item fr,rr = 22.686 N;
+	\item fc,rr = 1.839 N;
+	\item frr = 44.145 N;
 \end{itemize}
 
 Esta força deve ser vencida pelos motores acoplados ao protótipo de modo a retirar a cadeira da inércia quando todas as rodas da cadeira estão alinhadas para frente perfeitamente. Porém, isto nem sempre acontece.
@@ -198,111 +197,111 @@ f_{ce}= m*g* \mu_e \frac{x}{dwb}
 A resistência total ao movimento (fT) seria portanto a soma das resistências de rolamento com a de atrito estático:
 
 \begin{equation}
-f_T = f_{rr} + f_{ce} = 44.146+61.312 = 105.46 N
+f_T = f_{rr} + f_{ce} = 44.146+45.984 = 90.129 N
 \end{equation}
 
-Isto exige um torque inicial de 10.546 Nm (dado que os raios das rodas do protótipo são de 10 cm). Portanto, pode-se dizer que, nesta situação, a potência necessária para retirar a cadeira da inércia é de:
+Isto exige um torque inicial de 9.0129 Nm (dado que os raios das rodas do protótipo são de 10 cm). Portanto, pode-se dizer que, nesta situação, a potência necessária para retirar a cadeira da inércia é de:
 
 \begin{equation}
-P = T*\omega = 10.546*26.18 = 276.09 W
+P = T*\omega = 9.0129*26.18 = 235.96 W
 \end{equation}
 
-	A potência entregue pelos motores à cadeira de rodas, já considerando as perdas, é de cerca de 583 W. A diferença entre a entregue e a necessária para retirar a cadeira da inércia é considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
+  A potência entregue pelos motores à cadeira de rodas será maior que estes 235.96 W . A diferença entre a entregue e a necessária para retirar a cadeira da inércia será considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
 
-\subsection{Moto-redutor}
+  \subsection{Moto-redutor}
 
-Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+  Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
 
-Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
+  Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
 
-\begin{itemize}
-  \item Potência de 305 a 350 W;
-  \item 12 ou 24 Vcc;
-  \item Rotação de entrada de 2500 rpm;
-  \item Reduções de 1:10 até 1:60.
-\end{itemize}
+  \begin{itemize}
+    \item Potência de 305 a 350 W;
+    \item 12 ou 24 Vcc;
+    \item Rotação de entrada de 2500 rpm;
+    \item Reduções de 1:10 até 1:60.
+  \end{itemize}
 
-Especificações a serem atendidas:
+  Especificações a serem atendidas:
 
-\begin{itemize}
-  \item Velocidade máxima de 10 km/h;
-  \item 12 Volts corrente contínua;
-  \item Peso da bateria 15 kg;
-  \item Peso da cadeira (valor aproximado) 15kg;
-  \item Peso total estimado: 150 Kg;
-  \item Redução de pelo menos 1:10.
-\end{itemize}
+  \begin{itemize}
+    \item Velocidade máxima de 10 km/h;
+    \item 12 Volts corrente contínua;
+    \item Peso da bateria 15 kg;
+    \item Peso da cadeira (valor aproximado) 15kg;
+    \item Peso total estimado: 150 Kg;
+    \item Redução de pelo menos 1:10.
+  \end{itemize}
 
-\subsection{Bateria}
+  \subsection{Bateria}
 
-A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
+  A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
 
-\subsubsection{Autonomia}
+  \subsubsection{Autonomia}
 
-Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Para este projeto fez-se uma estimativa da potência necessária através do balanço de energia \cite{acionamento_motores_cadeira}.
+  Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Para este projeto fez-se uma estimativa da potência necessária através do balanço de energia \cite{acionamento_motores_cadeira}.
 
-A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
+  A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
 
 
-\begin{equation}
-  Em = \frac{m*V^2}{2}
-\end{equation}
+  \begin{equation}
+    Em = \frac{m*V^2}{2}
+  \end{equation}
 
-Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade de 2.77 m/s. Assim, a energia necessária para mover a cadeira é de 578.7 J. Sendo 1 Watt igual a 1 J/s, tem-se, portanto, 578.7 W.
+  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade de 2.77 m/s. Assim, a energia necessária para mover a cadeira é de 578.7 J. Sendo 1 Watt igual a 1 J/s, tem-se, portanto, 578.7 W.
 
-Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 Volts e 305 Watts para o projeto, assim, a potência total entregue ao sistema é de 610 W. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
+  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 Volts e 305 Watts para o projeto, assim, a potência total entregue ao sistema é de 610 W. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
 
-As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
+  As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
 
-\begin{equation}
-P = R*I, assim, R = \frac{305}{25.417^2} = 0.47231 \ohm
-\end{equation}
+  \begin{equation}
+  P = R*I, assim, R = \frac{305}{25.417^2} = 0.47231 \ohm
+  \end{equation}
 
-As perdas nos enrolamentos (Pj) é portanto:
+  As perdas nos enrolamentos (Pj) é portanto:
 
-\begin{equation}
-Pj = R*I = 0.47213*25.417 = 12 W
-\end{equation}
+  \begin{equation}
+  Pj = R*I = 0.47213*25.417 = 12 W
+  \end{equation}
 
-As perdas totais (Pt) são, portanto:
+  As perdas totais (Pt) são, portanto:
 
-\begin{equation}
-Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
-\end{equation}
+  \begin{equation}
+  Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
+  \end{equation}
 
-Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, se deve adicionar um termo de perdas a serem superadas pelos motores à equação da energia, este termo $\epsilon$ seria igual a 1.09:
+  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, se deve adicionar um termo de perdas a serem superadas pelos motores à equação da energia, este termo $\epsilon$ seria igual a 1.09:
 
-\begin{equation}
-  Em = \frac{m*V^2*\epsilon}{2}
-\end{equation}
+  \begin{equation}
+    Em = \frac{m*V^2*\epsilon}{2}
+  \end{equation}
 
-Assim, a energia necessária para mover a estrutura seria de 630.434 J, ou 630.434 W de potência. Para encontrar o valor da velocidade final do sistema é preciso rearranjar a equação acima. Uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
+  Assim, a energia necessária para mover a estrutura seria de 630.434 J, ou 630.434 W de potência. Para encontrar o valor da velocidade final do sistema é preciso rearranjar a equação acima. Uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
 
-\begin{equation}
-Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
-\end{equation}
+  \begin{equation}
+  Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
+  \end{equation}
 
-Assim, a estimativa da velocidade máxima que a cadeira deve obter será de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+  Assim, a estimativa da velocidade máxima que a cadeira deve obter será de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
 
-\begin{equation}
-\omega = \frac{V}{r}
-\end{equation}
+  \begin{equation}
+  \omega = \frac{V}{r}
+  \end{equation}
 
-Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm.
+  Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm.
 
-Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
+  Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
 
-Para atender dois motores de 305 W, será conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
+  Para atender dois motores de 305 W, será conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
 
-\begin{equation}
-E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
-\end{equation}
+  \begin{equation}
+  E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
+  \end{equation}
 
-Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
+  Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
 
-\begin{equation}
-\Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
-\end{equation}
+  \begin{equation}
+  \Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
+  \end{equation}
 
 \section{Controle}
 
