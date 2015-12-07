@@ -310,7 +310,6 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \subsection{Atual Panorama}
 
-
   O módulo Controlador central possui um Raspberry, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
 
   A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteu-se um \textit{delay} do envio dos dados processados para o módulo Motor.
@@ -320,7 +319,6 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
   Para a primeira versão os dados enviados pelo Joystick utilizavam de um padrão de transmissão, feito para se ter certeza que os dados recebidos não seria algum tipo de ''lixo'' trasmitido. Esta padrão seguia o formato: ''$(valor\, potenciometro\, 1)$ $(valor\, potenciometro\, 2)$ $\backslash n$''.
 
   Para a segunda versão os dados são enviados conforme o seguinte padrão:\\ ''$(valores\, pares\, potenciometro\, 1)$ $(valores\, ímpares\, potenciometro\, 2)$''.
-
 
 
 \begin{comment}
@@ -339,7 +337,7 @@ Panororama do sistema de controle conforme Arquitetura
 
 O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos) e um microcontrolador.
 
-Toda a forma de interação entre o usuário e a cadeira de rodas é feita a partir do Joystick, a figura \ref{fig:joy_hand_control} dá uma noção das dimensões e ergonomia deste componente. O controle que fica nas mãos do usuário é conectado à cadeira de rodas por meio de um cabo $RJ45$, apenas o \textit{joystick} foi colocado dentro do controle, o microcontrolador dedicado a este módulo foi colocado junto ao controlador central na traseira da cadeira, para uma maior segurança do mesmo.
+Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda ponta pinos de saída para o MSP. Essas placas possuem RJ-45 fêmeas e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois, facilita a conexão de ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
 
 \begin{figure}[!htb]
 \centering
@@ -608,4 +606,69 @@ Esse distribuidor de tensão pode ser visto no diagrama apresentado na figura \r
 	\label{fig:diagrama_controle}
 \end{figure}
 
+Foram feitas duas versões de ponte H. A primeira ponte H, utilizava trilhas com cerca de 2mm a 3mm para os motores, considerando a formação da ponte H, onde a corrente passa por dois transistores em conjunto, os testes realizados e os cálculos de trilhas, foi necessário reestruturar a ponte H de forma que as trilhas suportassem os valores máximos de corrente que são de 25A. Após alguns testes, foi montado um novo esquemático, com os valores superdimensionados para a corrente que passaria pelo sistema. Usando o mesmo Transistor, já que esse tem um limite de 75A, o novo esquemático das trilhas possuíam valores de 5cm, conforme pode ser visto na figura x.
+
+As novas trilhas suportariam a corrente, contudo era necessário soldar o transistor, foi usado então fios para conectar os transistores a ponte H e ligados como mostrado na figura x. Cada um dos quatro transistores, possui um Gate, que é um pino de controle, o Drain, que é a saída do transistor e o Source, que é a entrada. Foram enumeradas entradas e saídas com os respectivos transistores, onde 1d equivale ao transistor 1 pino de Drain, 1s ao transistor 1, pino de Source e assim por diante. O pino de controle foi ligado direto a antiga formação da ponte H, já que essa possuía os devidos circuitos de ativar a ponte H e proteger os pinos de controle, usados no PWM.
+
+
 \subsection{Dissipador de calor}
+
+Os circuitos de potência modernos possuem elevado rendimento, porém a quantidade de
+calor gerada é uma preocupação. Atualmente os dispositivos operam com potências elevadas
+e no limite da capacidade de dissipação. O uso de um dissipador é tão importante quanto à
+parte elétrica do circuito.
+
+O objetivo dessa sessão é fornecer subsídios para estabelecer critérios para o
+dimensionamento do sistema de dissipação do calor produzido por componentes eletrônicos,
+especialmente semicondutores de potência da ponte H(transistores), buscando a proteção de
+tais componentes.
+
+Considerando:
+
+$P_t$ = Potência a ser dissipada pelo transistor;
+
+$T_j$ = Temperatura de junção;
+
+$T_c$ = Temperatura de carcaça;
+
+$T_{amb}$ = Temperatura ambiente;
+
+$R_{jc}$ = Resistência térmica na junção $[\frac{{\circ}\mathrm{C}}{W}]$;
+
+$R_{ch}$ = Resistência térmica na carcaça $[\frac{{\circ}\mathrm{C}}{W}]$;
+
+$R_{ha}$ = Resistência térmica dissipador - ambiente $[\frac{{\circ}\mathrm{C}}{W}]$;
+
+Onde $T_j$ e $R_{jc}$ são parãmetros do \textit{Datasheet}. Foram utilizadas duas ponte H, sendo
+que cada uma possui 4 transistores IRF3205(Jameco Part Number 618089)\cite{jameco}:
+
+$T_j = -55 à 175\,^{\circ}\mathrm{C}$;
+
+$R_{jc} = 0,75[\frac{{\circ}\mathrm{C}}{W}]$;
+
+$R_{ch} = 0,5[\frac{{\circ}\mathrm{C}}{W}]$;
+
+Assim podemos calcular $R_{ha}$ como:
+
+\begin{equation}
+ R_{ha} = \frac{(T_j - T_{amb})}{P_t} - R_{jc} + R_{ch}
+\end{equation}
+
+A potência total dissipada é de 300W por cada ponte H, assim cada transistor recebe 75W. A
+temperatura ambiente considerada é de $T_j$ como $40\,^{\circ}\mathrm{C}$, considerando a $T_j$ como $130\,^{\circ}\mathrm{C}$,
+temos assim:
+
+\begin{equation}
+ R_{ha} = \frac{(130 - 40)}{300} - 0,75 + 0,5 = 0,05\,\frac{^{\circ}\mathrm{C}}{{W}}
+\end{equation}
+
+Superfícies aletas, chamadas de dissipadores de calor são
+comumente utilizadas para o resfriamento de dispositivos eletrônicos. A energia dissipada por
+esses dispositivos é transferida por condução dos dispositivos de potência para os dissipadores
+e por convecção natural ou forçada dos dissipadores para o ambiente \cite[p.~434-439]{cengel}.
+
+Uma das principais questões na escolha de um dissipador de calor é escolher entre um com
+aletas estreitamente espaçadas ou aletas amplamente espaçadas para uma determinada área
+da base. Um dissipador com menor espaçamento entre as aletas terá maior superfície de
+transferência de calor, mas o coeficiente de transferência de calor é menor devido a
+resistência que as aletas introduzem no fluxo do ar.
