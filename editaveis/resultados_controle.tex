@@ -305,15 +305,33 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \section{Controle}
 
+  O controle da cadeira de rodas será feito utilizando 3 módulos: Joystick, Controlador central e Motor.
+  O módulo Joystick, para receber os comandos provenientes do usuário e enviar estes comando para o controlador central. O módulo do controlador central, recebe as informações do módulo anterior, as processa e faz o envio para o módulo Motor. O módulo Motor recebe as informações enviadas pelo módulo do controlador central, produzindo 2 pulsos de PWM e enviando-os para as pontes H, com o intuito de controlar a intensidade e direção dos motores.
+
+\subsection{Atual Panorama}
+
+
+  O módulo Controlador central possui um Raspberry, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
+
+  A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteu-se um \textit{delay} do envio dos dados processados para o módulo Motor.
+
+  Então uma segunda versão foi desenvolvida utilizando-se de múltiplas \textit{threads}: um \textit{thread} foi feita para receber e processar os dados provenientes do Joytick e uma \textit{thread} foi feita para enviar os dados para o Motor. Desta forma o \textit{delay} observado na primeira versão foi retirado, aumentando assim, o desempenho do sistema em relação a transferência e processamento dos dados.
+
+  Para a primeira versão os dados enviados pelo Joystick utilizavam de um padrão de transmissão, feito para se ter certeza que os dados recebidos não seria algum tipo de ''lixo'' trasmitido. Esta padrão seguia o formato: ''$(valor\, potenciometro\, 1)$ $(valor\, potenciometro\, 2)$ $\backslash n$''.
+
+  Para a segunda versão os dados são enviados conforme o seguinte padrão:\\ ''$(valores\, pares\, potenciometro\, 1)$ $(valores\, ímpares\, potenciometro\, 2)$''.
+
+
+
 \begin{comment}
 -------------------------------------------------------------------------------
 ---- Tópicos para a escrita da parte de controle do capítulo de resultados ----
 -------------------------------------------------------------------------------
 Panororama do sistema de controle conforme Arquitetura
   - Desde controle de software a periféricos (Usuário a Motor)
-  - Panorama de Arquitetura - Antes e depois
-    - Citar melhoria quanto ao desempenho
-  - Estratégia de comunição entre componentes - Antes e depois
+#  - Panorama de Arquitetura - Antes e depois
+#    - Citar melhoria quanto ao desempenho
+#  - Estratégia de comunição entre componentes - Antes e depois
   - Integração Joystick e motor - Falar sobre os estados
 \end{comment}
 
