@@ -182,34 +182,33 @@ Uma visão geral da estrutura é apresentada pela \ref{fig:vista_perspectiva_est
 
 A figura \ref{fig:analise_von_mises} representa as deformações na estrutura devido aos carregamentos estáticos no sistema e as devidas restrições relativas ao acoplamento e ao contato das rodas com o chão. Os carregamentos adotados foram de 14 kg da bateira, 15 kg dos dois motores e estimados 2 kg de todo o sistema de controle e foram devidamente posicionados em suas posições de trabalho. Vale ressaltar que as deformações apresentadas possuem um fator de aumento de 1000 para possibilitar a visualização. As tensões encontradas no sistema obedeceram o critério de Von Mises, que nos permite notar que a parte inferior da base é o gargalo, pois ela sofre as maiores tensões da estrutura. Na figura (a) verifica-se que a tensão máxima do material é 0.372 MPa, enquanto a figura (b) apresenta a visão frontal destas tensões. Com esses valores sabemos que a estrutura resistirá aos carregamentos a ela submetidos, já que a tensão de escoamento do aço 1020 é de 210Mpa
 
+\subsection{Centro de Massa}
+
+O Cálculo do centro de massa do conjunto total (cadeira, cadeirante e Sistema de automação) foi necessário para o cálculo da potência requerida dos motores. O centro de massa foi estimado a partir da soma vetorial dos centros de massa parciais do conjunto cadeira-cadeirante que foi obtido a partir dos estudos de \cite{artigo_centro_massa}, vide figura \ref{fig:centro_massa_cadeirante}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{figuras/resultados/centro_massa_cadeirante}
+\caption{Esquemático posicionamento do centro de massa sistema cadeira e cadeirante. Fonte:\cite{artigo_centro_massa}}
+\label{fig:centro_massa_cadeirante}
+\end{figure}
+
+O centro de massa do Sistema de automação, vide figura \ref{fig:centro_massa_sistema_automocao}, foi obtido a partir de uma simulação estática da estrutura em que se aplicou os devidos carregamentos e restrições de trabalho.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{figuras/resultados/centro_massa_sistema_automocao}
+\caption{Representação do centro de massa do sistema de automação}
+\label{fig:centro_massa_sistema_automocao}
+\end{figure}
+
+As coordenadas encontradas, tanto na literatura quanto computacionalmente, foram manualmente modificadas de modo a ter o eixo da roda maior da cadeira de rodas como ponto de origem para o cálculo vetorial. Vale lembrar que os cálculos desconsideram possíveis deformidades no corpo do usuário que possam causar assimetria na distribuição de massa.
+
+
 
 \section{Power-Train}
 
 \subsection[Resistência a Rolagem]{Resistência a Rolagem}
-Segundo \cite{propulsao_cadeira}, os fatores que determinam a resistência ao rolamento são: os coeficientes de atrito das rodas traseiras e dianteiras, o peso total do sistema (cadeira e usuário), a superfície em que a cadeira está sendo impulsionada e a distribuição de peso entre as rodas traseiras e dianteiras através do centro de massa (Cm).
-
-A figura \ref{fig:diagrama_variaveis} é um diagrama que ilustra as variáveis que determinam a resistência de rolagem da cadeira de rodas manual. Estas variáveis são: o comprimento da roda (\textit{dwb}), a distância horizontal do eixo das rodas traseiras ao centro de massa (\textit{x}) e a distância horizontal do eixo das rodas dianteiras ao centro de massa (\textit{dwb-x}).
-
-As forças presentes no diagrama representam as forças peso das rodas traseiras (\textit{fr}) e das dianteiras (\textit{fc}), que fazem parte das forças de resistência ao rolamento: \textit{fr,rr} das rodas traseiras e \textit{fc,rr} das rodas dianteiras. Nas equações abaixo: $\mu$ é o coeficiente de fricção de rolagem, $m$ é a massa e $g$ é a aceleração da gravidade \cite{propulsao_cadeira}.
-
-\begin{equation}
-	f_r=m*g\frac{(dwb-x)}{dwb} ; f_{r,rr}=\mu*f_r
-\end{equation}
-\begin{equation}
-	f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
-\end{equation}
-\begin{equation}
-f_rr=f_{c,rr}+ f_{r,rr}
-\end{equation}
-
-A resistência ao rolamento $frr$ é, por fim, a soma das resistências das rodas dianteiras e traseiras.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width = 0.7\textwidth]{figuras/resultados/diagrama_variaveis}
-	\caption{Diagrama das variáveis que determinam a resistência de rolagem da cadeira de rodas manual. \cite{propulsao_cadeira}.}
-	\label{fig:diagrama_variaveis}
-\end{figure}
 
 Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-se um peso a mais ao sistema, assim como um ponto a mais de contato de distribuição da massa total é adicionado ao sistema. Desta maneira, as forças nas rodas traseiras são aliviadas por serem divididas com as rodas do protótipo. A figura \ref{fig:finalmente_essa_imagem} abaixo apresenta as distâncias entre os eixos das rodas da cadeira e do protótipo ao centro de massa.
 
@@ -682,9 +681,30 @@ Esse distribuidor de tensão pode ser visto no diagrama apresentado na figura \r
 	\label{fig:diagrama_controle}
 \end{figure}
 
-Foram feitas duas versões de ponte H. A primeira ponte H, utilizava trilhas com cerca de 2mm a 3mm para os motores, considerando a formação da ponte H, onde a corrente passa por dois transistores em conjunto, os testes realizados e os cálculos de trilhas, foi necessário reestruturar a ponte H de forma que as trilhas suportassem os valores máximos de corrente que são de 25A. Após alguns testes, foi montado um novo esquemático, com os valores superdimensionados para a corrente que passaria pelo sistema. Usando o mesmo Transistor, já que esse tem um limite de 75A, o novo esquemático das trilhas possuíam valores de 5cm, conforme pode ser visto na figura x.
+Foram feitas duas versões de ponte H. Na primeira versão da ponte H utilizava-se trilhas com cerca de 5 mm para os motores e transistores. Após alguns testes foi verificado que a espessura não suportava a corrente que os motores necessitam, as trilhas estavam soltando da placa.
 
-As novas trilhas suportariam a corrente, contudo era necessário soldar o transistor, foi usado então fios para conectar os transistores a ponte H e ligados como mostrado na figura x. Cada um dos quatro transistores, possui um Gate, que é um pino de controle, o Drain, que é a saída do transistor e o Source, que é a entrada. Foram enumeradas entradas e saídas com os respectivos transistores, onde 1d equivale ao transistor 1 pino de Drain, 1s ao transistor 1, pino de Source e assim por diante. O pino de controle foi ligado direto a antiga formação da ponte H, já que essa possuía os devidos circuitos de ativar a ponte H e proteger os pinos de controle, usados no PWM.
+Com isso foi necessário reestruturar a ponte H, então foi idealizado o paralelo de 2 pontes H para alimentar cada motor. Para testar o paralelo foi necessário conhecer a corrente que cada ponte estava puxando. Segundo as especificações do motor, a corrente que cada motor puxa é de 25A. Em teoria cada ponte em paralelo deveria estar com no máximo 12,5A em sua saída, porém a aferição dessa corrente é complexa, pois não tinha-se instrumento de medida que suportasse tamanha corrente. Dessa forma desenvolveu-se um sistema de medida usando a proteção contra sobre-corrente do sistema, que é constituída de fusíveis automotivos de 12V. Variando os fusíveis de 5A em 5A e esperando eles se romperem, teve-se uma estimativa que sem carga o sistema estava puxando entre 10 e 15A.
+
+Após alguns testes, verificou-se que as trilhas continuavam não suportando a corrente quando colocava-se carga. Para solucionar o problema, foi montado um novo esquemático com as trilhas de grandes espessuras, 3,5cm, como na figura \ref{fig:novo_esquematico_ponte_h} para auxiliar na dissipação de calor do sistema. Usando os mesmo transistores, porém fora da placa e fixados diretamente no dissipador, mas com as ligações feitas através de cabos externos como mostrado na figura \ref{fig:ponte_h_dissipador}.
+
+\begin{figure}[!ht]
+  \center
+  \includegraphics[width=0.6\textwidth]{figuras/resultados/ponte_h_dissipador}
+  \caption{Ponte H e dissipador}
+  \label{fig:ponte_h_dissipador}
+\end{figure}
+
+
+O circuito de controle foi mantido similar ao primeiro layout e foi feito algumas pequenas modificações na proteção da entrada do sinal do PWM do circuito para garantir que não haverá curto circuito no sistema.
+
+As novas trilhas suportariam a corrente, contudo era necessário soldar o transistor, foi usado então fios para conectar os transistores a ponte H e ligados como mostrado na figura \ref{fig:novo_esquematico_ponte_h}. Cada um dos quatro transistores, possui um Gate, que é um pino de controle, o Drain, que é a saída do transistor e o Source, que é a entrada. Foram enumeradas entradas e saídas com os respectivos transistores, onde 1d equivale ao transistor 1 pino de Drain, 1s ao transistor 1, pino de Source e assim por diante. O pino de controle foi ligado direto a antiga formação da ponte H, já que essa possuía os devidos circuitos de ativar a ponte H e proteger os pinos de controle, usados no PWM.
+
+\begin{figure}[!ht]
+  \center
+  \includegraphics[width=0.7\textwidth]{figuras/resultados/novo_esquematico_ponte_h}
+  \caption{Novo esquemático ponte H}
+  \label{fig:novo_esquematico_ponte_h}
+\end{figure}
 
 
 \subsection{Dissipador de calor}

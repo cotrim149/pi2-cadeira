@@ -29,7 +29,7 @@ Na seção \textit{Power Train} são apresentados conceitos relacionados a motor
 
 	\textbf{Liga Metálica}
 
-	
+
 	Com o objetivo de confeccionar a estrutura que suportará os motores e baterias, é necessário observar alguns conceitos dos materiais que são relevantes ao projeto, bem como o custo, já que este trabalho se trata de um trabalho universitário.
 
 	De acordo com a matéria publicada por Infomet, a dureza e resistência da liga deve-se ao enriquecimento superficial nos aços que é suportada por um núcleo tenaz. Sabe-se que vários tipos de aço apresentam boas condições para essa finalidade. Para tanto, deve-se levar em consideração que a cementação exige tratamento térmico relativamente complexo, o que faz com que a escolha do aço não pode ser feita baseada somente na aplicação final do material, mas também levando em conta as condições térmicas que o material irá sofrer \cite{ensaio_fadiga}. Para esse trabalho, o material estará exposto a condições de temperatura ambiente, o que não será uma variável preocupante. Dessa forma, os esforços mecânicos serão os que merecem devida atenção.
@@ -41,6 +41,33 @@ Na seção \textit{Power Train} são apresentados conceitos relacionados a motor
 	Conforme a fornecedora de aço Açosport, Características e propriedades mecânicas dos aços SAE 1020, os aços SAE 1020 são aços carbonos de ligas metálicas constituídas basicamente de ferro, carbono, silício e manganês, apresentando também outros elementos inerentes ao processo de fabricação, em percentuais controlados. O aço carbono SAE 1020 é um dos aços mais utilizados, devido a sua baixa temperabilidade, excelente forjabilidade e soldabilidade, porém sua usinagem é relativamente pobre. Esse aço é indicado para parafusos, trefilados duros, chassis, discos de roda, peças em geral para máquinas, tubos soldados e veículos submetidos a esforços pequenos e médios. Este tipo de aço é altamente tenaz, particularmente indicado para fabricação de peças que devam receber tratamento superficial para aumento de dureza, principalmente cementação. O aço SAE 1020 é utilizado ainda para eixos em geral, forjados \cite{acosport}.
 
 	Por conta da facilidade de compra do SAE 1020 e especificações mecânicas descritas acima, o grupo optou por esse material para a realização da estrutura do dispositivo de locomoção automatizada. O material atende todas as especificações mecânicas para aguentar as cargas exigidas.
+
+	\textbf{Resistência a Rolagem}
+
+	Segundo \cite{propulsao_cadeira}, os fatores que determinam a resistência ao rolamento são: os coeficientes de atrito das rodas traseiras e dianteiras, o peso total do sistema (cadeira e usuário), a superfície em que a cadeira está sendo impulsionada e a distribuição de peso entre as rodas traseiras e dianteiras através do centro de massa (Cm).
+
+	A figura \ref{fig:diagrama_variaveis} é um diagrama que ilustra as variáveis que determinam a resistência de rolagem da cadeira de rodas manual. Estas variáveis são: o comprimento da roda (\textit{dwb}), a distância horizontal do eixo das rodas traseiras ao centro de massa (\textit{x}) e a distância horizontal do eixo das rodas dianteiras ao centro de massa (\textit{dwb-x}).
+
+	As forças presentes no diagrama representam as forças peso das rodas traseiras (\textit{fr}) e das dianteiras (\textit{fc}), que fazem parte das forças de resistência ao rolamento: \textit{fr,rr} das rodas traseiras e \textit{fc,rr} das rodas dianteiras. Nas equações abaixo: $\mu$ é o coeficiente de fricção de rolagem, $m$ é a massa e $g$ é a aceleração da gravidade \cite{propulsao_cadeira}.
+
+	\begin{equation}
+		f_r=m*g\frac{(dwb-x)}{dwb} ; f_{r,rr}=\mu*f_r
+	\end{equation}
+	\begin{equation}
+		f_c=m*g\frac{x}{dwb} ; f_{c,rr}=\mu*f_c
+	\end{equation}
+	\begin{equation}
+	f_rr=f_{c,rr}+ f_{r,rr}
+	\end{equation}
+
+	A resistência ao rolamento $frr$ é, por fim, a soma das resistências das rodas dianteiras e traseiras.
+
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width = 0.7\textwidth]{figuras/resultados/diagrama_variaveis}
+		\caption{Diagrama das variáveis que determinam a resistência de rolagem da cadeira de rodas manual. \cite{propulsao_cadeira}.}
+		\label{fig:diagrama_variaveis}
+	\end{figure}
 
 
 \section{Power Train}
