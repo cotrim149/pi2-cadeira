@@ -64,7 +64,7 @@ O protótipo é uma estrutura retangular com uma alça de regulação de largura
 \label{fig:acoplamento}
 \end{figure}
 
-No protótipo foram usadas oito braçadeiras circulares de curso infinito, as quais se acoplam na cadeira de rodas dando rigidez a estrutura, dessas oito braçadeiras, duas na parte inferior se acoplam na parte de baixo da cadeira, outras duas se acoplam na parte superior. A figura \ref{fig:acop_bracadeira} ilustra o sistema de acoplamento estrutura/cadeira.
+No protótipo alguns mecanismos de acoplamento foram testados afim de garantir o encaixe mais prático e eficiente do sistema com a cadeira. Dentre as tentativas, foram utilizados materiais como: velcro, correias de nylon e braçadeiras utilizadas em construção civil, que foi a solução mais bem-sucedida. Estas podem ser observadas nas extremidades de acoplamento do sistema na \ref{fig:acoplamento}. Este mecanismo foi posteriormente substituído no acoplamento superior do mecanismo por um sistema  \ref{fig:acop_bracadeira} de funcionamento análogo, porém, de estrutura mais robusta, que foi fabricado pela própria equipe.
 
 \begin{figure}[!htb]
 \centering
@@ -82,13 +82,13 @@ Na parte da estrutura mostrada na figura \ref{fig:acop_bracadeira} existem dois 
 \label{fig:superior_estrutura}
 \end{figure}
 
-A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois “joelhos” capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois “T” com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
+A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois ''joelhos'' capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois ''T'' com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
 
 Os componentes utilizados para se fazer este modelo são descritos:
 \begin{itemize}
   \item Oito braçadeiras circulares de curso infinito;
-  \item Quarto “joelhos” de 90$^\circ$;
-  \item Dois “T”;
+  \item Quarto ''joelhos'' de 90$^\circ$;
+  \item Dois ''T'';
   \item Duas rodas;
   \item Barras de PVC com diâmetros de 20mm e 25mm;
   \item Quatro parafusos;
@@ -104,6 +104,84 @@ O protótipo apresentado na figura \ref{fig:estr_prototipo} foi capaz de mostrar
 \caption{Estrutura acoplada a cadeira}
 \label{fig:estr_prototipo}
 \end{figure}
+
+A etapa seguinte foi a definição do material a ser utilizado no produto final. A melhor opção encontrada foi o aço SAE 1020, por atender todos os requisitos com consideráveis vantagens quando comparados a alternativas como ferro ou alumínio.
+
+Um modelo 3D do projeto foi desenvolvido utilizando o software CATIA V5R19, que já considerou o Aço 1020 em seções quadradas de 20 e 18 mm assim como redondas de 18 mm para as alças superiores. A partir do deste modelo, foi possível proceder com a montagem do mecanismos com toda base necessária para medidas, cortes, junções e elementos de todo o produto. Posteriormente, também foi possível uma análise estrutural.
+
+Alguns elementos foram modificados no sistema de acoplamento inferior e superior, em relação ao que foi apresentado no ponto de controle 2 para que houvesse maior aderência do dispositivo à cadeira de rodas, e evitar esforços mecânicos indesejáveis. Como mostra a \ref{fig:furos_estrutura}, na parte inferior do dispositivo foram adicionados novos furos na vertical, para que a estrutura melhor acople nas cadeiras de rodas de acordo com a NBR 9050.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.7]{figuras/resultados/furos_estrutura}
+\caption{Novos furos na parte inferior da estrutura}
+\label{fig:furos_estrutura}
+\end{figure}
+
+A parte superior da estrutura, que recebeu um novo método de acoplamento a cadeira de rodas, através da utilização de tubos de aço, onde a parte inferior de um dos tubos foi soldado transversalmente com a parte superior do outro tubo. Dois parafusos do tipo borboleta foram adicionados na parte central destes tubos para facilitar seu aperto. Um parafuso foi acoplado na parte inferior do tubo inferior, e outro parafuso foi acoplado na parte superior do tubo superior. Esses parafusos, quando apertados, acoplam-se à estrutura da cadeira de rodas de forma mais simplificada, rápida e segura em relação às braçadeiras utilizadas anteriormente. A \ref{fig:novo_acoplamento_superior} abaixo apresenta as mudanças descritas.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.7]{figuras/resultados/novo_acoplamento_superior}
+\caption{Novo acoplamento superior}
+\label{fig:novo_acoplamento_superior}
+\end{figure}
+
+Com esse novo acoplamento, a parte superior da estrutura pode variar horizontalmente de forma mais simples, já que os tubos inferiores movem-se para a direita e para a esquerda nos braços da estrutura, permitindo um amplo acoplamento em diferentes tipos de cadeiras de rodas.
+
+A figura \ref{fig:esquematico_estr_acoplada} mostra um esquema de como será acoplada a estrutura com a cadeira de rodas, que é feita de maneira simples e rápida. Esta estrutura não interfere no conforto do cadeirante, já que o sistema não interfere na acomodação do cadeirante na cadeira de rodas, enquanto a estrutura não o toca em nenhum momento.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.7]{figuras/resultados/esquematico_estr_acoplada}
+\caption{Esquemático de estruturas acopladas}
+\label{fig:esquematico_estr_acoplada}
+\end{figure}
+
+ \subsection{Esforços Estruturais}
+
+A partir da modelagem tridimensional da estrutura, podem ser demonstradas as tensões segundo o critério de Von Mises, que nos permite ver a tensão de cisalhamento máxima ou a energia de distorção máxima suportada pela estrutura.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.7]{figuras/resultados/vista_lateral_estrutura}
+\caption{Vista Lateral da estrutura do Sistema}
+\label{fig:vista_lateral_estrutura}
+\end{figure}
+
+A \ref{fig:vista_lateral_estrutura} representa a estrutura vista lateralmente, mostrando todos os compartimentos internos dos motores, bateria e controle. Na parte inferior da estrutura, ficarão os motoredutores, onde deles saem os eixos que se ligam às rodas. Na parte intermediária ficará a bateria, e acima dela, a parte de controle. A inclinação observada na parte inferior esquerda da figura acima foi feita para evitar que a estrutura arraste no chão quando o cadeirante passar por terrenos inclinados como, por exemplo, uma rampa.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.7]{figuras/resultados/vista_frontal_estrutura}
+\caption{Vista frontal da estrutura do Sistema}
+\label{fig:vista_frontal_estrutura}
+\end{figure}
+
+
+A \ref{fig:vista_frontal_estrutura} apresenta a parte frontal da estrutura, que será acoplada na parte de trás da cadeira de rodas. Apresentam-se aqui os novos furos que foram feitos na parte inferior, permitindo que o acoplamento inferior se mova em mais posições na vertical. Isto faz com que a estrutura obedeça melhor a NBR 9050. Os braços superiores podem ser, quando necessário, retirados e colocados novamente virados para dentro, formando assim uma espécie de alça para que a estrutura seja puxada ou transportada mais facilmente.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[keepaspectratio=true,scale=0.7]{figuras/resultados/vista_perspectiva_estrutura}
+\caption{Vista em perspectiva da estrutura do Sistema}
+\label{fig:vista_perspectiva_estrutura}
+\end{figure}
+
+Uma visão geral da estrutura é apresentada pela \ref{fig:vista_perspectiva_estrutura}. Aqui observa-se os níveis internos da estrutura, onde ficarão os motores, a bateria e a parte de controle. Além dos braços superiores, que podem se mover em diferentes níveis na vertical para se encaixar melhor na cadeira de rodas, e a parte inferior, também podendo se mover em diferentes níveis na vertical, acoplando facilmente na parte inferior da cadeira de rodas.
+
+\begin{figure}
+  \subfloat[]{\includegraphics[width = 0.37\textwidth]{figuras/resultados/von_mises_lateral}
+   \label{fig:analise_von_mises_1}}
+   \subfloat[]{\includegraphics[width = 0.3\textwidth]{figuras/resultados/von_mises_frontal}
+   \label{fig:analise_von_mises_2}}
+   \subfloat[]{\includegraphics[width = 0.24\textwidth]{figuras/resultados/von_mises_escala}
+   \label{fig:analise_von_mises_3}}
+  \caption{Tensão de Von Mises máxima e mínima do material}\label{fig:analise_von_mises}
+\end{figure}
+
+A figura \ref{fig:analise_von_mises} representa as deformações na estrutura devido aos carregamentos estáticos no sistema e as devidas restrições relativas ao acoplamento e ao contato das rodas com o chão. Os carregamentos adotados foram de 14 kg da bateira, 15 kg dos dois motores e estimados 2 kg de todo o sistema de controle e foram devidamente posicionados em suas posições de trabalho. Vale ressaltar que as deformações apresentadas possuem um fator de aumento de 1000 para possibilitar a visualização. As tensões encontradas no sistema obedeceram o critério de Von Mises, que nos permite notar que a parte inferior da base é o gargalo, pois ela sofre as maiores tensões da estrutura. Na figura (a) verifica-se que a tensão máxima do material é 0.372 MPa, enquanto a figura (b) apresenta a visão frontal destas tensões. Com esses valores sabemos que a estrutura resistirá aos carregamentos a ela submetidos, já que a tensão de escoamento do aço 1020 é de 210Mpa
+
 
 \section{Power-Train}
 
@@ -558,8 +636,6 @@ Integração Motor e Joystick
       Desvantagem: Não foi observados desvantagens para a aplicação, porém para outros propósitos é mais dificil de se utilizar os dados, pois os mesmos não tem uma relação direta com o plano cartesiano original.
 
 Ponte-H (copiar e colar do documento pc2)
-  - Colocar informações sobre dissipador (somente falta o valores pra jéssica colocar isso)
-  - Dimensionamento da largura das trilhas
   - Circuito de direcionamento das PWMs através das seletoras (demultiplexador)
 
 Alimentação do sistema
@@ -672,3 +748,9 @@ aletas estreitamente espaçadas ou aletas amplamente espaçadas para uma determi
 da base. Um dissipador com menor espaçamento entre as aletas terá maior superfície de
 transferência de calor, mas o coeficiente de transferência de calor é menor devido a
 resistência que as aletas introduzem no fluxo do ar.
+
+\subsection{Indicador de Nível de Bateria}
+
+É importante saber o nível de bateria da cadeira de rodas, com isso é possível controlar sua autonomia e saber quando ela irá parar de funcionar. O indicador servirá para informar quando a bateria estiver acabando, para que se possa voltar para estação de recarga e recarregar a cadeira de rodas.
+
+Será utilizado um multimetro automotivo de bateria como mostrado na figura X. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.

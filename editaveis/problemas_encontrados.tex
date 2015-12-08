@@ -96,20 +96,20 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
 
 \subsection{Ponte H}
  \begin{itemize}
-    \item Problema:Se colocado alto nível nas duas entradas o motor poderia “explodir”.
-	  \item Solução:Colocar uma porta lógica no início para corrigir essa falha, assim quando a ponte H receber nível lógico nas duas entradas o motor não responderá
-
     \item Problema: As entradas da ponte H não podem ser acionadas ao mesmo tempo, pois caso sejam acionadas haverá um curto circuito no sistema e não haverá diferença de tensão nos terminais do motor.
     \item Solução: Para o risco de curto circuito, caso as entradas fossem acionadas ao mesmo tempo, desenvolveu-se uma lógica na entrada utilizando portas lógicas do tipo AND e NAND. Isso foi feito para garantir que não haverá acionamento das duas entradas da ponte H ao mesmo tempo.
 
-    \item Problema no desenvolvimento da PCB: Por algumas placas estarem velhas, ao serem esquentadas o esquemático do papel não estava sendo transferido e o Fenolíteo descolou do cobre.
+    \item Problema: No desenvolvimento da PCB: Por algumas placas estarem velhas, ao serem esquentadas o esquemático do papel não estava sendo transferido e o Fenolíteo descolou do cobre.
     \item Solução: Foram compradas placas novas de Fenolíteo e foi feita a mudança de papel coche para papel fotográfico
 
     \item Dificuldades na simulação: Para fazer os testes da ponte H era necessário um PWM nas entradas do circuito, e na simulação não era possível fazer o sinal de PWM com um microcontrolador. Para testar o circuito completo era necessário utilizar a lógica das portas logicas junto com os CI’s correspondentes. Nas primeiras simulações os componentes corretos para a confecção não estavam sendo encontrados.
     \item Solucão: A dificuldade de simulação foi superada com a mudança de software de simulação, pois nessa forma foi possível encontrar todos os componentes que eram necessários para simulação, e para gerar o PWM foi estudado formas de gera-lo utilizando circuitos integrados. Dessa forma foi possível testar o funcionamento.
 
-    \item Problema: A porte H é um circuito de potência, e os seus transistores esquentem muito. Como o circuito puxa uma alta corrente, os transistores MOSFET superaquecem, e com isso não se é desejável deixar o circuito em uma temperatura tão elevada. Os transistores MOSFET podem operar em até 175$^{\circ}$C.
-    \item Solução: ara amenizar o problema de superaquecimento dos transistores, foi planejado a utilização de uma placa metálica, com o intuito de dissipar o calor dos transistores e nela acoplar um cooler.
+	\item Problema: Largura da trilha dos transistores da ponte H, quando ligada nos motores do sistema, após um tempo elas esquentavam e descolavam do fenolíteo, desta forma rompendo a ligação.
+    \item Solucão: Dimensionar e desenvolver uma placa de circuito impresso para ligar apenas os transistores.
+
+    \item Problema: A porte H é um circuito de potência, e os seus transistores esquentem muito. Como o circuito puxa uma alta corrente, os transistores MOSFET superaquecem. Os transistores MOSFET 3205 podem operar em até 175$^{\circ}$C, com uma temperatura tão elevada ele estava dessoldando os componentes ao redor do circuito.
+	\item Solucão: Colocar os transistores do lado de fora das placas de fenolíteo e em dissipadores devidamente dimensionados.
 
     \end{itemize}
 
