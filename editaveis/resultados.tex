@@ -383,17 +383,17 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 \section{Controle}
 
   O controle da cadeira de rodas será feito utilizando 3 módulos: Joystick, Controlador central e Motor.
-  O módulo Joystick, para receber os comandos provenientes do usuário e enviar estes comando para o controlador central. O módulo do controlador central, recebe as informações do módulo anterior, as processa e faz o envio para o módulo Motor. O módulo Motor recebe as informações enviadas pelo módulo do controlador central, produzindo 2 pulsos de PWM e enviando-os para as pontes H, com o intuito de controlar a intensidade e direção dos motores.
+  O módulo Joystick, para receber os comandos provenientes do usuário e enviá-los para o controlador central. O módulo do controlador central recebe as informações do módulo anterior, as processa e faz o envio para o módulo Motor. O módulo Motor recebe as informações enviadas pelo módulo do controlador central, produzindo 2 pulsos de PWM e enviando-os para as pontes H, com o intuito de controlar a intensidade e direção dos motores.
 
 \subsection{Atual Panorama}
 
-  O módulo Controlador central possui um Raspberry, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
+  O módulo Controlador central possui um \texit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
 
-  A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteu-se um \textit{delay} do envio dos dados processados para o módulo Motor.
+  A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteve-se um \textit{delay} do envio dos dados processados para o módulo Motor.
 
-  Então uma segunda versão foi desenvolvida utilizando-se de múltiplas \textit{threads}: um \textit{thread} foi feita para receber e processar os dados provenientes do Joytick e uma \textit{thread} foi feita para enviar os dados para o Motor. Desta forma o \textit{delay} observado na primeira versão foi retirado, aumentando assim, o desempenho do sistema em relação a transferência e processamento dos dados.
+  Então uma segunda versão foi desenvolvida utilizando-se de múltiplas \textit{threads}: uma \textit{thread} foi feita para receber e processar os dados provenientes do Joytick e outra para enviar os dados para o Motor. Desta forma o \textit{delay} observado na primeira versão foi retirado, aumentando assim, o desempenho do sistema em relação a transferência e processamento dos dados.
 
-  Para a primeira versão os dados enviados pelo Joystick utilizavam de um padrão de transmissão, feito para se ter certeza que os dados recebidos não seria algum tipo de ''lixo'' trasmitido. Esta padrão seguia o formato: ''$(valor\, potenciometro\, 1)$ $(valor\, potenciometro\, 2)$ $\backslash n$''.
+  Para a primeira versão os dados enviados pelo Joystick utilizavam de um padrão de transmissão, feito para se ter certeza que os dados recebidos não seriam algum tipo de ''lixo'' trasmitido. Esta padrão seguia o formato: ''$(valor\, potenciometro\, 1)$ $(valor\, potenciometro\, 2)$ $\backslash n$''.
 
   Para a segunda versão os dados são enviados conforme o seguinte padrão:\\ ''$(valores\, pares\, potenciometro\, 1)$ $(valores\, ímpares\, potenciometro\, 2)$''.
 
@@ -414,7 +414,7 @@ Panororama do sistema de controle conforme Arquitetura
 \label{ssec:joystick}
 O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos) e um microcontrolador.
 
-Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda ponta pinos de saída para o MSP. Essas placas possuem RJ-45 fêmeas e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois, facilita a conexão de ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
+Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda ponta pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois, facilita a conexão de ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
 
 \begin{figure}[!htb]
 \centering
@@ -450,7 +450,7 @@ Joystick
 
   \textbf{Comunição entre MSP e Raspberry}
 
-  A comunicação, tanto entre o MSP do Josytick e o Raspberry, quanto entre o MSP do Motor e o Raspberry, estão sendo feitas via \textit{threads}.
+  A comunicação, tanto entre o MSP do Joystick e o \texit{Raspberry PI}, quanto entre o MSP do Motor e o \texit{Raspberry PI}, estão sendo feitas via \textit{threads}.
 
   A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
 
@@ -461,9 +461,9 @@ Joystick
     \label{fig:find_port_method}
   \end{figure}
 
-  Este método permite que tanto o MSP do Joystick quanto o MSP do Motor, sejam conectados sem a previa identificação de qual porta utilizar para comunicação. Porém, há existência de prioridade entre as \textit{threads}, ou seja, enquanto a \textit{threads} do Joystick não se conectar com sucesso a \textit{threads} do Motor não irá se conectar.
+  Este método permite que tanto o MSP do Joystick quanto o MSP do Motor sejam conectados sem a previa identificação de qual porta utilizar para comunicação. Porém, há existência de prioridade entre as \textit{threads}, ou seja, enquanto a \textit{thread} do Joystick não se conectar com sucesso a \textit{thread} do Motor não irá realizar a conexão.
 
-  Para que este processo ocorra com sucesso, uma checagem de dados é feita para cada tentativa de conexão. Esta checagem consiste em verificar se a porta, a ser conectada, está enviando dados ou recebendo. Para que a conexão do Josytick ocorra com sucesso, a porta deva estar recebendo dados, para que a conexão do Motor ocorra com sucesso, a porta não deve enviar dados. A implementação desta checagem pode ser verificada na figura \ref{fig:try_receive_data}.
+  Para que este processo ocorra com sucesso, uma checagem de dados é feita para cada tentativa de conexão. Esta checagem consiste em verificar se a porta a ser conectada está enviando ou recebendo dados. Para que a conexão do Josytick ocorra com sucesso, a porta deve estar recebendo dados, para que a conexão do Motor ocorra com sucesso, a porta não deve receber dados. A implementação desta checagem pode ser verificada na figura \ref{fig:try_receive_data}.
 
   \begin{figure}[!htb]
   \centering
@@ -472,27 +472,27 @@ Joystick
   \label{fig:try_receive_data}
   \end{figure}
 
-  Esta estratégia auxilia na manutenção do produto, pois caso algum MSP fique inutilizavel, é possivel colocar outro MSP, previamente configurado, no lugar do componente inutilizado.
+  Esta estratégia auxilia na manutenção do produto, pois caso algum MSP fique inutilizável, é possivel colocar outro MSP, previamente configurado, no lugar do componente inutilizado.
 
   Após o Raspberry conseguir encontrar uma porta para se conectar com o MSP do Joystick, então a \textit{thread} do MSP do Motor utiliza do mesmo método para se conectar.
 
-  Ao se ter as duas conexões estabelecidas, então o recebimento de dados são adquiridos do Joystick e enviados para os Motores. Para se fazer este envio de informações de forma correta é necessário fazer a sincronização entre as \textit{threads}.
+  Ao se ter as duas conexões estabelecidas, então os dados são adquiridos do Joystick e enviados para os Motores. Para se realizar este envio de informações de forma correta é necessário fazer a sincronização entre as \textit{threads}.
 
   \textbf{Sincronização de \textit{Threads}}
 
   Foi percebido que as \textit{threads} precisam estar sincronizadas para se fazer o envio de informações de forma correta. Pois a \textit{thread} do Joystick recebe as informações, e a \textit{thread} do Motor consome estas informações.
 
-  Este problema de sincronização das \textit{threads} é conhecido como um clássico problema de \textit{threads}: Produtor e Consumidor.
+  Este problema de sincronização das \textit{threads} é conhecido como o clássico problema da programação paralela: Produtor e Consumidor.
 
   Este problema é caracterizado por 2 processo que compartilharem de um \textit{buffer} comum, no qual o produtor insere a informação no \textit{buffer} e o consumidor retira a informação do \textit{buffer}. Possíveis problemas: Produtor insere produto onde não foi consumido e consumidor remove informação onde já foi removido. Mais detalhes do problema no capítulo \ref{cap:fundamentacao_teorica}.
 
   Este problema foi solucionado com os seguintes passos:
   \begin{enumerate}
-    \item Produtor: Produz os itens necessários em \textit{buffer}, no caso os valores referentes aos potenciometros do Joystick. Neste momento a \textit{thread} do Consumidor é parada e uma variável responsável por esta trava é notificada. Isto pode ser visto na figura \ref{fig:joy_lock};
-    \item Consumidor: Consume os itens em \textit{buffer} enviado os mesmos para o MSP dos Motores. Neste momento a \textit{thread} do Produtor é parada e a variável responsável pela trava é consumida. Isto pode ser visto na figura \ref{fig:motor_lock};
+    \item Produtor: Produz os itens necessários em \textit{buffer}, no caso os valores referentes aos potenciômetros do Joystick. Neste momento a \textit{thread} do Consumidor é parada e uma variável responsável por esta trava é notificada. Isto pode ser visto na figura \ref{fig:joy_lock};
+    \item Consumidor: Consume os itens em \textit{buffer} enviando os mesmos para o MSP dos Motores. Neste momento a \textit{thread} do Produtor é parada e a variável responsável pela trava é consumida. Isto pode ser visto na figura \ref{fig:motor_lock};
   \end{enumerate}
 
-  A variável de trava é utilizada com o propósito de se fazer a produção e o consumo de forma sincronizada. O processo do Consumidor somente será ativo quando o processo do Produtor setar a variável de trava.
+  A variável de trava é utilizada com o propósito de se fazer a produção e o consumo de forma sincronizada e nunca ao mesmo tempo. O processo do Consumidor somente será ativo quando o processo do Produtor setar a variável de trava.
 
   \begin{figure}[!htb]
   \centering
@@ -510,7 +510,7 @@ Joystick
 
 \subsection{Motor}
 
-    O modulo Motor é utilizado para fazer a movimentação da cadeira, conforme os comandos enviados pelo usuário através do módulo Joystick. O módulo Motor é composto por 2 motores de corrente contínua e um microcontrolador.
+    O módulo Motor é utilizado para fazer a movimentação da cadeira, conforme os comandos enviados pelo usuário através do módulo Joystick. O módulo Motor é composto por 2 motores de corrente contínua e um microcontrolador.
 
     O microcontrolador deste módulo tem como intuito receber as informações do controlador central e gerar 2 pulsos de PWM, um para cada motor. As funções \textit{update\_left} e \textit{update\_right}, vide figura \ref{fig:update_motors}, tem como objetivo atualizar o \textit{duty cycle} para cada motor.
 
@@ -522,7 +522,7 @@ Joystick
     \label{fig:update_motors}
     \end{figure}
 
-    Os valores são recebidos através da função \textit{update}, vide figura \ref{fig:update}, responsável por receber de forma correta os dados. Esta rotina consiste em verificar se o valor recebido é impar ou par. Isto é feito por causa da estratégia utilizada para diferenciar os dados de cada potenciômetro enviados do módulo Joystick, através do controlador central.
+    Os valores são recebidos através da função \textit{update}, vide figura \ref{fig:update}, responsável por receber de forma correta os dados. Esta rotina consiste em verificar se o valor recebido é ímpar ou par. Isto é feito por causa da estratégia utilizada para diferenciar os dados de cada potenciômetro enviados do módulo Joystick, através do controlador central.
 
     \begin{figure}[!htb]
     \centering
@@ -531,12 +531,11 @@ Joystick
     \label{fig:update}
     \end{figure}
 
-
-    A função \textit{update\_left} recebe os valores pares, e a função \textit{update\_right} recebe os valores impares.
+    A função \textit{update\_left} recebe os valores pares, e a função \textit{update\_right} recebe os valores ímpares.
 
 \subsection{Integração Motor e Joystick}
 
-Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeamento dos possíveis estados de movimentação. Estes estados foram inicialmente mapeados utilizando os valores do módulo do Joystick. Com base nos estados mapeados, a intensidade e direção dos motores são formulados. Esta integração foi implementada na Raspberry.
+Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeamento dos possíveis estados de movimentação. Estes estados foram inicialmente mapeados utilizando os valores do módulo do Joystick. Com base nos estados mapeados, a intensidade e direção dos motores são formulados. Esta integração foi implementada na \textit{Raspberry}.
 
   \textbf{Mapeamento dos Estados em Relação ao Joystick}
 
