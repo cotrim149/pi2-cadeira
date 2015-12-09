@@ -4,7 +4,7 @@ A partir do estudo e pesquisa realizado até o momento determinamos o que utiliz
 
 \section{Estrutura}
 
-Com a utilização do programa CATIA V5 3D foi estruturado o sistema eletrônico acoplado à cadeira de rodas, \ref{fig:vista_isometrica_traseira}. Visando três preceitos básicos: comodidade, acessibilidade e conforto.
+Com a utilização do programa CATIA V5 3D foi estruturado o sistema acoplado à cadeira de rodas, \ref{fig:vista_isometrica_traseira}. Visando três preceitos básicos: comodidade, acessibilidade e conforto.
 
 \begin{figure}[!htb]
 \centering
@@ -170,7 +170,7 @@ A \ref{fig:vista_frontal_estrutura} apresenta a parte frontal da estrutura, que 
 
 Uma visão geral da estrutura é apresentada pela \ref{fig:vista_perspectiva_estrutura}. Aqui observa-se os níveis internos da estrutura, onde ficarão os motores, a bateria e a parte de controle. Além dos braços superiores, que podem se mover em diferentes níveis na vertical para se encaixar melhor na cadeira de rodas, e a parte inferior, também podendo se mover em diferentes níveis na vertical, acoplando facilmente na parte inferior da cadeira de rodas.
 
-\begin{figure}
+\begin{figure}[!ht]
   \subfloat[]{\includegraphics[width = 0.37\textwidth]{figuras/resultados/von_mises_lateral}
    \label{fig:analise_von_mises_1}}
    \subfloat[]{\includegraphics[width = 0.3\textwidth]{figuras/resultados/von_mises_frontal}
@@ -204,7 +204,7 @@ O centro de massa do Sistema de automação, vide figura \ref{fig:centro_massa_s
 
 As coordenadas encontradas, tanto na literatura quanto computacionalmente, foram manualmente modificadas de modo a ter o eixo da roda maior da cadeira de rodas como ponto de origem para o cálculo vetorial. Vale lembrar que os cálculos desconsideram possíveis deformidades no corpo do usuário que possam causar assimetria na distribuição de massa.
 
-
+Desta maneira, os cálculos resultaram que o centro de massa está, portanto, a 45 cm do eixo das rodas maiores da cadeira verticalmente para cima, e a 5 cm deste eixo horizontalmente na direçao do usuário. Foi observado que o centro de massa foi deslocado para mais perto do eixo das rodas maiores por causa de sua carga adicional ao sistema.
 
 \section{Power-Train}
 
@@ -648,7 +648,7 @@ No decorrer da produção do circuito da ponte H, foi utilizado uma porta NAND e
 
 Foi necessário utilizar um dobrador de tensão no circuito, com ele foi possível garantir um VGS maior que 2V para polarização dos transistores MOSFET da ponte. Como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polariza-lo.
 
-O circuito do dobrador, representado na figura \ref{figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
+O circuito do dobrador, representado na figura \ref{fig:figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
 
 Durante o período da onda quadrada em alto, C3 descarrega na saída do diodo na parte negativa gerando um efeito que dobra a tensão, conforme pode ser visto na figura \ref{fig:figx+4}. É importante observar que o capacitor C2 não pode ser muito grande e nem o pulso do oscilador muito largo para que não haja uma descontinuidade muito grande no valor de tensão.
 
@@ -773,4 +773,11 @@ resistência que as aletas introduzem no fluxo do ar.
 
 É importante saber o nível de bateria da cadeira de rodas, com isso é possível controlar sua autonomia e saber quando ela irá parar de funcionar. O indicador servirá para informar quando a bateria estiver acabando, para que se possa voltar para estação de recarga e recarregar a cadeira de rodas.
 
-Será utilizado um multimetro automotivo de bateria como mostrado na figura X. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.
+Será utilizado um multimetro automotivo de bateria como mostrado na figura \ref{fig:indicador_bateria}. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.
+
+\begin{figure}[!ht]
+  \center
+  \includegraphics[width=0.7\textwidth]{figuras/resultados/indicador_bateria}
+  \caption{Multimetro automotivo de bateria}
+  \label{fig:indicador_bateria}
+\end{figure}
