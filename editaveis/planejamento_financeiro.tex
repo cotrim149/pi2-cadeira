@@ -21,10 +21,7 @@ Um dos tópicos de grande importância para o projeto é o custo do produto que 
 % \usepackage{graphicx}
 % \usepackage[normalem]{ulem}
 % \useunder{\uline}{\ul}{}
-\begin{table}[!ht]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|}
+\begin{longtable}{|c|c|c|} 
 \hline
 Quantidade & Componente & Preço Unitário \\ \hline
 Controle &  &  \\
@@ -81,10 +78,8 @@ Estrutura &  &  \\
 1 & Solda e material & R\$300.00 \\
  & Subtotal & R\$300.00 \\ \hline
  & TOTAL & R\$2345.00 \\ \hline
-\end{tabular}
-}
-\caption{My caption}
+\caption{Tabela de gastos totais por subgrupo}
 \label{tab:custos_tabela}
-\end{table}
+\end{longtable}
 
 O custo total do projeto é de R\$2663.00.  Vale ressaltar que apesar do custo do protótipo ser alto, a nível industrial seria significantemente reduzido.
