@@ -78,21 +78,25 @@ Pode ser instalado no Raspberry um sistema operacional que possibilite a facilid
 \textbf{Quantidade de MSPs a serem utilizados}
 
 A utilização de vários MSPs é uma ótima alternativa para separar componentes independentes e utilizar ferramentas como conversor AD, gerador de PWM e temporizador de forma simples, barata e rápida.
- \begin{itemize}
-      \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
+  \begin{itemize}
+   \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
 
-	  \item Solução: MSPs dedicados a cada componente foram utilizados, por sua facilidade em implementar conversores AD de vários canais, PWMs e por ser de fácil comunicação com o Raspberry Pi via serial UART.
-
-    \end{itemize}
+	\item Solução: MSPs dedicados a cada componente foram utilizados, por sua facilidade em implementar conversores AD de vários canais, PWMs e por ser de fácil comunicação com o Raspberry Pi via serial UART.
+    \item Problema: Sincronização do envio dos dados com os pulsos de PWM.
+    \item Solução: A formatação do envio de dados foi modificado. A formatação anterior seguia o modelo: ''(Informação potenciômetro 1)(Informação potenciômetro 2)($\backslash$ n)'', sendo mudada para: ''(Valores Pares potenciômetro 1)(Valores Impares potenciômetro 2)''. Baseado nisso, houve uma melhora ao se receber os dados.
+  \end{itemize}
 
 \subsection{Arquitetura}
  \begin{itemize}
-      \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequêncial. A Paralela nos permite ter várias "threads" acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  "thread". Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
+   \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequêncial. A Paralela nos permite ter várias "threads" acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  "thread". Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
 
-	  \item Solução 1: Foi sugerido que uma montagem da solução sequêncial fosse montada para se fazer uma avaliação, em relação ao tempo de resposta que seria entre o usuário fazer o movimento com o Joystick e o motor responder ao movimento.
-  \item Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do software) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
+	\item Sugestão de Solução 1: Foi sugerido que uma montagem da solução sequêncial fosse montada para se fazer uma avaliação, em relação ao tempo de resposta que seria entre o usuário fazer o movimento com o Joystick e o motor responder ao movimento.
+  \item Sugestão de Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do software) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
+  \item Solução: Foi feita a implementação da arquitetura Paralela.
 
-    \end{itemize}
+  \item Problema: A arquitetura Paralela não está com as "threads" devidamente sincronizadas.
+  \item Solução: Foi descoberto que o problema de sincronização pode ser resolvido com a solução produtor/consumidor.
+\end{itemize}
 
 \subsection{Ponte H}
  \begin{itemize}
@@ -115,9 +119,11 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
 
 \subsection{Joystick}
  \begin{itemize}
-  \item Problema: Inicialmente utilizamos um joystick de um controle de videogame (PlayStation 2). Este não se adequou às nossas necessidades.
-  \item Solução: Adquirimos um joystick que tivesse conectores, facilitando assim a prototipagem e implementação. Ainda estamos aguardando sua chegada para verificar se esse joystick se adequaria.
+  \item Problema: Inicialmente utilizamos um \textit{joystick} de um controle de videogame (PlayStation 2). Este não se adequou às nossas necessidades.
+  \item Solução: Adquirimos um joystick que tivesse conectores, facilitando assim a prototipagem e implementação.
 
+  \item Problema: Fazer modelo físico do módulo Joystick.
+  \item Solução: Foi adquirida uma caixa plástica, na qual foi anexada o \textit{joystick}, vide seção \ref{ssec:joystick} para maiores detalhes.
  \end{itemize}
 
 \section{Power Train}
@@ -152,14 +158,24 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
 
  \begin{itemize}
    \item Problema: O sistema superior de acoplamento estava consumindo uma quantidade de tempo muito elevada para a sua regulagem.
-   \item Solução: foi construído um novo sistema de acoplamento para a parte superior, o novo sistema é semelhante ao antigo mas sua regulagem é muito mais veloz, a imagem x mostra esse novo sistema.
+   \item Solução: foi construído um novo sistema de acoplamento para a parte superior, o novo sistema é semelhante ao antigo mas sua regulagem é muito mais veloz, a imagem \ref{fig:novo_acoplamento_superior} mostra esse novo sistema.
+
+   \item Problema: Devido a possibilidade de andar sobre superfícies inclinadas, foi constatado que era necessário modificar a parte traseira da estrutura para que ela não encostasse no chão quando o sistema estivesse entrando em um aclive.
+   \item Solução: foi feito uma modificação na parte traseira, conforme a imagem \ref{fig:vista_lateral_estrutura} mostra, assim com a adição de uma coluna inclinada ao sistema, não há risco de arrasto da parte traseira.
+
+   \item Problema: Muito tempo para acoplar cadeiras;
+   \item Solução: O lado do parafusos foi ajustado para melhor manuzeio e uma outra ferramenta foi utilizada, diminuindo o tempo de acoplamento.
+
  \end{itemize}
 
 \subsection{Falta de cadeira}
  \begin{itemize}
   \item Problema: Não se tinha cadeiras de rodas disponíveis para teste da estrutura.
   \item Solução: Entramos em contato com os professores responsáveis pela cadeira de rodas presente no laboratório e conseguimos autorização para utilizá-la. Outras cadeiras foram conseguidas por meio de doações de terceiros.
-
  \end{itemize}
 
-\subsection{}
+ \subsection{Movimentação}
+   \begin{itemize}
+     \item Problema: Ao se acoplar a estrutura foi percebido, tardiamente, que as rodas da estrutura e da cadeira de rodas não são concêntricas. Impossibilitando a movimentação da cadeira em torno do seu próprio eixo;
+     \item Solucão: -
+   \end{itemize}
