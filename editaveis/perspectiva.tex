@@ -16,52 +16,39 @@ Na seção \textit{Incremento Atual} são levantadas as características e funci
     	\item Melhoria dos parafusos com adaptação de borboletas para facilitar na rosca, e, assim, evitar o uso de ferramentas.
     \end{enumerate}
   \subsection{Power Train}
-    \begin{enumerate}
-      \item Escolha do motor elétrico, levando em consideração, os estudo matemáticos realizados e seu custo financeiro.
-      \item Especificação do motor elétrico de Corrente Contínua quanto a potência minima;
-      \item Estudo e especificação sobre baterias a serem utilizadas, quanto tensão, capacidade e dimensão. Foi escolhido usar a bateria de Chumbo-Ácida selada, levando em conta vantagens e limitações. Os cálculos de autonomia foram feitos para melhor estimar o método de carregamento da bateria;
-
-    	\item Estudo com o auxílio do software Matlab da interferência da roda e do peso do sistema no desempenho do conjunto de moto-redução;
-      \item Os motores com redutor escolhido para o projeto possui potência de 305W e redução de 1:10;
-
-    \end{enumerate}
-
+    % \begin{enumerate}
+    %   \item Escolha do motor elétrico, levando em consideração, os estudo matemáticos realizados e seu custo financeiro.
+    %   \item Especificação do motor elétrico de Corrente Contínua quanto a potência minima;
+    %   \item Estudo e especificação sobre baterias a serem utilizadas, quanto tensão, capacidade e dimensão. Foi escolhido usar a bateria de Chumbo-Ácida selada, levando em conta vantagens e limitações. Os cálculos de autonomia foram feitos para melhor estimar o método de carregamento da bateria;
+    %
+    % 	\item Estudo com o auxílio do software Matlab da interferência da roda e do peso do sistema no desempenho do conjunto de moto-redução;
+    %   \item Os motores com redutor escolhido para o projeto possui potência de 305W e redução de 1:10;
+    %
+    % \end{enumerate}
+    Não houve incremento relacionado a esta área.
     \subsection{Controle}
       \begin{enumerate}
-        \item Especificação de tecnologia: Estudo e escolha da melhor tecnologia voltada para o problema, que no caso será feito com um Raspberry Pi para comunicação entre a interface do usuário e o motor;
-
-        \item Controle de potência: Estudo de qual tipo de controlador de potência a ser usado no motor, para controle de sua corrente. A escolha da utilização da ponte H será combinado com o algoritmo de PWM, que utiliza o Raspberry Pi como forma de resposta aos comandos dos usuários como a diração, aceleração, frenagem da cadeira motorizada adaptada;
-
-        \item Escolha da linguagem de programação: Definição de qual linguagem será utilizada com base na problemática existente e nos recursos a serem utilizados. A linguagem escolhida foi o Phyton, pois existem bibliotecas especificas que controlam GPIO do Raspebery Pi.
+        \item Mudança nas trilhas das pontes H para trilhas mais espessas de modo que os componentes da ponte H consigam aguentar a corrente que passa neles.
+         \item Confecção do Joystick para usuário.
+         \item Implementação de arquitetura paralela funcional.
+         \item Implementação de 2 pulsos de PWM em somente 1 microcontrolador.
+         \item Dissipadores de calor foram dimensionados para os transistores da ponte H, que podem chegar a altas temperaturas, as quais podem prejudicar seus componentes.
+         \item Modelagem dos estados de movimentação da cadeira de rodas em relação ao \textit{joystick} e intensidade e direção dos motores.
+       % \item Especificação de tecnologia: Estudo e escolha da melhor tecnologia voltada para o problema, que no caso será feito com um Raspberry Pi para comunicação entre a interface do usuário e o motor;
+        %
+        % \item Controle de potência: Estudo de qual tipo de controlador de potência a ser usado no motor, para controle de sua corrente. A escolha da utilização da ponte H será combinado com o algoritmo de PWM, que utiliza o Raspberry Pi como forma de resposta aos comandos dos usuários como a diração, aceleração, frenagem da cadeira motorizada adaptada;
+        %
+        % \item Escolha da linguagem de programação: Definição de qual linguagem será utilizada com base na problemática existente e nos recursos a serem utilizados. A linguagem escolhida foi o Phyton, pois existem bibliotecas especificas que controlam GPIO do Raspebery Pi.
 
       \end{enumerate}
 
   \subsection{Interface com Usuário}
     \begin{enumerate}
       \item Gerar um interface com o usuário utilizando o joystick para o controle da cadeira de rodas. Gerar, utilizando um display, indicadores que são importantes para o usuário, tais como: Velocidade e indicador da bateria.
-      \item Decisão do não uso de aplicativo para controle da cadeira de rodas.
-      \item Montagem de protótipo de controle para testes de ponte H e pulsos de PWM.
     \end{enumerate}
 
 \section{Próximos passos}
   \subsection{Estrutura}
-    \begin{enumerate}
-      \item Testes com o eixo acoplado ao motor;
-      \item Escolha de material mediante norma ABNT 6061 - T6;
-	 \item Desenvolvimento do protótipo.
-    \end{enumerate}
   \subsection{Power Train}
-    \begin{enumerate}
-      \item Testes em conjunto com a parte de estrutura e controle.
-      \end{enumerate}
-
   \subsection{Interface com Usuário}
-    \begin{enumerate}
-      \item Montagem do Joystick ergonômico.
-    \end{enumerate}
   \subsection{Controle}
-    \begin{enumerate}
-     \item Implementação de filtro para suavizar movimentos do Joystick para motores;
-     \item Implementação dos testes para os códigos do MSP;
-     \item Implementação dos sensores de nível de bateria e velocidade em MSP;
-    \end{enumerate}
