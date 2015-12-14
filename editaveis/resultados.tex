@@ -324,9 +324,9 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
     Em = \frac{m*V^2}{2}
   \end{equation}
 
-  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade de 2.77 m/s. Assim, a energia necessária para mover a cadeira é de 578.7 J. Sendo 1 Watt igual a 1 J/s, tem-se, portanto, 578.7 W.
+  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa do sistema e $V$ é a velocidade máxima. Assim, a energia necessária para mover a cadeira é de $578.7 J$. Este valor pode ser relacionado com a potência do sistema por esta ser igual a taxa de energia, ou seja, 1 watt é igual à 1 joule por segundo. Assim, a cadeira de rodas terá a capacidade de realizar $568.7 J$ a cada segundo de trabalho, com isso a potência exigida dos motores será de $578.7 W$.
 
-  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 Volts e 305 Watts para o projeto, assim, a potência total entregue ao sistema é de 610 W. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
+  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 volts e 305 watts para o projeto, assim, a potência total entregue ao sistema é de $610 W$. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
 
   As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
 
@@ -346,13 +346,13 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
   Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
   \end{equation}
 
-  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, se deve adicionar um termo de perdas a serem superadas pelos motores à equação da energia, este termo $\epsilon$ seria igual a 1.09:
+  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, pode-se considerar a equação real da energia abaixo ($Emr$), onde são consideradas as perdas através do termo $\epsilon$, que é igual a 1.09.
 
   \begin{equation}
     Em = \frac{m*V^2*\epsilon}{2}
   \end{equation}
 
-  Assim, a energia necessária para mover a estrutura seria de 630.434 J, ou 630.434 W de potência. Para encontrar o valor da velocidade final do sistema é preciso rearranjar a equação acima. Uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
+  Assim, a potência necessária para mover a estrutura seria, teoricamente de $630.4 W$. Para encontrar o valor da velocidade final do sistema, foram cnsiderados os dois motores de $305 W$, o peso $m$ de $150 Kg$ e o termo $\epsilon$. Além destes, uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
 
   \begin{equation}
   Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
