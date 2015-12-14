@@ -387,7 +387,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \subsection{Atual Panorama}
 
-  O módulo Controlador central possui um \texit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
+  O módulo Controlador central possui um \textit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
 
   A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteve-se um \textit{delay} do envio dos dados processados para o módulo Motor.
 
@@ -450,7 +450,7 @@ Joystick
 
   \textbf{Comunição entre MSP e Raspberry}
 
-  A comunicação, tanto entre o MSP do Joystick e o \texit{Raspberry PI}, quanto entre o MSP do Motor e o \texit{Raspberry PI}, estão sendo feitas via \textit{threads}.
+  A comunicação, tanto entre o MSP do Joystick e o \textit{Raspberry PI}, quanto entre o MSP do Motor e o \textit{Raspberry PI}, estão sendo feitas via \textit{threads}.
 
   A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
 
