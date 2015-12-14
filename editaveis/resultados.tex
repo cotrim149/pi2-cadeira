@@ -281,11 +281,11 @@ Isto exige um torque inicial de 9.0129 Nm (dado que os raios das rodas do protó
 P = T*\omega = 9.0129*26.18 = 235.96 W
 \end{equation}
 
-  A potência entregue pelos motores à cadeira de rodas será maior que estes 235.96 W . A diferença entre a entregue e a necessária para retirar a cadeira da inércia será considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
+  A potência entregue pelos motores à cadeira de rodas é maior que estes 235.96 W. A diferença entre a potência entregue e a necessária para retirar a cadeira da inércia é considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
 
   \subsection{Moto-redutor}
 
-  Será utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+  Foi utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
 
   Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
 
@@ -356,7 +356,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
   Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
   \end{equation}
 
-  Assim, a estimativa da velocidade máxima que a cadeira deve obter será de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+  Assim, a estimativa da velocidade máxima da cadeira é de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
 
   \begin{equation}
   \omega = \frac{V}{r}
@@ -366,7 +366,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
   Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
 
-  Para atender dois motores de 305 W, será conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
+  Para atender dois motores de 305 W, é conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
 
   \begin{equation}
   E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
@@ -380,7 +380,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \section{Controle}
 
-  O controle da cadeira de rodas será feito utilizando 3 módulos: Joystick, Controlador central e Motor.
+  O controle da cadeira de rodas foi feito utilizando 3 módulos: Joystick, Controlador central e Motor.
   O módulo Joystick, para receber os comandos provenientes do usuário e enviá-los para o controlador central. O módulo do controlador central recebe as informações do módulo anterior, as processa e faz o envio para o módulo Motor. O módulo Motor recebe as informações enviadas pelo módulo do controlador central, produzindo 2 pulsos de PWM e enviando-os para as pontes H, com o intuito de controlar a intensidade e direção dos motores.
 
 \subsection{Atual Panorama}
@@ -444,11 +444,11 @@ Joystick
 
 \subsection{Controlador Central}
 
-  O Raspberry será utilizado como central de comandos para processar as informações vindas do MSP dedicado ao módulo Joystick e enviar o resultado deste processamento para o MSP dedicado aos Motores.
+  O Raspberry foi utilizado como central de comandos para processar as informações vindas do MSP dedicado ao módulo Joystick e enviar o resultado deste processamento para o MSP dedicado aos Motores.
 
   \textbf{Comunição entre MSP e Raspberry}
 
-  A comunicação, tanto entre o MSP do Joystick e o \textit{Raspberry PI}, quanto entre o MSP do Motor e o \textit{Raspberry PI}, estão sendo feitas via \textit{threads}.
+  A comunicação, tanto entre o MSP do Joystick e o \textit{Raspberry PI}, quanto entre o MSP do Motor e o \textit{Raspberry PI}, foram feitas via \textit{threads}.
 
   A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
 
@@ -600,7 +600,7 @@ Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeame
 
     \textbf{Integração de \textit{joystick}}
 
-    O hardware utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, para fazer o controle da cadeira, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura \ref{fig:joy_m1m2}, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
+	Para se fazer o controle da cadeira, o \textit{hardware} utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura \ref{fig:joy_m1m2}, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
 
     \begin{figure}[!ht]
       \center
@@ -661,13 +661,13 @@ Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 par
 \end{figure}
 
 
-Para facilitar e proteger o sistema, será construído um distribuidor que vai ser basicamente uma placa que facilitará a conexão de todos os outros módulos ao sistema, assim não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
+Para facilitar e proteger o sistema, foi construido um distribuidor -  uma placa que facilitará a conexão de todos os outros módulos ao sistema. Sendo assim, não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
 
-O distribuidor vai ser responsável por alimentar os motores elétricos e os módulos de controle dos movimentos da cadeira de rodas. Ele contará com um bloco de entrada que estará conectado diretamente nos terminais da bateria, onde a partir desse bloco de entrada teremos duas saídas de distribuição, uma com 12 volts e outra com 5 volts.
+O distribuidor é responsável por alimentar os motores elétricos e os módulos de controle dos movimentos da cadeira de rodas. Ele contará com um bloco de entrada que estará conectado diretamente nos terminais da bateria, onde a partir desse bloco de entrada teremos duas saídas de distribuição, uma com 12 volts e outra com 5 volts.
 
-A saída de distribuição de 12 volts será realizada através de cabos que serão conectados nos terminais dos motores. Essa saída será dupla, ou seja, cada motor terá sua alimentação individual, sendo que para proteção dos dois motores, utilizaremos fuzíveis inseridos antes dos plugs dos moteres, para que caso ocorra alguma variação de corrente, os motores não sejam danificados.
+A saída de distribuição de 12 volts foi realizada através de cabos que foram conectados nos terminais dos motores. Essa saída é dupla, ou seja, cada motor tem sua alimentação individual, sendo que para proteção dos dois motores, utilizaremos fuzíveis inseridos antes dos plugs dos moteres, para que caso ocorra alguma variação de corrente, os motores não sejam danificados.
 
-A saída de distribuição de 5 volts será proveniente da utilização de um regulador de tensão 7805. Serão utilizados diodos zeners(falar qual) que garantirão que a tensão se mantenha estável nos 5 volts. Essa saída será responsável pela alimentação das duas pontes H, da Raspberry Pi, dos 3 msp430 e do joystick.
+A saída de distribuição de 5 volts é proveniente da utilização de um regulador de tensão 7805. São utilizados diodos zeners(falar qual) que garantem que a tensão se mantenha estável nos 5 volts. Essa saída é responsável pela alimentação das duas pontes H, da Raspberry Pi, dos 2 msp430 e do joystick.
 
 Esse distribuidor de tensão pode ser visto no diagrama apresentado na figura \ref{fig:diagrama_controle}.
 
@@ -770,7 +770,7 @@ resistência que as aletas introduzem no fluxo do ar.
 
 É importante saber o nível de bateria da cadeira de rodas, com isso é possível controlar sua autonomia e saber quando ela irá parar de funcionar. O indicador servirá para informar quando a bateria estiver acabando, para que se possa voltar para estação de recarga e recarregar a cadeira de rodas.
 
-Será utilizado um multimetro automotivo de bateria como mostrado na figura \ref{fig:indicador_bateria}. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.
+Foi utilizado um multimetro automotivo de bateria como mostrado na figura \ref{fig:indicador_bateria}. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.
 
 \begin{figure}[!ht]
   \center
