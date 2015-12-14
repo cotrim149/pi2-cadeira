@@ -82,13 +82,13 @@ Na parte da estrutura mostrada na figura \ref{fig:acop_bracadeira} existem dois 
 \label{fig:superior_estrutura}
 \end{figure}
 
-A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois ''joelhos'' capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois ''T'' com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
+A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois "joelhos" capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois "T" com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
 
 Os componentes utilizados para se fazer este modelo são descritos:
 \begin{itemize}
   \item Oito braçadeiras circulares de curso infinito;
-  \item Quarto ''joelhos'' de 90$^\circ$;
-  \item Dois ''T'';
+  \item Quarto "joelhos" de 90$^\circ$;
+  \item Dois "T";
   \item Duas rodas;
   \item Barras de PVC com diâmetros de 20mm e 25mm;
   \item Quatro parafusos;
@@ -382,21 +382,14 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \section{Controle}
 
-  O controle da cadeira de rodas será feito utilizando 3 módulos: Joystick, Controlador central e Motor.
-  O módulo Joystick, para receber os comandos provenientes do usuário e enviá-los para o controlador central. O módulo do controlador central recebe as informações do módulo anterior, as processa e faz o envio para o módulo Motor. O módulo Motor recebe as informações enviadas pelo módulo do controlador central, produzindo 2 pulsos de PWM e enviando-os para as pontes H, com o intuito de controlar a intensidade e direção dos motores.
+  O controle da cadeira de rodas foi feito em dois principais componentes: Joystick e Controlador dos Motores, além de um componente opcional, o Controlador Central.
+  O módulo Joystick tem o propósito de receber os comandos provenientes do usuário e enviá-los para o próximo módulo. O módulo opcional, Controlador Central, recebe as informações do Joystick e as envia para o Controlador dos Motores. Este, por sua vez, recebe as informações referentes à velocidade e direção de cada motor e as utiliza para produzir dois pulsos de PWM que controlam os motores através de duas pontes H.
 
-\subsection{Atual Panorama}
+\subsection{Panorama atual}
 
-  O módulo Controlador central possui um \textit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
+  Na atual versão do sistema, o usuário pode mover a cadeira de rodas através de um joystick, ligar e desligar o sistema atráves de uma chave e acompanhar o seu estado (ligado ou desligado) através de um LED, ambos acoplados ao joystick. Os dados referentes ao movimento do joystick são então enviados diretamente para o Controlador dos Motores, o qual controla o movimento (velocidade e direção) dos motores de acordo com os dados recebidos.
 
-  A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteve-se um \textit{delay} do envio dos dados processados para o módulo Motor.
-
-  Então uma segunda versão foi desenvolvida utilizando-se de múltiplas \textit{threads}: uma \textit{thread} foi feita para receber e processar os dados provenientes do Joytick e outra para enviar os dados para o Motor. Desta forma o \textit{delay} observado na primeira versão foi retirado, aumentando assim, o desempenho do sistema em relação a transferência e processamento dos dados.
-
-  Para a primeira versão os dados enviados pelo Joystick utilizavam de um padrão de transmissão, feito para se ter certeza que os dados recebidos não seriam algum tipo de ''lixo'' trasmitido. Esta padrão seguia o formato: ''$(valor\, potenciometro\, 1)$ $(valor\, potenciometro\, 2)$ $\backslash n$''.
-
-  Para a segunda versão os dados são enviados conforme o seguinte padrão:\\ ''$(valores\, pares\, potenciometro\, 1)$ $(valores\, ímpares\, potenciometro\, 2)$''.
-
+  Ainda foi implementado o módulo Controlador Central que, atualmente, apenas repassa as informações recebidas pelo Joystick para o Controlador dos Motores, cabe ressaltar que este módulo não foi integrado à versão atual do sistema devido ao seu atraso na inicialização do sistema e a não inclusão de novas funcionalidades.
 
 \begin{comment}
 -------------------------------------------------------------------------------
@@ -408,31 +401,34 @@ Panororama do sistema de controle conforme Arquitetura
 #    - Citar melhoria quanto ao desempenho
 #  - Estratégia de comunição entre componentes - Antes e depois
   - Integração Joystick e motor - Falar sobre os estados
+-------------------------------------------------------------------------------
 \end{comment}
 
 \subsection{Joystick}
-\label{ssec:joystick}
-O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos) e um microcontrolador.
 
-Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda ponta pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois, facilita a conexão de ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
+  O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos), uma chave liga/desliga do sistema de controle, juntamente com um LED e um microcontrolador.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
-\caption{Imagem do controle da cadeira de rodas}
-\label{fig:joy_hand_control}
-\end{figure}
+  Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda, pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois facilita a conexão ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
 
-O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD para os potenciômetros, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
+  \caption{Imagem do controle da cadeira de rodas}
+  \label{fig:joy_hand_control}
+  \end{figure}
 
-A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
+  O sistema 
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
-\caption{Rotina de trabalho do microcontrolador do módulo Joystick}
-\label{fig:joy_fluxogram}
-\end{figure}
+  O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD, uma para cada potenciômetro, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
+
+  A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
+
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
+  \caption{Rotina de trabalho do microcontrolador do módulo Joystick}
+  \label{fig:joy_fluxogram}
+  \end{figure}
 
 \begin{comment}
 
