@@ -107,7 +107,7 @@ O protótipo apresentado na figura \ref{fig:estr_prototipo} foi capaz de mostrar
 
 A etapa seguinte foi a definição do material a ser utilizado no produto final. A melhor opção encontrada foi o aço SAE 1020, por atender todos os requisitos com consideráveis vantagens quando comparados a alternativas como ferro ou alumínio.
 
-Um modelo 3D do projeto foi desenvolvido utilizando o software CATIA V5R19, que já considerou o Aço 1020 em seções quadradas de 20 e 18 mm assim como redondas de 18 mm para as alças superiores. A partir do deste modelo, foi possível proceder com a montagem do mecanismos com toda base necessária para medidas, cortes, junções e elementos de todo o produto. Posteriormente, também foi possível uma análise estrutural.
+Um modelo 3D do projeto foi desenvolvido utilizando o \textit{software} CATIA V5R19, que já considerou o Aço 1020 em seções quadradas de 20 e 18 mm assim como redondas de 18 mm para as alças superiores. A partir do deste modelo, foi possível proceder com a montagem do mecanismos com toda base necessária para medidas, cortes, junções e elementos de todo o produto. Posteriormente, também foi possível uma análise estrutural.
 
 Alguns elementos foram modificados no sistema de acoplamento inferior e superior, em relação ao que foi apresentado no ponto de controle 2 para que houvesse maior aderência do dispositivo à cadeira de rodas, e evitar esforços mecânicos indesejáveis. Como mostra a \ref{fig:furos_estrutura}, na parte inferior do dispositivo foram adicionados novos furos na vertical, para que a estrutura melhor acople nas cadeiras de rodas de acordo com a NBR 9050.
 
@@ -387,9 +387,9 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \subsection{Atual Panorama}
 
-  O módulo Controlador central possui um \textit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao software implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
+  O módulo Controlador central possui um \textit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao \textit{software} implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
 
-  A primeira versão deste software foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteve-se um \textit{delay} do envio dos dados processados para o módulo Motor.
+  A primeira versão deste \textit{software} foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteve-se um \textit{delay} do envio dos dados processados para o módulo Motor.
 
   Então uma segunda versão foi desenvolvida utilizando-se de múltiplas \textit{threads}: uma \textit{thread} foi feita para receber e processar os dados provenientes do Joytick e outra para enviar os dados para o Motor. Desta forma o \textit{delay} observado na primeira versão foi retirado, aumentando assim, o desempenho do sistema em relação a transferência e processamento dos dados.
 
@@ -403,7 +403,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 ---- Tópicos para a escrita da parte de controle do capítulo de resultados ----
 -------------------------------------------------------------------------------
 Panororama do sistema de controle conforme Arquitetura
-  - Desde controle de software a periféricos (Usuário a Motor)
+  - Desde controle de \textit{software} a periféricos (Usuário a Motor)
 #  - Panorama de Arquitetura - Antes e depois
 #    - Citar melhoria quanto ao desempenho
 #  - Estratégia de comunição entre componentes - Antes e depois
@@ -437,7 +437,7 @@ A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquiri
 \begin{comment}
 
 Joystick
-  - Software e Hardware (periféricos e MSP Joystick)
+  - \textit{software} e Hardware (periféricos e MSP Joystick)
     - Colocar imagem de código
   - Interface de usuário
     - Fotos do controle
@@ -625,7 +625,7 @@ Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeame
 Integração Motor e Joystick
 #  - Mapeamento dos estados em relação ao joystick (255,255->Frente)
 #  - Mapeamento dos estados em relação aos motores (intensidade, direção)
-  - Integração via software ou via hardware
+  - Integração via \textit{software} ou via hardware
     - Soft
       Vantagens: Uso de propósito geral
       Desvantagem: capacidade de Processamento para cálculo de transformação

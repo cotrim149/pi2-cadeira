@@ -29,7 +29,7 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 
   \textbf{Linguagem Nova}
 
-    Mesmo com a experiência do grupo dos alunos de software, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
+    Mesmo com a experiência do grupo dos alunos de \textit{software}, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
 
 \subsection{Ambiente de Desenvolvimento}
 
@@ -57,7 +57,7 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
     \end{itemize}
 
 \subsection{Ambiente físico}
-O ambiente físico utilizado para desenvolvimento do software deste projeto é um Raspeberry Pi, vide seção \ref{subsec:tecnologias}, referente as configurações do mesmo.
+O ambiente físico utilizado para desenvolvimento do \textit{software} deste projeto é um Raspeberry Pi, vide seção \ref{subsec:tecnologias}, referente as configurações do mesmo.
 
  \textbf{SSH}
 
@@ -91,7 +91,7 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
    \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequêncial. A Paralela nos permite ter várias "threads" acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  "thread". Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
 
 	\item Sugestão de Solução 1: Foi sugerido que uma montagem da solução sequêncial fosse montada para se fazer uma avaliação, em relação ao tempo de resposta que seria entre o usuário fazer o movimento com o Joystick e o motor responder ao movimento.
-  \item Sugestão de Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do software) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
+  \item Sugestão de Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do \textit{software}) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
   \item Solução: Foi feita a implementação da arquitetura Paralela.
 
   \item Problema: A arquitetura Paralela não está com as "threads" devidamente sincronizadas.
@@ -107,7 +107,7 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
     \item Solução: Foram compradas placas novas de Fenolíteo e foi feita a mudança de papel coche para papel fotográfico
 
     \item Dificuldades na simulação: Para fazer os testes da ponte H era necessário um PWM nas entradas do circuito, e na simulação não era possível fazer o sinal de PWM com um microcontrolador. Para testar o circuito completo era necessário utilizar a lógica das portas logicas junto com os CI’s correspondentes. Nas primeiras simulações os componentes corretos para a confecção não estavam sendo encontrados.
-    \item Solucão: A dificuldade de simulação foi superada com a mudança de software de simulação, pois nessa forma foi possível encontrar todos os componentes que eram necessários para simulação, e para gerar o PWM foi estudado formas de gera-lo utilizando circuitos integrados. Dessa forma foi possível testar o funcionamento.
+    \item Solucão: A dificuldade de simulação foi superada com a mudança de \textit{software} de simulação, pois nessa forma foi possível encontrar todos os componentes que eram necessários para simulação, e para gerar o PWM foi estudado formas de gera-lo utilizando circuitos integrados. Dessa forma foi possível testar o funcionamento.
 
 	\item Problema: Largura da trilha dos transistores da ponte H, quando ligada nos motores do sistema, após um tempo elas esquentavam e descolavam do fenolíteo, desta forma rompendo a ligação.
     \item Solucão: Dimensionar e desenvolver uma placa de circuito impresso para ligar apenas os transistores.
@@ -132,7 +132,7 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
   Fazer a escolha do melhor motor, levando em conta o atendimento os requisitos velocidade-torque.
  \begin{itemize}
   \item Problema: A escolha do melhor método de cálculo de potência necessária para mover o sistema completo (cadeira de rodas mais usuário) foi um problema devida a alta variedade de possibilidades, tornando-se muito indecisa a precisão dos cálculos.
-  \item Solução: Após uma vasta pesquisa na literatura e com alguns professores da FGA, com o auxilio do software Matlab, foram feitas diversas simulações envolvendo as variáveis de projeto para a decisão do melhor conjunto.
+  \item Solução: Após uma vasta pesquisa na literatura e com alguns professores da FGA, com o auxilio do \textit{software} Matlab, foram feitas diversas simulações envolvendo as variáveis de projeto para a decisão do melhor conjunto.
 
   \item Problema: Motores de corrente contínua fornecem um baixo torque, através dos cálculos, observou-se que era preciso um torque alto.
   \item Solução: Foi necessário o uso de um redutor para atender as especificações matemáticas do projeto. A partir disso foi feita uma busca de mercado e optamos por encomendar um kit motor-redutor pronto
