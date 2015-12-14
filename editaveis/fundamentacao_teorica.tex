@@ -13,9 +13,7 @@ Na seção \textit{Power Train} são apresentados conceitos relacionados a motor
 Quando a parte de estrutura estiver na fundamentação teórica, trocar os dois últimos parágrafos dessa introdução por:
 
 -----------------------------
-Neste capítulo é apresentada toda a fundamentação teórica utilizada para a criação do produto desenvolvido. Dividido em seções, o capítulo aborda os seguintes temas:
-
-\begin{itemize}
+Neste capítulo é apresentad
 	\item Power Train (Alimentação e Motores)
 	\item Estrutura Mecânica
 	\item Controle Eletrônico
@@ -74,9 +72,9 @@ Na seção \textit{Power Train} são apresentados conceitos relacionados a motor
 
 Para que a cadeira de rodas se movimente sem o uso de força humana, é preciso de um sistema elétrico capaz de substituir essa ação. Tal sistema deve ser composto por motores que darão o torque e a força necessária para as rodas da cadeira, e por uma fonte de energia que alimente estes motores, garantindo autonomia eficiente ao sistema, uma bateria, por exemplo.
 
-\subsection{Motor}
+\subsection{Motor Elétrico}
 
-Motor é uma máquina que tem a capacidade de transformar energia elétrica em energia mecânica \cite{projeto_cadeira_rodas_inteligente}, existem dois tipos de motores: motor de corrente alternada (CA) e os de corrente contínua (CC).
+O motor elétrico é uma máquina que tem a capacidade de transformar energia elétrica em energia mecânica \cite{projeto_cadeira_rodas_inteligente}. Existem dois tipos de motores: motor de corrente alternada (CA) e os de corrente contínua (CC).
 
 As cadeiras de rodas automáticas utilizam-se de baterias como fonte de alimentação para os motores, portanto deve-se utilizar motores de corrente contínua. Este tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
 
@@ -101,11 +99,11 @@ Um sistema que supre essas três condições funcionará adequadamente nos demai
 
 O objetivo é atender as restrições de projeto com o menor requerimento de potência, ou seja, obter um perfil de torque-velocidade ótimo para o sistema de tração elétrica. Os motores de corrente contínua utilizam-se das forças eletromagnéticas para transformar energia elétrica em mecânica, eles funcionam com uma fonte retificada, ou seja, que possuem polaridade fixa.
 
-Este tipo de motor possui dois terminais, um positivo e outro negativo que de acordo com a polaridade e o sentido da corrente controlam a repulsão dos eletroímãs e consequentemente o sentido da rotação do motor. Ele é capaz de reverter o sentido da corrente sem que haja reversão de torque.
+Este tipo de motor possui dois terminais, um positivo e outro negativo que de acordo com a polaridade e o sentido da corrente controlam a repulsão dos eletroímãs e consequentemente o sentido da rotação do motor. Desta maneira, este tipo de motor seria capaz mover as rodas tanto para frente quanto para trás, promovendo mobilidade à cadeira de rodas do usuário.
 
-Uma das maiores vantagens dos motores de corrente contínua é o controle da velocidade que é feito por drenagem de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção, além disso, são propícios a problemas com faíscas internas o que impede o seu uso em ambientes perigosos.
+Uma das maiores vantagens dos motores de corrente contínua é o controle da velocidade que é feito por drenagem de corrente para o motor. Porém são mais difíceis de serem construídos e mais propícios a problemas, gerando uma maior manutenção.
 
-Outro problema encontrado é a alta velocidade angular. Motores de corrente contínua encontrados no mercado possuem velocidades angulares nominais entre 2500 e 2800 rpm, o que lhes confere um baixo torque. Cadeiras de rodas precisam de motores que transmitam um alto torque para as rodas para poder movimentá-la, assim, se faz necessário um sistema redutor acoplado ao eixo do motor para reduzir a velocidade angular e aumentar o torque.
+Outro problema encontrado é a alta velocidade angular. Motores de corrente contínua encontrados no mercado possuem velocidades angulares nominais entre 2500 e 2800 rpm, o que lhes confere um baixo torque. Cadeiras de rodas precisam de motores que transmitam um alto torque para movimentar suas rodas, assim, se faz necessário um sistema redutor acoplado ao eixo do motor para reduzir a velocidade angular e aumentar o torque.
 
 \subsection{Redutor}
 
