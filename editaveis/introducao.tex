@@ -1,28 +1,81 @@
 \chapter[Introdução]{Introdução}
 
-A cadeira de rodas manual (CRM) é um importante instrumento para a funcionalidade diária na vida daqueles que tem os membros inferiores comprometidos. Segundo uma pesquisa realizada em 2010 pelo IBGE (Instituto Brasileiro de Geografia e Estatística) existe cerca de 4,4 milhões de indivíduos incapazes ou com grandes dificuldades de locomoção em todo o Brasil ~\cite{ibge:cartilha:2010}, cadeirantes, em sua maioria.
+A cadeira de rodas manual (CRM) é um importante instrumento para a funcionalidade diária na vida daqueles que tem os membros inferiores comprometidos. Segundo uma pesquisa realizada em 2010 pelo Instituto Brasileiro de Geografia e Estatística (IBGE) existe cerca de 4,4 milhões de indivíduos incapazes ou com grandes dificuldades de locomoção em todo o Brasil ~\cite{ibge:cartilha:2010}, cadeirantes, em sua maioria.
 
 Segundo \cite{sagawa} as CRM são consideradas meios de locomoção de baixa eficiência mecânica (2 a 10\%), além disso os membros superiores não foram preparados para fazerem tantos esforços e movimentos repetidos. Para indivíduos que ainda estão em fase de adaptação esse esforço é ainda maior e para aqueles com sobrepeso os problemas de sobrecarga podem ser tão sérios quanto os riscos cardiovasculares.
 
-Na busca de aumentar a funcionalidade de independência do indivíduo, a cadeira de rodas elétrica surgiu para oferecer a ele maior facilidade e eficácia no deslocamento. Nesse âmbito, nos últimos anos projetos de automação de cadeiras de rodas manuais ~\cite{brunel:wheelchair:2004}, \cite{artigo_rudi}, \cite{patent_cadeira_rodas_eletrica},	 \cite{marcos:controle:2002}  vem sido testados, estes dão ao cadeirante a facilidade de mobilidade  e ao mesmo tempo utilizam-se do fato de que a cadeira de rodas manual já está com a ergonomia adaptada as necessidades do individuo.
+Na busca de aumentar a do indivíduo, a cadeira de rodas elétrica surgiu para oferecer a ele maior facilidade e eficácia no deslocamento. Nesse âmbito, nos últimos anos projetos de automação de cadeiras de rodas manuais ~\cite{brunel:wheelchair:2004}, \cite{artigo_rudi}, \cite{patent_cadeira_rodas_eletrica},	 \cite{marcos:controle:2002}  vem sido testados, estes dão ao cadeirante a facilidade de mobilidade  e ao mesmo tempo utilizam-se do fato de que a cadeira de rodas manual já está com a ergonomia adaptada as necessidades do individuo.
 
-Dessa forma, diante da importância entre a relação homem/cadeira de rodas o presente trabalho tem como objetivo prototipar um kit de automação de cadeira de rodas que seja acoplável às cadeiras de rodas regulamentadas pela NBR 9050 \cite{nbr9050} e as dimensões do INMETRO(Instituto Nacional de Metrologia, Qualidade e Tecnologia) ~\cite{inmetro}.
+Dessa forma, diante da importância entre a relação homem/cadeira de rodas o presente trabalho tem como objetivo prototipar um kit de automação de cadeira de rodas que seja acoplável às cadeiras de rodas regulamentadas pela NBR 9050 \cite{nbr9050} e as dimensões do  Instituto Nacional de Metrologia, Qualidade e Tecnologia (INMETRO) ~\cite{inmetro}.
+
+
+\section{Estado Técnico}
+
+\subsection{História}
+O primeiro meio de suporte para pessoas doentes ou deficientes, possivelmente foi a maca, que foi inventada por volta 4000 a.C. Ela era leve e podia ser facilmente transportada pelos escravos, servos ou membros da família \cite{souza}.
+
+Uma cama de criança, retratada em um vaso grego do século VI a.C., pode ser considerada a mais antiga representação de um veículo sobre roda em ambientes internos. Uma escultura feita mil anos após o vaso, pode ser considerada a mais antiga representação de uma cadeira de rodas. Acredita-se que a escultura venha da China, sendo o único país da metade oriental da Ásia em que as cadeiras foram usadas antes dos tempos modernos \cite{souza}.
+
+Por volta do século XVI, algumas cadeiras receberam pequenas rodas ou rolos, dando comodidade aos idosos e doentes, onde essas cadeiras tinham as costas reclináveis, apoio de cabeça e apoio de braço. Com a criação dessas cadeiras, os idosos e doentes não precisavam ficar confinados nas camas. Muitas dessas cadeiras eram feitas individualmente e para a própria utilização do dono \cite{souza}.
+
+Com o passar do tempo, cresceu o desejo pelo conforto, com isso, foram feitos algumas alterações nos contornos das cadeiras, elas passaram a receber braços adaptados às formas do corpo humano. Entretanto, as cadeiras de rodas ainda precisavam de alguma pessoa para empurrar. Uma das últimas melhorias que foi aplicada às cadeiras de rodas, foi no final do século XIX, quando as rodas de bicicletas de madeira foram substituídas por raios de metais, deixando-as bem parecidas com as que usamos hoje em dia. Um pouco mais tarde, quando as rodas de bicicletas foram envoltas com pneu de borracha, os fabricantes das cadeiras de rodas começaram a seguir essa tendência \cite{souza}.
+
+No início do século XX, o inventor americano George Westinghouse, fez alguns desenhos sobre suas idéias para a criação de uma cadeira de rodas elétrica. Entretanto, ele faleceu em 1914 sem ter construído uma cadeira de rodas elétrica, apesar disso, muitos o consideram como o inventor. Alguns anos depois, um grupo de engenheiros criou uma cadeira de rodas motorizada, entretanto, esta era muito cara, pesada e inflexível para os consumidores \cite{clark}, \cite{shepard}. Já no início da década de 1930, Harry Jennings projetou uma cadeira de rodas dobrável com a ajuda de um paraplégico, o que acabou melhorando os modelos seguintes das cadeiras de rodas elétricas \cite{clark}, \cite{shepard}.
+
+De acordo com a necessidade e avanço científico e tecnológico do ser humano as cadeiras de rodas se tornaram um novo produto. Visando o mercado, várias empresas investiram na fabricação e desenvolvimento de modelos e tecnologias, que beneficiam aos cadeirantes. Existem atualmente diversos modelos de cadeiras de roda como cadeiras para banhos, cadeiras automatizadas, cadeiras dobráveis é até mesmo kits de automação, equipamentos que se tornaram de extrema importância para facilitar a acessibilidade dos cadeirantes \cite{ione}.
+
+\subsection{O Estado da Arte}
+
+As tecnologias assistivas, que são recursos tecnológicos que facilitam a vida das pessoas com algum tipo de deficiência, tem se tornado hoje um assunto cada vez mais comum. O avanço tecnológico tem facilitado uma inclusão social maior auxiliando atividades como, a automação de ambientes que facilita para a execução de tarefas simples. Na correção postural, com cadeiras que beneficiam a postura de pessoas que possuem alguma deficiência física. E na locomoção, que podem ser bengalas, cadeiras de rodas manuais ou elétricas, qualquer equipamento ou estratégia que auxilie na mobilidade.
+
+A NBR 9050 recomenda padrões de cadeiras de roda manuais ,estabelecendo padrões de estofados, dimensões estruturais, dentre outros que facilitam a vida de pessoas com deficiência \cite{becker}.
+
+Hoje em dia, com a tecnologia mais avançada e os estudos em materiais mais resistentes e leves, pode-se observar uma vasta gama de cadeiras de rodas manuais e elétricas. Na figura \ref{fig:stand_up}, é apresentado uma cadeira de rodas do modelo stand-up. Seu principal objetivo para o cadeirante é além de melhorar sua auto-estima, facilitar a acessibilidade nas atividades cotidianas, como exemplo, pegar um livro em uma estante, ou simplesmente olhar uma pessoa frente a frente. Isso ocorre devido a cadeira ter um sistema de elevação elétrico ou manual, permitindo pequenos deslocamentos do corpo da pessoa na posição ereta, com segurança e praticidade
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[keepaspectratio=true,scale=0.50]{figuras/introducao/versoes}
+  \caption{Cadeira Stand-up}
+  \label{fig:stand_up}
+\end{figure}
+
+
+Na figura \ref{fig:desporto}, pode ser observado um exemplo de cadeira de rodas para desporto. Esse tipo de cadeira de rodas são utilizadas nas atividades desportivas, onde cada cadeira é feita de acordo com a deficiência do para-atleta. Essas cadeiras são feitas com materiais leves, para que o para atleta tenha mais velocidade e mobilidade (FREIRE,
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[keepaspectratio=true,scale=0.50]{figuras/introducao/cadeira_desporte}
+  \caption{Cadeira desporto}
+  \label{fig:desporto}
+\end{figure}
+
+
+Outro ramo que tem incentivado bastante pesquisas são os que oferecem automação para CRM. Na figura \ref{fig:kit_motorizacao} é apresentado a patente (PI0304753-9), que consiste em um kit para motorização de cadeiras de rodas, em que as rodas são tracionada por um conjunto de rodas menores comandadas por um joystick. Na figura também é possível visualizar a presença de um joystick fixado junto ao apoio de braço. (HTTP://WWW.PATENTESONLINE.COM.BR/,2015).
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[keepaspectratio=true,scale=0.50]{figuras/introducao/kit_motorizacao}
+  \caption{Patente de um kit de automação de cadeiras de rodas}
+  \label{fig:kit_motorizacao}
+\end{figure}
+
+A idéia dessa patente serviu de inspiração para o desenvolvimento desse projeto, onde a idéia principal é construir um kit para ser acoplado em qualquer cadeira de rodas manual, transformando-a em motorizada.
 
 \section{Objetivos}
 \subsection{Objetivos Gerais}
 
-O principal objetivo desse trabalho é desenvolver um kit de automação de cadeira de rodas, que seja portátil e removível. Tornando possível a redução significativa do trabalho humano para a locomoção da CRM.
+O principal objetivo desse trabalho é desenvolver um kit de automação de cadeira de rodas, que seja portátil e removível.
 
 \subsection{Objetivos Específicos}
 
-O projeto foi dividido em quatro ramos: \textit{Power Train}; estrutura; controle; e interface com o usuário. Sendo que mesmo com a divisão houve um envolvimento de todas as engenharias (Automotiva, Eletrônica, Energia e \textit{Software}) nos quatro ramos durante toda execução do projeto.
+O projeto foi dividido em quatro ramos: \textit{power train}; estrutura; controle; e interface com o usuário. Sendo que mesmo com a divisão houve um envolvimento de todas as engenharias (Automotiva, Eletrônica, Energia e \textit{Software}) nos quatro ramos durante toda execução do projeto.
 
 \textbf{Engenharia Automotiva}
 
   \begin{enumerate}
-    \item Criação um design que permita um acoplamento, visando a ergonomia, peso e dimensionamento do sistema de \textit{Power Train} segundo NBR 9050;
+    \item Criação um design que permita um acoplamento, visando a ergonomia, peso e dimensionamento do sistema de \textit{power train} segundo NBR 9050;
     \item Análise de materiais levando em consideração que o produto deve resistir a adversidades como água, sol, calor, etc;
-    \item Análise de esforços;
+    \item Análise de esforços estruturais via critério de Von Misses;
     \item Montagem do protótipo funcional;
   \end{enumerate}
 
@@ -48,64 +101,6 @@ O projeto foi dividido em quatro ramos: \textit{Power Train}; estrutura; control
     \item Teste incremental das unidades de código desenvolvidas, fazendo a utilização de MOCK, quando necessário, diminuindo assim a dependência de outras partes do projeto;
     \item Desenvolvimento incremental para que seja possível a integração continua;
   \end{enumerate}
-
-\section{Estado Técnico}
-
-\subsection{História}
-O primeiro meio de suporte para pessoas doentes ou deficientes, possivelmente foi a maca, que foi inventada por volta 4000aC. Ela era leve e podia ser facilmente transportada pelos escravos, servos ou membros da família \cite{souza}.
-
-Uma cama de criança, retratada em um vaso grego do século VI aC, pode ser considerada a mais antiga representação de um veículo sobre roda em ambientes internos. Uma escultura feita mil anos após o vaso, pode ser considerada a mais antiga representação de uma cadeira de rodas. Acredita-se que a escultura venha da China, sendo o único país da metade oriental da Ásia em que as cadeiras foram usadas antes dos tempos modernos \cite{souza}.
-
-No século III dC, foi inventando um veículo muito utilizado até hoje, o carrinho de mão. Este objeto chegou a Europa por volta do século XII dC pela rota das Cruzadas, sendo um veículo útil para todos os tipos de natureza \cite{souza}.
-
-Por volta do século XVI, algumas cadeiras receberam pequenas rodas ou rolos, dando comodidade aos idosos e doentes, onde essas cadeiras tinham as costas reclináveis, apoio de cabeça e apoio de braço. Com a criação dessas cadeiras, os idosos e doentes não precisavam ficar confinados nas camas, já que muitas dessas cadeiras eram feitas individualmente e para a própria utilização do dono \cite{souza}.
-
-Com o passar do tempo, cresceu o desejo pelo conforto, com isso, foram feitos algumas alterações nos contornos das cadeiras, onde elas recebiam braços adaptados às formas do corpo humano. Entretanto, as cadeiras de rodas ainda precisavam de alguma pessoa para empurrar. Uma das últimas melhorias que foi aplicada às cadeiras de rodas, foi no final do século XIX, quando as rodas de bicicletas de madeira foram substituídas por raios de metais, deixando-as bem parecidas com as que usamos hoje em dia. Um pouco mais tarde, quando as rodas de bicicletas foram envoltas com pneu de borracha, os fabricantes das cadeiras de rodas começaram a seguir essa tendência \cite{souza}.
-
-No início do século XX, o inventor americano George Westinghouse, fez alguns desenhos sobre suas idéias para a criação de uma cadeira de rodas elétrica, entretanto, Westinghouse faleceu em 1914 sem ter construído uma cadeira de rodas elétrica. Apesar disso, muitos o consideram como o inventor da cadeira de rodas elétrica. Alguns anos depois, um grupo de engenheiros criou uma cadeira de rodas motorizada, entretanto, esta era muito cara, pesada e inflexível para os consumidores \cite{clark}, \cite{shepard}.
-
-Já no início da década de 1930, Harry Jennings projetou uma cadeira de rodas dobrável com a ajuda de um paraplégico, o que acabou melhorando os modelos seguintes das cadeiras de rodas elétricas \cite{clark}, \cite{shepard}.
-
-De acordo com a necessidade e avanço cientifico e tecnológico do ser humano as cadeiras de rodas se tornaram um novo produto. Visando o mercado, várias empresas investiram na fabricação e desenvolvimento de modelos e tecnologias, que beneficiam aos cadeirantes. Existem atualmente diversos modelos de cadeiras de roda como cadeiras para banhos, cadeiras automatizadas, cadeiras dobráveis é até mesmo kits de automação, equipamentos que se tornaram de extrema importância para facilitar a acessibilidade dos cadeirantes \cite{ione}.
-
-\subsection{O Estado da Arte}
-
-As tecnologias assistivas, que são recursos tecnológicos que facilitam a vida das pessoas com algum tipo de deficiência, tem se tornado hoje um assunto cada vez mais comum. O avanço tecnológico tem facilitado uma inclusão social cada vez maior auxiliando atividades como, a automação de ambientes que facilita para a execução de tarefas simples. Na correção postural, com cadeiras que beneficiam a postura de pessoas que possuem alguma deficiência física. E na locomoção, que podem ser bengalas, cadeiras de rodas manuais ou elétricas, qualquer equipamento ou estratégia que auxilie na mobilidade.
-
-A NBR9050 recomenda padrões de cadeiras de roda manuais e ajustes estruturais da mobília para de prédios para acessibilidade de pessoas com deficiência, estabelecendo padrões de estofados, dimensões estruturais, dentre outros que facilitam a vida de pessoas com deficiência \cite{becker}.
-
-Hoje em dia, com a tecnologia mais avançada e os estudos em materiais mais resistentes e leves, pode-se observar uma vasta gama de cadeiras de rodas manuais e elétricas.
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[keepaspectratio=true,scale=0.50]{figuras/introducao/versoes}
-  \caption{Cadeira Stand-up}
-  \label{fig:stand_up}
-\end{figure}
-
-
-Na figura \ref{fig:stand_up}, é apresentado uma cadeira de rodas do modelo stand-up. Existem modelos manuais e motorizadas. Seu principal objetivo para o cadeirante é além de melhorar sua auto-estima, facilitar a acessibilidade nas atividades cotidianas, como exemplo, pegar um livro em uma estante, ou simplesmente olhar uma pessoa frente a frente. Isso ocorre devido a cadeira ter um sistema de elevação elétrico ou manual, permitindo pequenos deslocamentos do corpo da pessoa na posição ereta, com segurança e praticidade.
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[keepaspectratio=true,scale=0.50]{figuras/introducao/cadeira_desporte}
-  \caption{Cadeira desporto}
-  \label{fig:desporto}
-\end{figure}
-
-
-Na figura \ref{fig:desporto}, tem um exemplo de cadeira de rodas para desporto. Esse tipo de cadeira de rodas são utilizadas nas atividades desportivas, onde cada cadeira é feita de acordo com a deficiência do para-atleta. Essas cadeiras são feitas com materiais leves, para que o para atleta tenha mais velocidade e mobilidade (FREIRE, 2009).
-
-Na figura \ref{fig:kit_motorizacao} é apresentado a patente (PI0304753-9), que consiste em um kit para motorização de cadeiras de rodas, em que as rodas são tracionada por um conjunto de rodas menores comandadas por um joystick. Na figura também é possível visualizar a presença de um joystick fixado junto ao apoio de braço. (HTTP://WWW.PATENTESONLINE.COM.BR/,2015).
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[keepaspectratio=true,scale=0.50]{figuras/introducao/kit_motorizacao}
-  \caption{Patente de um kit de automação de cadeiras de rodas}
-  \label{fig:kit_motorizacao}
-\end{figure}
-
-A idéia dessa patente serviu de inspiração para o desenvolvimento desse projeto, onde a idéia principal é construir um kit para ser acoplado em qualquer cadeira de rodas manual, transformando-a em motorizada.
 
 \section{Requisitos}
 
