@@ -27,3 +27,4 @@
 *.ps
 Icon*
 *.tex~
+.DS_Store

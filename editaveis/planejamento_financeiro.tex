@@ -1,41 +1,85 @@
 \chapter[Planejamento Financeiro]{Planejamento Financeiro}
-\subsection {Arrecadação}
-Desde o início do projeto começamos a arrecadar um valor mensal, sem qualquer cálculo, usando apenas suposições. 
-\itemInício da arrecadação = setembro
-\itemQuantidade de meses de projeto = 4
-\itemValor = 50,00
-\itemQuantidade de integrantes = 13
-\itemTotal a ser arrecadado = 2600,00
+
+Um dos aspectos de grande relevância para o projeto é o custo. Nessa sessão faremos uma avaliação sobre o custo de fabricação de umm protótipo funcional de um kit para automação de cadeira de rodas eleétrica.
+
+\section {Arrecadação}
+Desde o início do projeto começamos a arrecadar um valor mensal, utilizando de uma estimativa inicial.
+
+  \begin{itemize}
+    \item Início da arrecadação = setembro
+    \item Quantidade de meses de projeto = 4
+    \item Valor = R\$50,00
+    \item Quantidade de integrantes = 13
+    \item Total a ser arrecadado = R\$2600,00
+  \end{itemize}
+
 Com o amadurecimento e o conhecimento dos gastos reais do projeto esse valor se mostrou suficiente para custear o projeto.
 
-\subsection {Planejamento de Gastos}
-Um dos tópicos de grande importância para o projeto é o custo do produto que está sendo desenvolvido. Nessa sessão serão apresentados os valores levantados.\\
--Controle
+\section {Planejamento de Gastos}
+Na tabela \ref{tab:custos_tabela}, serão apresentados os custos finais de fabricação do protótipo.
 
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+% \usepackage[normalem]{ulem}
+% \useunder{\uline}{\ul}{}
+\begin{longtable}{|c|c|c|}
+\hline
+Quantidade & Componente & Preço Unitário \\ \hline
+Controle &  &  \\
+1 & Raspberry Pi B+ & R\$ 250,00 \\
+3 & MSP430G2553 & R\$ 20,00 \\
+1 & Joystick & R\$ 15,00 \\
+2 & Ponte H & R\$ 50,00 \\
+  & Componentes Reserva & R\$ 50,00 \\
+24 & Isolamento com mica e porca & R\$ 0,80 \\
+5 & resistência 1k4 & R\$ 0,15 \\
+3 & placa fenolíteo 25x25 & R\$18,00 \\
+8 & Transistor IRF 3205 & R\$ 3,90 \\
+4 & Capacitor eletrolítico 10 uF x 50 V & R\$ 0,30 \\
+2 & Capacitor eletrolítico 1000uF x 25 V & R\$ 0,65 \\
+2 & Capacitor eletrolítico 10uF x 100 V & R\$ 0,30 \\
+4 & diodo in 4007 & R\$ 0,20 \\
+4 & Transistor BC548 & R\$ 0,35 \\
+4 & Transistor BC558 & R\$ 0,30 \\
+2 & CI LM555 & R\$ 1,20 \\
+6 & Resistência 100R & R\$ 0,20 \\
+6 & Resistência 1k & R\$ 0,20 \\
+2 & Resistência 2k2 & R\$ 0,20 \\
+16 & Resistência 10k & R\$ 0,20 \\
+2 & Resistência 15k & R\$ 0,20 \\
+8 & Resistência 100k & R\$ 0,20 \\
+16 & Parafuso & R\$ 0,60 \\
+2 & Chicote de 2 vias & R\$ 6,50 \\
+2 & 74LS08 & R\$ 4,90 \\
+2 & 74LS04 & R\$ 4,00 \\
+1 & Caixa para joystick & R\$ 7,50 \\
+2 & RJ45 fêmea & R\$ 6,00 \\
+24 & Borne com porca & R\$ 1,50 \\
+24 & Plug Banana & R\$ 1,00 \\
+4 & Fusível 15A & R\$ 0,50 \\
+2 & Fusível 20A & R\$ 0,50 \\
+2 & Fusível 25A & R\$ 0,50 \\
+2 & Fusível 30A & R\$ 0,50 \\
+2 & Espaguete termo retrátil 4,5 mm & R\$ 3,90 \\
+1 & Fita isolante & R\$ 6,90 \\
+1 & cabo flexível 2,5 mm, 4 metros Vermelho & R\$ 3,00 \\
+1 & cabo flexível 2,5 mm, 2 metros Vermelho & R\$ 1,50 \\
+1 & cabo flexível 2,5 mm, 2 metros azul & R\$ 3,00 \\
+2 & cabinho flexível 2,5 mm, amarelo & R\$ 1,60 \\
+2 & cabinho flexível 2,5 mm, preto & R\$ 1,60 \\
+4 & Tubo de solda & R\$ 5,00 \\
+ & Subtotal & R\$ 770,55 \\ \hline
+\textit{Power Train} &  &  \\
+1 & Baterias SLA & R\$ 300,00 \\
+2 & Redutor MR com motor GPB 1:10 & R\$ 560,00 \\
+2 & Rodas para anexo & R\$ 75,00 \\
+ & Subtotal & R\$1.570,00 \\ \hline
+Estrutura &  &  \\
+1 & Solda e material & R\$300,00 \\
+ & Subtotal & R\$300,00 \\ \hline
+ & TOTAL & R\$2.640,55 \\ \hline
+\caption{Tabela de gastos totais por subgrupo}
+\label{tab:custos_tabela}
+\end{longtable}
 
-\begin{center}
-\begin{tabular}{ |c|c|c| } 
- \hline
-Quantidade & Componente & Preço Unitário\\
- \hline
--Controle &  & \\
- 1 & Raspberry Pi B+   &  R$ 250.00 \\ 
- 4 & MSP430G2553  & R$ 20.00 \\ 
- 1 & Joystick  & R$ 15.00 \\ 
- & Componentes Reserva & R$ 50.00\\
-& SUBTOTAL & R$ 495.00\\
--Power train &  & \\
-1& Baterias SLA  & R$ 300.00\\
-2 & Moto-redutor&  R$ 560.00\\
-2& RODA & R$ 75.00\\
-& SUBTOTAL &  R$1570.00\\
--Estrutura &  & \\
-1 &  Solda e material & R$600.00\\
-
- \hline
-& TOTAL &  R$2663.00\\
- \hline
-\end{tabular}
-\end{center}
-
-O custo total do projeto é de R$2663.00.  Vale ressaltar que apesar do custo do protótipo ser alto a nível industrial seria significantemente reduzido.
+O custo total do projeto é de R\$ 2.640,55.  Vale ressaltar que apesar do custo do protótipo ser alto, a nível industrial seria significantemente reduzido.

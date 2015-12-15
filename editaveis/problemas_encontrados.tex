@@ -1,135 +1,217 @@
 \chapter[Problemas Encontrados]{Problemas Encontrados}
 
-Esta seção tem como foco a explicação dos problemas encarados e das soluções adaptadas, durante o desenvolvimento do projeto. Tanto como grupo quanto em subdivisões especificas feitas.
+Esta seção tem como foco a explicação dos problemas encarados e das soluções adaptadas, durante o desenvolvimento do projeto. Tanto como grupo quanto em subdivisões específicas feitas.
 
- \subsection{Geral}
+ \section{Geral}
 
--Dificuldade na definição das atividades da Sprint: No início do projeto foi definido que nossa organização seria baseada na metodologia ágil, sendo assim teríamos tarefas semanais. 
+\textbf{Dificuldade na definição das atividades da \textit{Sprint}}
     \begin{itemize}
-      \item Problema: De uma forma geral, o grupo superestimou as atividades nas sprints, tornando muito difícil a conclusão das atividades propostas para a sprint.
-	  \item Solução: Como solução granularizamos as atividades reduzindo-as para que fosse possível realizá-las no tempo de uma sprint e durante a mudança, que durou cerca de 3 sprints, calibramos os erros e acertos na retrospectiva feita ao final de cada sprint 
-.
-   
+    \item Problema: De uma forma geral, o grupo superestimou as atividades nas sprints, tornando muito difícil a conclusão das atividades propostas para a sprint.
+	  \item Solução: Como solução granularizamos as atividades reduzindo-as para que fosse possível realizá-las no tempo de uma sprint e durante a mudança, que durou cerca de 3 sprints, calibramos os erros e acertos na retrospectiva feita ao final de cada sprint.
+
     \end{itemize}
 
--Redistribuição do pessoal da área de Power Train para a área de Controle e Estrutura, porque as atividades propostas para a área de Power Train foram concluídas. Baseado nisso foi feita a escolha de realocar os componentes desta área para a área de Controle.
+\textbf{Redistribuição do pessoal da área de \textit{Power Train} para a área de Controle e Estrutura}
     \begin{itemize}
-      \item Problema: Realocar os componentes de forma a não ficarem ocioso em alguma atividade.
-	  \item Solução:Relocar os componentes conforme maior expertise dos mesmos na área de Controle e Estrutura.
-    
+    \item Problema: Realocar os componentes de forma a não ficarem ocioso em alguma atividade, pois as atividades envoltas para suas respectivas áreas já haviam terminado.
+	  \item Solução: Relocar os componentes conforme maior expertise dos mesmos na área de Controle e Estrutura.
     \end{itemize}
 
--Gastos com materiais
+\textbf{Gastos com materiais}
     \begin{itemize}
   \item Problema: Na fase inicial do trabalho muitas pesquisas foram feitas e os materiais necessários levantados, porém não era de conhecimento o quanto gastaríamos com o projeto.
   \item Solução: Desde o inicio já começamos a arrecadar dinheiro dos integrantes e com o amadurecimento do projeto conseguimos mensurar de forma mais real qual seria o custo do projeto sendo possível assim um planejamento financeiro melhor.
 
     \end{itemize}
 
-\subsection{Controle}
+\section{Controle}
 
--LINGUAGEM NOVA: Mesmo com a experiência do grupo dos alunos de software, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
-1 Ambiente de desenvolvimento:
+  \textbf{Linguagem de programação}
 
--Testes unitários do código-fonte.
+    Mesmo com a experiência do grupo dos alunos de \textit{software}, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
+
+\subsection{Ambiente de Desenvolvimento}
+
+\textbf{Testes unitários do código-fonte}
+
     \begin{itemize}
-      \item Problema: Utilização do framework de teste de forma correta.
-	  \item Solução: Olhar a documentação do framework e aprender como utilizar.
-   
+    \item Problema: Utilização do framework de teste de forma correta.
+    \item Solução: Olhar a documentação do framework e aprender como utilizar.
+
     \end{itemize}
 
--Mock
+\textbf{Mock}
+
  \begin{itemize}
-      \item Problema: Entendimento de como utilizar o "Mock" para fingir que o Hardware existe.
-	  \item Solução: Conversa entre grupos da disciplina de Projeto Integrador 2 e leitura e compreensão da documentação.
-   
+    \item Problema: Entendimento de como utilizar o "Mock" para fingir que o Hardware existe.
+    \item Solução: Conversa entre grupos da disciplina de Projeto Integrador 2 e leitura e compreensão da documentação.
+
     \end{itemize}
 
--Cobertura de código em Python
+\textbf{Cobertura de código em Python}
+
  \begin{itemize}
-      \item Problema: Como fazer cobertura de código para Python.
-	  \item Solução: Depois de realizar pesquisas o Coverage foi escolhido e instalado inicialmente no repositório local para teste e depois que confirmada a eficiencia foi instalado na Raspberry Pi.
+    \item Problema: Como fazer cobertura de código para Python.
+    \item Solução: Depois de realizar pesquisas o Coverage foi escolhido e instalado inicialmente no repositório local para teste e depois que confirmada a eficiência foi instalado na Raspberry Pi.
     \end{itemize}
 
-2 Ambiente físico: O ambiente físico utilizado para desenvolvimento do software deste projeto é um Raspeberry Pi, vide seção 2.2.2.1, referente as configurações do mesmo.
--SSH
+\textbf{Utilização de múltiplas funcionalidades do microcontrolador}
+
  \begin{itemize}
-      \item Problema:  O acesso via SSH é feito através de um cabo de rede, no qual somete uma máquina por vez pode acessar. Isso ocasiona um problema de ociosidade na equipe: enquanto um componente o utiliza, os outros 2 ficam ociosos.
+    \item Problema: Como gerar dois pulsos PWM independentes com atualização de \textit{duty cycle} por conexão serial.
+    \item Solução: Leitura detalhada da documentação do microcontrolador utilizado e pesquisa em diversos fóruns.
+\end{itemize}
+
+\begin{itemize}
+   \item Problema: Como saber se os dois pulsos PWM implementados estariam corretos.
+   \item Solução: Foi utilizado um osciloscópio nas saidas do microcontrolador, e feita a aferência dos mesmos.
+\end{itemize}
+
+\subsection{Ambiente físico}
+ \textbf{SSH}
+
+ \begin{itemize}
+    \item Problema:  O acesso via SSH é feito através de um cabo de rede, no qual somete uma máquina por vez pode acessar. Isso ocasiona um problema de ociosidade na equipe: enquanto um componente o utiliza, os outros 2 ficam ociosos.
 	  \item Solução: Utilizar o Raspeberry conectado a um roteador Wi-Fi, que permite a todos os integrantes utilizarem do ambiente mutualmente via rede sem fio.
     \end{itemize}
 
--Mudança de Sistema Operacional: Pode ser instalado no Raspberry um sistema operacional que possibilite a facilidade de uso, mediante as necessidades de quem o instala.
- \begin{itemize}
-      \item Problema:  Problema relacionado: Pretende-se utilizar um ambiente para teste que possibilite o desenvolvimento de forma completa mediante o possível para o projeto. Para isto é necessário o uso de testes unitários e do "Mock", descobriu-se que o primeiro SIstema Operacional instalado (Raspdebian Wheezy) não atende para a utilização do "Mock".
+  \textbf{Mudança de Sistema Operacional}
 
-	  \item Solução:Um outro Sistema Operacional foi instalado (Raspdebian Jessie), por possuir nativamente um ambiente de testes robusto que possibilite o uso de testes unitários e "Mock". 
+ \begin{itemize}
+    \item Problema:  Problema relacionado: Pretende-se utilizar um ambiente para teste que possibilite o desenvolvimento de forma completa mediante o possível para o projeto. Para isto é necessário o uso de testes unitários e do "Mock", descobriu-se que o primeiro SIstema Operacional instalado (Raspdebian Wheezy) não atende para a utilização do "Mock".
+	  \item Solução:Um outro Sistema Operacional foi instalado (Raspdebian Jessie), por possuir nativamente um ambiente de testes robusto que possibilite o uso de testes unitários e "Mock".
     \end{itemize}
 
--Quantidade de MSPs a serem utilizados: A utilização de vários MSPs é uma ótima alternativa para separar componentes independentes e utilizar ferramentas como conversor AD, gerador de PWM e temporizador de forma simples, barata e rápida.
+\textbf{Quantidade de microcontroladores a serem utilizados}
+  \begin{itemize}
+    \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
+  	\item Solução: MSPs dedicados a cada componente foram utilizados, por sua facilidade em implementar conversores AD de vários canais, PWMs e por ser de fácil comunicação com o Raspberry Pi via serial UART.
+
+    \item Problema: Sincronização do envio dos dados com os pulsos de PWM.
+    \item Solução: A formatação do envio de dados foi modificado. A formatação anterior seguia o modelo: ''(Informação potenciômetro 1)(Informação potenciômetro 2)($\backslash$ n)'', sendo mudada para: ''(Valores Pares potenciômetro 1)(Valores Impares potenciômetro 2)''. Baseado nisso, houve uma melhora ao se receber os dados.
+  \end{itemize}
+
+\textbf{Velocidade de inicialização do sistema}
+  \begin{itemize}
+    \item Problema: Demora na conexão entre os microcontroladores e a Raspberry Pi.
+    \item Solução: Como os componentes são independentes e a Raspberry Pi está redundante no atual incremento do projeto, optou-se por retirá-la para uma maior desempenho.
+  \end{itemize}
+
+\subsection{Arquitetura}
+
+\textbf{Desenvolvimento}
+
  \begin{itemize}
-      \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
+   \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequencial. A Paralela nos permite ter várias \textit{threads} acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  \textit{thread}. Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
 
-	  \item Solução: MSPs dedicados a cada componente foram utilizados, por sua facilidade em implementar conversores AD de vários canais, PWMs e por ser de fácil comunicação com o Raspberry Pi via serial UART.
+	\item Sugestão de Solução 1: Foi sugerido que uma montagem da solução sequêncial fosse montada para se fazer uma avaliação, em relação ao tempo de resposta que seria entre o usuário fazer o movimento com o Joystick e o motor responder ao movimento.
+  \item Sugestão de Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do \textit{software}) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
+  \item Solução: Foi feita a implementação da arquitetura Paralela.
 
-    \end{itemize}
+  \item Problema: A arquitetura Paralela não está com as \textit{threads} devidamente sincronizadas.
+  \item Solução: Foi descoberto que o problema de sincronização pode ser resolvido com a solução produtor/consumidor.
+\end{itemize}
 
-- Arquitetura
+\subsection{Ponte H}
+
+\textbf{Acionamento das Entradas da Ponte H}
+
  \begin{itemize}
-      \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequêncial. A Paralela nos permite ter várias "threads" acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  "thread". Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
+    \item Problema: As entradas da ponte H não podem ser acionadas ao mesmo tempo, pois caso sejam acionadas haverá um curto circuito no sistema e não haverá diferença de tensão nos terminais do motor.
+    \item Solução: Para o risco de curto circuito, caso as entradas fossem acionadas ao mesmo tempo, desenvolveu-se uma lógica na entrada utilizando portas lógicas do tipo AND e NAND. Isso foi feito para garantir que não haverá acionamento das duas entradas da ponte H ao mesmo tempo.
+\end{itemize}
 
-	  \item Solução 1: Foi sugerido que uma montagem da solução sequêncial fosse montada para se fazer uma avaliação, em relação ao tempo de resposta que seria entre o usuário fazer o movimento com o Joystick e o motor responder ao movimento.
-  \item Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do software) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
+\textbf{Confecção dos Circuitos}
 
-    \end{itemize}
+\begin{itemize}
 
--Simulações da Ponte H
+    \item Problema: No desenvolvimento da PCB: Por algumas placas estarem velhas, ao serem esquentadas o esquemático do papel não estava sendo transferido e o Fenolíteo descolou do cobre.
+    \item Solução: Foram compradas placas novas de Fenolíteo e foi feita a mudança de papel coche para papel fotográfico
+
+	\item Problema: Largura da trilha dos transistores da ponte H, quando ligada nos motores do sistema, após um tempo elas esquentavam e descolavam do fenolíteo, desta forma rompendo a ligação.
+    \item Solucão: Dimensionar e desenvolver uma placa de circuito impresso para ligar apenas os transistores.
+
+    \item Problema: A porte H é um circuito de potência, e os seus transistores esquentem muito. Como o circuito puxa uma alta corrente, os transistores MOSFET superaquecem. Os transistores MOSFET 3205 podem operar em até 175$^{\circ}$C, com uma temperatura tão elevada ele estava dessoldando os componentes ao redor do circuito.
+	\item Solucão: Colocar os transistores do lado de fora das placas de fenolíteo e em dissipadores devidamente dimensionados.
+\end{itemize}
+
+\textbf{Simulação}
+
+\begin{itemize}
+
+    \item Problema: Para fazer os testes da ponte H era necessário um PWM nas entradas do circuito, e na simulação não era possível fazer o sinal de PWM com um microcontrolador. Para testar o circuito completo era necessário utilizar a lógica das portas logicas junto com os CI’s correspondentes. Nas primeiras simulações os componentes corretos para a confecção não estavam sendo encontrados.
+    \item Solucão: A dificuldade de simulação foi superada com a mudança de \textit{software} de simulação, pois nessa forma foi possível encontrar todos os componentes que eram necessários para simulação, e para gerar o PWM foi estudado formas de gera-lo utilizando circuitos integrados. Dessa forma foi possível testar o funcionamento.
+
+
+\end{itemize}
+
+\subsection{Joystick}
+
+\textbf{Aquisição de Joystick}
+
  \begin{itemize}
-      \item Problema:Se colocado alto nível nas duas entradas o motor poderia “explodir”.
+  \item Problema: Inicialmente utilizamos um \textit{joystick} de um controle de videogame (PlayStation 2). Este não se adequou às nossas necessidades.
+  \item Solução: Adquirimos um joystick que tivesse conectores, facilitando assim a prototipagem e implementação.
+\end{itemize}
 
-	  \item Solução:Colocar uma porta lógica no início para corrigir essa falha, assim quando a ponte H receber nível lógico nas duas entradas o motor não responderá
+\textbf{Produção do Joystick}
 
-    \end{itemize}
-
--Joystick
- \begin{itemize}
-  \item Problema: Inicialmente utilizamos um joystick de um controle de videogame (PlayStation 2). Este não se adequou às nossas necessidades.
-  \item Solução: Adquirimos um joystick que tivesse conectores, facilitando assim a prototipagem e implementação. Ainda estamos aguardando sua chegada para verificar se esse joystick se adequaria.
-
+\begin{itemize}
+  \item Problema: Fazer modelo físico do módulo Joystick.
+  \item Solução: Foi adquirida uma caixa plástica, na qual foi anexada o \textit{joystick}.
  \end{itemize}
 
-\subsection{Power Train}
+\section{\textit{Power Train}}
 
--Escolha de um motor que atendesse os requisitos velocidade-torque.
+\textbf{Escolha de um motor}\footnote{Levando em conta o atendimento os requisitos velocidade-torque}
+
  \begin{itemize}
   \item Problema: A escolha do melhor método de cálculo de potência necessária para mover o sistema completo (cadeira de rodas mais usuário) foi um problema devida a alta variedade de possibilidades, tornando-se muito indecisa a precisão dos cálculos.
-  \item Solução: Após uma vasta pesquisa na literatura e com alguns professores da FGA, com o auxilio do software Matlab, foram feitas diversas simulações envolvendo as variáveis de projeto para a decisão do melhor conjunto. 
+  \item Solução: Após uma vasta pesquisa na literatura e com alguns professores da FGA, com o auxilio do \textit{software} Matlab, foram feitas diversas simulações envolvendo as variáveis de projeto para a decisão do melhor conjunto.
 
   \item Problema: Motores de corrente contínua fornecem um baixo torque, através dos cálculos, observou-se que era preciso um torque alto.
   \item Solução: Foi necessário o uso de um redutor para atender as especificações matemáticas do projeto. A partir disso foi feita uma busca de mercado e optamos por encomendar um kit motor-redutor pronto
 
  \end{itemize}
 
--Eixo do conjunto moto-redutor
+\textbf{Eixo do conjunto moto-redutor}
  \begin{itemize}
   \item Problema: Os primeiros conjuntos moto-redutor que foram analisados foram o de motor de para-brisas de carro, esses conjuntos não forneciam a velocidade especificada pelo projeto, porém foram úteis para testes de controle. E seria fácil acoplar a roda do sistema a esse conjunto devido ao seu design. Entre tudo, quando os motores reais do projeto chegaram, o eixo era muito curto e devido ao design seria impossível conectar diretamente as rodas
-  \item Solução: Será necessário fazer um novo eixo com o uso do torno mecânico para ligar a roda ao conjunto moto-redutor.
+  \item Solução: Foi construído um novo eixo com o uso do torno mecânico para ligar a roda ao conjunto moto-redutor.
 
  \end{itemize}
 
-\subsection{Estrutura}
--Acoplamento
+\section{Estrutura}
+
+\textbf{Acoplamento}
  \begin{itemize}
-  \item Problema: O ponto mais importante a se considerar para que o projeto funcione de modo eficaz e robusta é a forma como o sistema se acopla a cadeira, pois o deslocamento sera feito através da rotação das rodas acopladas a mala, ou seja, caso  a conexão não fique firme o deslocamento sera comprometido. 
-  \item Solução 1: Primeiramente se pensou em criar um sistema de garras que seriam presas a estrutura tubular da cadeira, o que seria eficaz e simples de ser feito, porem após conseguir cadeiras reais para análise foi constatado que não haveria como acoplar as garras a algumas cadeiras devido a forma como os fabricantes fixam o tecido que mantem o encosto para as costas no lugar. Então foi pensado em utilizar velcros que seriam baratos, fáceis de utilizar e se bem posicionados permitiriam uma boa fixação, m...(line truncated)...
-  \item Solução 2: Em seguida foi pensado em uma forma de acoplamento que não fosse afetada por diferentes tipos de modos de montagem ou disposição de partes da cadeira. Tendo em mãos duas cadeiras de rodas reais e distintas notou se a presença de dois pontos livres para realizar o acoplamento. Com a solução em mente foi decidido criar um protótipo em PVC, devido ao baixo custo, para que fosse possível analisar de fato se o sistema de acoplamento idealizado seria eficaz. Apos construída a estrutura foi const...(line truncated)...
+  \item Problema: O ponto mais importante a se considerar para que o projeto funcione de modo eficaz e robusta é a forma como o sistema se acopla a cadeira, pois o deslocamento foi feito através da rotação das rodas acopladas a mala, ou seja, caso  a conexão não fique firme o deslocamento foi comprometido.
+  \item Solução 1: Primeiramente se pensou em criar um sistema de garras que seriam presas a estrutura tubular da cadeira, o que seria eficaz e simples de ser feito, porem após conseguir cadeiras reais para análise foi constatado que não haveria como acoplar as garras a algumas cadeiras devido a forma como os fabricantes fixam o tecido que mantem o encosto para as costas no lugar. Então foi pensado em utilizar velcros que seriam baratos, fáceis de utilizar e se bem posicionados permitiriam uma boa fixação, mas após testados ficou claro que não seria possível manter a estrutura firmemente fixada, pois o velcro não previne alguns tipos de movimentos que a movimentaçao do sistema geraria.
+
+  \item Solução 2: Em seguida foi pensado em uma forma de acoplamento que não fosse afetada por diferentes tipos de modos de montagem ou disposição de partes da cadeira. Tendo em mãos duas cadeiras de rodas reais e distintas notou se a presença de dois pontos livres para realizar o acoplamento. Com a solução em mente foi decidido criar um protótipo em PVC, devido ao baixo custo, para que fosse possível analisar de fato se o sistema de acoplamento idealizado seria eficaz. Apos construída a estrutura foi constatada, então, a eficácia do sistema, que tem baixo custo, sem perder a resistência, praticidade e adaptabilidade aos parâmetros fixados pela NBR 9050.
+ \end{itemize}
+
+ \textbf{Montagem}
+
+ \begin{itemize}
+   \item Problema: O sistema superior de acoplamento estava consumindo uma quantidade de tempo muito elevada para a sua regulagem.
+   \item Solução: foi construído um novo sistema de acoplamento para a parte superior, o novo sistema é semelhante ao antigo mas sua regulagem é muito mais veloz, a imagem \ref{fig:novo_acoplamento_superior} mostra esse novo sistema.
+
+   \item Problema: Muito tempo para acoplar cadeiras;
+   \item Solução: O lado do parafusos foi ajustado para melhor manuzeio e uma outra ferramenta foi utilizada, diminuindo o tempo de acoplamento.
 
  \end{itemize}
 
--Falta de cadeira
+\textbf{Falta de cadeira}
  \begin{itemize}
   \item Problema: Não se tinha cadeiras de rodas disponíveis para teste da estrutura.
   \item Solução: Entramos em contato com os professores responsáveis pela cadeira de rodas presente no laboratório e conseguimos autorização para utilizá-la. Outras cadeiras foram conseguidas por meio de doações de terceiros.
-
  \end{itemize}
 
-
+ \textbf{Movimentação}
+   \begin{itemize}
+     \item Problema: Ao se acoplar a estrutura foi percebido, tardiamente, que as rodas da estrutura e da cadeira de rodas não são concêntricas. Impossibilitando a movimentação da cadeira em torno do seu próprio eixo;
+     \item Solucão: Como a cadeira consegue realizar rotações, mesmo que não em torno do próprio eixo, manteve-se a solução, pois a mesma permite a realização de movimentos em espaços que atendem à NBR 9050 que especifica os espaços para cadeirantes.
+	 \item Problema: Devido a possibilidade de andar sobre superfícies inclinadas, foi constatado que era necessário modificar a parte traseira da estrutura para que ela não encostasse no chão quando o sistema estivesse entrando em um aclive.
+     \item Solução: foi feito uma modificação na parte traseira, conforme a imagem \ref{fig:vista_lateral_estrutura} mostra, assim com a adição de uma coluna inclinada ao sistema, não há risco de arrasto da parte traseira.
+   \end{itemize}
