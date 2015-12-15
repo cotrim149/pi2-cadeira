@@ -15,39 +15,11 @@ Com a utilização do programa CATIA V5 3D foi modelado e simulado o protótipo,
 \label{fig:vista_isometrica_traseira}
 \end{figure}
 
-  % \begin{figure}[!htb]
-  % \centering
-  % \includegraphics[width=0.5\textwidth]{figuras/estrutura/vista_traseira}
-  % \caption{Vista Traseira}
-  % \label{fig:traseira}
-  % \end{figure}
-
 A forma como o protótipo se acopla a haste superior da cadeira, usa como base suas hastes verticais e as manoplas da cadeira. Na parte inferior o acoplamento é feito através de braçadeiras que se acoplam as hastes horizontais da cadeira. Tendo em vista que essas hastes são normatizadas pela NBR 9050, tem-se um acoplamento eficaz.
-
-% \begin{figure}[!htb]
-% \centering
-% \includegraphics[width=0.5\textwidth]{figuras/estrutura/explode}
-% \caption{Visão do Sistema}
-% \label{fig:sistema}
-% \end{figure}
 
 Cada roda foi conectada diretamente ao eixo de um moto redutor, permitindo o controle independente da rotação das rodas. Sendo assim, é possível efetuar manobras que demandam diferentes rotações entre as rodas. Dessa forma, o controle da cadeira será similar a cadeiras automatizadas existentes no mercado, facilitando a interação usuário$\backslash$cadeira e garantindo controles de direção suficientemente precisos.
 
-% \begin{figure}[!htb]
-% \centering
-% \includegraphics[width=0.5\textwidth]{figuras/estrutura/vista_lateral_cadeira}
-% \caption{Imagem Lateral}
-% \label{fig:lateral}
-% \end{figure}
-
 Devido ao fato dos eixos das rodas não serem concêntricos quando se realiza um movimento de rotação, ocorre arrasto nas rodas maiores da cadeira de rodas, pois o movimento gerado faz com que essas rodas girem fora de sua trajetória natural. Isso gera alguns esforços que podem ser prejudiciais a estrutura da cadeira, além de ocasionar desgaste prematuro dos pneus. Para solucionar esse problema as rodas da cadeira e do protótipo deveriam ser concêntricas. O que não é possível de ser alcançado com a estrutura que foi planejada.
-
-% \begin{figure}[!htb]
-% \centering
-% \includegraphics[width=0.5\textwidth]{figuras/estrutura/vista_superior}
-% \caption{Imagem Superior}
-% \label{fig:superior}
-% \end{figure}
 
 \subsection{Protótipo}
 
@@ -116,7 +88,7 @@ A figura \ref{fig:vista_frontal_estrutura} apresenta a parte frontal da estrutur
 
 \subsection{Centro de Massa}
 
-O Cálculo do centro de massa do conjunto total (cadeira, cadeirante e Sistema de automação) foi necessário para o cálculo da potência requerida dos motores. O centro de massa foi estimado a partir da soma vetorial dos centros de massa parciais do conjunto cadeira-cadeirante que foi obtido a partir dos estudos de \cite{artigo_centro_massa}, vide figura \ref{fig:centro_massa_cadeirante}.
+O cálculo do centro de massa do conjunto total (cadeira, cadeirante e sistema de automação) foi necessário para o cálculo da potência requerida dos motores. O centro de massa foi estimado a partir da soma vetorial dos centros de massa parciais do conjunto cadeira-cadeirante que foi obtido a partir dos estudos de \cite{artigo_centro_massa}, vide figura \ref{fig:centro_massa_cadeirante}.
 
 \begin{figure}[!htb]
 \centering
@@ -125,7 +97,7 @@ O Cálculo do centro de massa do conjunto total (cadeira, cadeirante e Sistema d
 \label{fig:centro_massa_cadeirante}
 \end{figure}
 
-O centro de massa do Sistema de automação, vide figura \ref{fig:centro_massa_sistema_automocao}, foi obtido a partir de uma simulação estática da estrutura em que se aplicou os devidos carregamentos e restrições de trabalho.
+O centro de massa do sistema de automação, vide figura \ref{fig:centro_massa_sistema_automocao}, foi obtido a partir de uma simulação estática da estrutura em que se aplicou os devidos carregamentos e restrições de trabalho.
 
 \begin{figure}[!htb]
 \centering
@@ -142,7 +114,7 @@ Desta maneira, os cálculos resultaram que o centro de massa está, portanto, a 
 
 \subsection[Resistência a Rolagem]{Resistência a Rolagem}
 
-Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-se um peso a mais ao sistema, assim como um ponto a mais de contato de distribuição da massa total é adicionado ao sistema. Desta maneira, as forças nas rodas traseiras são aliviadas por serem divididas com as rodas do protótipo. A figura \ref{fig:finalmente_essa_imagem} abaixo apresenta as distâncias entre os eixos das rodas da cadeira e do protótipo ao centro de massa.
+Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-se um peso a mais ao sistema, assim como um ponto a mais de contato de distribuição da massa total é adicionado ao sistema. Desta maneira, as forças nas rodas traseiras são aliviadas por serem divididas com as rodas do protótipo. A figura \ref{fig:finalmente_essa_imagem} apresenta as distâncias entre os eixos das rodas da cadeira e do protótipo ao centro de massa.
 
 \begin{figure}[!htb]
 	\centering
@@ -151,7 +123,7 @@ Ao acoplar o protótipo criado para automatizar a cadeira de rodas, acrescenta-s
 	\label{fig:finalmente_essa_imagem}
 \end{figure}
 
-Desta maneira, as equações discutidas anteriormente são modificadas abaixo para se ajustarem ao protótipo acoplado, onde $s$ é a distância entre as rodas do protótipo e o centro de massa, e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo. Como explicado na seção anterior, a distância entre o eixo das rodas maiores e o centro de massa, neste caso $x$, foi igual a 5 cm.
+Desta maneira, as equações discutidas anteriormente são modificadas para se ajustarem ao protótipo acoplado, onde $s$ é a distância entre as rodas do protótipo e o centro de massa, e \textit{dwb} é a distância entre o eixo das rodas dianteiras e as rodas do protótipo. Como explicado na seção anterior, a distância entre o eixo das rodas maiores e o centro de massa, neste caso $x$, foi igual a 5 cm.
 
 \begin{equation}
 	f_p=m*g\frac{(dwb-s-x)}{dwb} ; f_{p,rr}=\mu*f_p
@@ -203,7 +175,7 @@ A resistência adicional pode ser definida, portanto, como:
 f_{ce}= m*g* \mu_e \frac{x}{dwb}
 \end{equation}
 
-A resistência total ao movimento (fT) seria portanto a soma das resistências de rolamento com a de atrito estático:
+A resistência total ao movimento ($f_T$) seria portanto a soma das resistências de rolamento com a de atrito estático:
 
 \begin{equation}
 f_T = f_{rr} + f_{ce} = 44.146+45.984 = 90.129 N
@@ -217,11 +189,11 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
   A potência entregue pelos motores à cadeira de rodas é maior que estes 235.96 W. A diferença entre a potência entregue e a necessária para retirar a cadeira da inércia é considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
 
-  \subsection{Moto-redutor}
+  \subsection{Motoredutor}
 
-  Foi utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+  Foi utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante \cite{manual_bateria_unipower}.
 
-  Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
+  Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois motoredutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
 
   \begin{itemize}
     \item Potência de 305 a 350 W;
@@ -243,7 +215,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
   \subsection{Bateria}
 
-  A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
+  A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (\textit{no-breaks}) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
 
   \subsubsection{Autonomia}
 
@@ -256,7 +228,7 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
     Em = \frac{m*V^2}{2}
   \end{equation}
 
-  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa do sistema e $V$ é a velocidade máxima. Assim, a energia necessária para mover a cadeira é de $578.7 J$. Este valor pode ser relacionado com a potência do sistema por esta ser igual a taxa de energia, ou seja, 1 watt é igual à 1 joule por segundo. Assim, a cadeira de rodas terá a capacidade de realizar $568.7 J$ a cada segundo de trabalho, com isso a potência exigida dos motores será de $578.7 W$.
+  Em que $Em$ é a energia fornecida pelo motor, $m$ é a massa do sistema e $V$ é a velocidade máxima. Assim, a energia necessária para mover a cadeira é de $578.7 J$. Este valor pode ser relacionado com a potência do sistema por esta ser igual a taxa de energia, ou seja, 1 watt é igual à 1 joule por segundo. Assim, a cadeira de rodas terá a capacidade de realizar $568.7 J$ a cada segundo de trabalho, com isso a potência exigida dos motores será de $578.7 W$.
 
   Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 volts e 305 watts para o projeto, assim, a potência total entregue ao sistema é de $610 W$. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
 

@@ -6,27 +6,26 @@ A metodologia de desenvolvimento do produto mostra como foram desenvolvidas as p
 
 \section{Estrutura}
 
-A modelagem 3D do dispositivo foi construído um modelo 3D da estrutura, que foi dimensionado de acordo com os dados fornecidos pela NBR 9050 \cite{nbr9050}, de modo que o sistema atenda as cadeiras de rodas que também possuem especificações pela NBR 9050. Para isso utilizou-se o \textit{software} Catia V5R19, Ainda foi constuído uma modelo utilizando PVC para os testes iniciais e desenvolvimento dos acoplamentos.
-
-Com o auxílio do um torno mecânico disponível no galpão da Faculdade UNB - Campus Gama, foi torneado um eixo para o acoplamento do conjunto de moto-redução e roda do sistema.
+A modelagem 3D do dispositivo foi construído um modelo 3D da estrutura, que foi dimensionado de acordo com os dados fornecidos pela NBR 9050 \cite{nbr9050}, de modo que o sistema atenda as cadeiras de rodas que também possuem especificações pela NBR 9050.
+Para isso utilizou-se o \textit{software} Catia V5R19, onde uma análise estrutural também foi realizada. Em seguida foi constuído uma modelo utilizando PVC para os testes iniciais e desenvolvimento dos acoplamentos. Por fim foi feito o protótipo com aço SAE 1020 ultilizando técnicas de soldagem no galpão da Faculdade UNB - Campus Gama. Além disso, com o auxílio do um torno mecânico, foi torneado um eixo para o acoplamento do conjunto de motoredutor e roda do sistema.
 
 \section{Power Train}
 
-Para a especificação do conjunto moto-redutor e bateria, foram levantados os requisitos necessários do moto-redutor e a autonomia do sistema, comparando os cálculos teóricos realizados e o que é encontrado no mercado.
+Para a especificação do conjunto moto-redutor e bateria, foram levantados os requisitos necessários do motoredutor e a autonomia do sistema, comparando os cálculos teóricos realizados e o que é encontrado no mercado.
 
 \section{Controle}
 
-	Especificação de tecnologia: estudo e escolha da melhor tecnologia voltada para o problema. Envolvendo desde as especificações do ambiente físico até as especificações do ambiente virtual para desenvolvimento do \textit{software}.
+	O primeiro aspecto analisado para a parte de controle foi a especificação de tecnologia que consistiu no estudo e escolha da melhor tecnologia voltada para o problema. Envolvendo desde as especificações do ambiente físico até as especificações do ambiente virtual para desenvolvimento do \textit{software}.
 
-	Estudo, simulação e execução de qual tipo de controlador de potência será usado no motor, para controle de sua corrente.
+	Em seguida um estudo, simulação e execução de qual tipo de controlador de potência  usado no motor, para controle de sua corrente foi feito.
 
-	Estudo e implementação e testes das soluções encontradas para o \textit{joystick}, gerador de PWM para o controle dos motores e bateria.
+	Além disso, foi feito um estudo, implementação e testes das soluções encontradas para o \textit{joystick}, gerador de PWM para o controle dos motores e bateria.
 
 \section{Metodologia de organização e monitoramento}
 
-Para a execução do projeto o grupo organizou com base nas metodologias ágeis ''Extreme Programming'' (XP) e Scrum, comuns a engenharia de \textit{software}, porém, estas metodologias foram adaptadas conforme a necessidade e o contexto do projeto que este documento descreve. Um exemplo destas adaptações é a ausência de um ''Product Owner'', para esta representação todo o grupo a exercerá através de reuniões para tomadas de decisão.
+Para a execução do projeto o grupo organizou com base nas metodologias ágeis \textit{Extreme Programming} (XP) e \textit{Scrum}, comuns a engenharia de \textit{software}, porém, estas metodologias foram adaptadas conforme a necessidade e o contexto do projeto que este documento descreve. Um exemplo destas adaptações é a ausência de um \textit{Product Owner}, para esta representação todo o grupo a exercerá através de reuniões para tomadas de decisão.
 
-O Scrum e o XP são metodologias ágeis que nos baseamos para o planejamento do processo produtivo. No inicio do projeto foi definido o escopo, product backlog, de uma forma mais macro, resultando assim na nossa EAP, que pode ser observada na figura \ref{fig:eap}.
+O \textit{Scrum} e o XP são metodologias ágeis que  baseamos para o planejamento do processo produtivo. No inicio do projeto foi definido o escopo, \textit{product backlog}, de uma forma mais macro, resultando assim na nossa  Estrutura Analítica do Projeto (EAP), que pode ser observada na figura \ref{fig:eap}.
 
 \begin{figure}[!htb]
 \centering
@@ -35,11 +34,9 @@ O Scrum e o XP são metodologias ágeis que nos baseamos para o planejamento do 
 \label{fig:eap}
 \end{figure}
 
-O projeto foi dividido em \textit{Sprints}, técnica do Scrum baseada em intervalos fixos de tempo para a entrega de uma parte do produto final (Builds), que por votação interna teve sua duração limitada a uma semana.
+O projeto foi dividido em \textit{Sprints}, técnica do\textit{ Scrum}baseada em intervalos fixos de tempo para a entrega de uma parte do produto final \textit{Builds}, que por votação interna teve sua duração limitada a uma semana.
 
-Para cada início de \textit{Sprint} foi realizada o \textit{Planning}, uma reunião dedicada ao planejamento de toda a \textit{Sprint}. Em seu decorrer foram realizadas \textit{Dailies}, que pode ser dito como um \textit{feedback} diário de cada membro, ou cada \textit{pairing}, comunicando o que foi realizado naquele dia, citando as dificuldades e o que será feito no próximo dia.
-
-No final da \textit{Sprint} foi realizada uma retrospectiva onde são levantados pontos positivos e pontos a serem melhorados.
+Para cada início de \textit{Sprint} foi realizada o \textit{Planning}, uma reunião dedicada ao planejamento de toda a \textit{Sprint}. Em seu decorrer foram realizadas \textit{Dailies}, que pode ser dito como um \textit{feedback} diário de cada membro, ou cada \textit{pairing}, comunicando o que foi realizado naquele dia, citando as dificuldades e o que será feito no próximo dia. No final da \textit{Sprint} foi realizada uma retrospectiva onde são levantados pontos positivos e pontos a serem melhorados.
 
 Os prazos e datas nos quais foram baseados as datas de entrega, \textit{builds}, releases, foram definidos para se adequar ao tempo da disciplina e às datas estipuladas pelo plano de ensino da disciplina.
 %Com isso foi feito o planejamento de Sprints que pode ser encontrado na figura \ref{fig:cronograma}
@@ -50,46 +47,45 @@ Com isso concluiu-se que as fases são divididas em \textit{Sprints}, e as ativi
 
 \section{Integração entre Engenharias}
 
-Considerando a diversidade de conhecimentos das várias engenharias que contribuiram para o trabalho, o grupo teve como objetivo agregar o máximo de informações possíveis, com a finalidade de integração entre os integrantes. Com base nesta integração, então foi alcançado um trabalho final mais completo, envolvendo os membros em atividades que não são apenas a da área de conhecimento. Baseado nessa integração os grupos de pesquisa da primeira Sprint foram separados como mostra na tabela \ref{tab:grupos_engenharia}.
+Considerando a diversidade de conhecimentos das várias engenharias que contribuiram para o trabalho, o grupo teve como objetivo agregar o máximo de informações possíveis, com a finalidade de integração entre os integrantes. Com base nesta integração, então foi alcançado um trabalho final mais completo, envolvendo os membros em atividades que não são apenas a da área de conhecimento. Baseado nessa integração os grupos de pesquisa da primeira Sprint foram separados como mostra na tabela \ref{tab:grupos_engenharia}. As outras \textit{sprints} podem ser observadas nas imagens no apêndice \ref{app:apendice_um}.
 
 \begin{table}[!h]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|l|l|}
-\hline
-\multicolumn{1}{|l|}{\textit{\textbf{Sprint}}} & \multicolumn{1}{c|}{\textbf{Tema}} & \multicolumn{1}{c|}{\textbf{Engenharia}} \\ \hline
-\multirow{7}{*}{0} & Manual do usuário das ferramentasa serem utilizadas pelo grupo & Energia \\ \cline{2-3}
- & Motor & Eletrônica/Software \\ \cline{2-3}
- & Motor & Eletrônica/Energia \\ \cline{2-3}
- & Estrutura & Automotiva \\ \cline{2-3}
- & Comunicação & Eletrônica \\ \cline{2-3}
- & Identidade Visual do Grupo & Energia/Software \\ \cline{2-3}
- & Projetos Similares & Energia/Software \\ \hline
-\end{tabular}
-}
-\caption{My caption}
-\label{tab:grupos_engenharia}
+	\centering
+	\caption{Exemplo de integração entre engenharias e temas}
+	\label{tab:grupos_engenharia}
+	\resizebox{\textwidth}{!}{%
+	\begin{tabular}{|c|l|l|}
+		\hline
+		\multicolumn{1}{|l|}{\textit{\textbf{Sprint}}} & \multicolumn{1}{c|}{\textbf{Tema}} & \multicolumn{1}{c|}{\textbf{Engenharia}} \\ \hline
+		\multirow{7}{*}{0} & Manual do usuário das ferramentasa serem utilizadas pelo grupo & Energia \\ \cline{2-3}
+		 & Motor & Eletrônica/Software \\ \cline{2-3}
+		 & Motor & Eletrônica/Energia \\ \cline{2-3}
+		 & Estrutura & Automotiva \\ \cline{2-3}
+		 & Comunicação & Eletrônica \\ \cline{2-3}
+		 & Identidade Visual do Grupo & Energia/Software \\ \cline{2-3}
+		 & Projetos Similares & Energia/Software \\ \hline
+	\end{tabular}
+	}
 \end{table}
 
-Com isso em mente e munidos de uma metodologia de organização de ciclo de vida baseados em princípios ágeis, as tarefas são divididas entre pequenos grupos formados pelos integrantes de diferentes engenharias sempre que possível. Como exemplo, temos a tabela 3, que mostra nosso esquemático de divisão das engenharias nos ramos.
+Com isso em mente e munidos de uma metodologia de organização de ciclo de vida baseados em princípios ágeis, as tarefas são divididas entre pequenos grupos formados pelos integrantes de diferentes engenharias sempre que possível. Como exemplo, temos a tabela \ref{tab:divisao_ramos}, que mostra nosso esquemático de divisão das engenharias nos ramos.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
 \begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{l|l|l|l|l}
-\cline{2-4}
-& \textbf{Ramos}  & \textbf{Tema} & \textbf{Engenharias} &  \\ \cline{1-4}
-\multicolumn{1}{|l|}{\multirow{4}{*}{\rotatebox[origin=c]{90}{Primeira parte}}} & Power Train             & Especificação do conjunto bateria e alimentação                             & Energia                     &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Estrutura               & Acoplamento, design estrutural e sustentação de todo o sistema              & Automotiva                  &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Controle                & Controle da intensidade e direção dos motores                               & Eletrônica/Software         &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Interface com o usuário & Recebimento e processamento dos comandos do usuário                         & Eletrônica/Software         &  \\ \cline{1-4}
-\multicolumn{1}{|l|}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Segunda parte}}} & Estrutura               & Melhorias no acoplamento, design estrutural e sustentação de todo o sistema & Automotiva/ Energia         &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Controle                & Melhorias no controle da intensidade e direção dos motores                  & Eletrônica/Software/Energia &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Interface com o usuário & Melhorias no recebimento e processamento dos comandos do usuário            & Eletrônica/Software/Energia &  \\ \cline{1-4}
-\end{tabular}
+	\centering
+	\caption{Divisão das engenharias nos ramos}
+	\label{tab:divisao_ramos}
+	\begin{tabular}{lp{0.1\textwidth}|lp{0.3\textwidth}|lp{0.4\textwidth}|lp{0.2\textwidth}}
+		\cline{2-4}	& \textbf{Ramos}  & \textbf{Tema} & \textbf{Engenharias} & \\ \cline{1-4}
+
+		\multicolumn{1}{|l|}{\multirow{6}{*}{{Primeira parte}}} & Power Train & Especificação do conjunto bateria e alimentação & Energia & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Estrutura & Acoplamento, design estrutural e sustentação de todo o sistema & Automotiva & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Controle & Controle da intensidade e direção dos motores & Eletrônica e Software & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Interface com o usuário & Recebimento e processamento dos comandos do usuário & Eletrônica e Software & \\	\cline{1-4}
+
+		\multicolumn{1}{|l|}{\multirow{3}{*}{{Segunda parte}}} & Estrutura               & Melhorias no acoplamento, design estrutural e sustentação de todo o sistema & Automotiva e Energia & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Controle & Melhorias no controle da intensidade e direção dos motores & Eletrônica, Software e Energia & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Interface com o usuário & Melhorias no recebimento e processamento dos comandos do usuário & Eletrônica, Software e Energia & \\ \cline{1-4}
+	\end{tabular}
 \end{table}
 
 Embora a intenção principal seja integrar os conhecimentos da melhor forma possível, temos ciência da necessidade de se focar engenharias específicas em determinadas áreas de atuação, fato que pode ser obsevado na primeira parte da tabela. Porém, após a definição e compra da bateria e motorredutor, realizada no meio do período da disciplina de Projeto Integrador 2, houve a necessidade de finalização desse grupo de atividades e realocação dos integrantes nos outros grupos.
