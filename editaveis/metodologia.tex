@@ -50,43 +50,42 @@ Com isso concluiu-se que as fases são divididas em \textit{Sprints}, e as ativi
 Considerando a diversidade de conhecimentos das várias engenharias que contribuiram para o trabalho, o grupo teve como objetivo agregar o máximo de informações possíveis, com a finalidade de integração entre os integrantes. Com base nesta integração, então foi alcançado um trabalho final mais completo, envolvendo os membros em atividades que não são apenas a da área de conhecimento. Baseado nessa integração os grupos de pesquisa da primeira Sprint foram separados como mostra na tabela \ref{tab:grupos_engenharia}. As outras \textit{sprints} podem ser observadas nas imagens no apêndice \ref{app:apendice_um}.
 
 \begin{table}[!h]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|l|l|}
-\hline
-\multicolumn{1}{|l|}{\textit{\textbf{Sprint}}} & \multicolumn{1}{c|}{\textbf{Tema}} & \multicolumn{1}{c|}{\textbf{Engenharia}} \\ \hline
-\multirow{7}{*}{0} & Manual do usuário das ferramentasa serem utilizadas pelo grupo & Energia \\ \cline{2-3}
- & Motor & Eletrônica/Software \\ \cline{2-3}
- & Motor & Eletrônica/Energia \\ \cline{2-3}
- & Estrutura & Automotiva \\ \cline{2-3}
- & Comunicação & Eletrônica \\ \cline{2-3}
- & Identidade Visual do Grupo & Energia/Software \\ \cline{2-3}
- & Projetos Similares & Energia/Software \\ \hline
-\end{tabular}
-}
-\caption{Exemplo de integração entre engenharias e temas}
-\label{tab:grupos_engenharia}
+	\centering
+	\caption{Exemplo de integração entre engenharias e temas}
+	\label{tab:grupos_engenharia}
+	\resizebox{\textwidth}{!}{%
+	\begin{tabular}{|c|l|l|}
+		\hline
+		\multicolumn{1}{|l|}{\textit{\textbf{Sprint}}} & \multicolumn{1}{c|}{\textbf{Tema}} & \multicolumn{1}{c|}{\textbf{Engenharia}} \\ \hline
+		\multirow{7}{*}{0} & Manual do usuário das ferramentasa serem utilizadas pelo grupo & Energia \\ \cline{2-3}
+		 & Motor & Eletrônica/Software \\ \cline{2-3}
+		 & Motor & Eletrônica/Energia \\ \cline{2-3}
+		 & Estrutura & Automotiva \\ \cline{2-3}
+		 & Comunicação & Eletrônica \\ \cline{2-3}
+		 & Identidade Visual do Grupo & Energia/Software \\ \cline{2-3}
+		 & Projetos Similares & Energia/Software \\ \hline
+	\end{tabular}
+	}
 \end{table}
 
 Com isso em mente e munidos de uma metodologia de organização de ciclo de vida baseados em princípios ágeis, as tarefas são divididas entre pequenos grupos formados pelos integrantes de diferentes engenharias sempre que possível. Como exemplo, temos a tabela \ref{tab:divisao_ramos}, que mostra nosso esquemático de divisão das engenharias nos ramos.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
 \begin{table}[]
-\centering
-\begin{tabular}{l|l|l|l|l}
-\cline{2-4}
-& \textbf{Ramos}  & \textbf{Tema} & \textbf{Engenharias} &  \\ \cline{1-4}
-\multicolumn{1}{|l|}{\multirow{4}{*}{\rotatebox[origin=c]{90}{Primeira parte}}} & Power Train             & Especificação do conjunto bateria e alimentação                             & Energia                     &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Estrutura               & Acoplamento, design estrutural e sustentação de todo o sistema              & Automotiva                  &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Controle                & Controle da intensidade e direção dos motores                               & Eletrônica/Software         &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Interface com o usuário & Recebimento e processamento dos comandos do usuário                         & Eletrônica/Software         &  \\ \cline{1-4}
-\multicolumn{1}{|l|}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Segunda parte}}} & Estrutura               & Melhorias no acoplamento, design estrutural e sustentação de todo o sistema & Automotiva/ Energia         &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Controle                & Melhorias no controle da intensidade e direção dos motores                  & Eletrônica/Software/Energia &  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                  & Interface com o usuário & Melhorias no recebimento e processamento dos comandos do usuário            & Eletrônica/Software/Energia &  \\ \cline{1-4}
-\end{tabular}
-\caption{My caption}
-\label{tab:divisao_ramos}
+	\centering
+	\caption{Divisão das engenharias nos ramos}
+	\label{tab:divisao_ramos}
+	\begin{tabular}{lp{0.1\textwidth}|lp{0.3\textwidth}|lp{0.4\textwidth}|lp{0.2\textwidth}}
+		\cline{2-4}	& \textbf{Ramos}  & \textbf{Tema} & \textbf{Engenharias} & \\ \cline{1-4}
+
+		\multicolumn{1}{|l|}{\multirow{6}{*}{{Primeira parte}}} & Power Train & Especificação do conjunto bateria e alimentação & Energia & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Estrutura & Acoplamento, design estrutural e sustentação de todo o sistema & Automotiva & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Controle & Controle da intensidade e direção dos motores & Eletrônica e Software & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Interface com o usuário & Recebimento e processamento dos comandos do usuário & Eletrônica e Software & \\	\cline{1-4}
+
+		\multicolumn{1}{|l|}{\multirow{3}{*}{{Segunda parte}}} & Estrutura               & Melhorias no acoplamento, design estrutural e sustentação de todo o sistema & Automotiva e Energia & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Controle & Melhorias no controle da intensidade e direção dos motores & Eletrônica, Software e Energia & \\ \cline{2-4}
+		\multicolumn{1}{|l|}{} & Interface com o usuário & Melhorias no recebimento e processamento dos comandos do usuário & Eletrônica, Software e Energia & \\ \cline{1-4}
+	\end{tabular}
 \end{table}
 
 Embora a intenção principal seja integrar os conhecimentos da melhor forma possível, temos ciência da necessidade de se focar engenharias específicas em determinadas áreas de atuação, fato que pode ser obsevado na primeira parte da tabela. Porém, após a definição e compra da bateria e motorredutor, realizada no meio do período da disciplina de Projeto Integrador 2, houve a necessidade de finalização desse grupo de atividades e realocação dos integrantes nos outros grupos.
