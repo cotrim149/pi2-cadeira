@@ -15,12 +15,12 @@ Com a utilização do programa CATIA V5 3D foi modelado e simulado o protótipo,
 \label{fig:vista_isometrica_traseira}
 \end{figure}
 
-  % \begin{figure}[!htb]
-  % \centering
-  % \includegraphics[width=0.5\textwidth]{figuras/estrutura/vista_traseira}
-  % \caption{Vista Traseira}
-  % \label{fig:traseira}
-  % \end{figure}
+	% \begin{figure}[!htb]
+	% \centering
+	% \includegraphics[width=0.5\textwidth]{figuras/estrutura/vista_traseira}
+	% \caption{Vista Traseira}
+	% \label{fig:traseira}
+	% \end{figure}
 
 A forma como o protótipo se acopla a haste superior da cadeira, usa como base suas hastes verticais e as manoplas da cadeira. Na parte inferior o acoplamento é feito através de braçadeiras que se acoplam as hastes horizontais da cadeira. Tendo em vista que essas hastes são normatizadas pela NBR 9050, tem-se um acoplamento eficaz.
 
@@ -86,13 +86,13 @@ Neste novo mecanismo de acoplamento, a parte superior da estrutura pode variar h
 A figura \ref{fig:vista_frontal_estrutura} apresenta a parte frontal da estrutura, que será acoplada na parte posterior da cadeira de rodas. É possível observar os novos furos que foram feitos na parte inferior, permitindo que o acoplamento inferior se mova em mais posições na vertical. Isto faz com que a estrutura se adeque a NBR 9050. Na figura \ref{fig:esquematico_estr_acoplada} é possível observar a estrutra acoplada a cadeira.
 
 \begin{figure}[!ht]
-  \subfloat[]{\includegraphics[width=0.5\textwidth]{figuras/resultados/vista_frontal_estrutura}
-   \label{fig:vista_frontal_estrutura}
-  }
-   \subfloat[]{\includegraphics[width=0.5\textwidth]{figuras/resultados/esquematico_estr_acoplada}
-   \label{fig:esquematico_estr_acoplada}
-   }
-  \caption{Em (a) Vista frontal da estrutura do Sistemad; Em (b) Esquemático de estruturas acopladas}\label{fig:vista_frontal_e_esquematico_acoplamento}
+	\subfloat[]{\includegraphics[width=0.5\textwidth]{figuras/resultados/vista_frontal_estrutura}
+	 \label{fig:vista_frontal_estrutura}
+	}
+	 \subfloat[]{\includegraphics[width=0.5\textwidth]{figuras/resultados/esquematico_estr_acoplada}
+	 \label{fig:esquematico_estr_acoplada}
+	 }
+	\caption{Em (a) Vista frontal da estrutura do Sistemad; Em (b) Esquemático de estruturas acopladas}\label{fig:vista_frontal_e_esquematico_acoplamento}
 \end{figure}
 
  \subsection{Esforços Estruturais}
@@ -104,14 +104,14 @@ A figura \ref{fig:vista_frontal_estrutura} apresenta a parte frontal da estrutur
  As tensões encontradas no sistema obedeceram o critério de Von Misses, onde é possível notar que a parte inferior da base é o gargalo, pois ela sofre as maiores tensões da estrutura. Na figura (a) verifica-se que a tensão máxima do material é 0.372 MPa, enquanto a figura (b) apresenta a visão frontal destas tensões. Com esses valores, sabemos que a estrutura resistirá aos carregamentos a ela submetidos, já que a tensão de escoamento do aço 1020 é de 210 Mpa.
 
  \begin{figure}[!ht]
-   \subfloat[]{\includegraphics[width = 0.37\textwidth]{figuras/resultados/von_mises_lateral}
-    \label{fig:analise_von_mises_1}}
-    \subfloat[]{\includegraphics[width = 0.3\textwidth]{figuras/resultados/von_mises_frontal}
-    \label{fig:analise_von_mises_2}}
-    \subfloat[]{\includegraphics[width = 0.24\textwidth]{figuras/resultados/von_mises_escala}
-    \label{fig:analise_von_mises_3}}
-   \caption{Tensão de Von Mises máxima e mínima do material}
-   \label{fig:analise_von_mises}
+	 \subfloat[]{\includegraphics[width = 0.37\textwidth]{figuras/resultados/von_mises_lateral}
+		\label{fig:analise_von_mises_1}}
+		\subfloat[]{\includegraphics[width = 0.3\textwidth]{figuras/resultados/von_mises_frontal}
+		\label{fig:analise_von_mises_2}}
+		\subfloat[]{\includegraphics[width = 0.24\textwidth]{figuras/resultados/von_mises_escala}
+		\label{fig:analise_von_mises_3}}
+	 \caption{Tensão de Von Mises máxima e mínima do material}
+	 \label{fig:analise_von_mises}
  \end{figure}
 
 \subsection{Centro de Massa}
@@ -215,475 +215,474 @@ Isto exige um torque inicial de 9.0129 Nm (dado que os raios das rodas do protó
 P = T*\omega = 9.0129*26.18 = 235.96 W
 \end{equation}
 
-  A potência entregue pelos motores à cadeira de rodas é maior que estes 235.96 W. A diferença entre a potência entregue e a necessária para retirar a cadeira da inércia é considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
+	A potência entregue pelos motores à cadeira de rodas é maior que estes 235.96 W. A diferença entre a potência entregue e a necessária para retirar a cadeira da inércia é considerável, o que poderia causar um arranque repentino do sistema. Este tranco poderia prejudicar o usuário assim como a cadeira. A solução para este problema está no uso de pontes H, que fornecem corrente aos motores de forma gradativa a medida que o usuário empurra o joystick, diminuindo o arranque do protótipo.
 
-  \subsection{Moto-redutor}
+	\subsection{Moto-redutor}
 
-  Foi utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
+	Foi utilizado no projeto o motor de corrente contínua. A escolha foi feita pois esse tipo de motor é muito utilizado em projetos que necessitam de velocidades variáveis, eles também apresentam uma região de torque e potência constante e são simples de realizar a aceleração e a desaceleração \cite{manual_bateria_unipower}.
 
-  Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
+	Após uma vasta pesquisa no mercado de motores e redutores, optou-se por comprar dois moto-redutores feitos pela empresa MKS Redutores de São Paulo. O motor com redutor escolhido para o projeto foi o MR com motor GPB que possui as seguintes especificações:
 
-  \begin{itemize}
-    \item Potência de 305 a 350 W;
-    \item 12 ou 24 Vcc;
-    \item Rotação de entrada de 2500 rpm;
-    \item Reduções de 1:10 até 1:60.
-  \end{itemize}
+	\begin{itemize}
+		\item Potência de 305 a 350 W;
+		\item 12 ou 24 Vcc;
+		\item Rotação de entrada de 2500 rpm;
+		\item Reduções de 1:10 até 1:60.
+	\end{itemize}
 
-  Especificações a serem atendidas:
+	Especificações a serem atendidas:
 
-  \begin{itemize}
-    \item Velocidade máxima de 10 km/h;
-    \item 12 Volts corrente contínua;
-    \item Peso da bateria 15 kg;
-    \item Peso da cadeira (valor aproximado) 15kg;
-    \item Peso total estimado: 150 Kg;
-    \item Redução de pelo menos 1:10.
-  \end{itemize}
+	\begin{itemize}
+		\item Velocidade máxima de 10 km/h;
+		\item 12 Volts corrente contínua;
+		\item Peso da bateria 15 kg;
+		\item Peso da cadeira (valor aproximado) 15kg;
+		\item Peso total estimado: 150 Kg;
+		\item Redução de pelo menos 1:10.
+	\end{itemize}
 
-  \subsection{Bateria}
+	\subsection{Bateria}
 
-  A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
+	A bateria de chumbo-ácido é muito utilizada hoje em dia em diferentes áreas, como automóveis, sistemas de fornecimento de energia elétrica ininterrupta (no-breaks) e cadeiras de rodas elétricas. Desprezando-se o problema do peso e considerando as observações feitas anteriormente no capítulo \ref{cap:fundamentacao_teorica}, a bateria de chumbo-ácido selada foi a escolhida para o projeto, considerando ainda o seu fácil acesso no mercado e baixo custo.
 
-  \subsubsection{Autonomia}
+	\subsubsection{Autonomia}
 
-  Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Para este projeto fez-se uma estimativa da potência necessária através do balanço de energia \cite{acionamento_motores_cadeira}.
+		Segundo a literatura, cadeiras de rodas elétricas trabalham com motores de corrente contínua entre 250 W a 300 W de potência. Há diversas maneiras de chegar neste valor, como por distribuição de forças, por balanço de energia, por forças em um plano inclinado, entre outras. Para este projeto fez-se uma estimativa da potência necessária através do balanço de energia \cite{acionamento_motores_cadeira}.
 
-  A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
+		A energia fornecida pelo motor deve ser igual à energia cinética da cadeira. Sendo a massa máxima que a cadeira de rodas aguenta de 150 kg e considerando que cadeiras de rodas elétricas chegam até 10 km/h, tem-se:
 
 
-  \begin{equation}
-    Em = \frac{m*V^2}{2}
-  \end{equation}
+		\begin{equation}
+			Em = \frac{m*V^2}{2}
+		\end{equation}
 
-  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa do sistema e $V$ é a velocidade máxima. Assim, a energia necessária para mover a cadeira é de $578.7 J$. Este valor pode ser relacionado com a potência do sistema por esta ser igual a taxa de energia, ou seja, 1 watt é igual à 1 joule por segundo. Assim, a cadeira de rodas terá a capacidade de realizar $568.7 J$ a cada segundo de trabalho, com isso a potência exigida dos motores será de $578.7 W$.
+		Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa do sistema e $V$ é a velocidade máxima. Assim, a energia necessária para mover a cadeira é de $578.7 J$. Este valor pode ser relacionado com a potência do sistema por esta ser igual a taxa de energia, ou seja, 1 watt é igual à 1 joule por segundo. Assim, a cadeira de rodas terá a capacidade de realizar $568.7 J$ a cada segundo de trabalho, com isso a potência exigida dos motores será de $578.7 W$.
 
-  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 volts e 305 watts para o projeto, assim, a potência total entregue ao sistema é de $610 W$. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
+		Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 volts e 305 watts para o projeto, assim, a potência total entregue ao sistema é de $610 W$. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
 
-  As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
+		As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
 
-  \begin{equation}
-  P = R*I, assim, R = \frac{305}{25.417^2} = 0.47231 \ohm
-  \end{equation}
+		\begin{equation}
+			P = R*I, assim, R = \frac{305}{25.417^2} = 0.47231 \ohm
+		\end{equation}
 
-  As perdas nos enrolamentos (Pj) é portanto:
+		As perdas nos enrolamentos (Pj) é portanto:
 
-  \begin{equation}
-  Pj = R*I = 0.47213*25.417 = 12 W
-  \end{equation}
+		\begin{equation}
+			Pj = R*I = 0.47213*25.417 = 12 W
+		\end{equation}
 
-  As perdas totais (Pt) são, portanto:
+		As perdas totais (Pt) são, portanto:
 
-  \begin{equation}
-  Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
-  \end{equation}
+		\begin{equation}
+			Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
+		\end{equation}
 
-  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, pode-se considerar a equação real da energia abaixo ($Emr$), onde são consideradas as perdas através do termo $\epsilon$, que é igual a 1.09.
+		Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, pode-se considerar a equação real da energia abaixo ($Emr$), onde são consideradas as perdas através do termo $\epsilon$, que é igual a 1.09.
 
-  \begin{equation}
-    Em = \frac{m*V^2*\epsilon}{2}
-  \end{equation}
+		\begin{equation}
+			Em = \frac{m*V^2*\epsilon}{2}
+		\end{equation}
 
-  Assim, a potência necessária para mover a estrutura seria, teoricamente de $630.4 W$. Para encontrar o valor da velocidade final do sistema, foram cnsiderados os dois motores de $305 W$, o peso $m$ de $150 Kg$ e o termo $\epsilon$. Além destes, uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
+		Assim, a potência necessária para mover a estrutura seria, teoricamente de $630.4 W$. Para encontrar o valor da velocidade final do sistema, foram cnsiderados os dois motores de $305 W$, o peso $m$ de $150 Kg$ e o termo $\epsilon$. Além destes, uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
 
-  \begin{equation}
-  Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
-  \end{equation}
+		\begin{equation}
+			Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
+		\end{equation}
 
-  Assim, a estimativa da velocidade máxima da cadeira é de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
+		Assim, a estimativa da velocidade máxima da cadeira é de aproximadamente 8.6 km/h, que é uma velocidade bem razoável para este tipo de sistema. Sabe-se que a velocidade angular é dada pela divisão da velocidade linear pelo raio:
 
-  \begin{equation}
-  \omega = \frac{V}{r}
-  \end{equation}
+		\begin{equation}
+			\omega = \frac{V}{r}
+		\end{equation}
 
-  Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm.
+		Logo, utilizando a velocidade estimada acima, a velocidade angular obtida é de 23.9 rad/s ou 228.31 rpm. Considerando as especificações do motor, sua velocidade angular nominal de 2500 rpm, teria de ser feita uma redução de pelo menos 1:11, onde a velocidade angular de saída do redutor seria de 227.3 rpm.
 
-  Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
+		Por motivos construtivos do motoredutor, a redução só pode ser feita de 1:10 ou de 1:15. Desta forma optou-se por uma redução de 1:10, que proporciona velocidade de saída nominal de 250 rpm (26.18 rad/s) no redutor. Sendo o torque a divisão da potência pela velocidade angular, o torque gerado é de 23.30 Nm.
 
-  Para atender dois motores de 305 W, é conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
+		Para atender dois motores de 305 W, é conectada uma bateria de carro de chumbo-ácido selado de 12 V (U) e capacidade de 60Ah (I*$\Delta$t), tem-se que a energia $E$ gerada pela bateria é de:
 
-  \begin{equation}
-  E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
-  \end{equation}
+		\begin{equation}
+			E = (I*\Delta t)*U = (60Ah)*12 = 720Wh
+		\end{equation}
 
-  Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
+		Desta forma, considerando a potência consumida pelos dispositivos eletrônicos de controle desprezível, tem-se que a autonomia da bateria seria de pouco mais de uma hora:
 
-  \begin{equation}
-  \Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
-  \end{equation}
+		\begin{equation}
+			\Delta t = \frac{720 Wh}{610 W} = 1.18 h = 1 hora e 10 minutos
+		\end{equation}
 
 \section{Controle}
 
-  O controle da cadeira de rodas foi feito em dois principais componentes: Joystick e Controlador dos Motores, além de um componente opcional, o Controlador Central.
+	O controle da cadeira de rodas foi feito em dois principais componentes: Joystick e Controlador dos Motores, além de um componente opcional, o Controlador Central.
 
-  O módulo Joystick tem o propósito de receber os comandos provenientes do usuário e enviá-los para o próximo módulo. O módulo opcional, Controlador Central, recebe as informações do Joystick e as envia para o Controlador dos Motores. Este, por sua vez, recebe as informações referentes à velocidade e direção de cada motor e as utiliza para produzir dois pulsos de PWM que controlam os motores através de duas pontes H.
+	O módulo Joystick tem o propósito de receber os comandos provenientes do usuário e enviá-los para o próximo módulo. O módulo opcional, Controlador Central, recebe as informações do Joystick e as envia para o Controlador dos Motores. Este, por sua vez, recebe as informações referentes à velocidade e direção de cada motor e as utiliza para produzir dois pulsos de PWM que controlam os motores através de duas pontes H.
 
-\subsection{Panorama atual}
+	\subsection{Panorama atual}
 
-  Na atual versão do sistema, o usuário pode mover a cadeira de rodas através de um joystick, ligar e desligar o sistema atráves de uma chave e acompanhar o seu estado (ligado ou desligado) através de um LED, ambos acoplados ao joystick. Os dados referentes ao movimento do joystick são então enviados diretamente para o Controlador dos Motores, o qual controla o movimento (velocidade e direção) dos motores de acordo com os dados recebidos.
+		Na atual versão do sistema, o usuário pode mover a cadeira de rodas através de um joystick, ligar e desligar o sistema atráves de uma chave e acompanhar o seu estado (ligado ou desligado) através de um LED, ambos acoplados ao joystick. Os dados referentes ao movimento do joystick são então enviados diretamente para o Controlador dos Motores, o qual controla o movimento (velocidade e direção) dos motores de acordo com os dados recebidos.
 
-  Ainda foi implementado o módulo Controlador Central que, atualmente, apenas repassa as informações recebidas pelo Joystick para o Controlador dos Motores, cabe ressaltar que este módulo não foi integrado à versão atual do sistema devido ao seu atraso na inicialização do sistema e a não inclusão de novas funcionalidades.
+		Ainda foi implementado o módulo Controlador Central que, atualmente, apenas repassa as informações recebidas pelo Joystick para o Controlador dos Motores, cabe ressaltar que este módulo não foi integrado à versão atual do sistema devido ao seu atraso na inicialização do sistema e a não inclusão de novas funcionalidades.
 
-\subsection{Joystick}
+	\subsection{Joystick}
 
-  O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos), uma chave liga/desliga do sistema de controle, juntamente com um LED e um microcontrolador.
+		O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos), uma chave liga/desliga do sistema de controle, que atua em conjunto com um LED, e um microcontrolador.
 
-  Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda, pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois facilita a conexão ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
+		Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda, pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois facilita a conexão ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em com uma placa de madeira para dar peso e robustez, além disso, a caixa plástica cortada de acordo com o \textit{joystick} e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
 
-  \begin{figure}[!htb]
-  \centering
-  \includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
-  \caption{Imagem do controle da cadeira de rodas}
-  \label{fig:joy_hand_control}
-  \end{figure}
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
+			\caption{Imagem do controle da cadeira de rodas}
+			\label{fig:joy_hand_control}
+		\end{figure}
 
-  O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD, uma para cada potenciômetro, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
+		O sistema liga/desliga do Joystick é composto por uma chave e um LED, este é ligado ao início do sistema, concentrado no joystick e o torna parte fundamental do sistema. Este sistema desconecta apenas a alimentação dos microcontroladores e portas lógicas, fazendo com que os motores permaneçam parados. A alimentação dos microcontroladores e portas lógicas, proveniente de um banco de bateria, vai diretamente para o controle que fica na mão do usuário, passando por uma chave liga/desliga e então alimentando o resto do sistema, conforme a figura \ref{fig:onoff-system}. 
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width = 0.5\textwidth]{figuras/resultados/onoff-system}
+			\caption{Diagrama do sistema liga/desliga}
+			\label{fig:onoff-system}
+		\end{figure}
 
-  A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
+		O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD, um para cada potenciômetro, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
 
-  \begin{figure}[!htb]
-  \centering
-  \includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
-  \caption{Rotina de trabalho do microcontrolador do módulo Joystick}
-  \label{fig:joy_fluxogram}
-  \end{figure}
+		A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
 
-\subsection{Controlador Central}
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
+			\caption{Rotina de trabalho do microcontrolador do módulo Joystick}
+			\label{fig:joy_fluxogram}
+		\end{figure}
 
-  O Raspberry foi utilizado como central de comandos para processar as informações vindas do MSP dedicado ao módulo Joystick e enviar o resultado deste processamento para o MSP dedicado aos Motores.
+	\subsection{Controlador dos Motores}
 
-  \textbf{Comunição entre MSP e Raspberry}
+		O módulo Motor é utilizado para fazer a movimentação da cadeira, conforme os comandos enviados pelo usuário através do módulo Joystick. O módulo Motor é composto por um microcontrolador, um sistema de seleção de direção dos motores duas pontes H e dois motores de corrente contínua.
 
-  A comunicação, tanto entre o MSP do Joystick e o \textit{Raspberry PI}, quanto entre o MSP do Motor e o \textit{Raspberry PI}, foram feitas via \textit{threads}.
+		\subsubsection{Microcontrolador}
 
-  A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
+			O microcontrolador deste módulo tem o papel de receber as informações do componente anterior e gerar, para cada ponte H (ou seja, cada motor) um pulso PWM e um sinal de direção, o pulso PWM controla a velocidade do motor e o sinal, sua direção. A figura \ref{fig:motor_routine} ilustra, de forma simplificada, a rotina de funcionamento do microcontrolador dedicado ao componente Controlador dos Motores.
 
-  \begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figuras/resultados/find_port_method}
-    \caption{Método para encontrar porta dinamicamente}
-    \label{fig:find_port_method}
-  \end{figure}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width = 0.7\textwidth]{figuras/resultados/motor_routine}
+				\caption{Rotina de operação do microcontrolador do Controlador dos Motores}
+				\label{fig:motor_routine}
+			\end{figure}
 
-  Este método permite que tanto o MSP do Joystick quanto o MSP do Motor sejam conectados sem a previa identificação de qual porta utilizar para comunicação. Porém, há existência de prioridade entre as \textit{threads}, ou seja, enquanto a \textit{thread} do Joystick não se conectar com sucesso a \textit{thread} do Motor não irá realizar a conexão.
+			As funções \textit{update\_left} e \textit{update\_right}, vide figura \ref{fig:update_motors}, mostram a implementação do controlador dos PWM e sinais de direção de ambos os motores.
 
-  Para que este processo ocorra com sucesso, uma checagem de dados é feita para cada tentativa de conexão. Esta checagem consiste em verificar se a porta a ser conectada está enviando ou recebendo dados. Para que a conexão do Josytick ocorra com sucesso, a porta deve estar recebendo dados, para que a conexão do Motor ocorra com sucesso, a porta não deve receber dados. A implementação desta checagem pode ser verificada na figura \ref{fig:try_receive_data}.
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width = 0.8\textwidth]{figuras/resultados/update_motor_right}
+				\includegraphics[width = 0.8\textwidth]{figuras/resultados/update_motor_left}
+				\caption{Funções para atualização do \textit{duty cycle} do PWM e sinais de direção de ambos os motores}
+				\label{fig:update_motors}
+			\end{figure}
 
-  \begin{figure}[!htb]
-  \centering
-  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/try_receive_data}
-  \caption{Método para checar se existe recebimento de dados em porta. Caso do Motor.}
-  \label{fig:try_receive_data}
-  \end{figure}
+			Os valores são recebidos através da função \textit{update}, vide figura \ref{fig:update}, responsável por receber de forma correta os dados. Esta rotina consiste em verificar se o valor recebido é ímpar ou par. Isto é feito por causa da estratégia utilizada para diferenciar os dados de cada potenciômetro enviados do módulo Joystick.
 
-  Esta estratégia auxilia na manutenção do produto, pois caso algum MSP fique inutilizável, é possivel colocar outro MSP, previamente configurado, no lugar do componente inutilizado.
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width = 0.35\textwidth]{figuras/resultados/update}
+				\caption{Função para diferenciação de dado recebido}
+				\label{fig:update}
+			\end{figure}
 
-  Após o Raspberry conseguir encontrar uma porta para se conectar com o MSP do Joystick, então a \textit{thread} do MSP do Motor utiliza do mesmo método para se conectar.
+			A função \textit{update\_right} recebe os valores pares, e a função \textit{update\_left} recebe os valores ímpares.
 
-  Ao se ter as duas conexões estabelecidas, então os dados são adquiridos do Joystick e enviados para os Motores. Para se realizar este envio de informações de forma correta é necessário fazer a sincronização entre as \textit{threads}.
+		\subsubsection{Ponte H}
 
-  \textbf{Sincronização de \textit{Threads}}
+			No decorrer da produção do circuito da ponte H, foi utilizado duas portas AND e uma porta NOT para a implementação da seletora e assim garantir que não haverá acionamento de todos os transistores ao mesmo tempo.
 
-  Foi percebido que as \textit{threads} precisam estar sincronizadas para se fazer o envio de informações de forma correta. Pois a \textit{thread} do Joystick recebe as informações, e a \textit{thread} do Motor consome estas informações.
+			Como não se pode acionar as duas entradas ao mesmo tempo de uma ponte H, devido o risco de curto circuito, houve a necessidade de desenvolver um circuito de segurança, que impedisse esse tipo de acionamento. O MSP gerará um sinal que dirá qual o sentido do motor e através do uso de portas lógicas do tipo NOT e AND esse controle é possível, como mostrado na figura \ref{fig:circuito_seletora}.
 
-  Este problema de sincronização das \textit{threads} é conhecido como o clássico problema da programação paralela: Produtor e Consumidor.
+			\begin{figure}[!h]
+				\center
+				\includegraphics[width=0.6\textwidth]{figuras/resultados/circuito_seletora}
+				\caption{Circuito para a implementação das portas seletoras}
+				\label{fig:circuito_seletora}
+			\end{figure}
 
-  Este problema é caracterizado por 2 processo que compartilharem de um \textit{buffer} comum, no qual o produtor insere a informação no \textit{buffer} e o consumidor retira a informação do \textit{buffer}. Possíveis problemas: Produtor insere produto onde não foi consumido e consumidor remove informação onde já foi removido. Mais detalhes do problema no capítulo \ref{cap:fundamentacao_teorica}.
+			Foi necessário utilizar um dobrador de tensão no circuito, com ele foi possível garantir um VGS maior que 2V para polarização dos transistores MOSFET da ponte. Como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polarizá-lo.
 
-  Este problema foi solucionado com os seguintes passos:
-  \begin{enumerate}
-    \item Produtor: Produz os itens necessários em \textit{buffer}, no caso os valores referentes aos potenciômetros do Joystick. Neste momento a \textit{thread} do Consumidor é parada e uma variável responsável por esta trava é notificada. Isto pode ser visto na figura \ref{fig:joy_lock};
-    \item Consumidor: Consume os itens em \textit{buffer} enviando os mesmos para o MSP dos Motores. Neste momento a \textit{thread} do Produtor é parada e a variável responsável pela trava é consumida. Isto pode ser visto na figura \ref{fig:motor_lock};
-  \end{enumerate}
+			O circuito do dobrador, representado na figura \ref{fig:figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
 
-  A variável de trava é utilizada com o propósito de se fazer a produção e o consumo de forma sincronizada e nunca ao mesmo tempo. O processo do Consumidor somente será ativo quando o processo do Produtor setar a variável de trava.
+			Durante o período da onda quadrada em alto, C3 descarrega na saída do diodo na parte negativa gerando um efeito que dobra a tensão, conforme pode ser visto na figura \ref{fig:figx+4}. É importante observar que o capacitor C2 não pode ser muito grande e nem o pulso do oscilador muito largo para que não haja uma descontinuidade muito grande no valor de tensão.
 
-  \begin{figure}[!htb]
-  \centering
-  \includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/joy_lock}
-  \caption{Código utilizado para notificar variável de trava}
-  \label{fig:joy_lock}
-  \end{figure}
+			Esse circuito é necessário pois a tensão do circuito está limitada em 12V. Com isso não é possível conseguir um VGS maior que 2V nos transistores MOSFET da ponte H. Com o auxílio desse artifício muito utilizado na eletrônica consegue-se fazer a transformação de um tensão DC em uma tensão DC com o dobro de tensão, com isso tem-se 24V teóricos na saída do circuito dobrador de tensão, pois a tensão de entrada é cerca de 12V.
 
-  \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figuras/resultados/motor_lock}
-  \caption{Código utilizado para consumir itens e consequentemente a variável de trava}
-  \label{fig:motor_lock}
-  \end{figure}
+			Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 para eles alimentarem o Gate dos transistores MOSFET do circuito, como há perdas envolvidas, chegarão cerca de 22V nas portas G dos transistores, tornando possível haver uma diferença maior que a VTH e polarizando os transistores da maneira correta e permitindo o funcionamento do sistema por completo.
 
-\subsection{Motor}
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=0.6\textwidth]{figuras/referencialteorico/figurax_4}
+				\caption{Circuito elevador te tensão}
+				\label{fig:figx+4}
+			\end{figure}
 
-    O módulo Motor é utilizado para fazer a movimentação da cadeira, conforme os comandos enviados pelo usuário através do módulo Joystick. O módulo Motor é composto por 2 motores de corrente contínua e um microcontrolador.
-
-    O microcontrolador deste módulo tem como intuito receber as informações do controlador central e gerar 2 pulsos de PWM, um para cada motor. As funções \textit{update\_left} e \textit{update\_right}, vide figura \ref{fig:update_motors}, tem como objetivo atualizar o \textit{duty cycle} para cada motor.
-
-    \begin{figure}[!htb]
-    \centering
-    \includegraphics[width = 0.5\textwidth]{figuras/resultados/update_motor_right}
-    \includegraphics[width = 0.5\textwidth]{figuras/resultados/update_motor_left}
-    \caption{Funções para atualização de taxa do \textit{duty cycle}}
-    \label{fig:update_motors}
-    \end{figure}
-
-    Os valores são recebidos através da função \textit{update}, vide figura \ref{fig:update}, responsável por receber de forma correta os dados. Esta rotina consiste em verificar se o valor recebido é ímpar ou par. Isto é feito por causa da estratégia utilizada para diferenciar os dados de cada potenciômetro enviados do módulo Joystick, através do controlador central.
-
-    \begin{figure}[!htb]
-    \centering
-    \includegraphics[width = 0.5\textwidth]{figuras/resultados/update}
-    \caption{Função para diferenciação de dado recebido}
-    \label{fig:update}
-    \end{figure}
-
-    A função \textit{update\_left} recebe os valores pares, e a função \textit{update\_right} recebe os valores ímpares.
-
-\subsection{Integração Motor e Joystick}
-
-Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeamento dos possíveis estados de movimentação. Estes estados foram inicialmente mapeados utilizando os valores do módulo do Joystick. Com base nos estados mapeados, a intensidade e direção dos motores são formulados. Esta integração foi implementada na \textit{Raspberry}.
-
-  \textbf{Mapeamento dos Estados em Relação ao Joystick}
-
-  Estes estados, vide tabela \ref{tab:tabela-pots}, são formalizados a partir das possibilidades de valores que podem ser capturados do módulo Joystick.
-
-  Os valores do potenciômetro 1 são referenciados para o motor da esquerda e os valores do potenciômetro 2 são referenciados para o motor da direita.
-
-  \begin{table}[!ht]
-  \centering
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  ID & Valor Potenciômetro 1  & Valor Potenciômetro 2  & Estado \\ \hline
-  1 & 254 & 255 & Para frente \\ \hline
-  2 & 254 & 1 & Virar para direita (próprio eixo) \\ \hline
-  3 & 254 & 127 & Virar para direita (eixo motor 2) frontal \\ \hline
-  4 & 126 & 127 & Parado \\ \hline
-  5 & 126 & 255 & virar para esquerda (eixo motor 1) frontal \\ \hline
-  6 & 126 & 1 & virar para esquerda (eixo motor 1) traseiro \\ \hline
-  7 & 0 & 1 & Para trás \\ \hline
-  8 & 0 & 255 & Virar para esquerda (próprio eixo) \\ \hline
-  9 & 0 & 127 & virar para direita (eixo motor 2) traseiro \\ \hline
-  \end{tabular}
-  }
-  \caption{Mapeamento dos estados conforme valores do Joystick}
-  \label{tab:tabela-pots}
-  \end{table}
-
-  Para elucidar os estados da tabela \ref{tab:tabela-pots} a figura \ref{fig:estados} foi confeccionada.
-
-  \begin{figure}[!ht]
-    \center
-    \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_1_2_7_8}
-    \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_3_5}
-    \includegraphics[width=0.3\textwidth]{figuras/resultados/estados_6_9}
-    \caption{Estados da cadeira}
-    \label{fig:estados}
-  \end{figure}
-
-  \textbf{Mapeamento de Intensidade e Direção dos Motores}
-
-    Conforme os estados mapeados na tabela \ref{tab:tabela-pots}, as intensidades e direções de cada motor são definidas na tabela \ref{tab:tabela-pots2}.
-
-    \begin{table}[!ht]
-    \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-    ID & Estado & Motor 1(Intensidade(\%), Direção) & Motor 2(Intensidade (\%), Direção) \\ \hline
-    1 & Para frente & (100, + ) & (100, + ) \\ \hline
-    2 & Virar para direita (próprio eixo) & (100, +) & (100, -) \\ \hline
-    3 & Virar para direita (eixo motor 2) frontal & (100, +) & (0 , *) \\ \hline
-    4 & Parado & (0, *) & (0, *) \\ \hline
-    5 & Virar para esquerda (eixo motor 1) frontal & (0, *) & (100, +) \\ \hline
-    6 & Virar para esquerda (eixo motor 1) traseiro & (0, *) & (100, -) \\ \hline
-    7 & Para trás & (100, -) & (100, -) \\ \hline
-    8 & Virar para esquerda (próprio eixo) & (100, -) & (100, +) \\ \hline
-    9 & Virar para direita (eixo motor 2) traseiro & (100, -) & (0, *) \\ \hline
-    \end{tabular}
-    }
-    \caption{Intensidade e direção dos motores conforme estado. Asteriscos simbolizam motor sem direção}
-    \label{tab:tabela-pots2}
-    \end{table}
+			Para facilitar e proteger o sistema, foi construido um distribuidor -  uma placa que facilitará a conexão de todos os outros módulos ao sistema. Sendo assim, não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
 
-    \textbf{Integração de \textit{joystick}}
+			Para a alimentação dos micro controladores da parte de controle da cadeira de rodas utilizou-se um banco de baterias (PowerBank), que possui uma saída USB de 5V de tensão, através dela alimentou-se uma LaunchPad do MSP-430 para realizar a regulação da tensão de saída para 3,5V, desta forma foi possível alimentar o sistema responsável por realizar o controle dos motores.
 
-	Para se fazer o controle da cadeira, o \textit{hardware} utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura \ref{fig:joy_m1m2}, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
+			Para a alimentação dos motores, foi realizada uma conexão através de cabos diretos da bateria para seus terminais. Essa saída será dupla, ou seja, cada motor terá sua alimentação individual, sendo que para proteção foi utilizado fusíveis automotivos inseridos nesses cabos, para que em caso de sobrecorrente, os motores não sejam danificados.
 
-    \begin{figure}[!ht]
-      \center
-      \includegraphics[width=0.4\textwidth]{figuras/resultados/joy_xy}
-      \caption{Visão de \textit{joystick} com eixos para propósito geral}
-      \label{fig:joy_superior}
-    \end{figure}
+			A ponte H também foi alimentada diretamente da bateria e possui fusíveis em sua alimentação. Caso haja algo de errado com o circuito, os fusíveis vão atuar, evitando assim a queima dos componentes da ponte H.
 
-    \begin{figure}[!ht]
-      \center
-      \includegraphics[width=0.5\textwidth]{figuras/resultados/joy_m1m2}
-      \caption{Visão de \textit{joystick} com eixos rotacionados}
-      \label{fig:joy_m1m2}
-    \end{figure}
+			\textbf{Versões da Ponte H}
 
+			Foram feitas duas versões de ponte H. Na primeira versão da ponte H utilizava-se trilhas com cerca de 5 mm para os motores e transistores. Após alguns testes foi verificado que a espessura não suportava a corrente que os motores necessitam, as trilhas estavam soltando da placa.
 
+			Com isso foi necessário reestruturar a ponte H, então foi idealizado o paralelo de 2 pontes H para alimentar cada motor. Para testar o paralelo foi necessário conhecer a corrente que cada ponte estava puxando. Segundo as especificações do motor, a corrente que cada motor puxa é de 25A. Em teoria cada ponte em paralelo deveria estar com no máximo 12,5A em sua saída, porém a aferição dessa corrente é complexa, pois não tinha-se instrumento de medida que suportasse tamanha corrente. Dessa forma desenvolveu-se um sistema de medida usando a proteção contra sobre-corrente do sistema, que é constituída de fusíveis automotivos de 12V. Variando os fusíveis de 5A em 5A e esperando eles se romperem, teve-se uma estimativa que sem carga o sistema estava puxando entre 10 e 15A.
 
-\begin{comment}
+			Após alguns testes, verificou-se que as trilhas continuavam não suportando a corrente quando colocava-se carga. Para solucionar o problema, foi montado um novo esquemático com as trilhas de grandes espessuras, 3,5cm, como na figura \ref{fig:novo_esquematico_ponte_h} para auxiliar na dissipação de calor do sistema. Usando os mesmo transistores, porém fora da placa e fixados diretamente no dissipador, mas com as ligações feitas através de cabos externos como mostrado na figura \ref{fig:ponte_h_dissipador}.
 
-Integração Motor e Joystick
-#  - Mapeamento dos estados em relação ao joystick (255,255->Frente)
-#  - Mapeamento dos estados em relação aos motores (intensidade, direção)
-  - Integração via \textit{software} ou via hardware
-    - Soft
-      Vantagens: Uso de propósito geral
-      Desvantagem: capacidade de Processamento para cálculo de transformação
-    - Hardware:
-      Vantagens: Valores de intensidade e direção dos motores são adquiridos de forma instanea
-      Desvantagem: Não foi observados desvantagens para a aplicação, porém para outros propósitos é mais dificil de se utilizar os dados, pois os mesmos não tem uma relação direta com o plano cartesiano original.
+			\begin{figure}[!ht]
+				\center
+				\includegraphics[width=0.6\textwidth]{figuras/resultados/ponte_h_dissipador}
+				\caption{Ponte H e dissipador}
+				\label{fig:ponte_h_dissipador}
+			\end{figure}
 
-Ponte-H (copiar e colar do documento pc2)
-  - Circuito de direcionamento das PWMs através das seletoras (demultiplexador)
+			O circuito de controle foi mantido similar ao primeiro layout e foi feito algumas pequenas modificações na proteção da entrada do sinal do PWM do circuito para garantir que não haverá curto circuito no sistema.
 
-Alimentação do sistema
-  - Esquema de alimentação do sistema
-  - Circuito regulador de tensão
-\end{comment}
+			As novas trilhas suportariam a corrente, contudo era necessário soldar o transistor, foi usado então fios para conectar os transistores a ponte H e ligados como mostrado na figura \ref{fig:novo_esquematico_ponte_h}. Cada um dos quatro transistores, possui um Gate, que é um pino de controle, o Drain, que é a saída do transistor e o Source, que é a entrada. Foram enumeradas entradas e saídas com os respectivos transistores, onde 1d equivale ao transistor 1 pino de Drain, 1s ao transistor 1, pino de Source e assim por diante. O pino de controle foi ligado direto a antiga formação da ponte H, já que essa possuía os devidos circuitos de ativar a ponte H e proteger os pinos de controle, usados no PWM.
 
-\subsection{Ponte H}
+			\begin{figure}[!ht]
+				\center
+				\includegraphics[width=0.7\textwidth]{figuras/resultados/novo_esquematico_ponte_h}
+				\caption{Novo esquemático ponte H}
+				\label{fig:novo_esquematico_ponte_h}
+			\end{figure}
 
-No decorrer da produção do circuito da ponte H, foi utilizado duas portas AND e uma porta NOT para a implementação da seletora e assim garantir que não haverá acionamento de todos os transistores ao mesmo tempo.
+		\subsubsection{Dissipador de calor}
 
-Como não se pode acionar as duas entradas ao mesmo tempo de uma ponte H, devido o risco de curto circuito, houve a necessidade de desenvolver um circuito de segurança, que impedisse esse tipo de acionamento. O MSP gerará um sinal que dirá qual o sentido do motor e através do uso de portas lógicas do tipo NOT e AND esse controle é possível, como mostrado na figura \ref{fig:circuito_seletora}.
+				Os circuitos de potência modernos possuem elevado rendimento, porém a quantidade de calor gerada é uma preocupação. Atualmente os dispositivos operam com potências elevadas e no limite da capacidade de dissipação. O uso de um dissipador é tão importante quanto à parte elétrica do circuito.
 
-\begin{figure}[!h]
-  \center
-  \includegraphics[width=0.6\textwidth]{figuras/resultados/circuito_seletora}
-  \caption{Circuito para a implementação das portas seletoras}
-  \label{fig:circuito_seletora}
-\end{figure}
+				O objetivo dessa sessão é fornecer subsídios para estabelecer critérios para o dimensionamento do sistema de dissipação do calor produzido por componentes eletrônicos, especialmente semicondutores de potência da ponte H(transistores), buscando a proteção de tais componentes.
 
+				Considerando:
 
-Foi necessário utilizar um dobrador de tensão no circuito, com ele foi possível garantir um VGS maior que 2V para polarização dos transistores MOSFET da ponte. Como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polariza-lo.
+				$P_t$ = Potência a ser dissipada pelo transistor;
 
-O circuito do dobrador, representado na figura \ref{fig:figx+4}, possui um oscilador que gera uma onda quadrada, que no caso é um CI 555, e para o controle do pulso temos os resistores R5 e R6 e o capacitor C4. Em C2 tem-se um capacitor inversamente polarizado o que faz com que esse carregue apenas quando a parte baixa da onda quadrada é ativada.
+				$T_j$ = Temperatura de junção;
 
-Durante o período da onda quadrada em alto, C3 descarrega na saída do diodo na parte negativa gerando um efeito que dobra a tensão, conforme pode ser visto na figura \ref{fig:figx+4}. É importante observar que o capacitor C2 não pode ser muito grande e nem o pulso do oscilador muito largo para que não haja uma descontinuidade muito grande no valor de tensão.
+				$T_c$ = Temperatura de carcaça;
 
-Esse circuito é necessário pois a tensão do circuito está limitada em 12V. Com isso não é possível conseguir um VGS maior que 2V nos transistores MOSFET da ponte H. Com o auxílio desse artifício muito utilizado na eletrônica consegue-se fazer a transformação de um tensão DC em uma tensão DC com o dobro de tensão, com isso tem-se 24V teóricos na saída do circuito dobrador de tensão, pois a tensão de entrada é cerca de 12V.
+				$T_{amb}$ = Temperatura ambiente;
 
-Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 para eles alimentarem o Gate dos transistores MOSFET do circuito, como há perdas envolvidas, chegarão cerca de 22V nas portas G dos transistores, tornando possível haver uma diferença maior que a VTH e polarizando os transistores da maneira correta e permitindo o funcionamento do sistema por completo.
+				$R_{jc}$ = Resistência térmica na junção $[\frac{{\circ}\mathrm{C}}{W}]$;
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.6\textwidth]{figuras/referencialteorico/figurax_4}
-	\caption{Circuito elevador te tensão}
-	\label{fig:figx+4}
-\end{figure}
+				$R_{ch}$ = Resistência térmica na carcaça $[\frac{{\circ}\mathrm{C}}{W}]$;
 
+				$R_{ha}$ = Resistência térmica dissipador - ambiente $[\frac{{\circ}\mathrm{C}}{W}]$;
 
-Para facilitar e proteger o sistema, foi construido um distribuidor -  uma placa que facilitará a conexão de todos os outros módulos ao sistema. Sendo assim, não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
+				Onde $T_j$ e $R_{jc}$ são parãmetros do \textit{Datasheet}. Foram utilizadas duas ponte H, sendo que cada uma possui 4 transistores IRF3205(Jameco Part Number 618089)\cite{jameco}:
 
-Para a alimentação dos micro controladores da parte de controle da cadeira de rodas utilizou-se um banco de baterias (PowerBank), que possui uma saída USB de 5V de tensão, através dela alimentou-se uma LaunchPad do MSP-430 para realizar a regulação da tensão de saída para 3,5V, desta forma foi possível alimentar o sistema responsável por realizar o controle dos motores.
+				$T_j = -55 à 175\,^{\circ}\mathrm{C}$;
 
-Para a alimentação dos motores, foi realizada uma conexão através de cabos diretos da bateria para seus terminais. Essa saída será dupla, ou seja, cada motor terá sua alimentação individual, sendo que para proteção foi utilizado fusíveis automotivos inseridos nesses cabos, para que em caso de sobrecorrente, os motores não sejam danificados.
+				$R_{jc} = 0,75[\frac{{\circ}\mathrm{C}}{W}]$;
 
-A ponte H também foi alimentada diretamente da bateria e possui fusíveis em sua alimentação. Caso haja algo de errado com o circuito, os fusíveis vão atuar, evitando assim a queima dos componentes da ponte H.
+				$R_{ch} = 0,5[\frac{{\circ}\mathrm{C}}{W}]$;
 
-\textbf{Versões da Ponte H}
+				Assim podemos calcular $R_{ha}$ como:
 
-Foram feitas duas versões de ponte H. Na primeira versão da ponte H utilizava-se trilhas com cerca de 5 mm para os motores e transistores. Após alguns testes foi verificado que a espessura não suportava a corrente que os motores necessitam, as trilhas estavam soltando da placa.
+				\begin{equation}
+					R_{ha} = \frac{(T_j - T_{amb})}{P_t} - R_{jc} + R_{ch}
+				\end{equation}
 
-Com isso foi necessário reestruturar a ponte H, então foi idealizado o paralelo de 2 pontes H para alimentar cada motor. Para testar o paralelo foi necessário conhecer a corrente que cada ponte estava puxando. Segundo as especificações do motor, a corrente que cada motor puxa é de 25A. Em teoria cada ponte em paralelo deveria estar com no máximo 12,5A em sua saída, porém a aferição dessa corrente é complexa, pois não tinha-se instrumento de medida que suportasse tamanha corrente. Dessa forma desenvolveu-se um sistema de medida usando a proteção contra sobre-corrente do sistema, que é constituída de fusíveis automotivos de 12V. Variando os fusíveis de 5A em 5A e esperando eles se romperem, teve-se uma estimativa que sem carga o sistema estava puxando entre 10 e 15A.
+				A potência total dissipada é de 300W por cada ponte H, assim cada transistor recebe 75W. A temperatura ambiente considerada é de $T_j$ como $40\,^{\circ}\mathrm{C}$, considerando a $T_j$ como $130\,^{\circ}\mathrm{C}$, temos assim:
 
-Após alguns testes, verificou-se que as trilhas continuavam não suportando a corrente quando colocava-se carga. Para solucionar o problema, foi montado um novo esquemático com as trilhas de grandes espessuras, 3,5cm, como na figura \ref{fig:novo_esquematico_ponte_h} para auxiliar na dissipação de calor do sistema. Usando os mesmo transistores, porém fora da placa e fixados diretamente no dissipador, mas com as ligações feitas através de cabos externos como mostrado na figura \ref{fig:ponte_h_dissipador}.
+				\begin{equation}
+				 R_{ha} = \frac{(130 - 40)}{300} - 0,75 + 0,5 = 0,05\,\frac{^{\circ}\mathrm{C}}{{W}}
+				\end{equation}
 
-\begin{figure}[!ht]
-  \center
-  \includegraphics[width=0.6\textwidth]{figuras/resultados/ponte_h_dissipador}
-  \caption{Ponte H e dissipador}
-  \label{fig:ponte_h_dissipador}
-\end{figure}
+				Superfícies aletas, chamadas de dissipadores de calor são comumente utilizadas para o resfriamento de dispositivos eletrônicos. A energia dissipada por esses dispositivos é transferida por condução dos dispositivos de potência para os dissipadores e por convecção natural ou forçada dos dissipadores para o ambiente \cite[p.~434-439]{cengel}. 
 
+				Uma das principais questões na escolha de um dissipador de calor é escolher entre um com atletas estreitamente espaçadas ou aletas amplamente espaçadas para uma determinada área da base. Um dissipador com menor espaçamento entre as aletas terá maior superfície de transferência de calor, mas o coeficiente de transferência de calor é menor devido a resistência que as aletas introduzem no fluxo do ar.
 
-O circuito de controle foi mantido similar ao primeiro layout e foi feito algumas pequenas modificações na proteção da entrada do sinal do PWM do circuito para garantir que não haverá curto circuito no sistema.
+	\subsection{Integração entre Controlador dos Motores e Joystick}
 
-As novas trilhas suportariam a corrente, contudo era necessário soldar o transistor, foi usado então fios para conectar os transistores a ponte H e ligados como mostrado na figura \ref{fig:novo_esquematico_ponte_h}. Cada um dos quatro transistores, possui um Gate, que é um pino de controle, o Drain, que é a saída do transistor e o Source, que é a entrada. Foram enumeradas entradas e saídas com os respectivos transistores, onde 1d equivale ao transistor 1 pino de Drain, 1s ao transistor 1, pino de Source e assim por diante. O pino de controle foi ligado direto a antiga formação da ponte H, já que essa possuía os devidos circuitos de ativar a ponte H e proteger os pinos de controle, usados no PWM.
+		Para se fazer a movimentação da cadeira de forma correta, foi feito um mapeamento dos possíveis estados de movimentação. Estes estados foram inicialmente mapeados utilizando os valores do módulo do Joystick. Com base nos estados mapeados, a intensidade e direção dos motores são formulados. Esta integração foi implementada no Controlador dos Motores.
 
-\begin{figure}[!ht]
-  \center
-  \includegraphics[width=0.7\textwidth]{figuras/resultados/novo_esquematico_ponte_h}
-  \caption{Novo esquemático ponte H}
-  \label{fig:novo_esquematico_ponte_h}
-\end{figure}
+		\textbf{Mapeamento dos Estados em Relação ao Joystick}
 
+		Estes estados, vide tabela \ref{tab:tabela-pots}, são formalizados a partir das possibilidades de valores que podem ser capturados do módulo Joystick.
 
-\subsection{Dissipador de calor}
+		Os valores do potenciômetro 1 são referenciados para o motor da esquerda e os valores do potenciômetro 2 são referenciados para o motor da direita.
 
-Os circuitos de potência modernos possuem elevado rendimento, porém a quantidade de
-calor gerada é uma preocupação. Atualmente os dispositivos operam com potências elevadas
-e no limite da capacidade de dissipação. O uso de um dissipador é tão importante quanto à
-parte elétrica do circuito.
+		\begin{table}[!ht]
+		\centering
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		ID & Valor Potenciômetro 1  & Valor Potenciômetro 2  & Estado \\ \hline
+		1 & 254 & 255 & Para frente \\ \hline
+		2 & 254 & 1 & Virar para direita (próprio eixo) \\ \hline
+		3 & 254 & 127 & Virar para direita (eixo motor 2) frontal \\ \hline
+		4 & 126 & 127 & Parado \\ \hline
+		5 & 126 & 255 & virar para esquerda (eixo motor 1) frontal \\ \hline
+		6 & 126 & 1 & virar para esquerda (eixo motor 1) traseiro \\ \hline
+		7 & 0 & 1 & Para trás \\ \hline
+		8 & 0 & 255 & Virar para esquerda (próprio eixo) \\ \hline
+		9 & 0 & 127 & virar para direita (eixo motor 2) traseiro \\ \hline
+		\end{tabular}
+		}
+		\caption{Mapeamento dos estados conforme valores do Joystick}
+		\label{tab:tabela-pots}
+		\end{table}
 
-O objetivo dessa sessão é fornecer subsídios para estabelecer critérios para o
-dimensionamento do sistema de dissipação do calor produzido por componentes eletrônicos,
-especialmente semicondutores de potência da ponte H(transistores), buscando a proteção de
-tais componentes.
+		Para elucidar os estados da tabela \ref{tab:tabela-pots} a figura \ref{fig:estados} foi confeccionada.
 
-Considerando:
+		\begin{figure}[!ht]
+			\center
+			\includegraphics[width=0.3\textwidth]{figuras/resultados/estados_1_2_7_8}
+			\includegraphics[width=0.3\textwidth]{figuras/resultados/estados_3_5}
+			\includegraphics[width=0.3\textwidth]{figuras/resultados/estados_6_9}
+			\caption{Estados da cadeira}
+			\label{fig:estados}
+		\end{figure}
 
-$P_t$ = Potência a ser dissipada pelo transistor;
+		\textbf{Mapeamento de Intensidade e Direção dos Motores}
 
-$T_j$ = Temperatura de junção;
+		Conforme os estados mapeados na tabela \ref{tab:tabela-pots}, as intensidades e direções de cada motor são definidas na tabela \ref{tab:tabela-pots2}.
 
-$T_c$ = Temperatura de carcaça;
+		\begin{table}[!ht]
+		\centering
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|c|c|c|}
+		\hline
+		ID & Estado & Motor 1(Intensidade(\%), Direção) & Motor 2(Intensidade (\%), Direção) \\ \hline
+		1 & Para frente & (100, + ) & (100, + ) \\ \hline
+		2 & Virar para direita (próprio eixo) & (100, +) & (100, -) \\ \hline
+		3 & Virar para direita (eixo motor 2) frontal & (100, +) & (0 , *) \\ \hline
+		4 & Parado & (0, *) & (0, *) \\ \hline
+		5 & Virar para esquerda (eixo motor 1) frontal & (0, *) & (100, +) \\ \hline
+		6 & Virar para esquerda (eixo motor 1) traseiro & (0, *) & (100, -) \\ \hline
+		7 & Para trás & (100, -) & (100, -) \\ \hline
+		8 & Virar para esquerda (próprio eixo) & (100, -) & (100, +) \\ \hline
+		9 & Virar para direita (eixo motor 2) traseiro & (100, -) & (0, *) \\ \hline
+		\end{tabular}
+		}
+		\caption{Intensidade e direção dos motores conforme estado. Asteriscos simbolizam motor sem direção}
+		\label{tab:tabela-pots2}
+		\end{table}
 
-$T_{amb}$ = Temperatura ambiente;
+		\textbf{Integração de \textit{joystick}}
 
-$R_{jc}$ = Resistência térmica na junção $[\frac{{\circ}\mathrm{C}}{W}]$;
+		Para se fazer o controle da cadeira, o \textit{hardware} utilizado no módulo Joystick, vide capítulo \ref{cap:fundamentacao_teorica}, foi acoplado usando uma rotação de 45 graus no sentido anti-horário. Isto foi feito para melhorar a interpretação dos dados. Esta translação do eixo XY dos potenciômetros do \textit{joystick}, vide figura \ref{fig:joy_superior}, para o novo eixo M1M2, vide figura \ref{fig:joy_m1m2}, nos permite inserir os estados da tabela \ref{tab:tabela-pots} e implementar estes estados de forma mais fácil.
 
-$R_{ch}$ = Resistência térmica na carcaça $[\frac{{\circ}\mathrm{C}}{W}]$;
+		\begin{figure}[!ht]
+			\center
+			\includegraphics[width=0.4\textwidth]{figuras/resultados/joy_xy}
+			\caption{Visão de \textit{joystick} com eixos para propósito geral}
+			\label{fig:joy_superior}
+		\end{figure}
 
-$R_{ha}$ = Resistência térmica dissipador - ambiente $[\frac{{\circ}\mathrm{C}}{W}]$;
+		\begin{figure}[!ht]
+			\center
+			\includegraphics[width=0.5\textwidth]{figuras/resultados/joy_m1m2}
+			\caption{Visão de \textit{joystick} com eixos rotacionados}
+			\label{fig:joy_m1m2}
+		\end{figure}
 
-Onde $T_j$ e $R_{jc}$ são parãmetros do \textit{Datasheet}. Foram utilizadas duas ponte H, sendo
-que cada uma possui 4 transistores IRF3205(Jameco Part Number 618089)\cite{jameco}:
+	\subsection{Controlador Central}
 
-$T_j = -55 à 175\,^{\circ}\mathrm{C}$;
+		Este módulo tornou-se opcional por não acrescentar, até o incremento atual, nenhuma funcionalidade e ainda se mostrar um sistema instável devido ao seu atraso em estabelecer uma conexão com os microcontroladores.
 
-$R_{jc} = 0,75[\frac{{\circ}\mathrm{C}}{W}]$;
+		O \textit{Raspberry PI}, juntamente com o sistema operacional Raspbian Jessie 4.1, foi utilizado como central de comandos para processar as informações vindas do microcontrolador dedicado ao módulo Joystick e enviar o resultado deste processamento para o microcontrolador dedicado ao Controlador dos Motores.
 
-$R_{ch} = 0,5[\frac{{\circ}\mathrm{C}}{W}]$;
+		\textbf{Comunição entre microcontroladores e o Controlador Central}
 
-Assim podemos calcular $R_{ha}$ como:
+		A comunicação entre os MSP do Joystick e do Controlador dos Motores e a \textit{Raspberry PI} foi feita via serial, utilizando o protocolo UART, a comunicação com cada um dos componentes foi feita utilizando-se uma \textit{thread} dedicada.
 
-\begin{equation}
- R_{ha} = \frac{(T_j - T_{amb})}{P_t} - R_{jc} + R_{ch}
-\end{equation}
+		A conexão entre os MSP foi formulada através do método \textit{findPort}. Sua implementação pode ser observada na figura \ref{fig:find_port_method}.
 
-A potência total dissipada é de 300W por cada ponte H, assim cada transistor recebe 75W. A
-temperatura ambiente considerada é de $T_j$ como $40\,^{\circ}\mathrm{C}$, considerando a $T_j$ como $130\,^{\circ}\mathrm{C}$,
-temos assim:
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=0.9\textwidth]{figuras/resultados/find_port_method}
+			\caption{Método para encontrar porta dinamicamente}
+			\label{fig:find_port_method}
+		\end{figure}
 
-\begin{equation}
- R_{ha} = \frac{(130 - 40)}{300} - 0,75 + 0,5 = 0,05\,\frac{^{\circ}\mathrm{C}}{{W}}
-\end{equation}
+		Este método permite que tanto o MSP do Joystick quanto o MSP do Motor sejam conectados sem a previa identificação de qual porta utilizar para comunicação. Porém, há existência de prioridade entre as \textit{threads}, ou seja, enquanto a \textit{thread} do Joystick não se conectar com sucesso a \textit{thread} do Motor não irá realizar a conexão.
 
-Superfícies aletas, chamadas de dissipadores de calor são
-comumente utilizadas para o resfriamento de dispositivos eletrônicos. A energia dissipada por
-esses dispositivos é transferida por condução dos dispositivos de potência para os dissipadores
-e por convecção natural ou forçada dos dissipadores para o ambiente \cite[p.~434-439]{cengel}.
+		Para que este processo ocorra com sucesso, uma checagem de dados é feita para cada tentativa de conexão. Esta checagem consiste em verificar se a porta a ser conectada está enviando ou recebendo dados. Para que a conexão do Josytick ocorra com sucesso, a porta deve estar recebendo dados, para que a conexão do Motor ocorra com sucesso, a porta não deve receber dados. A implementação desta checagem pode ser verificada na figura \ref{fig:try_receive_data}.
 
-Uma das principais questões na escolha de um dissipador de calor é escolher entre um com
-aletas estreitamente espaçadas ou aletas amplamente espaçadas para uma determinada área
-da base. Um dissipador com menor espaçamento entre as aletas terá maior superfície de
-transferência de calor, mas o coeficiente de transferência de calor é menor devido a
-resistência que as aletas introduzem no fluxo do ar.
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/try_receive_data}
+			\caption{Método para checar se existe recebimento de dados em porta. Caso do Motor.}
+			\label{fig:try_receive_data}
+		\end{figure}
 
-\subsection{Indicador de Nível de Bateria}
+		Esta estratégia auxilia na manutenção do produto, pois caso algum MSP fique inutilizável, é possivel colocar outro MSP, previamente configurado, no lugar do componente inutilizado.
 
-É importante saber o nível de bateria da cadeira de rodas, com isso é possível controlar sua autonomia e saber quando ela irá parar de funcionar. O indicador servirá para informar quando a bateria estiver acabando, para que se possa voltar para estação de recarga e recarregar a cadeira de rodas.
+		Após o \textit{Raspberry PI} conseguir encontrar uma porta para se conectar com o MSP do Joystick, então a \textit{thread} do MSP do Motor utiliza do mesmo método para se conectar.
 
-Foi utilizado um multímetro automotivo de bateria como mostrado na figura \ref{fig:indicador_bateria}. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.
+		Ao se ter as duas conexões estabelecidas, então os dados são adquiridos do Joystick e enviados para os Motores. Para se realizar este envio de informações de forma correta é necessário fazer a sincronização entre as \textit{threads}.
 
-\begin{figure}[!ht]
-  \center
-  \includegraphics[width=0.7\textwidth]{figuras/resultados/indicador_bateria}
-  \caption{Multímetro automotivo de bateria}
-  \label{fig:indicador_bateria}
-\end{figure}
+		\textbf{Sincronização de \textit{Threads}}
+
+		Foi percebido que as \textit{threads} precisam estar sincronizadas para se fazer o envio de informações de forma correta. Pois a \textit{thread} do Joystick recebe as informações, e a \textit{thread} do Motor consome estas informações.
+
+		Este problema de sincronização das \textit{threads} é conhecido como o clássico problema da programação paralela: Produtor e Consumidor.
+
+		Este problema é caracterizado por 2 processo que compartilharem de um \textit{buffer} comum, no qual o produtor insere a informação no \textit{buffer} e o consumidor retira a informação do \textit{buffer}. Possíveis problemas: Produtor insere produto onde não foi consumido e consumidor remove informação onde já foi removido. Mais detalhes do problema no capítulo \ref{cap:fundamentacao_teorica}.
+
+		Este problema foi solucionado com os seguintes passos:
+		\begin{enumerate}
+			\item Produtor: Produz os itens necessários em \textit{buffer}, no caso os valores referentes aos potenciômetros do Joystick. Neste momento a \textit{thread} do Consumidor é parada e uma variável responsável por esta trava é notificada. Isto pode ser visto na figura \ref{fig:joy_lock};
+			\item Consumidor: Consume os itens em \textit{buffer} enviando os mesmos para o MSP dos Motores. Neste momento a \textit{thread} do Produtor é parada e a variável responsável pela trava é consumida. Isto pode ser visto na figura \ref{fig:motor_lock};
+		\end{enumerate}
+
+		A variável de trava é utilizada com o propósito de se fazer a produção e o consumo de forma sincronizada e nunca ao mesmo tempo. O processo do Consumidor somente será ativo quando o processo do Produtor setar a variável de trava.
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[keepaspectratio=true,scale=0.5]{figuras/resultados/joy_lock}
+			\caption{Código utilizado para notificar variável de trava}
+			\label{fig:joy_lock}
+		\end{figure}
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=0.9\textwidth]{figuras/resultados/motor_lock}
+			\caption{Código utilizado para consumir itens e consequentemente a variável de trava}
+			\label{fig:motor_lock}
+		\end{figure}
+
+	\subsection{Indicador de Nível de Bateria}
+
+		É importante saber o nível de bateria da cadeira de rodas, com isso é possível controlar sua autonomia e saber quando ela irá parar de funcionar. O indicador servirá para informar quando a bateria estiver acabando, para que se possa voltar para estação de recarga e recarregar a cadeira de rodas.
+
+		Foi utilizado um multímetro automotivo de bateria como mostrado na figura \ref{fig:indicador_bateria}. Eles são comumente utilizados para medir as baterias auxiliares utilizadas em sons automotivos. Seu funcionamento baseia-se na medição da diferença de tensão nos polos da bateria, dessa forma indicando qual é a tensão da bateria. Quando a tensão cair a um nível crítico é quando os motores da cadeira de rodas irão parar de funcionar, no caso do motor do projeto, 9V. Quando o indicador chegar em 9V, o usuário deve retornar com a cadeira de rodas para que a mesma seja recarregada.
+
+		\begin{figure}[!ht]
+			\center
+			\includegraphics[width=0.7\textwidth]{figuras/resultados/indicador_bateria}
+			\caption{Multímetro automotivo de bateria}
+			\label{fig:indicador_bateria}
+		\end{figure}
+
+	\begin{comment}
+		Integração Motor e Joystick
+		#  - Mapeamento dos estados em relação ao joystick (255,255->Frente)
+		#  - Mapeamento dos estados em relação aos motores (intensidade, direção)
+			- Integração via \textit{software} ou via hardware
+				- Soft
+					Vantagens: Uso de propósito geral
+					Desvantagem: capacidade de Processamento para cálculo de transformação
+				- Hardware:
+					Vantagens: Valores de intensidade e direção dos motores são adquiridos de forma instanea
+					Desvantagem: Não foi observados desvantagens para a aplicação, porém para outros propósitos é mais dificil de se utilizar os dados, pois os mesmos não tem uma relação direta com o plano cartesiano original.
+
+		Ponte-H (copiar e colar do documento pc2)
+			- Circuito de direcionamento das PWMs através das seletoras (demultiplexador)
+
+		Alimentação do sistema
+			- Esquema de alimentação do sistema
+			- Circuito regulador de tensão
+	\end{comment}
