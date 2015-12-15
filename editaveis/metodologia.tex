@@ -2,11 +2,12 @@
 
 Nesta seção são apresentadas as metodologias de desenvolvimento do produto, de organização e monitoramento e de integração entre engenharias.
 
-A metodologia de desenvolvimento do produto mostra como foram desenvolvidas as partes da estrutura, alimentação e controle do sistema. A metodologia de organização e monitoramento detalha como foram realizadas as reuniões, os papéis de cada membro da equipe, ferramentas de organização e documentos produzidos. Já a parte de integração entre engenharias apresenta a contribuição de cada engenharia no decorrer do projeto e em cada tarefa.
+A metodologia de desenvolvimento do produto mostra como foram desenvolvidas as partes da estrutura, alimentação e controle do sistema. A metodologia de organização e monitoramento detalha como foram realizadas as reuniões, os papéis de cada membro da equipe, ferramentas de organização e documentos produzidos. Já a parte de integração entre engenharias apresenta a contribuição de cada engenharia no decorrer do projeto.
 
 \section{Estrutura}
 
 A modelagem 3D do dispositivo foi construído um modelo 3D da estrutura, que foi dimensionado de acordo com os dados fornecidos pela NBR 9050 \cite{nbr9050}, de modo que o sistema atenda as cadeiras de rodas que também possuem especificações pela NBR 9050.
+
 Para isso utilizou-se o \textit{software} Catia V5R19, onde uma análise estrutural também foi realizada. Em seguida foi constuído uma modelo utilizando PVC para os testes iniciais e desenvolvimento dos acoplamentos. Por fim foi feito o protótipo com aço SAE 1020 ultilizando técnicas de soldagem no galpão da Faculdade UNB - Campus Gama. Além disso, com o auxílio do um torno mecânico, foi torneado um eixo para o acoplamento do conjunto de motoredutor e roda do sistema.
 
 \section{Power Train}
@@ -15,9 +16,9 @@ Para a especificação do conjunto moto-redutor e bateria, foram levantados os r
 
 \section{Controle}
 
-	O primeiro aspecto analisado para a parte de controle foi a especificação de tecnologia que consistiu no estudo e escolha da melhor tecnologia voltada para o problema. Envolvendo desde as especificações do ambiente físico até as especificações do ambiente virtual para desenvolvimento do \textit{software}.
+	O primeiro aspecto analisado para a parte de controle foi a especificação de tecnologia, que consistiu no estudo e escolha da melhor tecnologia voltada para o problema. Envolvendo desde as especificações do ambiente físico até as especificações do ambiente virtual para desenvolvimento do \textit{software}.
 
-	Em seguida um estudo, simulação e execução de qual tipo de controlador de potência  usado no motor, para controle de sua corrente foi feito.
+	Em seguida simulações foram realizadas com o  o intuito de saber qual o melhor tipo de controlador de potência a ser usado nos motores. Vários testes foram executados com o intuito de manter o objetivo de implementar aquilo que foi simulado.
 
 	Além disso, foi feito um estudo, implementação e testes das soluções encontradas para o \textit{joystick}, gerador de PWM para o controle dos motores e bateria.
 
@@ -39,7 +40,6 @@ O projeto foi dividido em \textit{Sprints}, técnica do\textit{ Scrum}baseada em
 Para cada início de \textit{Sprint} foi realizada o \textit{Planning}, uma reunião dedicada ao planejamento de toda a \textit{Sprint}. Em seu decorrer foram realizadas \textit{Dailies}, que pode ser dito como um \textit{feedback} diário de cada membro, ou cada \textit{pairing}, comunicando o que foi realizado naquele dia, citando as dificuldades e o que será feito no próximo dia. No final da \textit{Sprint} foi realizada uma retrospectiva onde são levantados pontos positivos e pontos a serem melhorados.
 
 Os prazos e datas nos quais foram baseados as datas de entrega, \textit{builds}, releases, foram definidos para se adequar ao tempo da disciplina e às datas estipuladas pelo plano de ensino da disciplina.
-%Com isso foi feito o planejamento de Sprints que pode ser encontrado na figura \ref{fig:cronograma}
 
 Para o acompanhamento do projeto foram utilizadas ferramentas que facilitam os métodos citados anteriormente. Para auxiliar na comunicação foi utilizada a ferramenta \textit{Slack}; para o compartilhamento de Artefatos, pesquisas e documentos foi utilizada a ferramenta \textit{Google Drive}, para reuniões à distancia foi utilizada a ferramenta \textit{Google Hangouts}, para o desenvolvimento e versionamento dos \textit{softwares} foi utilizado o \textit{GitHub}.
 
@@ -50,22 +50,22 @@ Com isso concluiu-se que as fases são divididas em \textit{Sprints}, e as ativi
 Considerando a diversidade de conhecimentos das várias engenharias que contribuiram para o trabalho, o grupo teve como objetivo agregar o máximo de informações possíveis, com a finalidade de integração entre os integrantes. Com base nesta integração, então foi alcançado um trabalho final mais completo, envolvendo os membros em atividades que não são apenas a da área de conhecimento. Baseado nessa integração os grupos de pesquisa da primeira Sprint foram separados como mostra na tabela \ref{tab:grupos_engenharia}. As outras \textit{sprints} podem ser observadas nas imagens no apêndice \ref{app:apendice_um}.
 
 \begin{table}[!h]
-	\centering
-	\caption{Exemplo de integração entre engenharias e temas}
-	\label{tab:grupos_engenharia}
-	\resizebox{\textwidth}{!}{%
-	\begin{tabular}{|c|l|l|}
-		\hline
-		\multicolumn{1}{|l|}{\textit{\textbf{Sprint}}} & \multicolumn{1}{c|}{\textbf{Tema}} & \multicolumn{1}{c|}{\textbf{Engenharia}} \\ \hline
-		\multirow{7}{*}{0} & Manual do usuário das ferramentasa serem utilizadas pelo grupo & Energia \\ \cline{2-3}
-		 & Motor & Eletrônica/Software \\ \cline{2-3}
-		 & Motor & Eletrônica/Energia \\ \cline{2-3}
-		 & Estrutura & Automotiva \\ \cline{2-3}
-		 & Comunicação & Eletrônica \\ \cline{2-3}
-		 & Identidade Visual do Grupo & Energia/Software \\ \cline{2-3}
-		 & Projetos Similares & Energia/Software \\ \hline
-	\end{tabular}
-	}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{\textit{\textbf{Sprint}}} & \multicolumn{1}{c|}{\textbf{Tema}} & \multicolumn{1}{c|}{\textbf{Engenharia}} \\ \hline
+\multirow{7}{*}{0} & Manual do usuário das ferramentasa serem utilizadas pelo grupo & Energia/Software \\ \cline{2-3}
+ & Motor & Eletrônica/Software \\ \cline{2-3}
+ & Motor & Eletrônica/Energia \\ \cline{2-3}
+ & Estrutura & Automotiva \\ \cline{2-3}
+ & Comunicação & Software \\ \cline{2-3}
+ & Identidade Visual do Grupo & Energia/Software \\ \cline{2-3}
+ & Projetos Similares & Energia/Software \\ \hline
+\end{tabular}
+}
+\caption{Exemplo de integração entre engenharias e temas}
+\label{tab:grupos_engenharia}
 \end{table}
 
 Com isso em mente e munidos de uma metodologia de organização de ciclo de vida baseados em princípios ágeis, as tarefas são divididas entre pequenos grupos formados pelos integrantes de diferentes engenharias sempre que possível. Como exemplo, temos a tabela \ref{tab:divisao_ramos}, que mostra nosso esquemático de divisão das engenharias nos ramos.
@@ -89,3 +89,14 @@ Com isso em mente e munidos de uma metodologia de organização de ciclo de vida
 \end{table}
 
 Embora a intenção principal seja integrar os conhecimentos da melhor forma possível, temos ciência da necessidade de se focar engenharias específicas em determinadas áreas de atuação, fato que pode ser obsevado na primeira parte da tabela. Porém, após a definição e compra da bateria e motorredutor, realizada no meio do período da disciplina de Projeto Integrador 2, houve a necessidade de finalização desse grupo de atividades e realocação dos integrantes nos outros grupos.
+
+Os integrantes de energia foram divididos em dois grupos, onde um grupo ajudou a
+estrutura e o outro ajudou o controle. Na parte de estrutura, os alunos de energia ajudaram a construir a estrutura usando soldas e as borboletas para o acoplamento superior do protótipo e a pintá-la.
+
+Já o outro grupo, que ficou responsável em ajudar o controle, aprenderam e ajudaram a soldar as pontes H, fizeram cálculos para o dissipador de calor, e aprenderam a usar Latex. Os integrantes de energia ajudaram também pregando os componentes de estrutura de uma maneira mais organizada e bem distribuídas, e na configuração plug and chug das pontes H.
+
+Os integrantes de estrutura ajudaram os integrantes de controle a colocar os componentes do controle na estrutura de uma maneira em que os fios ficassem dentro da estrutura, sem corromper ou danificar os fios.
+
+Os integrantes do grupo de \textit{software} ficaram responsáveis por desenvolver o sistema que faz a comunicação entre os microcontroladores e motores, modelagem dos estados da cadeira de rodas em relação a intensidade e direção dos motores, em consonância com o funcionamento do \textit{joystick} e implementação do pulso de PWM. Estas atividade foram auxiliada por parte dos integrantes do grupo da eletrônica, principalmente em relação a como usar os microcontroaldores e funcionamento do \textit{software} de maneira embarcada.
+
+Os integrantes de \textit{software} ainda auxiliaram o grupo de eletrônica na confecção dos circuitos da ponte H e depuração dos circuitos da ponte H a procura por erros.
