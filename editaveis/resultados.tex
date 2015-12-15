@@ -80,13 +80,13 @@ Na parte da estrutura mostrada na figura \ref{fig:acop_bracadeira} existem dois 
 \label{fig:superior_estrutura}
 \end{figure}
 
-A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois ''joelhos'' capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois ''T'' com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
+A figura \ref{fig:superior_estrutura} representa a parte superior da estrutura, ela contem dois "joelhos" capazes de ligar as duas alças com as duas barras de sustentação da estrutura. Há dois "T" com furo que ligam três barras de cada lado, eles tem a função de regular a altura com o seis furos nas barras de movimentação. Na alça estão duas braçadeiras livres, que se ligam na parte superior da cadeira de rodas, assim como a parte superior já descrita.
 
 Os componentes utilizados para se fazer este modelo são descritos:
 \begin{itemize}
   \item Oito braçadeiras circulares de curso infinito;
-  \item Quarto ''joelhos'' de 90$^\circ$;
-  \item Dois ''T'';
+  \item Quarto "joelhos" de 90$^\circ$;
+  \item Dois "T";
   \item Duas rodas;
   \item Barras de PVC com diâmetros de 20mm e 25mm;
   \item Quatro parafusos;
@@ -322,9 +322,9 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
     Em = \frac{m*V^2}{2}
   \end{equation}
 
-  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa de 150 kg e $V$ é a velocidade de 2.77 m/s. Assim, a energia necessária para mover a cadeira é de 578.7 J. Sendo 1 Watt igual a 1 J/s, tem-se, portanto, 578.7 W.
+  Onde $Em$ é a energia fornecida pelo motor, $m$ é a massa do sistema e $V$ é a velocidade máxima. Assim, a energia necessária para mover a cadeira é de $578.7 J$. Este valor pode ser relacionado com a potência do sistema por esta ser igual a taxa de energia, ou seja, 1 watt é igual à 1 joule por segundo. Assim, a cadeira de rodas terá a capacidade de realizar $568.7 J$ a cada segundo de trabalho, com isso a potência exigida dos motores será de $578.7 W$.
 
-  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 Volts e 305 Watts para o projeto, assim, a potência total entregue ao sistema é de 610 W. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
+  Após uma pesquisa no mercado, foram adquiridos dois motores de corrente contínua de 12 volts e 305 watts para o projeto, assim, a potência total entregue ao sistema é de $610 W$. Este tipo de motor possui perdas de potência tanto mecânicas (\textit{Pm}) quanto térmicas (\textit{Pj}) \cite{perdas}. A primeira está associada a perdas por causa da velocidade: por atrito, nas escovas do motor e por curto-circuito; estima-se que estas juntas sejam cerca de 3 a 5\% da potência nominal do motor.
 
   As perdas térmicas estão associadas ao efeito Joule: os fios usados nos enrolamentos dos motores apresentam certa resistência elétrica. A corrente entregue para o motor, em máxima potência é dada pela divisão da potência pela tensão do motor: \textit{I} = 25.417 A. Desta forma, a resistência \textit{R} pode ser calculada pela fórmula da potência a seguir:
 
@@ -344,13 +344,13 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
   Pt = Pj+Pm = 12+(305*0.05) = 27.25 W
   \end{equation}
 
-  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, se deve adicionar um termo de perdas a serem superadas pelos motores à equação da energia, este termo $\epsilon$ seria igual a 1.09:
+  Estas perdas representam cerca de 9\% da potência nominal do motor. Desta maneira, pode-se considerar a equação real da energia abaixo ($Emr$), onde são consideradas as perdas através do termo $\epsilon$, que é igual a 1.09.
 
   \begin{equation}
     Em = \frac{m*V^2*\epsilon}{2}
   \end{equation}
 
-  Assim, a energia necessária para mover a estrutura seria de 630.434 J, ou 630.434 W de potência. Para encontrar o valor da velocidade final do sistema é preciso rearranjar a equação acima. Uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
+  Assim, a potência necessária para mover a estrutura seria, teoricamente de $630.4 W$. Para encontrar o valor da velocidade final do sistema, foram cnsiderados os dois motores de $305 W$, o peso $m$ de $150 Kg$ e o termo $\epsilon$. Além destes, uma eficiência de 80\% foi atribuída ao acoplamento das rodas com o eixo do motor. Estes 20\% englobam as perdas no redutor, perdas por escorregamento da conexão do redutor e da roda com o chão, entre outros. Assim, temos:
 
   \begin{equation}
   Em = 0.8*\sqrt{\frac{600*2}{m*\epsilon}}
@@ -380,67 +380,39 @@ P = T*\omega = 9.0129*26.18 = 235.96 W
 
 \section{Controle}
 
-  O controle da cadeira de rodas foi feito utilizando 3 módulos: Joystick, Controlador central e Motor.
-  O módulo Joystick, para receber os comandos provenientes do usuário e enviá-los para o controlador central. O módulo do controlador central recebe as informações do módulo anterior, as processa e faz o envio para o módulo Motor. O módulo Motor recebe as informações enviadas pelo módulo do controlador central, produzindo 2 pulsos de PWM e enviando-os para as pontes H, com o intuito de controlar a intensidade e direção dos motores.
+  O controle da cadeira de rodas foi feito em dois principais componentes: Joystick e Controlador dos Motores, além de um componente opcional, o Controlador Central.
 
-\subsection{Atual Panorama}
+  O módulo Joystick tem o propósito de receber os comandos provenientes do usuário e enviá-los para o próximo módulo. O módulo opcional, Controlador Central, recebe as informações do Joystick e as envia para o Controlador dos Motores. Este, por sua vez, recebe as informações referentes à velocidade e direção de cada motor e as utiliza para produzir dois pulsos de PWM que controlam os motores através de duas pontes H.
 
-  O módulo Controlador central possui um \textit{Raspberry PI}, utilizado para processar as informações submetidas a ele pelo módulo Joystick, e enviar as informações processadas para o módulo Motor. Isto é possivel graças ao \textit{software} implementado. Nesta implementação foi utilizada o protocolo de comunicação UART.
+\subsection{Panorama atual}
 
-  A primeira versão deste \textit{software} foi feita de forma sequencial: era feita a recepção dos dados provenientes do Joystick na \textit{thread} principal do programa, este dado então era processado e enviado para o módulo Motor. Com esta abordagem obteve-se um \textit{delay} do envio dos dados processados para o módulo Motor.
+  Na atual versão do sistema, o usuário pode mover a cadeira de rodas através de um joystick, ligar e desligar o sistema atráves de uma chave e acompanhar o seu estado (ligado ou desligado) através de um LED, ambos acoplados ao joystick. Os dados referentes ao movimento do joystick são então enviados diretamente para o Controlador dos Motores, o qual controla o movimento (velocidade e direção) dos motores de acordo com os dados recebidos.
 
-  Então uma segunda versão foi desenvolvida utilizando-se de múltiplas \textit{threads}: uma \textit{thread} foi feita para receber e processar os dados provenientes do Joytick e outra para enviar os dados para o Motor. Desta forma o \textit{delay} observado na primeira versão foi retirado, aumentando assim, o desempenho do sistema em relação a transferência e processamento dos dados.
-
-  Para a primeira versão os dados enviados pelo Joystick utilizavam de um padrão de transmissão, feito para se ter certeza que os dados recebidos não seriam algum tipo de ''lixo'' trasmitido. Esta padrão seguia o formato: ''$(valor\, potenciometro\, 1)$ $(valor\, potenciometro\, 2)$ $\backslash n$''.
-
-  Para a segunda versão os dados são enviados conforme o seguinte padrão:\\ ''$(valores\, pares\, potenciometro\, 1)$ $(valores\, ímpares\, potenciometro\, 2)$''.
-
-
-\begin{comment}
--------------------------------------------------------------------------------
----- Tópicos para a escrita da parte de controle do capítulo de resultados ----
--------------------------------------------------------------------------------
-Panororama do sistema de controle conforme Arquitetura
-  - Desde controle de \textit{software} a periféricos (Usuário a Motor)
-#  - Panorama de Arquitetura - Antes e depois
-#    - Citar melhoria quanto ao desempenho
-#  - Estratégia de comunição entre componentes - Antes e depois
-  - Integração Joystick e motor - Falar sobre os estados
-\end{comment}
+  Ainda foi implementado o módulo Controlador Central que, atualmente, apenas repassa as informações recebidas pelo Joystick para o Controlador dos Motores, cabe ressaltar que este módulo não foi integrado à versão atual do sistema devido ao seu atraso na inicialização do sistema e a não inclusão de novas funcionalidades.
 
 \subsection{Joystick}
-\label{ssec:joystick}
-O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos) e um microcontrolador.
 
-Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda ponta pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois, facilita a conexão de ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
+  O módulo Joystick é a interface de ligação entre o usuário e a cadeira de rodas, este componente é composto por um \textit{joystick} (alavanca que se move sobre uma base e capta movimentos em dois eixos), uma chave liga/desliga do sistema de controle, juntamente com um LED e um microcontrolador.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
-\caption{Imagem do controle da cadeira de rodas}
-\label{fig:joy_hand_control}
-\end{figure}
+  Para permitir o controle do sistema pelo usuário, foi montado uma caixa plástica com o Joystick e uma placa de controle. Com o controlador travado, foi desenvolvida uma placa de circuito impresso, utilizada tanto no controlador quanto no MSP de controle da mesma. A primeira ponta, controlador, possui LEDs e a segunda, pinos de saída para o MSP. Essas placas possuem RJ-45 fêmea e as saídas para o joystick e LEDs. O sistema utiliza esse tipo de conector pois facilita a conexão ponta a ponta, possui várias vias de transmissão de dados e pode ser facilmente substituído. Por fim, a placa de controle e o joystick foram travados com parafusos em uma placa de madeira para dar peso e robustez e a caixa plástica cortada de acordo com o Joystick e conectores. Estas configurações podem ser vistas na figura \ref{fig:joy_hand_control}.
 
-O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD para os potenciômetros, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width = 0.5\textwidth]{figuras/resultados/joy_hand_control}
+  \caption{Imagem do controle da cadeira de rodas}
+  \label{fig:joy_hand_control}
+  \end{figure}
 
-A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
+  O \textit{joystick} utilizado é composto por dois potenciômetros que indicam as posições em dois eixos independentes. Utilizando os potenciômetros como simples divisores de tensão é possível inferir as posições de seus eixos a partir da medições das tensões do circuito, para realizar esta medição e então rastrear o comando de movimento do usuário, são utilizados dois canais de conversores AD, uma para cada potenciômetro, tais conversores são internos ao microcontrolador utilizado e não necessitam de nenhum \textit{hardware} extra.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
-\caption{Rotina de trabalho do microcontrolador do módulo Joystick}
-\label{fig:joy_fluxogram}
-\end{figure}
+  A rotina de trabalho do microcontrolador do módulo Joystick consiste em adquirir os valores analógicos das posições do \textit{joystick}, convertê-los em valores digitais de um \textit{byte} cada, diferenciando-os utilizando a estratégia de representar um eixo apenas por valores ímpares e o outro apenas por valores pares (ambos entre 0 e 255) e enviá-los via serial alternadamente em um laço infinito, conforme a figura \ref{fig:joy_fluxogram}.
 
-\begin{comment}
-
-Joystick
-  - \textit{software} e Hardware (periféricos e MSP Joystick)
-    - Colocar imagem de código
-  - Interface de usuário
-    - Fotos do controle
-
-\end{comment}
+  \begin{figure}[!htb]
+  \centering
+  \includegraphics[width = 0.9\textwidth]{figuras/resultados/joy_fluxogram}
+  \caption{Rotina de trabalho do microcontrolador do módulo Joystick}
+  \label{fig:joy_fluxogram}
+  \end{figure}
 
 \subsection{Controlador Central}
 
@@ -665,7 +637,7 @@ Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 par
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4}
+	\includegraphics[width=0.6\textwidth]{figuras/referencialteorico/figurax_4}
 	\caption{Circuito elevador te tensão}
 	\label{fig:figx+4}
 \end{figure}
