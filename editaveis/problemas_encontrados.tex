@@ -6,14 +6,14 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 
 -Dificuldade na definição das atividades da \textit{Sprint}: No início do projeto foi definido que nossa organização seria baseada na metodologia ágil, sendo assim teríamos tarefas semanais.
     \begin{itemize}
-      \item Problema: De uma forma geral, o grupo superestimou as atividades nas sprints, tornando muito difícil a conclusão das atividades propostas para a sprint.
+    \item Problema: De uma forma geral, o grupo superestimou as atividades nas sprints, tornando muito difícil a conclusão das atividades propostas para a sprint.
 	  \item Solução: Como solução granularizamos as atividades reduzindo-as para que fosse possível realizá-las no tempo de uma sprint e durante a mudança, que durou cerca de 3 sprints, calibramos os erros e acertos na retrospectiva feita ao final de cada sprint.
 
     \end{itemize}
 
 -Redistribuição do pessoal da área de \textit{Power Train} para a área de Controle e Estrutura, porque as atividades propostas para a área de \textit{Power Train} foram concluídas. Baseado nisso foi feita a escolha de realocar os componentes desta área para a área de Controle.
     \begin{itemize}
-      \item Problema: Realocar os componentes de forma a não ficarem ocioso em alguma atividade.
+    \item Problema: Realocar os componentes de forma a não ficarem ocioso em alguma atividade.
 	  \item Solução: Relocar os componentes conforme maior expertise dos mesmos na área de Controle e Estrutura.
     \end{itemize}
 
@@ -26,7 +26,7 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 
 \section{Controle}
 
-  \textbf{Linguagem Nova}
+  \textbf{Linguagem de programação}
 
     Mesmo com a experiência do grupo dos alunos de \textit{software}, houve problemas em relação ao Phyton, como: entendimento da exportação relativa de classes em outras pastas, mudança da versão 2.7 para a versão 3.4 e problemas de identação relacionado a IDE de desenvolvimento.
 
@@ -35,24 +35,31 @@ Esta seção tem como foco a explicação dos problemas encarados e das soluçõ
 \textbf{Testes unitários do código-fonte}
 
     \begin{itemize}
-      \item Problema: Utilização do framework de teste de forma correta.
-	  \item Solução: Olhar a documentação do framework e aprender como utilizar.
+    \item Problema: Utilização do framework de teste de forma correta.
+    \item Solução: Olhar a documentação do framework e aprender como utilizar.
 
     \end{itemize}
 
 \textbf{Mock}
 
  \begin{itemize}
-      \item Problema: Entendimento de como utilizar o "Mock" para fingir que o Hardware existe.
-	  \item Solução: Conversa entre grupos da disciplina de Projeto Integrador 2 e leitura e compreensão da documentação.
+    \item Problema: Entendimento de como utilizar o "Mock" para fingir que o Hardware existe.
+    \item Solução: Conversa entre grupos da disciplina de Projeto Integrador 2 e leitura e compreensão da documentação.
 
     \end{itemize}
 
 \textbf{Cobertura de código em Python}
 
  \begin{itemize}
-      \item Problema: Como fazer cobertura de código para Python.
-	  \item Solução: Depois de realizar pesquisas o Coverage foi escolhido e instalado inicialmente no repositório local para teste e depois que confirmada a eficiencia foi instalado na Raspberry Pi.
+    \item Problema: Como fazer cobertura de código para Python.
+    \item Solução: Depois de realizar pesquisas o Coverage foi escolhido e instalado inicialmente no repositório local para teste e depois que confirmada a eficiência foi instalado na Raspberry Pi.
+    \end{itemize}
+
+\textbf{Utilização de múltiplas funcionalidades do microcontrolador}
+
+ \begin{itemize}
+    \item Problema: Como gerar dois pulsos PWM independentes com atualização de \textit{duty cycle} por conexão serial.
+    \item Solução: Leitura detalhada da documentação do microcontrolador utilizado e pesquisa em diversos fóruns.
     \end{itemize}
 
 \subsection{Ambiente físico}
@@ -61,7 +68,7 @@ O ambiente físico utilizado para desenvolvimento do \textit{software} deste pro
  \textbf{SSH}
 
  \begin{itemize}
-      \item Problema:  O acesso via SSH é feito através de um cabo de rede, no qual somete uma máquina por vez pode acessar. Isso ocasiona um problema de ociosidade na equipe: enquanto um componente o utiliza, os outros 2 ficam ociosos.
+    \item Problema:  O acesso via SSH é feito através de um cabo de rede, no qual somete uma máquina por vez pode acessar. Isso ocasiona um problema de ociosidade na equipe: enquanto um componente o utiliza, os outros 2 ficam ociosos.
 	  \item Solução: Utilizar o Raspeberry conectado a um roteador Wi-Fi, que permite a todos os integrantes utilizarem do ambiente mutualmente via rede sem fio.
     \end{itemize}
 
@@ -69,31 +76,36 @@ O ambiente físico utilizado para desenvolvimento do \textit{software} deste pro
 
 Pode ser instalado no Raspberry um sistema operacional que possibilite a facilidade de uso, mediante as necessidades de quem o instala.
  \begin{itemize}
-      \item Problema:  Problema relacionado: Pretende-se utilizar um ambiente para teste que possibilite o desenvolvimento de forma completa mediante o possível para o projeto. Para isto é necessário o uso de testes unitários e do "Mock", descobriu-se que o primeiro SIstema Operacional instalado (Raspdebian Wheezy) não atende para a utilização do "Mock".
-
+    \item Problema:  Problema relacionado: Pretende-se utilizar um ambiente para teste que possibilite o desenvolvimento de forma completa mediante o possível para o projeto. Para isto é necessário o uso de testes unitários e do "Mock", descobriu-se que o primeiro SIstema Operacional instalado (Raspdebian Wheezy) não atende para a utilização do "Mock".
 	  \item Solução:Um outro Sistema Operacional foi instalado (Raspdebian Jessie), por possuir nativamente um ambiente de testes robusto que possibilite o uso de testes unitários e "Mock".
     \end{itemize}
 
-\textbf{Quantidade de MSPs a serem utilizados}
+\textbf{Quantidade de microcontroladores a serem utilizados}
 
-A utilização de vários MSPs é uma ótima alternativa para separar componentes independentes e utilizar ferramentas como conversor AD, gerador de PWM e temporizador de forma simples, barata e rápida.
+A utilização de vários microcontroladores é uma ótima alternativa para separar componentes independentes e utilizar ferramentas como conversor AD, gerador de PWM e temporizador de forma simples, barata e rápida.
   \begin{itemize}
-   \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
-
-	\item Solução: MSPs dedicados a cada componente foram utilizados, por sua facilidade em implementar conversores AD de vários canais, PWMs e por ser de fácil comunicação com o Raspberry Pi via serial UART.
+    \item Problema: Unificar todo o controle no Raspberry Pi diminui a confiabilidade do sistema, além disso, ele não tem conversores analógico/digital, necessários para o sistema de controle.
+  	\item Solução: MSPs dedicados a cada componente foram utilizados, por sua facilidade em implementar conversores AD de vários canais, PWMs e por ser de fácil comunicação com o Raspberry Pi via serial UART.
+   
     \item Problema: Sincronização do envio dos dados com os pulsos de PWM.
     \item Solução: A formatação do envio de dados foi modificado. A formatação anterior seguia o modelo: ''(Informação potenciômetro 1)(Informação potenciômetro 2)($\backslash$ n)'', sendo mudada para: ''(Valores Pares potenciômetro 1)(Valores Impares potenciômetro 2)''. Baseado nisso, houve uma melhora ao se receber os dados.
   \end{itemize}
 
+\textbf{Velocidade de inicialização do sistema}
+  \begin{itemize}
+    \item Problema: Demora na conexão entre os microcontroladores e a Raspberry Pi.
+    \item Solução: Como os componentes são independentes e a Raspberry Pi está redundante no atual incremento do projeto, optou-se por retirá-la para uma maior desempenho.
+  \end{itemize}
+
 \subsection{Arquitetura}
  \begin{itemize}
-   \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequêncial. A Paralela nos permite ter várias "threads" acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  "thread". Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
+   \item Problema: Esta arquitetura possui 2 formas de serem montadas: Paralela ou Sequencial. A Paralela nos permite ter várias \textit{threads} acontecendo simultaneamente para difererentes situações. A Sequêncial acontece de forma sucessiva em somente uma  \textit{thread}. Houve a dúvida técnica de qual destas implementar em tempo de apresentação do produto. Existiu o temor de não se obter uma Arquitetura, caso fosse usado a solução Paralela.
 
 	\item Sugestão de Solução 1: Foi sugerido que uma montagem da solução sequêncial fosse montada para se fazer uma avaliação, em relação ao tempo de resposta que seria entre o usuário fazer o movimento com o Joystick e o motor responder ao movimento.
   \item Sugestão de Solução 2: Foi sugerido que a contabilização do tempo de execução (delay dos compontentes eletrônicos + complexidade do \textit{software}) fosse feita, para analisar e ter certeza de que a solução Sequêncial diferenciaria muito da solução Paralela.
   \item Solução: Foi feita a implementação da arquitetura Paralela.
 
-  \item Problema: A arquitetura Paralela não está com as "threads" devidamente sincronizadas.
+  \item Problema: A arquitetura Paralela não está com as \textit{threads} devidamente sincronizadas.
   \item Solução: Foi descoberto que o problema de sincronização pode ser resolvido com a solução produtor/consumidor.
 \end{itemize}
 
@@ -176,5 +188,5 @@ A utilização de vários MSPs é uma ótima alternativa para separar componente
  \subsection{Movimentação}
    \begin{itemize}
      \item Problema: Ao se acoplar a estrutura foi percebido, tardiamente, que as rodas da estrutura e da cadeira de rodas não são concêntricas. Impossibilitando a movimentação da cadeira em torno do seu próprio eixo;
-     \item Solucão: -
+     \item Solucão: Como a cadeira consegue realizar rotações, mesmo que não em torno do próprio eixo, manteve-se a solução, pois a mesma permite a realização de movimentos em espaços que atendem à NBR 9050 que especifica os espaços para cadeirantes.
    \end{itemize}
