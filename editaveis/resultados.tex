@@ -641,7 +641,17 @@ Alimentação do sistema
 
 \subsection{Ponte H}
 
-No decorrer da produção do circuito da ponte H, foi utilizado uma porta NAND e duas porta AND para garantir que não haverá acionamento de todos os transistores ao mesmo tempo.
+No decorrer da produção do circuito da ponte H, foi utilizado duas portas AND e uma porta NOT para a implementação da seletora e assim garantir que não haverá acionamento de todos os transistores ao mesmo tempo.
+
+Como não se pode acionar as duas entradas ao mesmo tempo de uma ponte H, devido o risco de curto circuito, houve a necessidade de desenvolver um circuito de segurança, que impedisse esse tipo de acionamento. O MSP gerará um sinal que dirá qual o sentido do motor e através do uso de portas lógicas do tipo NOT e AND esse controle é possível, como mostrado na figura \ref{fig:circuito_seletora}.
+
+\begin{figure}[!h]
+  \center
+  \includegraphics[width=0.6\textwidth]{figuras/resultados/circuito_seletora}
+  \caption{Circuito para a implementação das portas seletoras}
+  \label{fig:circuito_seletora}
+\end{figure}
+
 
 Foi necessário utilizar um dobrador de tensão no circuito, com ele foi possível garantir um VGS maior que 2V para polarização dos transistores MOSFET da ponte. Como a alimentação da ponte está restrita nos 12V teve-se que utilizar esse artificio para conseguir criar essa diferença de tensão nos terminais do transistor e polariza-lo.
 
@@ -655,7 +665,7 @@ Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 par
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4.eps}
+	\includegraphics[keepaspectratio=true,scale=0.8]{figuras/referencialteorico/figurax_4}
 	\caption{Circuito elevador te tensão}
 	\label{fig:figx+4}
 \end{figure}
@@ -663,20 +673,13 @@ Dessa forma liga-se a saída do dobrador de tensão nos transistores Q7 e Q8 par
 
 Para facilitar e proteger o sistema, foi construido um distribuidor -  uma placa que facilitará a conexão de todos os outros módulos ao sistema. Sendo assim, não será necessário que haja reduções de tensão tão drásticas nos módulos, pois essa já estará pronta no distribuidor.
 
-O distribuidor é responsável por alimentar os motores elétricos e os módulos de controle dos movimentos da cadeira de rodas. Ele contará com um bloco de entrada que estará conectado diretamente nos terminais da bateria, onde a partir desse bloco de entrada teremos duas saídas de distribuição, uma com 12 volts e outra com 5 volts.
+Para a alimentação dos micro controladores da parte de controle da cadeira de rodas utilizou-se um banco de baterias (PowerBank), que possui uma saída USB de 5V de tensão, através dela alimentou-se uma LaunchPad do MSP-430 para realizar a regulação da tensão de saída para 3,5V, desta forma foi possível alimentar o sistema responsável por realizar o controle dos motores.
 
-A saída de distribuição de 12 volts foi realizada através de cabos que foram conectados nos terminais dos motores. Essa saída é dupla, ou seja, cada motor tem sua alimentação individual, sendo que para proteção dos dois motores, utilizaremos fuzíveis inseridos antes dos plugs dos moteres, para que caso ocorra alguma variação de corrente, os motores não sejam danificados.
+Para a alimentação dos motores, foi realizada uma conexão através de cabos diretos da bateria para seus terminais. Essa saída será dupla, ou seja, cada motor terá sua alimentação individual, sendo que para proteção foi utilizado fusíveis automotivos inseridos nesses cabos, para que em caso de sobrecorrente, os motores não sejam danificados.
 
-A saída de distribuição de 5 volts é proveniente da utilização de um regulador de tensão 7805. São utilizados diodos zeners(falar qual) que garantem que a tensão se mantenha estável nos 5 volts. Essa saída é responsável pela alimentação das duas pontes H, da Raspberry Pi, dos 2 msp430 e do joystick.
+A ponte H também foi alimentada diretamente da bateria e possui fusíveis em sua alimentação. Caso haja algo de errado com o circuito, os fusíveis vão atuar, evitando assim a queima dos componentes da ponte H.
 
-Esse distribuidor de tensão pode ser visto no diagrama apresentado na figura \ref{fig:diagrama_controle}.
-
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[keepaspectratio=true,scale=0.4]{figuras/resultados/fluxograma}
-	\caption{Diagrama do sistema de controle}
-	\label{fig:diagrama_controle}
-\end{figure}
+\textbf{Versões da Ponte H}
 
 Foram feitas duas versões de ponte H. Na primeira versão da ponte H utilizava-se trilhas com cerca de 5 mm para os motores e transistores. Após alguns testes foi verificado que a espessura não suportava a corrente que os motores necessitam, as trilhas estavam soltando da placa.
 

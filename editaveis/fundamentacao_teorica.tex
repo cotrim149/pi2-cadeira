@@ -242,7 +242,7 @@ Geralmente motores precisam de corrente relativamente altas para controlar o seu
 
 \textbf{Ponte H}
 
-Para realizar o controle dos motores elétricos de corrente contínua é necessário determinar o sentido da corrente que passa pelos terminais do motor, é através da ponte H que se realiza o controle. Com a ponte H é possível determinar o sentido que o eixo girará e sua velocidade. O Diagrama da ponte H pode ser visto na figura \ref{fig:ponteh}.
+Para realizar o controle dos motores elétricos de corrente contínua é necessário a utilização de uma ponte H, com ela é possível controlar o sentido da corrente que passará pelos terminais do motor, é através dela que é possível ser realizado o controle dos motores, como determinar o sentido que o eixo girará e sua velocidade. O Diagrama da ponte H pode ser visto na figura \ref{fig:ponteh}.
 
 \begin{figure}[!htb]
 	\centering
@@ -251,9 +251,7 @@ Para realizar o controle dos motores elétricos de corrente contínua é necess�
 	\label{fig:ponteh}
 \end{figure}
 
-A ponte H é utilizada para o controle dos motores e ela faz isso por meio do controle de corrente. E ainda é usada para determinar o sentido de corrente e o valor de tensão no controle de um motor DC.
-
-A ponte H é um conjunto de quatro transistores, ligados de formas que suas entradas, ao serem acionadas, polarizem apenas dois transistores como mostrado na figura \ref{fig:ponteh_fets}, dos quatro presentes. Permitindo assim, que a corrente flua pelo motor movimentando-o.
+A ponte H é constituida por um conjunto de quatro transistores, eles são ligados de formas que suas entradas ao serem acionadas polarizem apenas dois transistores dos quatro transistores presentes, como mostrado na figura \ref{fig:ponteh_fets}. Permitindo assim, que a corrente flua pelo motor movimentando-o.
 
 \begin{figure}[!htb]
 	\centering
@@ -262,7 +260,7 @@ A ponte H é um conjunto de quatro transistores, ligados de formas que suas entr
 	\label{fig:ponteh_fets}
 \end{figure}
 
-Os transistores da ponte H funcionam como chaves controladas por tensão. Os transistores utilizados são o IRF 3205, e eles são polarizados quando se cria uma diferença de tensão entre o \textit{Gate} (G) e \textit{Source} (s), conforme pode ser visto na figura \ref{fig:portas_transistor_irf}, VGS maior que a tensão de threshold (VTH).
+Os transistores da ponte H funcionam como chaves controladas por tensão.  Serão utilizados os transistores IRF 3205, a polarização de um transistor é dada  quando cria-se uma diferença de tensão entre os terminais de \textit{Gate} (G) e \textit{Source} (s), como podem ser vistos na figura \ref{fig:portas_transistor_irf}, quando se cria VGS maior que a tensão de threshold (VTH) o transistor é polarizado corretamente.
 
 \begin{figure}[!htb]
 	\centering
@@ -271,7 +269,7 @@ Os transistores da ponte H funcionam como chaves controladas por tensão. Os tra
 	\label{fig:portas_transistor_irf}
 \end{figure}
 
-A tensão de VTH é a menor diferença de tensão que precisa ser alcançado entre G e S, conforme pode ser visto na figura x, para que o transistor seja ativado essa informação encontra-se no datasheet, para o transistor IRF 3205 esse valor varia de 2V até 4V \cite{datasheet_irf_3205}.
+A tensão de VTH é a menor diferença de tensão que precisa ser alcançado entre G e S, para que o transistor seja ativado, o valor desta tensão encontra-se no datasheet, para o transistor que será utilizado no projeto tem-se esse valor de 2V a 4V \cite{datasheet_irf_3205}.
 
 Com isso utiliza-se desta propriedade e da disposição deles para fazer o controle do sentido de giro do motor. Quando o transistor Q1 e Q4 são polarizados, o terminal direito do motor fica com uma tensão mais positiva que o esquerdo, fazendo a corrente fluir da direita para a esquerda como mostrado na figura \ref{fig:motor_clockwise}.
 
